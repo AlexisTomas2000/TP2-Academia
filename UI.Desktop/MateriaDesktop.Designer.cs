@@ -166,7 +166,10 @@ namespace UI.Desktop
 
         private void MateriaDesktop_Load(object sender, EventArgs e)
         {
- 
+            PlanLogic plan = new PlanLogic();
+            cbPlanes.DataSource = plan.GetAll();
+            cbPlanes.DisplayMember = "Descripcion";
+            cbPlanes.ValueMember = "id";
 
         }
 

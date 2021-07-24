@@ -56,6 +56,7 @@ namespace UI.Desktop
             int id = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
             MateriaDesktop mat = new MateriaDesktop(id, ApplicationForm.ModoForm.Baja);
             mat.ShowDialog();
+            listar();
         }
     }
 }

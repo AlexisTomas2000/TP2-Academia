@@ -20,7 +20,7 @@ namespace UI.Desktop
         public MateriaDesktop()
         {
             InitializeComponent();
-            cb();
+            //cb();
         }
       
         public MateriaDesktop(ModoForm modo) : this()
@@ -42,7 +42,7 @@ namespace UI.Desktop
             this.txbDesc.Text = this.MateriaActual.Descripcion;
             this.txtHS.Text = this.MateriaActual.HsSemanales.ToString();
             this.txtHT.Text = this.MateriaActual.HsTotales.ToString();
-            this.cbPlanes.Text = this.MateriaActual.IDPlan.ToString();
+            this.cbPlanes.SelectedValue = this.MateriaActual.IDPlan;
 
             switch (this.Modo)
             {
@@ -73,7 +73,7 @@ namespace UI.Desktop
                     }
             }
         }
-        public void cb()
+       /* public void cb()
         {
             PlanLogic plan = new PlanLogic();
             planesD = plan.GetAll();
@@ -81,7 +81,7 @@ namespace UI.Desktop
             {
                 cbPlanes.Items.Add(pla[i].Descripcion);
             }
-        }
+        }*/
         public override void GuardarCambios()
         {
             MapearADatos();
@@ -100,7 +100,7 @@ namespace UI.Desktop
                         this.MateriaActual.HsSemanales = int.Parse(this.txtHS.Text);
                         this.MateriaActual.HsTotales = int.Parse(this.txtHT.Text);
                         int i = cbPlanes.SelectedIndex;
-                        this.MateriaActual.IDPlan = this.planesD[i]._ID;
+                        this.MateriaActual.IDPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         this.MateriaActual.Descripcion = this.txbDesc.Text;
                         MateriaActual.State = BusinessEntity.States.New;
                         break;
@@ -111,7 +111,7 @@ namespace UI.Desktop
                         this.MateriaActual.HsSemanales = int.Parse(this.txtHS.Text);
                         this.MateriaActual.HsTotales = int.Parse(this.txtHT.Text);
                         int i = cbPlanes.SelectedIndex;
-                        this.MateriaActual.IDPlan = this.planesD[i]._ID;
+                        this.MateriaActual.IDPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         this.MateriaActual.Descripcion = this.txbDesc.Text;
                         MateriaActual.State = BusinessEntity.States.Modified;
                         break;
@@ -122,7 +122,7 @@ namespace UI.Desktop
                         this.MateriaActual.HsSemanales = int.Parse(this.txtHS.Text);
                         this.MateriaActual.HsTotales = int.Parse(this.txtHT.Text);
                         int i = cbPlanes.SelectedIndex;
-                        this.MateriaActual.IDPlan = this.planesD[i]._ID;
+                        this.MateriaActual.IDPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         this.MateriaActual.Descripcion = this.txbDesc.Text;
                         MateriaActual.State = BusinessEntity.States.Deleted;
                             break;
