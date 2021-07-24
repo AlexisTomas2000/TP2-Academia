@@ -15,12 +15,11 @@ namespace UI.Desktop
     {
         private Business.Entities.Materia _MateriaActual;
         public Business.Entities.Materia MateriaActual { get => this._MateriaActual; set => this._MateriaActual = value; }
-        private List<Plan> pla;
-        public List<Plan> planesD { get=> this.pla;  set =>this.pla = value;}
+ 
         public MateriaDesktop()
         {
             InitializeComponent();
-            //cb();
+
         }
       
         public MateriaDesktop(ModoForm modo) : this()
@@ -73,15 +72,6 @@ namespace UI.Desktop
                     }
             }
         }
-       /* public void cb()
-        {
-            PlanLogic plan = new PlanLogic();
-            planesD = plan.GetAll();
-            for (int i = 0; i < planesD.Count; i++)
-            {
-                cbPlanes.Items.Add(pla[i].Descripcion);
-            }
-        }*/
         public override void GuardarCambios()
         {
             MapearADatos();
