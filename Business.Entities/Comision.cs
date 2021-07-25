@@ -13,25 +13,28 @@ namespace Business.Entities
 
         public int AnioEspecialidad
         {
-            get => default;
+            get => _AñoEspecialidad;
             set
             {
+                _AñoEspecialidad = value;
             }
         }
 
         public String Descripcion
         {
-            get => default;
+            get => _Descripcion;
             set
             {
+            _Descripcion= value;
             }
         }
 
         public int IdPlan
         {
-            get => default;
+            get => _IDPlan;
             set
             {
+                _IDPlan = value;
             }
         }
     }
