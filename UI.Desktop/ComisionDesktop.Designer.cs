@@ -130,6 +130,7 @@ namespace UI.Desktop
             this.Controls.Add(this.btnAceptar);
             this.Name = "ComisionDesktop";
             this.Text = "ComisionDesktop";
+            this.Load += new System.EventHandler(this.ComisionDesktop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -40,6 +40,7 @@ namespace UI.Desktop
             this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -133,18 +134,29 @@ namespace UI.Desktop
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(713, 421);
+            this.btnActualizar.Location = new System.Drawing.Point(632, 421);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(713, 421);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // Comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvComisiones);
@@ -171,5 +183,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio_Especialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_plan;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
