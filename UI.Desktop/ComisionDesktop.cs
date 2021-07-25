@@ -21,7 +21,7 @@ namespace UI.Desktop
         public Business.Entities.Comision ComisionActual { get=>this._ComisionActual; set=>this._ComisionActual=value; }
         private void ComisionDesktop_Load(object sender, EventArgs e)
         {
-
+            PlanLogic plan = new PlanLogic();
         }
         public ComisionDesktop(ModoForm modo) : this()
         {
