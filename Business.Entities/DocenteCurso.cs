@@ -13,26 +13,20 @@ namespace Business.Entities
 
         public int Cargo
         {
-            get => default;
-            set
-            {
-            }
+            get => this._Cargo;
+            set => this._Cargo = value;
         }
 
         public int IDCurso
         {
-            get => default;
-            set
-            {
-            }
+            get => this._IDCurso;
+            set => this._IDCurso = value;
         }
 
         public int IDDocente
         {
-            get => default;
-            set
-            {
-            }
+            get => this._IDDocente;
+            set => this._IDDocente = value;
         }
     }
 }
