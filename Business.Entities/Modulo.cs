@@ -8,7 +8,7 @@ namespace Business.Entities
 {
     public class Modulo : BusinessEntity
     {
-        private String desc;
-        public String Descripcion { get =>this.desc; set =>this.desc=value; }
+        private String _Descripcion;
+        public String Descripcion { get =>this._Descripcion; set =>this._Descripcion = value; }
     }
 }
