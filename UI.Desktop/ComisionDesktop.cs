@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,48 @@ namespace UI.Desktop
         public ComisionDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
+        }
+        public ComisionDesktop(int id,ModoForm modo) : this()
+        {
+            this.Modo = modo;
+            ComisionLogic com = new ComisionLogic();
+            ComisionActual = com.GetOne(id);
+            this.MapearDeDatos();
+        }
+        public override void MapearDeDatos()
+        {
+            this.txbID.Text = this.ComisionActual.ID.ToString();
+            this.txbDesc.Text = this.ComisionActual.Descripcion;
+            this.txbAñoEsp.Text = this.ComisionActual.AnioEspecialidad.ToString();
+            this.cbPlanes.SelectedValue = this.ComisionActual.IdPlan;
+            switch (this.Modo)
+            {
+                case ModoForm.Alta:
+                    {
+                        this.btnAceptar.Text = "Guardar";
+                        break;
+                    }
+                case ModoForm.Modificacion:
+                    {
+                        this.btnAceptar.Text = "Guardar";
+                        break;
+                    }
+                case ModoForm.Baja:
+                    {
+                        this.btnAceptar.Text = "Eliminar";
+                        break;
+                    }
+                case ModoForm.Consulta:
+                    {
+                        this.btnAceptar.Text = "Aceptar";
+                        break;
+                    }
+                default:
+                    {
+                        this.btnAceptar.Text = "Guardar";
+                        break;
+                    }
+            }
         }
     }
 }
