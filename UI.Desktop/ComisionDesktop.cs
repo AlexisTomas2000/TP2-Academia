@@ -22,6 +22,9 @@ namespace UI.Desktop
         private void ComisionDesktop_Load(object sender, EventArgs e)
         {
             PlanLogic plan = new PlanLogic();
+            cbPlanes.DataSource = plan.GetAll();
+            cbPlanes.DisplayMember = "Descripcion";
+            cbPlanes.ValueMember = "Id";
         }
         public ComisionDesktop(ModoForm modo) : this()
         {
@@ -68,6 +71,13 @@ namespace UI.Desktop
                         break;
                     }
             }
+        }
+
+        public override void GuardarCambios()
+        {
+            MapearADatos();
+            ComisionLogic com = new ComisionLogic();
+            com.Save(this.ComisionActual);
         }
     }
 }
