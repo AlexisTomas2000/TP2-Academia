@@ -47,5 +47,10 @@ namespace Business.Logic
             this.UsuarioData = new Data.Database.UsuarioAdapter();
             UsuarioData.Save(usu);
         }
+        public bool GetOne(string usu, string pass)
+        {
+            this.UsuarioData = new Data.Database.UsuarioAdapter();
+            return UsuarioData.GetOne(usu, pass);
+        }
     }
 }

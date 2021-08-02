@@ -86,6 +86,7 @@ namespace UI.Desktop
             this.Controls.Add(this.btnUsuarios);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
         }

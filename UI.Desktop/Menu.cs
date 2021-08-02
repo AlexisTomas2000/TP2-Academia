@@ -64,5 +64,10 @@ namespace UI.Desktop
             materias.ShowDialog();
             this.Show();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

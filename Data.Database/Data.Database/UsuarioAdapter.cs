@@ -224,5 +224,34 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        public bool GetOne(string usu, string pass)
+        {
+            Usuario usr = new Usuario();
+            bool rta;
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select nombre_usuario, clave from usuarios where nombre_usuario='" + usu + "' AND clave='" + pass + "'", sqlConn);
+                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.Text).Value = usu;
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.Text).Value = pass;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                if (drUsuarios.Read())
+                {
+                    rta = true;
+                }
+                else { rta = false; }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al Ingresar usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return rta;
+        }
     }
 }
