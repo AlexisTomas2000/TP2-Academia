@@ -37,27 +37,47 @@ namespace UI.Desktop
 
         private void tsbAgregar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
             ComisionDesktop comd = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
             comd.ShowDialog();
         }
 
-        private void tsbEditar_Click(object sender, EventArgs e)
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsbEditar_Click_1(object sender, EventArgs e)
         {
             int id = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
             ComisionDesktop comd = new ComisionDesktop(id, ApplicationForm.ModoForm.Modificacion);
             comd.ShowDialog();
         }
 
-        private void tsbEliminar_Click(object sender, EventArgs e)
+        private void tsbEliminar_Click_1(object sender, EventArgs e)
         {
             int id = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
             ComisionDesktop comd = new ComisionDesktop(id, ApplicationForm.ModoForm.Baja);
             comd.ShowDialog();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
