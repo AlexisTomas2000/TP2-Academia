@@ -11,7 +11,8 @@ namespace Data.Database
 {
     public class ComisionAdapter : Adapter
     {
-        public List<Comision> GetAll() {
+        public List<Comision> GetAll()
+        {
             List<Comision> comisiones = new List<Comision>();
             try
             {
@@ -47,20 +48,20 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select * from comisiones where id_comision= @id_comision", sqlConn);
+                SqlCommand cmdComision = new SqlCommand("select * from comisiones where id_comision= @id", sqlConn);
                 cmdComision.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drComision = cmdComision.ExecuteReader();
-                if  (drComision.Read())
+                if (drComision.Read())
                 {
-                    
+
                     com.ID = (int)drComision["id_comision"];
                     com.Descripcion = (string)drComision["desc_comision"];
                     com.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     com.IdPlan = (int)drComision["id_plan"];
-                    
+
                 }
                 drComision.Close();
-                
+
             }
             catch (Exception Ex)
             {
@@ -81,7 +82,7 @@ namespace Data.Database
                 //abrimos la conexion
                 this.OpenConnection();
                 //creame la sentencia sql y asignamos un valor al parametro
-                SqlCommand cmdDelete = new SqlCommand("delete comisiones where id_materia=@id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete comisiones where id_comision=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();

@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-        public Business.Entities.Comision ComisionActual { get=>this._ComisionActual; set=>this._ComisionActual=value; }
+        public Business.Entities.Comision ComisionActual { get => this._ComisionActual; set => this._ComisionActual = value; }
         private void ComisionDesktop_Load(object sender, EventArgs e)
         {
             PlanLogic plan = new PlanLogic();
@@ -30,7 +31,7 @@ namespace UI.Desktop
         {
             this.Modo = modo;
         }
-        public ComisionDesktop(int id,ModoForm modo) : this()
+        public ComisionDesktop(int id, ModoForm modo) : this()
         {
             this.Modo = modo;
             ComisionLogic com = new ComisionLogic();
@@ -72,6 +73,45 @@ namespace UI.Desktop
                     }
             }
         }
+        public override void MapearADatos()
+        {
+            switch (Modo)
+            {
+                case ModoForm.Alta:
+                    {
+                        txbID.ReadOnly = false;
+                        Comision com = new Comision();
+                        ComisionActual = com;
+                        this.ComisionActual.AnioEspecialidad = int.Parse(this.txbAñoEsp.Text);
+                        this.ComisionActual.Descripcion = this.txbDesc.Text;
+                        int i = cbPlanes.SelectedIndex;
+                        this.ComisionActual.IdPlan = int.Parse(cbPlanes.SelectedValue.ToString());
+                        ComisionActual.State = BusinessEntity.States.New;
+                        break;
+                    }
+                case ModoForm.Modificacion:
+                    {
+                        this.ComisionActual.ID = int.Parse(this.txbID.Text);
+                        this.ComisionActual.AnioEspecialidad = int.Parse(this.txbAñoEsp.Text);
+                        this.ComisionActual.Descripcion = this.txbDesc.Text;
+                        int i = cbPlanes.SelectedIndex;
+                        this.ComisionActual.IdPlan = int.Parse(cbPlanes.SelectedValue.ToString());
+                        ComisionActual.State = BusinessEntity.States.Modified;
+                        break;
+                    }
+                case ModoForm.Baja:
+                    {
+                        this.ComisionActual.ID = int.Parse(this.txbID.Text);
+                        this.ComisionActual.AnioEspecialidad = int.Parse(this.txbAñoEsp.Text);
+                        this.ComisionActual.Descripcion = this.txbDesc.Text;
+                        int i = cbPlanes.SelectedIndex;
+                        this.ComisionActual.IdPlan = int.Parse(cbPlanes.SelectedValue.ToString());
+                        ComisionActual.State = BusinessEntity.States.Deleted;
+                        break;
+                    }
+            }
+
+        }
 
         public override void GuardarCambios()
         {
@@ -84,29 +124,30 @@ namespace UI.Desktop
             bool resp = false;
             ComisionLogic com = new ComisionLogic();
             string rta;
-            if (!("".Equals(txbDescripcion.Text))) 
+            if (!("".Equals(txbDescripcion.Text)))
             {
-                if (!("".Equals(cbPlanes.Text))) 
+                if (!("".Equals(cbPlanes.Text)))
                 {
-                    if (!("".Equals(txbAñoEsp.Text))) 
+                    if (!("".Equals(txbAñoEsp.Text)))
                     {
                         resp = true;
                     }
                     else { { rta = "El año de la especialidad no puede ser vacío" + this.txbAñoEsp.Text; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
                 }
-                else { { rta ="Debe seleccionar un plan para la Comision"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+                else { { rta = "Debe seleccionar un plan para la Comision"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
             }
             else { { rta = "La descripción de la comision no puede ser vacía"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
             return resp;
         }
+
         private void btnAceptar_Click(object sender, EventArgs e)
+        
         {
-            if (Validar()) {
-                GuardarCambios();
-                Close();
+            if (this.Validar())
+            {
+                this.GuardarCambios();
+                this.Close();
             }
         }
     }
-
-    
 }
