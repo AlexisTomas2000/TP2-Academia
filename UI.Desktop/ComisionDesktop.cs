@@ -40,7 +40,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txbID.Text = this.ComisionActual.ID.ToString();
-            this.txbDesc.Text = this.ComisionActual.Descripcion;
+            this.txbDescripcion.Text = this.ComisionActual.Descripcion;
             this.txbAñoEsp.Text = this.ComisionActual.AnioEspecialidad.ToString();
             this.cbPlanes.SelectedValue = this.ComisionActual.IdPlan;
             switch (this.Modo)
@@ -79,5 +79,34 @@ namespace UI.Desktop
             ComisionLogic com = new ComisionLogic();
             com.Save(this.ComisionActual);
         }
+        public override bool Validar()
+        {
+            bool resp = false;
+            ComisionLogic com = new ComisionLogic();
+            string rta;
+            if (!("".Equals(txbDescripcion.Text))) 
+            {
+                if (!("".Equals(cbPlanes.Text))) 
+                {
+                    if (!("".Equals(txbAñoEsp.Text))) 
+                    {
+                        resp = true;
+                    }
+                    else { { rta = "El año de la especialidad no puede ser vacío" + this.txbAñoEsp.Text; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+                }
+                else { { rta ="Debe seleccionar un plan para la Comision"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            }
+            else { { rta = "La descripción de la comision no puede ser vacía"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            return resp;
+        }
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (Validar()) {
+                GuardarCambios();
+                Close();
+            }
+        }
     }
+
+    
 }

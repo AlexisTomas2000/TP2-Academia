@@ -31,7 +31,7 @@ namespace UI.Desktop
         {
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txbID = new System.Windows.Forms.TextBox();
-            this.txbDesc = new System.Windows.Forms.TextBox();
+            this.txbDescripcion = new System.Windows.Forms.TextBox();
             this.txbAñoEsp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,20 +48,22 @@ namespace UI.Desktop
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txbID
             // 
             this.txbID.Location = new System.Drawing.Point(60, 28);
             this.txbID.Name = "txbID";
+            this.txbID.ReadOnly = true;
             this.txbID.Size = new System.Drawing.Size(100, 20);
             this.txbID.TabIndex = 1;
             // 
-            // txbDesc
+            // txbDescripcion
             // 
-            this.txbDesc.Location = new System.Drawing.Point(397, 28);
-            this.txbDesc.Name = "txbDesc";
-            this.txbDesc.Size = new System.Drawing.Size(100, 20);
-            this.txbDesc.TabIndex = 2;
+            this.txbDescripcion.Location = new System.Drawing.Point(397, 28);
+            this.txbDescripcion.Name = "txbDescripcion";
+            this.txbDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txbDescripcion.TabIndex = 2;
             // 
             // txbAñoEsp
             // 
@@ -125,7 +127,7 @@ namespace UI.Desktop
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbAñoEsp);
-            this.Controls.Add(this.txbDesc);
+            this.Controls.Add(this.txbDescripcion);
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.btnAceptar);
             this.Name = "ComisionDesktop";
@@ -140,7 +142,7 @@ namespace UI.Desktop
 
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txbID;
-        private System.Windows.Forms.TextBox txbDesc;
+        private System.Windows.Forms.TextBox txbDescripcion;
         private System.Windows.Forms.TextBox txbAñoEsp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
