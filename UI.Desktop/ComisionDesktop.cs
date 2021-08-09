@@ -83,7 +83,7 @@ namespace UI.Desktop
                         Comision com = new Comision();
                         ComisionActual = com;
                         this.ComisionActual.AnioEspecialidad = int.Parse(this.txbAñoEsp.Text);
-                        this.ComisionActual.Descripcion = this.txbDesc.Text;
+                        this.ComisionActual.Descripcion = this.txbDescripcion.Text;
                         int i = cbPlanes.SelectedIndex;
                         this.ComisionActual.IdPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         ComisionActual.State = BusinessEntity.States.New;
@@ -93,7 +93,7 @@ namespace UI.Desktop
                     {
                         this.ComisionActual.ID = int.Parse(this.txbID.Text);
                         this.ComisionActual.AnioEspecialidad = int.Parse(this.txbAñoEsp.Text);
-                        this.ComisionActual.Descripcion = this.txbDesc.Text;
+                        this.ComisionActual.Descripcion = this.txbDescripcion.Text;
                         int i = cbPlanes.SelectedIndex;
                         this.ComisionActual.IdPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         ComisionActual.State = BusinessEntity.States.Modified;
@@ -103,7 +103,7 @@ namespace UI.Desktop
                     {
                         this.ComisionActual.ID = int.Parse(this.txbID.Text);
                         this.ComisionActual.AnioEspecialidad = int.Parse(this.txbAñoEsp.Text);
-                        this.ComisionActual.Descripcion = this.txbDesc.Text;
+                        this.ComisionActual.Descripcion = this.txbDescripcion.Text;
                         int i = cbPlanes.SelectedIndex;
                         this.ComisionActual.IdPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         ComisionActual.State = BusinessEntity.States.Deleted;

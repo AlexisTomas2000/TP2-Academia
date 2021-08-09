@@ -33,6 +33,7 @@ namespace UI.Desktop
             this.btnEspecialidades = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
             this.btnMateria = new System.Windows.Forms.Button();
+            this.btnComisiones = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnUsuarios
@@ -47,7 +48,7 @@ namespace UI.Desktop
             // 
             // btnEspecialidades
             // 
-            this.btnEspecialidades.Location = new System.Drawing.Point(336, 143);
+            this.btnEspecialidades.Location = new System.Drawing.Point(423, 143);
             this.btnEspecialidades.Name = "btnEspecialidades";
             this.btnEspecialidades.Size = new System.Drawing.Size(75, 23);
             this.btnEspecialidades.TabIndex = 1;
@@ -75,11 +76,22 @@ namespace UI.Desktop
             this.btnMateria.UseVisualStyleBackColor = true;
             this.btnMateria.Click += new System.EventHandler(this.btnMateria_Click);
             // 
+            // btnComisiones
+            // 
+            this.btnComisiones.Location = new System.Drawing.Point(298, 143);
+            this.btnComisiones.Name = "btnComisiones";
+            this.btnComisiones.Size = new System.Drawing.Size(75, 23);
+            this.btnComisiones.TabIndex = 4;
+            this.btnComisiones.Text = "Comisiones";
+            this.btnComisiones.UseVisualStyleBackColor = true;
+            this.btnComisiones.Click += new System.EventHandler(this.btnComisiones_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnMateria);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnEspecialidades);
@@ -97,5 +109,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Button btnMateria;
+        private System.Windows.Forms.Button btnComisiones;
     }
 }

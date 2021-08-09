@@ -69,5 +69,13 @@ namespace UI.Desktop
         {
 
         }
+
+        private void btnComisiones_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Comisiones com = new Comisiones();
+            com.ShowDialog();
+            this.Show();
+        }
     }
 }
