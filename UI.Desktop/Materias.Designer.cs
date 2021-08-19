@@ -148,7 +148,7 @@ namespace UI.Desktop
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(551, 447);
+            this.btnActualizar.Location = new System.Drawing.Point(470, 443);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 2;
@@ -158,7 +158,7 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(470, 447);
+            this.btnSalir.Location = new System.Drawing.Point(551, 443);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 3;

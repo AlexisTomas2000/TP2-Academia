@@ -75,7 +75,7 @@ namespace UI.Desktop
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 1;
-            this.btnListar.Text = "Listar";
+            this.btnListar.Text = "Actualizar";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
