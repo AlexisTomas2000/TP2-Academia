@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class Login
+    partial class formLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -102,8 +102,9 @@ namespace UI.Desktop
             this.linkLabel1.Text = "Olvide mi contraseña";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // Login
+            // formLogin
             // 
+            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 165);
@@ -114,7 +115,10 @@ namespace UI.Desktop
             this.Controls.Add(this.txtNomUsu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "formLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);

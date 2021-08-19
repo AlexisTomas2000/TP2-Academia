@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class Login : Form
+    public partial class formLogin : Form
     {
-        public Login()
+        public formLogin()
         {
             InitializeComponent();
         }
@@ -33,11 +33,7 @@ namespace UI.Desktop
             {
                 MessageBox.Show("Usted ha ingresado al sistema correctamente."
                     , "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                Menu m = new Menu();
-                m.ShowDialog();
-                this.Close();
-                
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
