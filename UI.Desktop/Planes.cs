@@ -57,5 +57,10 @@ namespace UI.Desktop
             PlanDesktop plan = new PlanDesktop(id, ApplicationForm.ModoForm.Baja);
             plan.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

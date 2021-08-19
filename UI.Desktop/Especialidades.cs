@@ -75,5 +75,10 @@ namespace UI.Desktop
             EspecialidadDesktop espe = new EspecialidadDesktop(id, ApplicationForm.ModoForm.Baja);
             espe.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

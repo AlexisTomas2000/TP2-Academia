@@ -42,6 +42,7 @@ namespace UI.Desktop
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +81,7 @@ namespace UI.Desktop
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(304, 204);
+            this.btnListar.Location = new System.Drawing.Point(215, 204);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 1;
@@ -130,11 +131,22 @@ namespace UI.Desktop
             this.tsbDelete.Text = "Eliminar";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(296, 203);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Especialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 229);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvEspecialidades);
@@ -162,5 +174,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
