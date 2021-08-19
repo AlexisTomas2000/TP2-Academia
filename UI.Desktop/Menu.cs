@@ -59,10 +59,7 @@ namespace UI.Desktop
 
         private void btnMateria_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Materias materias = new Materias();
-            materias.ShowDialog();
-            this.Show();
+            
         }
 
         private void Menu_Load(object sender, EventArgs e)
