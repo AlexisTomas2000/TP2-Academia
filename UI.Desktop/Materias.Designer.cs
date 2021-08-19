@@ -40,6 +40,8 @@ namespace UI.Desktop
             this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +111,7 @@ namespace UI.Desktop
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(638, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(654, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -144,11 +146,33 @@ namespace UI.Desktop
             this.toolStripButton2.Text = "Eliminar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(551, 447);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 2;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(470, 447);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 449);
+            this.ClientSize = new System.Drawing.Size(654, 482);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvMaterias);
             this.Name = "Materias";
@@ -174,5 +198,7 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Hs_Totales;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

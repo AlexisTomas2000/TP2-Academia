@@ -58,5 +58,15 @@ namespace UI.Desktop
             mat.ShowDialog();
             listar();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            listar();
+        }
     }
 }
