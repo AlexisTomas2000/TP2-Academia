@@ -15,42 +15,25 @@ namespace Business.Entities
 
         public int AnioCalendario
         {
-            get => default;
-            set
-            {
-            }
+            get => this._AnioCalendario;
+            set => this._AnioCalendario = value;
         }
 
         public int Cupo
         {
-            get => default;
-            set
-            {
-            }
+            get => this._Cupo;
+            set => this._Cupo = value;
         }
-
-        public String Descripcion
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public int IDComision
         {
-            get => default;
-            set
-            {
-            }
+            get => this._IDComision;
+            set => this._IDComision = value;
         }
 
         public int IDMateria
         {
-            get => default;
-            set
-            {
-            }
+            get => this._ID_Materia;
+            set => this._ID_Materia = value;
         }
     }
 }

@@ -45,6 +45,7 @@ namespace UI.Desktop
             this.label5 = new System.Windows.Forms.Label();
             this.cbPlanes = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbID
@@ -75,6 +76,7 @@ namespace UI.Desktop
             this.txtHT.Name = "txtHT";
             this.txtHT.Size = new System.Drawing.Size(100, 20);
             this.txtHT.TabIndex = 4;
+            this.txtHT.TextChanged += new System.EventHandler(this.txtHT_TextChanged);
             // 
             // label1
             // 
@@ -140,11 +142,22 @@ namespace UI.Desktop
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(383, 158);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // MateriaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 193);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cbPlanes);
             this.Controls.Add(this.label5);
@@ -170,7 +183,7 @@ namespace UI.Desktop
             cbPlanes.DataSource = plan.GetAll();
             cbPlanes.DisplayMember = "Descripcion";
             cbPlanes.ValueMember = "id";
-
+            //"TOMBO SE LA COME"
         }
 
         #endregion
@@ -186,5 +199,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbPlanes;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

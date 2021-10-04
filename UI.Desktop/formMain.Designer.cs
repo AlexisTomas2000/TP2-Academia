@@ -37,6 +37,7 @@ namespace UI.Desktop
             this.btnPlanes = new System.Windows.Forms.Button();
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnEspecialidades = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
             this.mnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace UI.Desktop
             // mnuSalir
             // 
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(180, 22);
+            this.mnuSalir.Size = new System.Drawing.Size(96, 22);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
@@ -115,11 +116,22 @@ namespace UI.Desktop
             this.btnEspecialidades.UseVisualStyleBackColor = true;
             this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
             // 
+            // btnCursos
+            // 
+            this.btnCursos.Location = new System.Drawing.Point(10, 252);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(119, 32);
+            this.btnCursos.TabIndex = 8;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnEspecialidades);
             this.Controls.Add(this.btnMaterias);
             this.Controls.Add(this.btnPlanes);
@@ -152,5 +164,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnEspecialidades;
+        private System.Windows.Forms.Button btnCursos;
     }
 }

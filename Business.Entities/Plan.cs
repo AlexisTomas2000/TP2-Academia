@@ -13,19 +13,14 @@ namespace Business.Entities
         public String Descripcion
         {
             get => _Descripcion;
-            set
-            {
-                _Descripcion = value;
-            }
+            set =>this._Descripcion = value;
+            
         }
 
         public int IDEspecialidad
         {
             get => _IDEspecialidad;
-            set
-            {
-                _IDEspecialidad = value;
-            }
+            set => this._IDEspecialidad = value;
         }
     }
 }

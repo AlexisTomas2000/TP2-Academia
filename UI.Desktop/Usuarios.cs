@@ -68,10 +68,10 @@ namespace UI.Desktop
 
         }
 
-        private void tsbEsp_Click(object sender, EventArgs e)
+        /*private void tsbEsp_Click(object sender, EventArgs e)
         {
             Especialidades espe = new Especialidades();
             espe.ShowDialog();
-        }
+        }*/
     }
 }

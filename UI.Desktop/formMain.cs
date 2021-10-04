@@ -76,5 +76,14 @@ namespace UI.Desktop
             especialidades.ShowDialog();
             this.Show();
         }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cursos cur = new Cursos();
+            cur.ShowDialog();
+            this.Show();
+
+        }
     }
 }

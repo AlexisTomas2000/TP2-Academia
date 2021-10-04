@@ -15,11 +15,12 @@ namespace UI.Desktop
     public partial class UsuarioDesktop : ApplicationForm
     {
         private Business.Entities.Usuario _UsuarioActual;
+        public Business.Entities.Usuario UsuarioActual { get => this._UsuarioActual; set => this._UsuarioActual = value; }
         public UsuarioDesktop()
         {
             InitializeComponent();
         }
-        public Business.Entities.Usuario UsuarioActual { get=>this._UsuarioActual; set=> this._UsuarioActual= value; }
+     
         private void UsuarioDesktop_Load(object sender, EventArgs e)
         {
 

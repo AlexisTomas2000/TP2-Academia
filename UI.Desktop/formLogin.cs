@@ -21,6 +21,7 @@ namespace UI.Desktop
 
         private void Login_Load(object sender, EventArgs e)
         {
+            txtContra.UseSystemPasswordChar = true;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

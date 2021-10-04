@@ -89,7 +89,7 @@ namespace UI.Desktop
                         MateriaActual = mat;
                         this.MateriaActual.HsSemanales = int.Parse(this.txtHS.Text);
                         this.MateriaActual.HsTotales = int.Parse(this.txtHT.Text);
-                        int i = cbPlanes.SelectedIndex;
+                        //int i = cbPlanes.SelectedIndex;
                         this.MateriaActual.IDPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         this.MateriaActual.Descripcion = this.txbDesc.Text;
                         MateriaActual.State = BusinessEntity.States.New;
@@ -100,7 +100,7 @@ namespace UI.Desktop
                         this.MateriaActual.ID = int.Parse(this.txbID.Text);
                         this.MateriaActual.HsSemanales = int.Parse(this.txtHS.Text);
                         this.MateriaActual.HsTotales = int.Parse(this.txtHT.Text);
-                        int i = cbPlanes.SelectedIndex;
+                        //int i = cbPlanes.SelectedIndex;
                         this.MateriaActual.IDPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         this.MateriaActual.Descripcion = this.txbDesc.Text;
                         MateriaActual.State = BusinessEntity.States.Modified;
@@ -111,7 +111,7 @@ namespace UI.Desktop
                         this.MateriaActual.ID = int.Parse(this.txbID.Text);
                         this.MateriaActual.HsSemanales = int.Parse(this.txtHS.Text);
                         this.MateriaActual.HsTotales = int.Parse(this.txtHT.Text);
-                        int i = cbPlanes.SelectedIndex;
+                       // int i = cbPlanes.SelectedIndex;
                         this.MateriaActual.IDPlan = int.Parse(cbPlanes.SelectedValue.ToString());
                         this.MateriaActual.Descripcion = this.txbDesc.Text;
                         MateriaActual.State = BusinessEntity.States.Deleted;
@@ -131,6 +131,16 @@ namespace UI.Desktop
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.GuardarCambios();
+            this.Close();
+        }
+
+        private void txtHT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
