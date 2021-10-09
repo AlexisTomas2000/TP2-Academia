@@ -109,6 +109,7 @@ namespace UI.Desktop
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(181, 20);
             this.txtFechaNac.TabIndex = 7;
+            this.txtFechaNac.Text = "Formato: dd/mm/yyyy";
             // 
             // cbPlan
             // 

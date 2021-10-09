@@ -188,11 +188,13 @@ namespace UI.Desktop
             // cbEleccion
             // 
             this.cbEleccion.FormattingEnabled = true;
+            this.cbEleccion.Items.AddRange(new object[] {
+            "Alumnos",
+            "Profesores"});
             this.cbEleccion.Location = new System.Drawing.Point(754, 415);
             this.cbEleccion.Name = "cbEleccion";
             this.cbEleccion.Size = new System.Drawing.Size(121, 21);
             this.cbEleccion.TabIndex = 5;
-            this.cbEleccion.Text = "Alumnos";
             this.cbEleccion.SelectedIndexChanged += new System.EventHandler(this.cbEleccion_SelectedIndexChanged);
             // 
             // Personas

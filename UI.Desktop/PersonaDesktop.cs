@@ -162,7 +162,10 @@ namespace UI.Desktop
         }
         public int dev()
         {
-            return this.PersonaActual.TipoPersona;
+            if (this.PersonaActual != null)
+            {
+                return this.PersonaActual.TipoPersona;}
+            else { return 0; }
           
         }
 
