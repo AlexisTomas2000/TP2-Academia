@@ -23,7 +23,16 @@ namespace UI.Desktop
         }
         private void Persona_Load(object sender, EventArgs e)
         {
- 
+            cbEleccion.Items.Add("Alumnos");
+            cbEleccion.Items.Add("Profesores");
+            //cbEleccion.SelectedIndex = 1;
+            if (cbEleccion.SelectedIndex == 1)
+            {
+                this.ListarP();
+
+            }
+            else { this.ListarA(); }
+
         }
         public void ListarA()
         {
@@ -40,12 +49,12 @@ namespace UI.Desktop
 
         private void btnAlumno_Click(object sender, EventArgs e)
         {
-            this.ListarA();
+            //this.ListarA();
         }
 
         private void btnProfesores_Click(object sender, EventArgs e)
         {
-            this.ListarP();
+           // this.ListarP();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -68,7 +77,7 @@ namespace UI.Desktop
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             int id = ((Business.Entities.Persona)this.dgvPersona.SelectedRows[0].DataBoundItem).ID;
-            PersonaDesktop pers = new PersonaDesktop(id,ApplicationForm.ModoForm.Modificacion);
+            PersonaDesktop pers = new PersonaDesktop(id, ApplicationForm.ModoForm.Modificacion);
             pers.ShowDialog();
             if (pers.dev() == 1)
             {
@@ -86,7 +95,20 @@ namespace UI.Desktop
             {
                 this.ListarA();
             }
-            else if (pers.dev() == 2) { ListarP(); }
+            else if (pers.dev() == 2)
+            {
+                ListarP();
+            }
+        }
+
+        private void cbEleccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbEleccion.SelectedIndex == 1)
+            {
+                this.ListarP();
+
+            }
+            else { this.ListarA(); }
         }
     }
 }

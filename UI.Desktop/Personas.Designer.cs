@@ -42,12 +42,11 @@ namespace UI.Desktop
             this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnAlumno = new System.Windows.Forms.Button();
-            this.btnProfesores = new System.Windows.Forms.Button();
             this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbBorrar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.cbEleccion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -146,36 +145,6 @@ namespace UI.Desktop
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(881, 415);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnAlumno
-            // 
-            this.btnAlumno.Location = new System.Drawing.Point(719, 415);
-            this.btnAlumno.Name = "btnAlumno";
-            this.btnAlumno.Size = new System.Drawing.Size(75, 23);
-            this.btnAlumno.TabIndex = 3;
-            this.btnAlumno.Text = "Alumnos";
-            this.btnAlumno.UseVisualStyleBackColor = true;
-            this.btnAlumno.Click += new System.EventHandler(this.btnAlumno_Click);
-            // 
-            // btnProfesores
-            // 
-            this.btnProfesores.Location = new System.Drawing.Point(800, 415);
-            this.btnProfesores.Name = "btnProfesores";
-            this.btnProfesores.Size = new System.Drawing.Size(75, 23);
-            this.btnProfesores.TabIndex = 4;
-            this.btnProfesores.Text = "Profesores";
-            this.btnProfesores.UseVisualStyleBackColor = true;
-            this.btnProfesores.Click += new System.EventHandler(this.btnProfesores_Click);
-            // 
             // tsbAgregar
             // 
             this.tsbAgregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -206,13 +175,32 @@ namespace UI.Desktop
             this.tsbBorrar.Text = "toolStripButton4";
             this.tsbBorrar.Click += new System.EventHandler(this.tsbBorrar_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(881, 415);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // cbEleccion
+            // 
+            this.cbEleccion.FormattingEnabled = true;
+            this.cbEleccion.Location = new System.Drawing.Point(754, 415);
+            this.cbEleccion.Name = "cbEleccion";
+            this.cbEleccion.Size = new System.Drawing.Size(121, 21);
+            this.cbEleccion.TabIndex = 5;
+            this.cbEleccion.Text = "Alumnos";
+            this.cbEleccion.SelectedIndexChanged += new System.EventHandler(this.cbEleccion_SelectedIndexChanged);
+            // 
             // Personas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 450);
-            this.Controls.Add(this.btnProfesores);
-            this.Controls.Add(this.btnAlumno);
+            this.Controls.Add(this.cbEleccion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvPersona);
@@ -232,8 +220,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvPersona;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnAlumno;
-        private System.Windows.Forms.Button btnProfesores;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -247,5 +233,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripButton tsbAgregar;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbBorrar;
+        private System.Windows.Forms.ComboBox cbEleccion;
     }
 }
