@@ -16,22 +16,22 @@ namespace UI.Desktop
     public partial class Personas : Form
     {
         private Business.Logic.PersonaLogic u1;
+        private int l;
         public Personas()
         {
             InitializeComponent();
         }
         private void Persona_Load(object sender, EventArgs e)
         {
-            this.cbEleccion.SelectedIndex = 0;
+            cbEleccion.Items.Add("Alumnos");
+            cbEleccion.Items.Add("Profesores");
+            //cbEleccion.SelectedIndex = 1;
             if (cbEleccion.SelectedIndex == 1)
             {
-                cbEleccion.DisplayMember = "Profesores";
                 this.ListarP();
 
             }
-            else { this.ListarA();
-                cbEleccion.DisplayMember = "Alumnos";
-            }
+            else { this.ListarA(); }
 
         }
         public void ListarA()
@@ -106,12 +106,9 @@ namespace UI.Desktop
             if (cbEleccion.SelectedIndex == 1)
             {
                 this.ListarP();
-                cbEleccion.DisplayMember = "Profesores";
 
             }
-            else { this.ListarA();
-                cbEleccion.DisplayMember = "Alumnos";
-            }
+            else { this.ListarA(); }
         }
     }
 }
