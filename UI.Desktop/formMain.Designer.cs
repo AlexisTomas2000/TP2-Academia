@@ -38,6 +38,7 @@ namespace UI.Desktop
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnEspecialidades = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
+            this.btnPersonas = new System.Windows.Forms.Button();
             this.mnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,11 +127,22 @@ namespace UI.Desktop
             this.btnCursos.UseVisualStyleBackColor = true;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
+            // btnPersonas
+            // 
+            this.btnPersonas.Location = new System.Drawing.Point(175, 252);
+            this.btnPersonas.Name = "btnPersonas";
+            this.btnPersonas.Size = new System.Drawing.Size(119, 32);
+            this.btnPersonas.TabIndex = 10;
+            this.btnPersonas.Text = "Personas";
+            this.btnPersonas.UseVisualStyleBackColor = true;
+            this.btnPersonas.Click += new System.EventHandler(this.button1_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPersonas);
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnEspecialidades);
             this.Controls.Add(this.btnMaterias);
@@ -165,5 +177,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnPersonas;
     }
 }

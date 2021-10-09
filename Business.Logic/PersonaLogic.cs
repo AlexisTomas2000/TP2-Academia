@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using Business.Entities;
 namespace Business.Logic
 {
-    class PersonaLogic:BusinessLogic
+    public class PersonaLogic:BusinessLogic
     {
         private Data.Database.PersonaAdapter _PersonaData;
         public Data.Database.PersonaAdapter PersonaData

@@ -85,5 +85,13 @@ namespace UI.Desktop
             this.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Personas cur = new Personas();
+            cur.ShowDialog();
+            this.Show();
+        }
     }
 }

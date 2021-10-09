@@ -125,7 +125,7 @@ namespace Data.Database
                 //abrimos la conexion
                 this.OpenConnection();
                 //creame la sentencia sql y asignamos un valor al parametro
-                SqlCommand cmdDelete = new SqlCommand("delete usuarios personas where id_persona=@id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete personas where id_persona=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();
@@ -200,7 +200,7 @@ namespace Data.Database
                     , sqlConn);
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
-                cmdSave.Parameters.Add("@direccion", SqlDbType.Bit).Value = persona.Direccion;
+                cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar,50).Value = persona.Direccion;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.EMail;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.DateTime, 50).Value = persona.FechaNacimiento;

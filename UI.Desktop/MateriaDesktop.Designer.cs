@@ -183,7 +183,6 @@ namespace UI.Desktop
             cbPlanes.DataSource = plan.GetAll();
             cbPlanes.DisplayMember = "Descripcion";
             cbPlanes.ValueMember = "id";
-            //"TOMBO SE LA COME"
         }
 
         #endregion
