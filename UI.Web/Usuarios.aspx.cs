@@ -116,6 +116,7 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            usuario.State = BusinessEntity.States.New;
         }
 
         private void SaveEntity(Usuario usuario)
