@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -47,23 +49,23 @@ namespace UI.Web
         UsuarioLogic _logic;
         private UsuarioLogic Logic
         {
-            get 
-            { 
-       
+            get
+            {
+
                 if (_logic == null) {
                     _logic = new UsuarioLogic();
                 }
 
                 return _logic;
             }
-            
+
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             this.LoadGrid();
         }
 
-        private void LoadGrid() 
+        private void LoadGrid()
         {
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
@@ -85,7 +87,7 @@ namespace UI.Web
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
-            if(this.isEntitySelected)
+            if (this.isEntitySelected)
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
@@ -116,7 +118,6 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
-            usuario.State = BusinessEntity.States.New;
         }
 
         private void SaveEntity(Usuario usuario)
@@ -126,36 +127,56 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            
-            if (validar())
+
+
+
+            switch (this.FormMode)
             {
-                switch (this.FormMode)
-                {
-                    case FormModes.Baja:
-                        this.DeleteEntity(this.SelectedID);
-                        this.LoadGrid();
-                        break;
-                    case FormModes.Modificacion:
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    this.formPanel.Visible = false;
+                    break;
+                case FormModes.Modificacion:
+                    if (validar())
+                    {
                         this.Entity = new Usuario();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        break;
-                    case FormModes.Alta:
+                        this.formPanel.Visible = false;
+                        this.ocultarerror();
+                    }
+                    break;
+                case FormModes.Alta:
+                    if (validar())
+                    {
                         this.Entity = new Usuario();
+                        this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        break;
+                        this.formPanel.Visible = false;
+                        this.ocultarerror();
+                    }
+                    break;
                     default:
-                        break;
-                }
-                this.formPanel.Visible = false;
+                    break;
             }
-            
         }
+
+        private void ocultarerror()
+        {
+            txtNom.Text = "";
+            txtUsu.Text = "";
+            txtEm.Text = "";
+            txtClave.Text = "";
+            txtCC.Text = "";
+            txtApe.Text = "";
+        }
+
         private void EnableForm(bool enable)
         {
             this.nombreTextBox.Enabled = enable;
@@ -187,30 +208,38 @@ namespace UI.Web
 
         private bool validar() {
             bool rta = false;
+            Regex rx = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match m = rx.Match(emailTextBox.Text);
             if (!("".Equals(nombreTextBox.Text))) {
                 if (!("".Equals(apellidoTextBox.Text)))
                 {
-                    if (!("".Equals(emailTextBox.Text)))
+                    if (m.Success)
                     {
                         if (!("".Equals(nombreUsuarioTextBox.Text)))
                         {
-                            if (!("".Equals(claveTextBox.Text)) && ((claveTextBox.Text.Length)>=8))
+                            if (!("".Equals(claveTextBox.Text)) && ((claveTextBox.Text.Length) >= 8))
                             {
                                 if (this.claveTextBox.Text.Equals(this.repetirClaveTextBox.Text))
                                 {
                                     rta = true;
                                 }
-                                else { this.txtCC.Visible = true; this.txtCC.Text="* La confirmacion de la clave no coincide con la version original" }
+                                else { this.txtCC.Visible = true; this.txtCC.Text = " * La confirmacion de la clave no coincide con la version original"; }
                             }
                             else { this.txtClave.Visible = true; this.txtClave.Text = "* La contraseña debe tener un minimo de 8 caracteres"; }
                         }
                         else { this.txtUsu.Visible = true; this.txtUsu.Text = "* El nombre de usuario no puede ser vacío"; }
                     }
-                    else { this.txtEm.Visible = true; this.txtEm.Text = "* El email no puede ser vacío"; }
+                    else { this.txtEm.Visible = true; this.txtEm.Text = "* El email no tiene formato valido"; }
                 }
                 else { this.txtApe.Visible = true; this.txtApe.Text = "* El apellido no puede estar vacío"; }
             } else { this.txtNom.Visible = true; this.txtNom.Text = "* El nombre no puede estar vacío"; }
             return rta;
         }
+
+        protected void cancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanel.Visible = false;
+        }
+
     }
 }
