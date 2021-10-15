@@ -60,6 +60,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
 
         /// <summary>
+        /// Control txtNom.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtNom;
+
+        /// <summary>
         /// Control apellidoLabel.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox apellidoTextBox;
 
         /// <summary>
+        /// Control txtApe.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtApe;
+
+        /// <summary>
         /// Control emailLabel.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+
+        /// <summary>
+        /// Control txtEm.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtEm;
 
         /// <summary>
         /// Control habilitadoLabel.
@@ -132,6 +159,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
 
         /// <summary>
+        /// Control txtUsu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtUsu;
+
+        /// <summary>
         /// Control claveLabel.
         /// </summary>
         /// <remarks>
@@ -150,6 +186,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox claveTextBox;
 
         /// <summary>
+        /// Control txtClave.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtClave;
+
+        /// <summary>
         /// Control repetirClaveLabel.
         /// </summary>
         /// <remarks>
@@ -166,6 +211,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox repetirClaveTextBox;
+
+        /// <summary>
+        /// Control txtCC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtCC;
 
         /// <summary>
         /// Control formActionsPanel.

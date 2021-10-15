@@ -126,30 +126,35 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            switch (this.FormMode)
+            
+            if (validar())
             {
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Alta:
-                    this.Entity = new Usuario();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
+                switch (this.FormMode)
+                {
+                    case FormModes.Baja:
+                        this.DeleteEntity(this.SelectedID);
+                        this.LoadGrid();
+                        break;
+                    case FormModes.Modificacion:
+                        this.Entity = new Usuario();
+                        this.Entity.ID = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        break;
+                    case FormModes.Alta:
+                        this.Entity = new Usuario();
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        break;
+                    default:
+                        break;
+                }
+                this.formPanel.Visible = false;
             }
-            this.formPanel.Visible = false;
+            
         }
         private void EnableForm(bool enable)
         {
@@ -178,6 +183,34 @@ namespace UI.Web
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);
+        }
+
+        private bool validar() {
+            bool rta = false;
+            if (!("".Equals(nombreTextBox.Text))) {
+                if (!("".Equals(apellidoTextBox.Text)))
+                {
+                    if (!("".Equals(emailTextBox.Text)))
+                    {
+                        if (!("".Equals(nombreUsuarioTextBox.Text)))
+                        {
+                            if (!("".Equals(claveTextBox.Text)) && ((claveTextBox.Text.Length)>=8))
+                            {
+                                if (this.claveTextBox.Text.Equals(this.repetirClaveTextBox.Text))
+                                {
+                                    rta = true;
+                                }
+                                else { this.txtCC.Visible = true; this.txtCC.Text="* La confirmacion de la clave no coincide con la version original" }
+                            }
+                            else { this.txtClave.Visible = true; this.txtClave.Text = "* La contraseña debe tener un minimo de 8 caracteres"; }
+                        }
+                        else { this.txtUsu.Visible = true; this.txtUsu.Text = "* El nombre de usuario no puede ser vacío"; }
+                    }
+                    else { this.txtEm.Visible = true; this.txtEm.Text = "* El email no puede ser vacío"; }
+                }
+                else { this.txtApe.Visible = true; this.txtApe.Text = "* El apellido no puede estar vacío"; }
+            } else { this.txtNom.Visible = true; this.txtNom.Text = "* El nombre no puede estar vacío"; }
+            return rta;
         }
     }
 }
