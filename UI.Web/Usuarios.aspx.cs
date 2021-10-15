@@ -169,12 +169,12 @@ namespace UI.Web
 
         private void ocultarerror()
         {
-            txtNom.Text = "";
-            txtUsu.Text = "";
-            txtEm.Text = "";
-            txtClave.Text = "";
-            txtCC.Text = "";
-            txtApe.Text = "";
+            txtNom.Visible = false;
+            txtUsu.Visible = false;
+            txtEm.Visible = false;
+            txtClave.Visible = false;
+            txtCC.Visible = false;
+            txtApe.Visible = false;
         }
 
         private void EnableForm(bool enable)
@@ -223,16 +223,16 @@ namespace UI.Web
                                 {
                                     rta = true;
                                 }
-                                else { this.txtCC.Visible = true; this.txtCC.Text = " * La confirmacion de la clave no coincide con la version original"; }
+                                else { this.txtCC.Visible = true; }
                             }
-                            else { this.txtClave.Visible = true; this.txtClave.Text = "* La contraseña debe tener un minimo de 8 caracteres"; }
+                            else { this.txtClave.Visible = true;  }
                         }
-                        else { this.txtUsu.Visible = true; this.txtUsu.Text = "* El nombre de usuario no puede ser vacío"; }
+                        else { this.txtUsu.Visible = true;  }
                     }
-                    else { this.txtEm.Visible = true; this.txtEm.Text = "* El email no tiene formato valido"; }
+                    else { this.txtEm.Visible = true;  }
                 }
-                else { this.txtApe.Visible = true; this.txtApe.Text = "* El apellido no puede estar vacío"; }
-            } else { this.txtNom.Visible = true; this.txtNom.Text = "* El nombre no puede estar vacío"; }
+                else { this.txtApe.Visible = true;  }
+            } else { this.txtNom.Visible = true; }
             return rta;
         }
 
