@@ -30,26 +30,26 @@
         <br />
         <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: "></asp:Label>
         <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
-        <asp:Label ID="txtApe" runat="server" ForeColor="#CC3300">* El apellido no puede estar vacío</asp:Label>
+        <asp:Label ID="txtApe" runat="server" ForeColor="#CC3300" Visible="False">* El apellido no puede estar vacío</asp:Label>
         <br />
         <asp:Label ID="emailLabel" runat="server" Text="EMail: "></asp:Label>
         <asp:TextBox ID="emailTextBox" runat="server" Width="136px"></asp:TextBox>
-        <asp:Label ID="txtEm" runat="server" ForeColor="#CC3300">* El email no tiene formato valido</asp:Label>
+        <asp:Label ID="txtEm" runat="server" ForeColor="#CC3300" Visible="False">* El email no tiene formato valido</asp:Label>
         <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
         <br />
         <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
         <asp:TextBox ID="nombreUsuarioTextBox" runat="server" Width="126px"></asp:TextBox>
-        <asp:Label ID="txtUsu" runat="server" ForeColor="#CC3300">* El nombre de usuario no puede ser vacío</asp:Label>
+        <asp:Label ID="txtUsu" runat="server" ForeColor="#CC3300" Visible="False">* El nombre de usuario no puede ser vacío</asp:Label>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
         <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server" Width="138px"></asp:TextBox>
-        <asp:Label ID="txtClave" runat="server" ForeColor="#CC3300">* La contraseña debe tener un minimo de 8 caracteres</asp:Label>
+        <asp:Label ID="txtClave" runat="server" ForeColor="#CC3300" Visible="False">* La contraseña debe tener un minimo de 8 caracteres</asp:Label>
         <br />
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: "></asp:Label>
         <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
-        <asp:Label ID="txtCC" runat="server" ForeColor="#CC3300"> * La confirmacion de la clave no coincide con la version original</asp:Label>
+        <asp:Label ID="txtCC" runat="server" ForeColor="#CC3300" Visible="False"> * La confirmacion de la clave no coincide con la version original</asp:Label>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
