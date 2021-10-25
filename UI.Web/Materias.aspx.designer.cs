@@ -78,13 +78,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
 
         /// <summary>
-        /// Control txtDesc.
+        /// Control descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDesc;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator descripcion;
 
         /// <summary>
         /// Control hsSemLabel.
@@ -105,13 +105,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox hsSemTextBox;
 
         /// <summary>
-        /// Control txtHsSem.
+        /// Control RequiredFieldValidator2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtHsSem;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// Control hsTotLabel.
@@ -132,13 +132,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox hsTotTextBox;
 
         /// <summary>
-        /// Control txtHsTot.
+        /// Control RequiredFieldValidator3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtHsTot;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// Control idPlanLabel.
@@ -159,13 +159,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.DropDownList ddlPlan;
 
         /// <summary>
-        /// Control txtIDPlan.
+        /// Control ValidationSummary1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtIDPlan;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
 
         /// <summary>
         /// Control formActionsPanel.

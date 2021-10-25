@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UI.Web
 {
@@ -130,7 +131,7 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            this.ocultarerror();
+
 
 
             switch (this.FormMode)
@@ -140,33 +141,33 @@ namespace UI.Web
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
                     this.formPanel.Visible = false;
-                    this.ocultarerror();
+
                     break;
                 case FormModes.Modificacion:
-                    if (validar())
+                    
                     {
-                        this.ocultarerror();
+
                         this.Entity = new Materia(); ;
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.ocultarerror();
+
                         this.formPanel.Visible = false;
 
                     }
                     break;
                 case FormModes.Alta:
-                    if (validar())
-                    {
-                        this.ocultarerror();
+                    
+                    {   
+
                         this.Entity = new Materia() ;
                         this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.ocultarerror();
+
                         this.formPanel.Visible = false;
 
                     }
@@ -204,40 +205,13 @@ namespace UI.Web
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
+            this.ClearForm();
             this.formPanel.Visible = false;
         }
 
-        private void ocultarerror()
-        {
-            txtDesc.Visible = false;
-            txtHsSem.Visible = false;
-            txtHsTot.Visible = false;
-            txtIDPlan.Visible = false;
-        }
+       
 
-        private bool validar()
-        {
-            bool rta = false;
 
-            if (!("".Equals(descripcionTextBox.Text)))
-            {
-                if (!("".Equals(hsSemTextBox.Text)))
-                {
-                    if (!("".Equals(hsTotTextBox.Text)))
-                    {
-                        if (!("".Equals(ddlPlan.Text)))
-                        {
-                            rta = true;
-                        }
-                        else { this.txtIDPlan.Visible = true; }
-                    }
-                    else { this.txtHsTot.Visible = true; }
-                }
-                else { this.txtHsSem.Visible = true; }
-            }
-            else { this.txtDesc.Visible = true; }
-            return rta;
-        }
 
         private void cargarDDl() {
             PlanLogic p = new PlanLogic();

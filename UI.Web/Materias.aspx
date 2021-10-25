@@ -30,24 +30,31 @@
         <br />
         <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
-        <asp:Label ID="txtDesc" runat="server" ForeColor="#CC3300" Visible="False">* La descripcion no puede quedar vacía</asp:Label>
+    <asp:RequiredFieldValidator ID="descripcion" runat="server" ControlToValidate="descripcionTextBox"   
+ErrorMessage="La descripcion no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>  
         <br />
         <asp:Label ID="hsSemLabel" runat="server" Text="Horas Semanales "></asp:Label>
         <asp:TextBox ID="hsSemTextBox" runat="server" Width="136px"></asp:TextBox>
-        <asp:Label ID="txtHsSem" runat="server" ForeColor="#CC3300" Visible="False">* Las horas semanales no pueden quedar vacías</asp:Label>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="hsSemTextBox"   
+ErrorMessage="Las horas semalas no pueden ser vacías" ForeColor="Red">*</asp:RequiredFieldValidator> 
         <br />
+         
         <asp:Label ID="hsTotLabel" runat="server" Text="Horas Totales: "></asp:Label>
         <asp:TextBox ID="hsTotTextBox" runat="server" Width="126px"></asp:TextBox>
-        <asp:Label ID="txtHsTot" runat="server" ForeColor="#CC3300" Visible="False">* Las horas totales no pueden quedar vacías</asp:Label>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="hsTotTextBox"   
+ErrorMessage="Las horas Totales no pueden ser vacías" ForeColor="Red">*</asp:RequiredFieldValidator>  
         <br />
+
         <asp:Label ID="idPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
         <asp:DropDownList ID="ddlPlan" runat="server">
         </asp:DropDownList>
-        <asp:Label ID="txtIDPlan" runat="server" ForeColor="#CC3300" Visible="False">* La contraseña debe tener un minimo de 8 caracteres</asp:Label>
         <br />
+        <br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
         <asp:Panel ID="formActionsPanel" runat="server">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            &nbsp;<asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+            &nbsp;
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             <br />
     </asp:Panel>
     </asp:Panel>
