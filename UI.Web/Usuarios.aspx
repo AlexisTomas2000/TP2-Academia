@@ -64,3 +64,8 @@
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
 </asp:Content>
+
+
+
+
+ 

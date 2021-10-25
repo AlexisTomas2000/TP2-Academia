@@ -149,5 +149,10 @@ namespace UI.Desktop
                 this.Close();
             }
         }
+
+        private void cbPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -115,6 +115,7 @@ namespace UI.Desktop
             this.cbPlanes.Name = "cbPlanes";
             this.cbPlanes.Size = new System.Drawing.Size(208, 21);
             this.cbPlanes.TabIndex = 9;
+            this.cbPlanes.SelectedIndexChanged += new System.EventHandler(this.cbPlanes_SelectedIndexChanged);
             // 
             // ComisionDesktop
             // 
