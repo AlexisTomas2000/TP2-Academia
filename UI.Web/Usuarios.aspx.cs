@@ -127,39 +127,45 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-
+            this.ocultarerror();
 
 
             switch (this.FormMode)
             {
                 case FormModes.Baja:
+                    
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
                     this.formPanel.Visible = false;
+                    this.ocultarerror();
                     break;
                 case FormModes.Modificacion:
                     if (validar())
                     {
+                        this.ocultarerror();
                         this.Entity = new Usuario();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.formPanel.Visible = false;
                         this.ocultarerror();
+                        this.formPanel.Visible = false;
+                        
                     }
                     break;
                 case FormModes.Alta:
                     if (validar())
                     {
+                        this.ocultarerror();
                         this.Entity = new Usuario();
                         this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.formPanel.Visible = false;
                         this.ocultarerror();
+                        this.formPanel.Visible = false;
+                        
                     }
                     break;
                     default:
