@@ -131,12 +131,6 @@ namespace UI.Web
 
 
 
-        private void ocultarerror()
-        {
-            txtDesc.Visible = false;
-            ddlIDEsp.Visible = false;
-
-        }
 
         private void EnableForm(bool enable)
         {
@@ -157,26 +151,12 @@ namespace UI.Web
             this.EnableForm(true);
         }
 
-        private bool validar()
-        {
-            bool rta = false;
-            Regex rx = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            if (!("".Equals(DescripcionTextBox.Text)))
-            {
-                if (!("".Equals(ddlIDEsp.Text)))
-                {
-                    rta = true;
-                }
-            }
-            else { this.txtDesc.Visible = true; }
-            return rta;
-        }
+
 
 
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            this.ocultarerror();
 
 
             switch (this.FormMode)
@@ -186,36 +166,31 @@ namespace UI.Web
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
                     this.formPanel.Visible = false;
-                    this.ocultarerror();
+                    
                     break;
                 case FormModes.Modificacion:
-                    if (validar())
-                    {
-                        this.ocultarerror();
+                    
+                    
                         this.Entity = new Business.Entities.Plan();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.ocultarerror();
+                        
                         this.formPanel.Visible = false;
 
-                    }
+                    
                     break;
                 case FormModes.Alta:
-                    if (validar())
-                    {
-                        this.ocultarerror();
                         this.Entity = new Business.Entities.Plan();
                         this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.ocultarerror();
                         this.formPanel.Visible = false;
 
-                    }
+                    
                     break;
                 default:
                     break;

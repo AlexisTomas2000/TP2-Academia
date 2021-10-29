@@ -5,6 +5,7 @@
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
             DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
+                <asp:BoundField HeaderText="ID Plan" DataField="ID" />
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
                 <asp:BoundField HeaderText="IDEspecialidad" DataField="IDEspecialidad" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -21,9 +22,11 @@
         </asp:GridView>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
+        <asp:Label ID="IDLabel" runat="server" Text="ID: "></asp:Label>
+        <asp:TextBox ID="IDTextBox" runat="server" Enabled="False"></asp:TextBox>
+        <br />
         <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="DescripcionTextBox" runat="server"></asp:TextBox>
-        <asp:Label ID="txtDesc" runat="server" ForeColor="#CC3300" Visible="False">* La descripcion no puede estar vacía</asp:Label>
         <br />
         <asp:Label ID="IDEspLabel" runat="server" Text="ID Especialidad: "></asp:Label>
          <asp:DropDownList ID="ddlIDEsp" runat="server"></asp:DropDownList>
