@@ -113,7 +113,7 @@ namespace UI.Web
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
             this.ClearForm();
-            this.fo.Visible = false;
+            this.formPanel.Visible = false;
         }
         private void DaleteEntity(int id)
         {
