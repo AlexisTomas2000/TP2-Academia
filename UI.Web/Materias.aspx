@@ -50,11 +50,12 @@ ErrorMessage="Las horas Totales no pueden ser vacías" ForeColor="Red">*</asp:Re
         </asp:DropDownList>
         <br />
         <br />
+        <br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
         <asp:Panel ID="formActionsPanel" runat="server">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             &nbsp;
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" CausesValidation="false" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             <br />
     </asp:Panel>
     </asp:Panel>
