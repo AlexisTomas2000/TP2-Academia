@@ -127,7 +127,6 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            this.ocultarerror();
 
 
             switch (this.FormMode)
@@ -137,51 +136,32 @@ namespace UI.Web
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
                     this.formPanel.Visible = false;
-                    this.ocultarerror();
                     break;
                 case FormModes.Modificacion:
-                    if (validar())
-                    {
-                        this.ocultarerror();
+       
                         this.Entity = new Usuario();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.ocultarerror();
                         this.formPanel.Visible = false;
-                        
-                    }
                     break;
                 case FormModes.Alta:
-                    if (validar())
-                    {
-                        this.ocultarerror();
+
                         this.Entity = new Usuario();
                         this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        this.ocultarerror();
                         this.formPanel.Visible = false;
-                        
-                    }
+       
                     break;
                     default:
                     break;
             }
         }
 
-        private void ocultarerror()
-        {
-            txtNom.Visible = false;
-            txtUsu.Visible = false;
-            txtEm.Visible = false;
-            txtClave.Visible = false;
-            txtCC.Visible = false;
-            txtApe.Visible = false;
-        }
 
         private void EnableForm(bool enable)
         {
@@ -212,7 +192,7 @@ namespace UI.Web
             this.EnableForm(true);
         }
 
-        private bool validar() {
+       /* private bool validar() {
             bool rta = false;
             Regex rx = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match m = rx.Match(emailTextBox.Text);
@@ -240,7 +220,7 @@ namespace UI.Web
                 else { this.txtApe.Visible = true;  }
             } else { this.txtNom.Visible = true; }
             return rta;
-        }
+        }*/
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {

@@ -60,13 +60,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
 
         /// <summary>
-        /// Control txtNom.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtNom;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Nombre;
 
         /// <summary>
         /// Control apellidoLabel.
@@ -87,13 +87,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox apellidoTextBox;
 
         /// <summary>
-        /// Control txtApe.
+        /// Control Apellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtApe;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Apellido;
 
         /// <summary>
         /// Control emailLabel.
@@ -114,13 +114,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
 
         /// <summary>
-        /// Control txtEm.
+        /// Control Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtEm;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Email;
 
         /// <summary>
         /// Control habilitadoLabel.
@@ -159,13 +159,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
 
         /// <summary>
-        /// Control txtUsu.
+        /// Control NombreUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtUsu;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreUsuario;
 
         /// <summary>
         /// Control claveLabel.
@@ -186,13 +186,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox claveTextBox;
 
         /// <summary>
-        /// Control txtClave.
+        /// Control clave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtClave;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator clave;
 
         /// <summary>
         /// Control repetirClaveLabel.
@@ -213,13 +213,22 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox repetirClaveTextBox;
 
         /// <summary>
-        /// Control txtCC.
+        /// Control repClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtCC;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator repClave;
+
+        /// <summary>
+        /// Control ValidationSummary1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
 
         /// <summary>
         /// Control formActionsPanel.

@@ -25,29 +25,36 @@
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="lbID" runat="server" Text="ID:"></asp:Label>
         <asp:TextBox ID="txtID" runat="server" ReadOnly="True"></asp:TextBox>
-        <asp:Label ID="lblIDeE" runat="server" ForeColor="#CC3300" Visible="False">*El ID no puede ser nulo o contener letras</asp:Label>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtID"   
+ErrorMessage="El ID no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator> 
         <br />
-        <asp:Label ID="lblDesc" runat="server" Text="Descripcion:"></asp:Label>
+     <asp:Label ID="lbldesc" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
-        <asp:Label ID="lblApeE" runat="server" ForeColor="#CC3300" Visible="False">* La descripcion no puede ser vacia</asp:Label>
-        <br />
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDesc"   
+ErrorMessage="La descripcion no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>  
+    <br />
         <asp:Label ID="lblAño" runat="server" Text="Año Especialidad:"></asp:Label>
         <asp:TextBox ID="txtAño" runat="server" Width="136px"></asp:TextBox>
-        <asp:Label ID="lblEA" runat="server" ForeColor="#CC3300" Visible="False">*El año Especialidad no puede ser vacio o contener letras</asp:Label>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtAño"   
+ErrorMessage="El año no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>  
+    <br />
         <br />
         <asp:Label ID="lblIDEsp" runat="server" Text="ID Plan:"></asp:Label>
     <asp:DropDownList ID="ddlIdPlan" runat="server"></asp:DropDownList>
         <br />
+      
         <asp:Panel ID="formActionsPanel" runat="server">
-        <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            &nbsp;<asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
-            <br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
+            <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+            &nbsp;
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" CausesValidation="false" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
     </asp:Panel>
     </asp:Panel>
-
+     
     <asp:Panel ID="gridActionsPanel" runat="server">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
+    
 </asp:Content>
