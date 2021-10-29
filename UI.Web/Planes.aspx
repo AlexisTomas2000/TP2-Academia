@@ -27,12 +27,15 @@
         <br />
         <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="DescripcionTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="Descripcion" runat="server" ControlToValidate="DescripcionTextBox"   
+ErrorMessage="La descripcion no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="IDEspLabel" runat="server" Text="ID Especialidad: "></asp:Label>
          <asp:DropDownList ID="ddlIDEsp" runat="server"></asp:DropDownList>
         <br />
         
         <asp:Panel ID="formActionsPanel" runat="server">
+             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             &nbsp;<asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             <br />

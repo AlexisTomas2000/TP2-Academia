@@ -82,7 +82,7 @@ namespace UI.Web
 
         private void cargarDD1()
         {
-            PlanLogic p = new PlanLogic();
+            EspecialidadLogic p = new EspecialidadLogic();
             ddlIDEsp.DataSource = p.GetAll();
             ddlIDEsp.DataTextField = "Descripcion";
             ddlIDEsp.DataValueField = "ID";
