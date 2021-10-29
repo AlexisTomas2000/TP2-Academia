@@ -9,7 +9,6 @@ namespace Business.Entities
     {
         private int _AnioCalendario;
         private int _Cupo;
-        private String _Descripcion;
         private int _IDComision;
         private int _ID_Materia;
 

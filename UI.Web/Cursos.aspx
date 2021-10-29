@@ -1,15 +1,16 @@
 ﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="UI.Web.Cursos" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-     <asp:Panel ID="Panel1" runat="server" Height="153px">
+<asp:Content ID="Content" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+  <asp:Panel ID="Panel1" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
             DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
-                <asp:BoundField HeaderText="Id Curso" DataField="Id" />
-                <asp:BoundField HeaderText="Id Comision" DataField="IDComision" />
+                <asp:BoundField HeaderText="ID Curso" DataField="ID" />
                 <asp:BoundField HeaderText="ID Materia" DataField="IDMateria" />
+                <asp:BoundField HeaderText="ID Comision" DataField="IDComision" />
                 <asp:BoundField HeaderText="Año" DataField="AnioCalendario" />
                 <asp:BoundField HeaderText="Cupo" DataField="Cupo" />
+
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -22,19 +23,32 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-          </asp:Panel>
-    <br />
+    </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server" style="margin-top: 0px">
-    <asp:Label ID="ID" runat="server" Text="ID"></asp:Label>
-    :&nbsp;
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>
+    <asp:TextBox ID="txtID" runat="server" Enabled="False" ReadOnly="True"></asp:TextBox>
      <br />
-    <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+    <asp:Label ID="lblIDMat" runat="server" Text="ID Materia:"></asp:Label>
+ <asp:DropDownList ID="ddlMat" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
     </asp:DropDownList>
     <br />
-    <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+    <asp:Label ID="lblIdCom" runat="server" Text="ID Comision:"></asp:Label>
+    <asp:DropDownList ID="ddlCom" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
     </asp:DropDownList>
-     </asp:Panel>
+    <br />
+    <asp:Label ID="lblAño" runat="server" Text="Año"></asp:Label>
+    <asp:TextBox ID="txtAño" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="Año" runat="server" ControlToValidate="txtAño"   
+ErrorMessage="El año no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>  
+    <br />
+    <asp:Label ID="lblCupo" runat="server" Text="Cupo:"></asp:Label>
+    <asp:TextBox ID="txtCupo" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="cupo" runat="server" ControlToValidate="txtCupo"   
+ErrorMessage="El año no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>  
+    <br />
+    <br />
+    </asp:Panel>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/>   
           <asp:Panel ID="formActionsPanel" runat="server">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             &nbsp;
