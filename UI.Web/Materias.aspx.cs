@@ -208,11 +208,6 @@ namespace UI.Web
             this.ClearForm();
             this.formPanel.Visible = false;
         }
-
-       
-
-
-
         private void cargarDDl() {
             PlanLogic p = new PlanLogic();
             ddlPlan.DataSource = p.GetAll();
