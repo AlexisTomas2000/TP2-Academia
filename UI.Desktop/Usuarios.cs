@@ -68,6 +68,12 @@ namespace UI.Desktop
 
         }
 
+        private void tsbAgregar_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop usua = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            usua.ShowDialog();
+        }
+
         /*private void tsbEsp_Click(object sender, EventArgs e)
         {
             Especialidades espe = new Especialidades();

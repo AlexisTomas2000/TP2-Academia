@@ -122,12 +122,9 @@ namespace Data.Database
         {
             try
             {
-                //abrimos la conexion
                 this.OpenConnection();
-                //creame la sentencia sql y asignamos un valor al parametro
                 SqlCommand cmdDelete = new SqlCommand("delete personas where id_persona=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -225,8 +222,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona=(select max(id_persona) From persona)", sqlConn);
-                //cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona=(select max(id_persona) From personas)", sqlConn);
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 if (drPersonas.Read())
                 {

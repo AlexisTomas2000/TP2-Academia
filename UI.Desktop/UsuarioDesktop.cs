@@ -16,7 +16,11 @@ namespace UI.Desktop
     {
         private Business.Entities.Usuario _UsuarioActual;
         private bool msj1 = false;
+        private int _tp;
+   
         public Business.Entities.Usuario UsuarioActual { get => this._UsuarioActual; set => this._UsuarioActual = value; }
+        public int Tp { get => _tp; set => _tp = value; }
+
         public UsuarioDesktop()
         {
             InitializeComponent();
@@ -38,18 +42,21 @@ namespace UI.Desktop
             this.MapearDeDatos();
             
         }
-        public UsuarioDesktop(bool msj, ModoForm modo) {
+        public UsuarioDesktop(bool msj, ModoForm modo):this() {
             this.Modo = modo;
-            this.msj1 = msj;
-
-            
-            /*if (msj) {
+            if (msj)
+            {
                 PersonaLogic per = new PersonaLogic();
-                Business.Entities.Persona person = new Business.Entities.Persona();
- //               person=per.ult()
-
-            }*/
-            
+                Business.Entities.Persona person = per.Ult();
+                this.txtNombre.Text = person.Nombre;
+                this.txtApellido.Text = person.Apellido;
+                this.txtEmail.Text = person.EMail;
+                this.txtNombre.Enabled = false;
+                this.txtApellido.Enabled = false;
+                this.txtEmail.Enabled = false;
+                Tp= person.ID;
+            }
+            this.msj1 = msj;
         }
         public override void MapearDeDatos()
         {
@@ -101,14 +108,7 @@ namespace UI.Desktop
                         Usuario usr = new Usuario();
                         UsuarioActual = usr;
                         if (msj1) {
-                            PersonaLogic per = new PersonaLogic();
-                             Business.Entities.Persona person = per.Ult();
-                            this.txtNombre.Text = person.Nombre;
-                            this.txtApellido.Text = person.Apellido;
-                            this.txtEmail.Text = person.EMail;
-                            this.txtNombre.Enabled=false; 
-                            this.txtApellido.Enabled=false;
-                            this.txtEmail.Enabled = false;
+                        
                             this.UsuarioActual.Nombre = this.txtNombre.Text;
                             this.UsuarioActual.Apellido = this.txtApellido.Text;
                             this.UsuarioActual.EMail = this.txtEmail.Text;
@@ -116,7 +116,7 @@ namespace UI.Desktop
                             this.UsuarioActual.Clave = this.txtClave.Text;
                             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                             this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
-                            this.UsuarioActual.IdPersona = person.ID;
+                            this.UsuarioActual.IdPersona = Tp;
                             UsuarioActual.State = BusinessEntity.States.New;
 
                         }
@@ -239,8 +239,8 @@ namespace UI.Desktop
 
         private void UsuarioDesktop_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Notificar("No puede cancelar la carga de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            e.Cancel = true;
+           /* this.Notificar("No puede cancelar la carga de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Cancel = true;*/
         }
     }
 }

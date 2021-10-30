@@ -166,10 +166,9 @@ namespace UI.Desktop
 
             if (Validar()) { 
                     this.GuardarCambios();
-                    UsuarioDesktop usua = new UsuarioDesktop(true, ModoForm.Alta);
-                    usua.ShowDialog();
-                    
-               
+
+                UI.Desktop.UsuarioDesktop usuar = new UI.Desktop.UsuarioDesktop(true, ModoForm.Alta);
+                    usuar.ShowDialog();
                     this.Close(); 
             }
         }
