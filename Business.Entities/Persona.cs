@@ -21,8 +21,6 @@ namespace Business.Entities
         {
             get => _Apellido;
             set => _Apellido = value;
-
-
         }
 
         public String Direccion
