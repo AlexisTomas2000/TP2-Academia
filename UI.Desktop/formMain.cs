@@ -34,7 +34,23 @@ namespace UI.Desktop
             {
                 this.Dispose();
             }
-
+            else { 
+                Business.Entities.Persona per = appLogin.Damelo();
+                switch (per.TipoPersona)
+                {
+                    case  1:
+                        this.MostrarUsu();
+                        break;
+                    case 2:
+                        this.MostrarProfesor();
+                        break;
+                    case 3:
+                        this.MostrarSuperAdmin();
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private void btnMaterias_Click(object sender, EventArgs e)
@@ -43,6 +59,30 @@ namespace UI.Desktop
             Materias materias = new Materias();
             materias.ShowDialog();
             this.Show();
+        }
+        private void MostrarUsu() { 
+                btnComisiones.Visible = true;
+                btnMaterias.Visible = true;
+                btnPlanes.Visible = true;
+                btnEspecialidades.Visible = true;   
+        }
+
+        private void MostrarProfesor() {
+                btnComisiones.Visible = true;
+                btnMaterias.Visible = true;
+                btnPlanes.Visible = true;
+                btnEspecialidades.Visible = true;
+        }
+        private void MostrarSuperAdmin()
+        {
+            btnComisiones.Visible = true;
+            btnMaterias.Visible = true;
+            btnPlanes.Visible = true;
+            btnEspecialidades.Visible = true;
+            btnUsuarios.Visible = true;
+            btnCursos.Visible = true;
+            btbDC.Visible = true;
+            btnPersonas.Visible = true;
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

@@ -52,5 +52,10 @@ namespace Business.Logic
             this.UsuarioData = new Data.Database.UsuarioAdapter();
             return UsuarioData.GetOne(usu, pass);
         }
+
+        public Usuario FindOne(String usu, String pass) {
+            this.UsuarioData = new Data.Database.UsuarioAdapter();
+            return UsuarioData.FindOne(usu, pass);
+        }
     }
 }
