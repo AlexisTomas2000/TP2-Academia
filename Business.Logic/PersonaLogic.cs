@@ -50,6 +50,11 @@ namespace Business.Logic
             this.PersonaData = new Data.Database.PersonaAdapter();
             PersonaData.Save(per);
         }
+        public Business.Entities.Persona Ult()
+        {
+            this.PersonaData = new Data.Database.PersonaAdapter();
+            return PersonaData.Ult();
+        }
  
     }
 }

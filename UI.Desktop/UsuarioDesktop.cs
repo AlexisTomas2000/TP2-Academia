@@ -102,19 +102,18 @@ namespace UI.Desktop
                         UsuarioActual = usr;
                         if (msj1) {
                             PersonaLogic per = new PersonaLogic();
-                            // Business.Entities.Persona person = per.ult();
-                            /* this.txtNombre.Text=person.Nombre
-                               this.txtApellido.Text=person.Apellido
-                               this.txtEMail.Text=person.EMail
-                               this.txtNombre.Enable=false;
-                               this.txtApellido.Enable=false;
-                               this.txtEMail.Enable=false
-                            */
+                             Business.Entities.Persona person = per.Ult();
+                            this.txtNombre.Text = person.Nombre;
+                            this.txtApellido.Text = person.Apellido;
+                            this.txtEmail.Text = person.EMail;
+                            this.txtNombre.Enabled=false; 
+                            this.txtApellido.Enabled=false;
+                            this.txtEmail.Enabled = false;
+                            this.UsuarioActual.Nombre = this.txtNombre.Text;
+                            this.UsuarioActual.Apellido = this.txtApellido.Text;
+                            this.UsuarioActual.EMail = this.txtEmail.Text;
                             this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-//                          this.UsuarioActual.Nombre = this.txtNombre.Text;
- //                           this.UsuarioActual.Apellido = this.txtApellido.Text;
                             this.UsuarioActual.Clave = this.txtClave.Text;
-//                            this.UsuarioActual.EMail = this.txtEmail.Text;
                             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                             this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
                             UsuarioActual.State = BusinessEntity.States.New;
