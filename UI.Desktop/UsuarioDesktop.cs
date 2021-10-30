@@ -165,6 +165,9 @@ namespace UI.Desktop
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
+        public void Escond() {
+            this.btnCancelar.Visible = false;
+        }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -193,7 +196,12 @@ namespace UI.Desktop
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+        }
+
+        private void UsuarioDesktop_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Notificar("No puede cancelar la carga de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

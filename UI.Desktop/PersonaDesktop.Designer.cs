@@ -37,20 +37,20 @@ namespace UI.Desktop
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtFechaNac = new System.Windows.Forms.TextBox();
-            this.cbPlan = new System.Windows.Forms.ComboBox();
             this.cbTP = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.cbPlanes = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtId
@@ -111,14 +111,6 @@ namespace UI.Desktop
             this.txtFechaNac.TabIndex = 7;
             this.txtFechaNac.Text = "Formato: dd/mm/yyyy";
             // 
-            // cbPlan
-            // 
-            this.cbPlan.FormattingEnabled = true;
-            this.cbPlan.Location = new System.Drawing.Point(363, 10);
-            this.cbPlan.Name = "cbPlan";
-            this.cbPlan.Size = new System.Drawing.Size(181, 21);
-            this.cbPlan.TabIndex = 9;
-            // 
             // cbTP
             // 
             this.cbTP.FormattingEnabled = true;
@@ -176,19 +168,10 @@ namespace UI.Desktop
             this.label5.TabIndex = 15;
             this.label5.Text = "Telefono";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(316, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Plan";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(272, 55);
+            this.label7.Location = new System.Drawing.Point(272, 56);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 13);
             this.label7.TabIndex = 17;
@@ -197,7 +180,7 @@ namespace UI.Desktop
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(264, 97);
+            this.label8.Location = new System.Drawing.Point(264, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 13);
             this.label8.TabIndex = 18;
@@ -206,7 +189,7 @@ namespace UI.Desktop
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(316, 135);
+            this.label9.Location = new System.Drawing.Point(318, 131);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 19;
@@ -215,7 +198,7 @@ namespace UI.Desktop
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(316, 176);
+            this.label10.Location = new System.Drawing.Point(325, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 20;
@@ -241,25 +224,45 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // cbPlanes
+            // 
+            this.cbPlanes.FormattingEnabled = true;
+            this.cbPlanes.Items.AddRange(new object[] {
+            "Alumno",
+            "Profesor"});
+            this.cbPlanes.Location = new System.Drawing.Point(363, 12);
+            this.cbPlanes.Name = "cbPlanes";
+            this.cbPlanes.Size = new System.Drawing.Size(181, 21);
+            this.cbPlanes.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(325, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Plan";
+            // 
             // PersonaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 246);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbPlanes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbTP);
-            this.Controls.Add(this.cbPlan);
             this.Controls.Add(this.txtFechaNac);
             this.Controls.Add(this.txtLegajo);
             this.Controls.Add(this.txtEmail);
@@ -286,19 +289,19 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.TextBox txtFechaNac;
-        private System.Windows.Forms.ComboBox cbPlan;
         private System.Windows.Forms.ComboBox cbTP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox cbPlanes;
+        private System.Windows.Forms.Label label6;
     }
 }

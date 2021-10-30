@@ -50,9 +50,9 @@ namespace UI.Desktop
                         this.PersonaActual.Direccion = this.txtDireccion.Text;
                         this.PersonaActual.EMail = this.txtEmail.Text;
                         this.PersonaActual.FechaNacimiento = DateTime.ParseExact(this.txtFechaNac.Text, "dd/MM/yyyy",provider);
+                        this.PersonaActual.IDPlan = int.Parse(this.cbPlanes.SelectedValue.ToString());
                         this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                         this.PersonaActual.TipoPersona = this.cbTP.SelectedIndex+1;
-                        this.PersonaActual.IDPlan = int.Parse(this.cbPlan.SelectedValue.ToString());
                         this.PersonaActual.Telefono = txtTelefono.Text;
                         PersonaActual.State = BusinessEntity.States.New;
                         break;
@@ -65,9 +65,9 @@ namespace UI.Desktop
                         this.PersonaActual.Direccion = this.txtDireccion.Text;
                         this.PersonaActual.EMail = this.txtEmail.Text;
                         this.PersonaActual.FechaNacimiento = DateTime.ParseExact(this.txtFechaNac.Text, "dd/MM/yyyy", provider);
+                        this.PersonaActual.IDPlan = int.Parse(this.cbPlanes.SelectedValue.ToString());
                         this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                         this.PersonaActual.TipoPersona = this.cbTP.SelectedIndex+1;
-                        this.PersonaActual.IDPlan = int.Parse(this.cbPlan.SelectedValue.ToString());
                         this.PersonaActual.Telefono = txtTelefono.Text;
                         PersonaActual.State = BusinessEntity.States.Modified;
                         break;
@@ -80,9 +80,9 @@ namespace UI.Desktop
                         this.PersonaActual.Direccion = this.txtDireccion.Text;
                         this.PersonaActual.EMail = this.txtEmail.Text;
                         this.PersonaActual.FechaNacimiento = DateTime.ParseExact(this.txtFechaNac.Text, "dd/MM/yyyy", provider);
+                        this.PersonaActual.IDPlan = int.Parse(this.cbPlanes.SelectedValue.ToString());
                         this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                         this.PersonaActual.TipoPersona = this.cbTP.SelectedIndex+1;
-                        this.PersonaActual.IDPlan = int.Parse(this.cbPlan.SelectedValue.ToString());
                         this.PersonaActual.Telefono = txtTelefono.Text;
                         PersonaActual.State = BusinessEntity.States.Deleted;
                         break;
@@ -101,7 +101,7 @@ namespace UI.Desktop
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
             this.txtFechaNac.Text = this.PersonaActual.FechaNacimiento.ToString("dd/MM/yyyy");
-            this.cbPlan.SelectedValue = this.PersonaActual.IDPlan;
+            this.cbPlanes.SelectedValue = this.PersonaActual.IDPlan;
             this.cbTP.SelectedIndex = this.PersonaActual.TipoPersona-1;
 
             switch (this.Modo)
@@ -132,14 +132,6 @@ namespace UI.Desktop
                         break;
                     }
             }
-    }
-            private void PersonaDesktop_Load(object sender, EventArgs e)
-        {
-    
-            PlanLogic plan = new PlanLogic();
-            cbPlan.DataSource = plan.GetAll();
-            cbPlan.DisplayMember = "Descripcion";
-            cbPlan.ValueMember = "id";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -171,14 +163,29 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Validar()){ this.GuardarCambios();
-                this.Close();
+
+            if (Validar()){
+                UsuarioDesktop usua = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+                usua.Escond();
+                if(usua.ShowDialog() == DialogResult.OK) {
+                    this.GuardarCambios();
+                    this.Close();
+                }
+               
             }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PersonaDesktop_Load(object sender, EventArgs e)
+        {
+            PlanLogic plan = new PlanLogic();
+            cbPlanes.DataSource = plan.GetAll();
+            cbPlanes.DisplayMember = "Descripcion";
+            cbPlanes.ValueMember = "id";
         }
     }
 }
