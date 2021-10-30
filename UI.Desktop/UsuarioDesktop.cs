@@ -116,6 +116,7 @@ namespace UI.Desktop
                             this.UsuarioActual.Clave = this.txtClave.Text;
                             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                             this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
+                            this.UsuarioActual.IdPersona = person.ID;
                             UsuarioActual.State = BusinessEntity.States.New;
 
                         }

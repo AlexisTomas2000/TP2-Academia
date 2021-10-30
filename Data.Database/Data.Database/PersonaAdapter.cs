@@ -225,7 +225,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona=(select max(id) From persona)", sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona=(select max(id_persona) From persona)", sqlConn);
                 //cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 if (drPersonas.Read())
