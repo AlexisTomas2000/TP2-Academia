@@ -140,7 +140,7 @@ namespace UI.Desktop
         }
         public override void GuardarCambios()
         {
-            MapearADatos();
+            
             PersonaLogic per = new PersonaLogic();
             per.Save(this.PersonaActual);
         }
@@ -164,14 +164,13 @@ namespace UI.Desktop
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            if (Validar()){
-                UsuarioDesktop usua = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-                usua.Escond();
-                if(usua.ShowDialog() == DialogResult.OK) {
+            if (Validar()) { 
                     this.GuardarCambios();
-                    this.Close();
+                if (this.Modo == ModoForm.Alta) {
+                    UsuarioDesktop usua = new UsuarioDesktop(true, ModoForm.Alta);
+                    
                 }
-               
+                    this.Close(); 
             }
         }
 
