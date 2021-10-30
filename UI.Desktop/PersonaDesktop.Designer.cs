@@ -110,6 +110,8 @@ namespace UI.Desktop
             this.txtFechaNac.Size = new System.Drawing.Size(181, 20);
             this.txtFechaNac.TabIndex = 7;
             this.txtFechaNac.Text = "Formato: dd/mm/yyyy";
+            this.txtFechaNac.TextChanged += new System.EventHandler(this.txtFechaNac_TextChanged);
+            this.txtFechaNac.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFechaNac_KeyDown);
             // 
             // cbTP
             // 

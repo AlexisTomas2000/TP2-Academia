@@ -187,5 +187,13 @@ namespace UI.Desktop
             cbPlanes.DisplayMember = "Descripcion";
             cbPlanes.ValueMember = "id";
         }
+
+        private void txtFechaNac_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtFechaNac_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
     }
 }

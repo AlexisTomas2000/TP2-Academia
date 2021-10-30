@@ -219,5 +219,41 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        public Business.Entities.Persona Ult()
+        {
+            Persona per = new Persona();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona=(select max(id) From persona)", sqlConn);
+                //cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+                if (drPersonas.Read())
+                {
+                    per.ID = (int)drPersonas["id_persona"];
+                    per.Nombre = (string)drPersonas["nombre"];
+                    per.Apellido = (string)drPersonas["apellido"];
+                    per.Direccion = (string)drPersonas["direccion"];
+                    per.EMail = (string)drPersonas["email"];
+                    per.Telefono = (string)drPersonas["telefono"];
+                    per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+                    per.Legajo = (int)drPersonas["legajo"];
+                    per.TipoPersona = (int)drPersonas["tipo_persona"];
+                    per.IDPlan = (int)drPersonas["id_plan"];
+                }
+                drPersonas.Close();
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la persona", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return per;
+        }
     }
 }
