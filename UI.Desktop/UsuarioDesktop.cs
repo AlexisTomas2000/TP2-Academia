@@ -15,6 +15,7 @@ namespace UI.Desktop
     public partial class UsuarioDesktop : ApplicationForm
     {
         private Business.Entities.Usuario _UsuarioActual;
+        private bool msj1 = false;
         public Business.Entities.Usuario UsuarioActual { get => this._UsuarioActual; set => this._UsuarioActual = value; }
         public UsuarioDesktop()
         {
@@ -35,6 +36,19 @@ namespace UI.Desktop
             UsuarioLogic usu = new UsuarioLogic();
             UsuarioActual = usu.GetOne(id);
             this.MapearDeDatos();
+            
+        }
+        public UsuarioDesktop(bool msj, ModoForm modo) {
+            this.Modo = modo;
+            this.msj1 = msj;
+
+            
+            /*if (msj) {
+                PersonaLogic per = new PersonaLogic();
+                Business.Entities.Persona person = new Business.Entities.Persona();
+ //               person=per.ult()
+
+            }*/
             
         }
         public override void MapearDeDatos()
@@ -86,15 +100,39 @@ namespace UI.Desktop
                     {
                         Usuario usr = new Usuario();
                         UsuarioActual = usr;
-                        this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                        this.UsuarioActual.Nombre = this.txtNombre.Text;
-                        this.UsuarioActual.Apellido = this.txtApellido.Text;
-                        this.UsuarioActual.Clave = this.txtClave.Text;
-                        this.UsuarioActual.EMail = this.txtEmail.Text;
-                        this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                        this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
-                        UsuarioActual.State = BusinessEntity.States.New;
+                        if (msj1) {
+                            PersonaLogic per = new PersonaLogic();
+                            // Business.Entities.Persona person = per.ult();
+                            /* this.txtNombre.Text=person.Nombre
+                               this.txtApellido.Text=person.Apellido
+                               this.txtEMail.Text=person.EMail
+                               this.txtNombre.Enable=false;
+                               this.txtApellido.Enable=false;
+                               this.txtEMail.Enable=false
+                            */
+                            this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+//                          this.UsuarioActual.Nombre = this.txtNombre.Text;
+ //                           this.UsuarioActual.Apellido = this.txtApellido.Text;
+                            this.UsuarioActual.Clave = this.txtClave.Text;
+//                            this.UsuarioActual.EMail = this.txtEmail.Text;
+                            this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                            this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
+                            UsuarioActual.State = BusinessEntity.States.New;
+
+                        }
+                        else
+                            {
+                            this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+                            this.UsuarioActual.Nombre = this.txtNombre.Text;
+                            this.UsuarioActual.Apellido = this.txtApellido.Text;
+                            this.UsuarioActual.Clave = this.txtClave.Text;
+                            this.UsuarioActual.EMail = this.txtEmail.Text;
+                            this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                            this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
+                            UsuarioActual.State = BusinessEntity.States.New;
+                        }
                         break;
+                    
                     }
                 case ModoForm.Modificacion:
                     {
@@ -202,6 +240,7 @@ namespace UI.Desktop
         private void UsuarioDesktop_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Notificar("No puede cancelar la carga de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Cancel = true;
         }
     }
 }

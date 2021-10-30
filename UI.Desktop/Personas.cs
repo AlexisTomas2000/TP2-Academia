@@ -16,7 +16,6 @@ namespace UI.Desktop
     public partial class Personas : Form
     {
         private Business.Logic.PersonaLogic u1;
-        private int l;
         public Personas()
         {
             InitializeComponent();
