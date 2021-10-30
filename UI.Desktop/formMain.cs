@@ -93,5 +93,13 @@ namespace UI.Desktop
             cur.ShowDialog();
             this.Show();
         }
+
+        private void btbDC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DocentesCursos dc = new DocentesCursos();
+            dc.ShowDialog();
+            this.Show();
+        }
     }
 }
