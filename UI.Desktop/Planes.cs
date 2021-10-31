@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
+using UI.Desktop.Informes;
+using UI.Desktop.frm_Informes;
 
 namespace UI.Desktop
 {
@@ -65,7 +67,8 @@ namespace UI.Desktop
 
         private void tsbReporte_Click(object sender, EventArgs e)
         {
-
+            Reporte2 r = new Reporte2();
+            r.ShowDialog();
         }
     }
 }

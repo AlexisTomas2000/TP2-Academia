@@ -69,7 +69,7 @@ namespace Data.Database
             }
             catch(Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar lista de usuarios", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuarios", Ex);
                 throw ExcepcionManejada;
             }
             finally 

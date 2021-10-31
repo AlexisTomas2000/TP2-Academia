@@ -1,5 +1,5 @@
 ﻿
-namespace UI.Desktop
+namespace UI.Desktop.Informes
 {
     partial class Reporte
     {
@@ -30,34 +30,37 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnRep = new System.Windows.Forms.Button();
+            this.btnInforme = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "ReportViewer";
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 45);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(656, 393);
             this.reportViewer1.TabIndex = 0;
             // 
-            // btnRep
+            // btnInforme
             // 
-            this.btnRep.Location = new System.Drawing.Point(13, 13);
-            this.btnRep.Name = "btnRep";
-            this.btnRep.Size = new System.Drawing.Size(75, 23);
-            this.btnRep.TabIndex = 0;
-            this.btnRep.Text = "Reporte";
-            this.btnRep.UseVisualStyleBackColor = true;
-            this.btnRep.Click += new System.EventHandler(this.btnRep_Click);
+            this.btnInforme.Location = new System.Drawing.Point(12, 12);
+            this.btnInforme.Name = "btnInforme";
+            this.btnInforme.Size = new System.Drawing.Size(75, 23);
+            this.btnInforme.TabIndex = 1;
+            this.btnInforme.Text = "Imprimir";
+            this.btnInforme.UseVisualStyleBackColor = true;
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
             // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnRep);
+            this.ClientSize = new System.Drawing.Size(685, 450);
+            this.Controls.Add(this.btnInforme);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "Reporte";
-            this.Text = "Reporte";
+            this.Text = "frm1";
+            this.Load += new System.EventHandler(this.Reporte_Load);
             this.ResumeLayout(false);
 
         }
@@ -65,6 +68,6 @@ namespace UI.Desktop
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.Button btnRep;
+        private System.Windows.Forms.Button btnInforme;
     }
 }
