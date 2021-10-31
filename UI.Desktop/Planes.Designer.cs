@@ -40,6 +40,7 @@ namespace UI.Desktop
             this.id_especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.tsbReporte = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,8 @@ namespace UI.Desktop
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
-            this.tsbEliminar});
+            this.tsbEliminar,
+            this.tsbReporte});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(644, 25);
@@ -148,6 +150,16 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // tsbReporte
+            // 
+            this.tsbReporte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbReporte.Image = ((System.Drawing.Image)(resources.GetObject("tsbReporte.Image")));
+            this.tsbReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReporte.Name = "tsbReporte";
+            this.tsbReporte.Size = new System.Drawing.Size(23, 22);
+            this.tsbReporte.Text = "toolStripButton1";
+            this.tsbReporte.Click += new System.EventHandler(this.tsbReporte_Click);
+            // 
             // Planes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,5 +194,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn id_plan;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_plan;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_especialidad;
+        private System.Windows.Forms.ToolStripButton tsbReporte;
     }
 }

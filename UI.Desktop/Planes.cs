@@ -62,5 +62,10 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void tsbReporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
