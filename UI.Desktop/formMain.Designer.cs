@@ -76,6 +76,7 @@ namespace UI.Desktop
             this.btnUsuarios.TabIndex = 2;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Visible = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnComisiones
@@ -86,6 +87,7 @@ namespace UI.Desktop
             this.btnComisiones.TabIndex = 3;
             this.btnComisiones.Text = "Comisiones";
             this.btnComisiones.UseVisualStyleBackColor = true;
+            this.btnComisiones.Visible = false;
             this.btnComisiones.Click += new System.EventHandler(this.btnComisiones_Click);
             // 
             // btnPlanes
@@ -96,6 +98,7 @@ namespace UI.Desktop
             this.btnPlanes.TabIndex = 4;
             this.btnPlanes.Text = "Planes";
             this.btnPlanes.UseVisualStyleBackColor = true;
+            this.btnPlanes.Visible = false;
             this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
             // 
             // btnMaterias
@@ -106,6 +109,7 @@ namespace UI.Desktop
             this.btnMaterias.TabIndex = 5;
             this.btnMaterias.Text = "Materias";
             this.btnMaterias.UseVisualStyleBackColor = true;
+            this.btnMaterias.Visible = false;
             this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
             // 
             // btnEspecialidades
@@ -116,6 +120,7 @@ namespace UI.Desktop
             this.btnEspecialidades.TabIndex = 6;
             this.btnEspecialidades.Text = "Especialidades";
             this.btnEspecialidades.UseVisualStyleBackColor = true;
+            this.btnEspecialidades.Visible = false;
             this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
             // 
             // btnCursos
@@ -126,6 +131,7 @@ namespace UI.Desktop
             this.btnCursos.TabIndex = 8;
             this.btnCursos.Text = "Cursos";
             this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Visible = false;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
             // btnPersonas
@@ -136,6 +142,7 @@ namespace UI.Desktop
             this.btnPersonas.TabIndex = 10;
             this.btnPersonas.Text = "Personas";
             this.btnPersonas.UseVisualStyleBackColor = true;
+            this.btnPersonas.Visible = false;
             this.btnPersonas.Click += new System.EventHandler(this.button1_Click);
             // 
             // btbDC
@@ -146,6 +153,7 @@ namespace UI.Desktop
             this.btbDC.TabIndex = 12;
             this.btbDC.Text = "Docentes Cursos";
             this.btbDC.UseVisualStyleBackColor = true;
+            this.btbDC.Visible = false;
             this.btbDC.Click += new System.EventHandler(this.btbDC_Click);
             // 
             // formMain
