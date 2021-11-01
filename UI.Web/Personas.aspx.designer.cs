@@ -60,6 +60,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox idPersonaTextBox;
 
         /// <summary>
+        /// Control ddlSelec.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSelec;
+
+        /// <summary>
         /// Control nombreLabel.
         /// </summary>
         /// <remarks>
@@ -258,13 +267,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label idPlanLabel;
 
         /// <summary>
-        /// Control idPlanTextbox.
+        /// Control ddlPlan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idPlanTextbox;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPlan;
 
         /// <summary>
         /// Control idPlan.

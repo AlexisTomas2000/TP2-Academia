@@ -29,7 +29,10 @@
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="IDPersonaLabel" runat="server" Text="ID Persona: "></asp:Label>
-        <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px"></asp:TextBox>
+        <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="ddlSelec" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+        </asp:DropDownList>
         <br />
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
@@ -63,7 +66,8 @@ ErrorMessage="El email no puede ser vacío" ForeColor="Red">*</asp:RequiredField
 ErrorMessage="El formato de la fecha de nacimiento no es correcto" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="idPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
-        <asp:TextBox ID="idPlanTextbox" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="ddlPlan" runat="server">
+        </asp:DropDownList>
     <asp:RequiredFieldValidator ID="idPlan" runat="server" ControlToValidate="idPlanTextBox"   
 ErrorMessage="Debe Seleccionar un plan" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
