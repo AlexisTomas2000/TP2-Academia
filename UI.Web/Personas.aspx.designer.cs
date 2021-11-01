@@ -33,6 +33,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.GridView gridView;
 
         /// <summary>
+        /// Control ddlSelec.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSelec;
+
+        /// <summary>
         /// Control formPanel.
         /// </summary>
         /// <remarks>
@@ -58,15 +67,6 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox idPersonaTextBox;
-
-        /// <summary>
-        /// Control ddlSelec.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSelec;
 
         /// <summary>
         /// Control nombreLabel.
@@ -168,13 +168,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox direccionTextBox;
 
         /// <summary>
-        /// Control repClave.
+        /// Control Direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator repClave;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Direccion;
 
         /// <summary>
         /// Control telefonoLabel.

@@ -13,7 +13,7 @@
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono" />
                 <asp:BoundField HeaderText="EMail" DataField="EMail" />
                 <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento" />
-                <asp:BoundField HeaderText="ID Plan" DataField="ID Plan" />
+                <asp:BoundField HeaderText="ID Plan" DataField="IDPlan" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -26,13 +26,13 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
+        <asp:DropDownList ID="ddlSelec" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+        </asp:DropDownList>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="IDPersonaLabel" runat="server" Text="ID Persona: "></asp:Label>
         <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="ddlSelec" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
-        </asp:DropDownList>
         <br />
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
@@ -48,7 +48,7 @@
         <br />
         <asp:Label ID="direccionLabel" runat="server" Text="Direccion:  "></asp:Label>
         <asp:TextBox ID="direccionTextBox" runat="server" ></asp:TextBox>
-        <asp:RequiredFieldValidator ID="repClave" runat="server" ControlToValidate="direccionClaveTextBox" ErrorMessage="La direccion no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="Direccion" runat="server" ControlToValidate="direccionTextBox" ErrorMessage="La direccion no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server" ></asp:TextBox>

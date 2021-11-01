@@ -75,7 +75,7 @@ namespace UI.Web
         {
         }
         private void cargarDDLP() {
-            CursoLogic m = new CursoLogic();
+            PlanLogic m = new PlanLogic();
             ddlPlan.DataSource = m.GetAll();
             ddlPlan.DataTextField = "Descripcion";
             ddlPlan.DataValueField = "ID";
