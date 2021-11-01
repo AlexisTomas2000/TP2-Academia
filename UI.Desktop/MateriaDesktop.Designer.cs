@@ -3,6 +3,7 @@ using Business.Entities;
 using Business.Logic;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace UI.Desktop
 {
@@ -175,6 +176,31 @@ namespace UI.Desktop
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+        public override bool Validar()
+        {
+            bool resp = false;
+            MateriaLogic mat = new MateriaLogic();
+            string rta;
+            if (!("".Equals(txbDesc.Text)))
+            {
+                if (!("".Equals(cbPlanes.Text)))
+                {
+                    if (!("".Equals(txtHT.Text)))
+                    {
+                        if (!("".Equals(txtHS.Text)))
+                        { 
+                        resp = true;
+                        }
+                        else { { rta = "Las Horas semanales no pueden ser vacío" + this.txtHS.Text; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+                   
+                    }
+                    else { { rta = "Las Horas totales no pueden ser vacío" + this.txtHT.Text; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+                }
+                else { { rta = "Debe seleccionar un plan para la Comision"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            }
+            else { { rta = "La descripción de la comision no puede ser vacía"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            return resp;
         }
 
         private void MateriaDesktop_Load(object sender, EventArgs e)

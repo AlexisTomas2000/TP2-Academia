@@ -124,6 +124,33 @@ namespace UI.Desktop
             CursoLogic cur = new CursoLogic();
             cur.Save(this.CursoActual);
         }
+        public override bool Validar()
+        {
+            bool resp = false;
+            CursoLogic cur = new CursoLogic();
+            string rta;
+            if (!("".Equals(cbIDCom.Text)))
+            {
+                if (!("".Equals(txbCupo.Text)))
+                {
+
+                
+
+                    if (!("".Equals(cbMate.Text)))
+                    {
+                        if (!("".Equals(txbAño.Text)))
+                        {
+                            resp = true;
+                        }
+                        else { { rta = "El año no puede ser vacío" + this.txbAño.Text; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+                    }
+                    else { { rta = "Debe seleccionar una materia para el curso"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+                }
+                else { { rta = "El cupo no puede estar vacío" + this.txbAño.Text; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            }
+            else { { rta = "Debe seleccionar una comision para el curso"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            return resp;
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

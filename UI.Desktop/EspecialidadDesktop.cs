@@ -113,6 +113,20 @@ namespace UI.Desktop
             esp.Save(this.EspecialidadActual);
 
         }
+        public override bool Validar()
+        {
+            bool resp = false;
+            EspecialidadLogic esp = new EspecialidadLogic();
+            string rta;
+            if (!("".Equals(txtDescripcion.Text)))
+            {
+
+                resp = true;
+            }
+
+            else { { rta = "La descripción de la especialidad no puede ser vacía"; } this.Notificar(rta, MessageBoxButtons.OKCancel, MessageBoxIcon.Error); }
+            return resp;
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
