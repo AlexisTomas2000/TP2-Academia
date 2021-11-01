@@ -58,7 +58,7 @@ namespace UI.Desktop
 
         private void tsbReporte_Click(object sender, EventArgs e)
         {
-            Reporte2 r = new Reporte2();
+            ReportePlanes r = new ReportePlanes();
             r.ShowDialog();
         }
     }

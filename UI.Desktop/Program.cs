@@ -18,7 +18,7 @@ namespace UI.Desktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new formMain());
-            Application.Run(new ReporteCursos());
+            Application.Run(new ReportePlanes());
             //Application.Run(new AlumnosInscripcionesDesktop());
         }
     }

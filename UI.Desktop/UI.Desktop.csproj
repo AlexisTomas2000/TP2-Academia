@@ -179,11 +179,11 @@
     <Compile Include="frm_Informes\ReporteCursos.Designer.cs">
       <DependentUpon>ReporteCursos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Informes\Reporte2.cs">
+    <Compile Include="frm_Informes\ReportePlanes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Informes\Reporte2.Designer.cs">
-      <DependentUpon>Reporte2.cs</DependentUpon>
+    <Compile Include="frm_Informes\ReportePlanes.Designer.cs">
+      <DependentUpon>ReportePlanes.cs</DependentUpon>
     </Compile>
     <Compile Include="MateriaDesktop.cs">
       <SubType>Form</SubType>
@@ -257,6 +257,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tp2_netDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="tp2_netDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tp2_netDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tp2_netDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tp2_netDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,11 +323,11 @@
     <EmbeddedResource Include="frm_Informes\ReporteCursos.resx">
       <DependentUpon>ReporteCursos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Informes\Reporte2.resx">
-      <DependentUpon>Reporte2.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Informes\ReportePlanes.resx">
+      <DependentUpon>ReportePlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informe\InformaCursos.rdlc" />
-    <EmbeddedResource Include="Informe\Report1.rdlc" />
+    <EmbeddedResource Include="Informe\InformePlanes.rdlc" />
     <EmbeddedResource Include="MateriaDesktop.resx">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +490,28 @@
     </None>
     <None Include="tp2_netDataSet5.xss">
       <DependentUpon>tp2_netDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="tp2_netDataSet6.xsc">
+      <DependentUpon>tp2_netDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="tp2_netDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tp2_netDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tp2_netDataSet6.xss">
+      <DependentUpon>tp2_netDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="tp2_netDataSet7.xsc">
+      <DependentUpon>tp2_netDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="tp2_netDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tp2_netDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tp2_netDataSet7.xss">
+      <DependentUpon>tp2_netDataSet7.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
