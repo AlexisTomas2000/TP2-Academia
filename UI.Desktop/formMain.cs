@@ -29,12 +29,14 @@ namespace UI.Desktop
 
         private void formMain_Shown(object sender, EventArgs e)
         {
+            this.Hide();
             formLogin appLogin = new formLogin();
             if (appLogin.ShowDialog() != DialogResult.OK)
             {
                 this.Dispose();
             }
-            else { 
+            else {
+                this.Show();
                 Business.Entities.Persona per = appLogin.Damelo();
                 switch (per.TipoPersona)
                 {
@@ -140,6 +142,11 @@ namespace UI.Desktop
             DocentesCursos dc = new DocentesCursos();
             dc.ShowDialog();
             this.Show();
+        }
+
+        private void mnsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

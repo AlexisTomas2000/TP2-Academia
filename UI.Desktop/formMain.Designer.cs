@@ -45,6 +45,7 @@ namespace UI.Desktop
             // 
             // mnsPrincipal
             // 
+            this.mnsPrincipal.BackColor = System.Drawing.Color.Bisque;
             this.mnsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuArchivo});
             this.mnsPrincipal.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +53,7 @@ namespace UI.Desktop
             this.mnsPrincipal.Size = new System.Drawing.Size(800, 24);
             this.mnsPrincipal.TabIndex = 1;
             this.mnsPrincipal.Text = "menuStrip1";
+            this.mnsPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnsPrincipal_ItemClicked);
             // 
             // mnuArchivo
             // 
@@ -64,7 +66,7 @@ namespace UI.Desktop
             // mnuSalir
             // 
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(96, 22);
+            this.mnuSalir.Size = new System.Drawing.Size(180, 22);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
@@ -160,6 +162,7 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btbDC);
             this.Controls.Add(this.btnPersonas);
@@ -170,6 +173,7 @@ namespace UI.Desktop
             this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.mnsPrincipal);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsPrincipal;
@@ -177,6 +181,7 @@ namespace UI.Desktop
             this.MinimizeBox = false;
             this.Name = "formMain";
             this.Text = "Academia";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.formMain_Load);
             this.Shown += new System.EventHandler(this.formMain_Shown);
             this.mnsPrincipal.ResumeLayout(false);
