@@ -118,7 +118,7 @@ namespace UI.Web
             this.direccionTextBox.Text = this.Entity.Direccion;
             this.telefonoTextBox.Text = this.Entity.Telefono;
             this.emailTextBox.Text = this.Entity.EMail;
-            this.ddlPlan.Text = this.Entity.IDPlan.ToString();
+            this.ddlPlan.SelectedIndex = int.Parse(this.Entity.IDPlan.ToString());
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,7 +164,6 @@ namespace UI.Web
         }
 
         private void EnableForm(bool enable) {
-            this.idPersonaTextBox.Enabled = enable;
             this.nombreTextBox.Enabled = enable;
             this.apellidoTextBox.Enabled = enable;
             this.legajoTextBox.Enabled = enable;

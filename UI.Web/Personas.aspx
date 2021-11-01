@@ -31,7 +31,7 @@
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="IDPersonaLabel" runat="server" Text="ID Persona: "></asp:Label>
-        <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False"></asp:TextBox>
+        <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False" ReadOnly="True"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
@@ -68,7 +68,7 @@ ErrorMessage="El formato de la fecha de nacimiento no es correcto" ForeColor="Re
         <asp:Label ID="idPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
         <asp:DropDownList ID="ddlPlan" runat="server">
         </asp:DropDownList>
-    <asp:RequiredFieldValidator ID="idPlan" runat="server" ControlToValidate="idPlanTextBox"   
+    <asp:RequiredFieldValidator ID="idPlan" runat="server" ControlToValidate="ddlPlan"   
 ErrorMessage="Debe Seleccionar un plan" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <br />
