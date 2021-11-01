@@ -16,7 +16,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdccm = new SqlCommand("SELECT cursos.id_materia, cursos.id_comision, concat(materias.desc_materia, ' ', comisiones.desc_comision)Matcom, cursos.id_curso "+
+                SqlCommand cmdccm = new SqlCommand("SELECT cursos.id_materia, cursos.id_comision, materias.desc_materia, comisiones.desc_comision, cursos.id_curso, cursos.anio_calendario,cursos.cupo " +
                                                     "FROM cursos INNER JOIN comisiones ON cursos.id_comision = comisiones.id_comision INNER JOIN "+
                                                     "materias ON cursos.id_materia = materias.id_materia", sqlConn);
                 SqlDataReader drCcms = cmdccm.ExecuteReader();
@@ -26,9 +26,13 @@ namespace Data.Database
                     c.Id_Comision = (int)drCcms["id_comision"];
                     c.Id_Materia= (int)drCcms["id_materia"];
                     c.Id_Curso= (int)drCcms["id_curso"];
-                    c.Desc = (String)drCcms["Matcom"];
+                    c.Desc = (String)drCcms["desc_materia"] + (String)drCcms["desc_comision"];
+                    c.Anio=(int)drCcms["anio_calendario"];
+                    c.Cupo = (int)drCcms["cupo"];
+                    c.DescComision= (String)drCcms["desc_comision"];
+                    c.Desc_Materia = (String)drCcms["desc_materia"];
                     ccms.Add(c);
-                }
+                }//concat(, ' ')Matcom
                 drCcms.Close();
                 return ccms;
             }

@@ -115,6 +115,7 @@ namespace UI.Desktop
             // 
             // cbTP
             // 
+            this.cbTP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTP.FormattingEnabled = true;
             this.cbTP.Items.AddRange(new object[] {
             "Alumno",
@@ -228,6 +229,7 @@ namespace UI.Desktop
             // 
             // cbPlanes
             // 
+            this.cbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlanes.FormattingEnabled = true;
             this.cbPlanes.Items.AddRange(new object[] {
             "Alumno",

@@ -112,6 +112,7 @@ namespace UI.Desktop
             // 
             // cbMate
             // 
+            this.cbMate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMate.FormattingEnabled = true;
             this.cbMate.Location = new System.Drawing.Point(74, 33);
             this.cbMate.Name = "cbMate";
@@ -120,6 +121,7 @@ namespace UI.Desktop
             // 
             // cbIDCom
             // 
+            this.cbIDCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDCom.FormattingEnabled = true;
             this.cbIDCom.Location = new System.Drawing.Point(74, 60);
             this.cbIDCom.Name = "cbIDCom";

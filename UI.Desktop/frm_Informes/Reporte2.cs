@@ -21,7 +21,7 @@ namespace UI.Desktop.frm_Informes
         private void Reporte2_Load(object sender, EventArgs e)
         {
             this.planesTableAdapter.Fill(this.tp2_netDataSet.planes);
-            PlanLogic p = new PlanLogic();
+           // PlanLogic p = new PlanLogic();
             this.reportViewer1.RefreshReport();
         }
 
