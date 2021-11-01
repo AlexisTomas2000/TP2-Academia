@@ -58,6 +58,7 @@ namespace UI.Desktop
             // 
             // cbIDcurso
             // 
+            this.cbIDcurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDcurso.FormattingEnabled = true;
             this.cbIDcurso.Location = new System.Drawing.Point(85, 99);
             this.cbIDcurso.Name = "cbIDcurso";
@@ -66,6 +67,7 @@ namespace UI.Desktop
             // 
             // cbCargo
             // 
+            this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargo.FormattingEnabled = true;
             this.cbCargo.Items.AddRange(new object[] {
             "Jefe/a de Catedra",

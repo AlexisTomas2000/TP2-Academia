@@ -53,6 +53,7 @@ namespace UI.Desktop
             // 
             // cbCursos
             // 
+            this.cbCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCursos.FormattingEnabled = true;
             this.cbCursos.Location = new System.Drawing.Point(100, 39);
             this.cbCursos.Name = "cbCursos";
@@ -61,6 +62,7 @@ namespace UI.Desktop
             // 
             // cbCondicion
             // 
+            this.cbCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCondicion.FormattingEnabled = true;
             this.cbCondicion.Items.AddRange(new object[] {
             "Inscripto",
@@ -160,10 +162,10 @@ namespace UI.Desktop
             this.txtID.BackColor = System.Drawing.Color.White;
             this.txtID.Enabled = false;
             this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(12, 123);
+            this.txtID.Location = new System.Drawing.Point(3, 123);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(53, 20);
+            this.txtID.Size = new System.Drawing.Size(16, 20);
             this.txtID.TabIndex = 14;
             // 
             // AlumnosInscripcionesDesktop
