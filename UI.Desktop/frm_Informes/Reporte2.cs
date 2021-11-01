@@ -20,7 +20,6 @@ namespace UI.Desktop.frm_Informes
 
         private void Reporte2_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tp2_netDataSet.planes' Puede moverla o quitarla según sea necesario.
             this.planesTableAdapter.Fill(this.tp2_netDataSet.planes);
             PlanLogic p = new PlanLogic();
             this.reportViewer1.RefreshReport();

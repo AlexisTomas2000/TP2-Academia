@@ -114,8 +114,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE alumnos_inscripciones SET id_inscripcion = @id_inscripcion, id_alumno=@id_alumno, " +
-                    "id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_alumno=@id_alumno and id_curso=@id_curso", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE alumnos_inscripciones SET  id_alumno=@id_alumno, " +
+                    "id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id_inscripcion" /*id_inscripcion = @id_inscripcion,id_alumno=@id_alumno and id_curso=@id_curso*/, sqlConn);
                 cmdSave.Parameters.Add("@id_inscripcion", SqlDbType.Int).Value = AI.ID;
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = AI.IDAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = AI.IDCurso;
@@ -139,7 +139,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones(id_alumno,id_curso,nota,condicion) " +
-                    "VALUES(@id_alumno,@id_curso,@nota,@nombre,@condicion) " +
+                    "VALUES(@id_alumno,@id_curso,@nota,@condicion) " +
                     "SELECT @@identity"
                     , sqlConn);
                 cmdSave.Parameters.Add("@id_inscripcion", SqlDbType.Int).Value = AI.ID;

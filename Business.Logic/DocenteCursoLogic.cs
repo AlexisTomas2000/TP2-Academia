@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Logic
 {
-    public class DocenteCursoLogic
+    public class DocenteCursoLogic : BusinessLogic
     {
         private Data.Database.DocenteCursoAdapter _DocenteCurso;
 

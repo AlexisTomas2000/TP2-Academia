@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Logic
 {
-    public class ComisionLogic
+    public class ComisionLogic:BusinessLogic
     {
             private Data.Database.ComisionAdapter _ComisionData;
             public Data.Database.ComisionAdapter ComisionData
