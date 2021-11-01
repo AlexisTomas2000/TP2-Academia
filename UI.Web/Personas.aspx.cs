@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -191,11 +192,18 @@ namespace UI.Web
         }
 
         private void LoadEntity(Persona per) {
+            CultureInfo provider = CultureInfo.InvariantCulture;
             per.Nombre = this.nombreTextBox.Text;
             per.Apellido = this.apellidoTextBox.Text;
             per.Legajo = int.Parse(this.legajoTextBox.Text);
             per.Direccion = this.direccionTextBox.Text;
+            per.FechaNacimiento = Convert.ToDateTime(this.fechaNacTextBox.Text);
             per.Telefono = this.telefonoTextBox.Text;
+            if (ddlSelec.SelectedIndex == 1)
+            {
+                per.TipoPersona = 2;
+            }
+            else { per.TipoPersona = 1; }
             per.EMail = this.emailTextBox.Text;
             per.IDPlan = int.Parse(this.ddlPlan.Text);
         }
