@@ -192,35 +192,6 @@ namespace UI.Web
             this.EnableForm(true);
         }
 
-       /* private bool validar() {
-            bool rta = false;
-            Regex rx = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match m = rx.Match(emailTextBox.Text);
-            if (!("".Equals(nombreTextBox.Text))) {
-                if (!("".Equals(apellidoTextBox.Text)))
-                {
-                    if (m.Success)
-                    {
-                        if (!("".Equals(nombreUsuarioTextBox.Text)))
-                        {
-                            if (!("".Equals(claveTextBox.Text)) && ((claveTextBox.Text.Length) >= 8))
-                            {
-                                if (this.claveTextBox.Text.Equals(this.repetirClaveTextBox.Text))
-                                {
-                                    rta = true;
-                                }
-                                else { this.txtCC.Visible = true; }
-                            }
-                            else { this.txtClave.Visible = true;  }
-                        }
-                        else { this.txtUsu.Visible = true;  }
-                    }
-                    else { this.txtEm.Visible = true;  }
-                }
-                else { this.txtApe.Visible = true;  }
-            } else { this.txtNom.Visible = true; }
-            return rta;
-        }*/
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
