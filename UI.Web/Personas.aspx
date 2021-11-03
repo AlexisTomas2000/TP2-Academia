@@ -31,7 +31,7 @@
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="IDPersonaLabel" runat="server" Text="ID Persona: "></asp:Label>
-        <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False" ReadOnly="True"></asp:TextBox>
+        <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False" ReadOnly="True" OnTextChanged="idPersonaTextBox_TextChanged"></asp:TextBox>
         <br />
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>

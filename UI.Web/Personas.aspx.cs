@@ -246,5 +246,10 @@ namespace UI.Web
             this.ClearForm();
             this.EnableForm(true);
         }
+
+        protected void idPersonaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

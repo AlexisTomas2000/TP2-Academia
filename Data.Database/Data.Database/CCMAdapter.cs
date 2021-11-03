@@ -26,7 +26,7 @@ namespace Data.Database
                     c.Id_Comision = (int)drCcms["id_comision"];
                     c.Id_Materia= (int)drCcms["id_materia"];
                     c.Id_Curso= (int)drCcms["id_curso"];
-                    c.Desc = (String)drCcms["desc_materia"] + (String)drCcms["desc_comision"];
+                    c.Desc = (String)drCcms["desc_materia"] +" "+ (String)drCcms["desc_comision"];
                     c.Anio=(int)drCcms["anio_calendario"];
                     c.Cupo = (int)drCcms["cupo"];
                     c.DescComision= (String)drCcms["desc_comision"];
