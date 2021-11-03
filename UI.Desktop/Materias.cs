@@ -15,10 +15,15 @@ namespace UI.Desktop
     public partial class Materias : Form
     {
         private Business.Logic.MateriaLogic m1;
+        public Persona Persona { get; set; }
         public Materias()
         {
             InitializeComponent();
             listar();
+        }
+
+        public Materias(Business.Entities.Persona per) {
+            this.Persona = per;
         }
 
         private void Materias_Load(object sender, EventArgs e)

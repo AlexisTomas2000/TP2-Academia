@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +15,29 @@ namespace UI.Desktop
     public partial class Comisiones : Form
     {
         private Business.Logic.ComisionLogic c1;
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         public Comisiones()
         {
             InitializeComponent();
         }
 
+        public Comisiones(Persona persona) : this() {
+            InitializeComponent();
+            Entity = persona;      
+        }
+
         private void Comisiones_Load(object sender, EventArgs e)
         {
+            if ((Entity.TipoPersona == 2 || Entity.TipoPersona==3))
+            {
+               this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
             listar();
+
         }
         public void listar()
         {
@@ -30,29 +46,11 @@ namespace UI.Desktop
             this.dgvComisiones.DataSource = c1.GetAll();
         }
 
+
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             listar();
-        }
-
-        private void tsbAgregar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tsbEditar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tsbEliminar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
@@ -79,5 +77,27 @@ namespace UI.Desktop
             ComisionDesktop comd = new ComisionDesktop(id, ApplicationForm.ModoForm.Baja);
             comd.ShowDialog();
         }
+        #region BNR
+        private void tsbAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }

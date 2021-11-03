@@ -35,14 +35,14 @@ namespace UI.Desktop
             this.Desc_com = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.tsmOpciones = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.tsmOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvComisiones
@@ -96,18 +96,27 @@ namespace UI.Desktop
             this.ID_plan.Name = "ID_plan";
             this.ID_plan.ReadOnly = true;
             // 
-            // toolStrip1
+            // btnActualizar
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNuevo,
-            this.tsbEditar,
-            this.tsbEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(112, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(388, 421);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 2;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(469, 421);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // tsbNuevo
             // 
@@ -139,27 +148,20 @@ namespace UI.Desktop
             this.tsbEliminar.Text = "toolStripButton3";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click_1);
             // 
-            // btnActualizar
+            // tsmOpciones
             // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(388, 421);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 2;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(469, 421);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 3;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.tsmOpciones.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsmOpciones.Enabled = false;
+            this.tsmOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            this.tsbEditar,
+            this.tsbEliminar});
+            this.tsmOpciones.Location = new System.Drawing.Point(0, -3);
+            this.tsmOpciones.Name = "tsmOpciones";
+            this.tsmOpciones.Size = new System.Drawing.Size(112, 25);
+            this.tsmOpciones.TabIndex = 1;
+            this.tsmOpciones.Text = "toolStrip1";
+            this.tsmOpciones.Visible = false;
             // 
             // Comisiones
             // 
@@ -168,15 +170,15 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(544, 449);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tsmOpciones);
             this.Controls.Add(this.dgvComisiones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Comisiones";
             this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.Comisiones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tsmOpciones.ResumeLayout(false);
+            this.tsmOpciones.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,15 +187,15 @@ namespace UI.Desktop
         #endregion
 
         private System.Windows.Forms.DataGridView dgvComisiones;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbNuevo;
-        private System.Windows.Forms.ToolStripButton tsbEditar;
-        private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Desc_com;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio_Especialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_plan;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ToolStripButton tsbNuevo;
+        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbEliminar;
+        private System.Windows.Forms.ToolStrip tsmOpciones;
     }
 }

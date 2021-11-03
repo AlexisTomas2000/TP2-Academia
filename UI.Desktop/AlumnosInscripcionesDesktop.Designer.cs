@@ -59,6 +59,7 @@ namespace UI.Desktop
             this.cbCursos.Name = "cbCursos";
             this.cbCursos.Size = new System.Drawing.Size(162, 21);
             this.cbCursos.TabIndex = 4;
+            this.cbCursos.SelectedIndexChanged += new System.EventHandler(this.cbCursos_SelectedIndexChanged);
             // 
             // cbCondicion
             // 

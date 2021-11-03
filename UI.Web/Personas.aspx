@@ -56,8 +56,12 @@ ErrorMessage="El telefono no puede ser vacío" ForeColor="Red">*</asp:RequiredFi
         <br />
         <asp:Label ID="emailLabel" runat="server" Text="EMail: "></asp:Label>
         <asp:TextBox ID="emailTextBox" runat="server" Width="136px"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="Email" runat="server" ControlToValidate="emailTextBox"   
-ErrorMessage="El email no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="email" runat="server" ControlToValidate="emailTextBox"   
+ErrorMessage="El Email no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+   <asp:RegularExpressionValidator
+        ID="regEmail" ControlToValidate="emailTextBox" ErrorMessage="Email No válido" ForeColor="Red"
+        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+        runat="server">*</asp:RegularExpressionValidator>
         <br />
         <asp:Label ID="fechaNacimientoLabel" runat="server" Text="Fecha de Nacimiento: "></asp:Label>
         <asp:TextBox ID="fechaNacTextBox" runat="server" Width="136px" TextMode="Date"></asp:TextBox>
@@ -70,6 +74,22 @@ ErrorMessage="El formato de la fecha de nacimiento no es correcto" ForeColor="Re
     <asp:RequiredFieldValidator ID="idPlan" runat="server" ControlToValidate="ddlPlan"   
 ErrorMessage="Debe Seleccionar un plan" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
+        <asp:Label ID="nomUsuLabel" runat="server" Text="Nombre de Usuario: "></asp:Label>
+        <asp:TextBox ID="NomUsuTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="nomUsu" runat="server" ControlToValidate="NomUsuTextBox"   
+ErrorMessage="El nombre de usuario no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <br />
+        <asp:Label ID="conLabel" runat="server" Text="Contraseña: "></asp:Label>
+        <asp:TextBox ID="contraseñaTextBox" runat="server" TextMode="Password"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="contraseñaTextBox"   
+ErrorMessage="La contraseña no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <br />
+        <asp:Label ID="repConLabel" runat="server" Text="Repetir Contraseña: "></asp:Label>
+        <asp:TextBox ID="repConTextBox" runat="server" TextMode="Password"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="repconreq" runat="server" ControlToValidate="repConTextBox"   
+ErrorMessage="Por favor, repita la contraseña" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="repCon" Operator="Equal" runat="server" ControlToValidate="repConTextBox" ControlToCompare="contraseñaTextBox"
+        ErrorMessage="Las contraseñas no coinciden" ForeColor="Red">*</asp:CompareValidator>
         <br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
         <asp:Panel ID="formActionsPanel" runat="server">

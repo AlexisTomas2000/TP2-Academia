@@ -30,7 +30,6 @@ namespace UI.Desktop
                 cbNota.Visible = false;
                 label3.Visible = false;
                 label4.Visible = false;
-                cbNota.Visible = false;
             }
             else if (Modo == ModoForm.Modificacion)
             {
@@ -172,6 +171,11 @@ namespace UI.Desktop
                 this.Close();
             }
             
+
+        }
+
+        private void cbCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

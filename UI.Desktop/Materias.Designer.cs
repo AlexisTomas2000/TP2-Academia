@@ -42,8 +42,10 @@ namespace UI.Desktop
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.dataSet21 = new UI.Desktop.DataSet.DataSet2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMaterias
@@ -166,6 +168,11 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // dataSet21
+            // 
+            this.dataSet21.DataSetName = "DataSet2";
+            this.dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +188,7 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +208,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
+        private DataSet.DataSet2 dataSet21;
     }
 }

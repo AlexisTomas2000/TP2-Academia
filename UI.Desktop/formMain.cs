@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,9 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI.Desktop
-{
+{   
     public partial class formMain : Form
     {
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         public formMain()
         {
             InitializeComponent();
@@ -37,8 +42,8 @@ namespace UI.Desktop
             }
             else {
                 this.Show();
-                Business.Entities.Persona per = appLogin.Damelo();
-                switch (per.TipoPersona)
+                this.Entity = appLogin.Damelo();
+                switch (this.Entity.TipoPersona)
                 {
                     case  1:
                         this.MostrarUsu();
@@ -66,7 +71,12 @@ namespace UI.Desktop
                 btnComisiones.Visible = true;
                 btnMaterias.Visible = true;
                 btnPlanes.Visible = true;
-                btnEspecialidades.Visible = true;   
+                btnEspecialidades.Visible = true;
+                tsbComisiones.Visible = true;
+                tsbMaterias.Visible = true;
+                tsbPlanes.Visible = true;
+                tsbEspecialidades.Visible = true;
+                tsbInscripciones.Visible = true;
         }
 
         private void MostrarProfesor() {
@@ -74,6 +84,18 @@ namespace UI.Desktop
                 btnMaterias.Visible = true;
                 btnPlanes.Visible = true;
                 btnEspecialidades.Visible = true;
+                btnCursos.Visible = true;
+                btnUsuarios.Visible = true;
+                tsbUsuarios.Visible = true;
+                tsbInscripciones.Visible = true;
+                tsbComisiones.Visible = true;
+                tsbMaterias.Visible = true;
+                tsbPlanes.Visible = true;
+                tsbRepoPlanes.Visible = true;
+                tsbCursos.Visible = true;
+                tsbRepoCurso.Visible = true;
+                tsbEspecialidades.Visible = true;
+           
         }
         private void MostrarSuperAdmin()
         {
@@ -85,8 +107,20 @@ namespace UI.Desktop
             btnCursos.Visible = true;
             btbDC.Visible = true;
             btnPersonas.Visible = true;
-        }
 
+            tsbComisiones.Visible = true;
+            tsbMaterias.Visible = true;
+            tsbPlanes.Visible = true;
+            tsbEspecialidades.Visible = true;
+            tsbUsuarios.Visible = true;
+            tsbDYC.Visible = true;
+            tsbInscripciones.Visible = true;
+            tsbRepoPlanes.Visible = true;
+            tsbCursos.Visible = true;
+            tsbRepoCurso.Visible = true;
+
+        }
+        #region btns
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -143,10 +177,18 @@ namespace UI.Desktop
             dc.ShowDialog();
             this.Show();
         }
-
+        #endregion 
         private void mnsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void tsbComisiones_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Comisiones comisiones = new Comisiones(Entity);
+            comisiones.ShowDialog();
+            this.Show();
         }
     }
 }

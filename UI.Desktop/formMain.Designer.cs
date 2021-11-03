@@ -31,7 +31,6 @@ namespace UI.Desktop
         {
             this.mnsPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnComisiones = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
@@ -40,6 +39,17 @@ namespace UI.Desktop
             this.btnCursos = new System.Windows.Forms.Button();
             this.btnPersonas = new System.Windows.Forms.Button();
             this.btbDC = new System.Windows.Forms.Button();
+            this.tsbComisiones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbPlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbCursos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbPersonas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbDYC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbRepoPlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbRepoCurso = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbInscripciones = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,17 +68,18 @@ namespace UI.Desktop
             // mnuArchivo
             // 
             this.mnuArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuSalir});
+            this.tsbComisiones,
+            this.tsbPlanes,
+            this.tsbMaterias,
+            this.tsbEspecialidades,
+            this.tsbCursos,
+            this.tsbUsuarios,
+            this.tsbPersonas,
+            this.tsbDYC,
+            this.tsbInscripciones});
             this.mnuArchivo.Name = "mnuArchivo";
             this.mnuArchivo.Size = new System.Drawing.Size(60, 20);
             this.mnuArchivo.Text = "Archivo";
-            // 
-            // mnuSalir
-            // 
-            this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(180, 22);
-            this.mnuSalir.Text = "Salir";
-            this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
             // btnUsuarios
             // 
@@ -158,6 +169,87 @@ namespace UI.Desktop
             this.btbDC.Visible = false;
             this.btbDC.Click += new System.EventHandler(this.btbDC_Click);
             // 
+            // tsbComisiones
+            // 
+            this.tsbComisiones.Name = "tsbComisiones";
+            this.tsbComisiones.Size = new System.Drawing.Size(180, 22);
+            this.tsbComisiones.Text = "Comisiones";
+            this.tsbComisiones.Visible = false;
+            this.tsbComisiones.Click += new System.EventHandler(this.tsbComisiones_Click);
+            // 
+            // tsbPlanes
+            // 
+            this.tsbPlanes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbRepoPlanes});
+            this.tsbPlanes.Name = "tsbPlanes";
+            this.tsbPlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsbPlanes.Text = "Planes";
+            this.tsbPlanes.Visible = false;
+            // 
+            // tsbMaterias
+            // 
+            this.tsbMaterias.Name = "tsbMaterias";
+            this.tsbMaterias.Size = new System.Drawing.Size(180, 22);
+            this.tsbMaterias.Text = "Materias";
+            this.tsbMaterias.Visible = false;
+            // 
+            // tsbEspecialidades
+            // 
+            this.tsbEspecialidades.Name = "tsbEspecialidades";
+            this.tsbEspecialidades.Size = new System.Drawing.Size(180, 22);
+            this.tsbEspecialidades.Text = "Especialidades";
+            this.tsbEspecialidades.Visible = false;
+            // 
+            // tsbCursos
+            // 
+            this.tsbCursos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbRepoCurso});
+            this.tsbCursos.Name = "tsbCursos";
+            this.tsbCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsbCursos.Text = "Cursos";
+            this.tsbCursos.Visible = false;
+            // 
+            // tsbUsuarios
+            // 
+            this.tsbUsuarios.Name = "tsbUsuarios";
+            this.tsbUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsbUsuarios.Text = "Usuarios";
+            this.tsbUsuarios.Visible = false;
+            // 
+            // tsbPersonas
+            // 
+            this.tsbPersonas.Name = "tsbPersonas";
+            this.tsbPersonas.Size = new System.Drawing.Size(180, 22);
+            this.tsbPersonas.Text = "Personas";
+            this.tsbPersonas.Visible = false;
+            // 
+            // tsbDYC
+            // 
+            this.tsbDYC.Name = "tsbDYC";
+            this.tsbDYC.Size = new System.Drawing.Size(180, 22);
+            this.tsbDYC.Text = "Docentes Y Cursos";
+            this.tsbDYC.Visible = false;
+            // 
+            // tsbRepoPlanes
+            // 
+            this.tsbRepoPlanes.Name = "tsbRepoPlanes";
+            this.tsbRepoPlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsbRepoPlanes.Text = "Reporte de Planes";
+            this.tsbRepoPlanes.Visible = false;
+            // 
+            // tsbRepoCurso
+            // 
+            this.tsbRepoCurso.Name = "tsbRepoCurso";
+            this.tsbRepoCurso.Size = new System.Drawing.Size(180, 22);
+            this.tsbRepoCurso.Text = "Reporte de cursos";
+            this.tsbRepoCurso.Visible = false;
+            // 
+            // tsbInscripciones
+            // 
+            this.tsbInscripciones.Name = "tsbInscripciones";
+            this.tsbInscripciones.Size = new System.Drawing.Size(180, 22);
+            this.tsbInscripciones.Text = "Inscripciones";
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,7 +287,6 @@ namespace UI.Desktop
 
         private System.Windows.Forms.MenuStrip mnsPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mnuArchivo;
-        private System.Windows.Forms.ToolStripMenuItem mnuSalir;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.Button btnPlanes;
@@ -204,5 +295,16 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnCursos;
         private System.Windows.Forms.Button btnPersonas;
         private System.Windows.Forms.Button btbDC;
+        private System.Windows.Forms.ToolStripMenuItem tsbComisiones;
+        private System.Windows.Forms.ToolStripMenuItem tsbPlanes;
+        private System.Windows.Forms.ToolStripMenuItem tsbRepoPlanes;
+        private System.Windows.Forms.ToolStripMenuItem tsbMaterias;
+        private System.Windows.Forms.ToolStripMenuItem tsbEspecialidades;
+        private System.Windows.Forms.ToolStripMenuItem tsbCursos;
+        private System.Windows.Forms.ToolStripMenuItem tsbRepoCurso;
+        private System.Windows.Forms.ToolStripMenuItem tsbUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsbPersonas;
+        private System.Windows.Forms.ToolStripMenuItem tsbDYC;
+        private System.Windows.Forms.ToolStripMenuItem tsbInscripciones;
     }
 }
