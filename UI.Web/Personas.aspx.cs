@@ -65,10 +65,10 @@ namespace UI.Web
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.ListarA();
+            
             if (!this.IsPostBack) {
-                this.cargarDDLP();
                 this.cargarDDLS();
+                this.cargarDDLP();
             }
         }
 
@@ -119,7 +119,8 @@ namespace UI.Web
             this.direccionTextBox.Text = this.Entity.Direccion;
             this.telefonoTextBox.Text = this.Entity.Telefono;
             this.emailTextBox.Text = this.Entity.EMail;
-            this.ddlPlan.SelectedIndex = int.Parse(this.Entity.IDPlan.ToString());
+            this.fechaNacTextBox.Text = this.Entity.FechaNacimiento.ToString("dd/MM/yyyy");
+            this.ddlPlan.SelectedIndex = this.Entity.IDPlan;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)

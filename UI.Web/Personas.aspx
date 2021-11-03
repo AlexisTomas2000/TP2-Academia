@@ -26,7 +26,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-        <asp:DropDownList ID="ddlSelec" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlSelec" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" AutoPostBack="True">
         </asp:DropDownList>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
