@@ -495,6 +495,9 @@
     </ReportItems>
     <Height>2in</Height>
     <Style>
+      <Border>
+        <Style>Solid</Style>
+      </Border>
       <BackgroundColor>Silver</BackgroundColor>
     </Style>
   </Body>
@@ -617,8 +620,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>tp2_netDataSet4</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\AlexisPc\source\repos\Academia\AlexisTomas2000\TP2-Academia\UI.Desktop\tp2_netDataSet4.xsd</rd:SchemaPath>
+        <rd:DataSetName>tp2_netDataSet9</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\AlexisPc\source\repos\Academia\AlexisTomas2000\TP2-Academia\UI.Web\tp2_netDataSet9.xsd</rd:SchemaPath>
         <rd:TableName>sp_ListaCursos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
