@@ -164,7 +164,7 @@ namespace UI.Web
                     this.Actualizar();
 
                     this.Form.Visible = false;
-                    
+                    Response.Redirect("Usuarios.aspx?vuelta=true");
                     break;
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);

@@ -29,72 +29,27 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comisiones));
-            this.dgvComisiones = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Desc_com = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsmOpciones = new System.Windows.Forms.ToolStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
+            this.tp2_netDataSet8 = new UI.Desktop.tp2_netDataSet8();
+            this.comisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comisionesTableAdapter = new UI.Desktop.tp2_netDataSet8TableAdapters.comisionesTableAdapter();
+            this.dgvComisiones = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsmOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvComisiones
-            // 
-            this.dgvComisiones.AllowUserToAddRows = false;
-            this.dgvComisiones.AllowUserToDeleteRows = false;
-            this.dgvComisiones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Desc_com,
-            this.Anio_Especialidad,
-            this.ID_plan});
-            this.dgvComisiones.Location = new System.Drawing.Point(0, 25);
-            this.dgvComisiones.MultiSelect = false;
-            this.dgvComisiones.Name = "dgvComisiones";
-            this.dgvComisiones.ReadOnly = true;
-            this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComisiones.Size = new System.Drawing.Size(544, 390);
-            this.dgvComisiones.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Desc_com
-            // 
-            this.Desc_com.DataPropertyName = "Descripcion";
-            this.Desc_com.HeaderText = "Descripcion Comision";
-            this.Desc_com.Name = "Desc_com";
-            this.Desc_com.ReadOnly = true;
-            this.Desc_com.Width = 150;
-            // 
-            // Anio_Especialidad
-            // 
-            this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
-            this.Anio_Especialidad.HeaderText = "Año Especialidad";
-            this.Anio_Especialidad.Name = "Anio_Especialidad";
-            this.Anio_Especialidad.ReadOnly = true;
-            this.Anio_Especialidad.Width = 150;
-            // 
-            // ID_plan
-            // 
-            this.ID_plan.DataPropertyName = "IdPlan";
-            this.ID_plan.HeaderText = "ID Plan";
-            this.ID_plan.Name = "ID_plan";
-            this.ID_plan.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -158,44 +113,111 @@ namespace UI.Desktop
             this.tsbEliminar});
             this.tsmOpciones.Location = new System.Drawing.Point(0, -3);
             this.tsmOpciones.Name = "tsmOpciones";
-            this.tsmOpciones.Size = new System.Drawing.Size(112, 25);
+            this.tsmOpciones.Size = new System.Drawing.Size(81, 25);
             this.tsmOpciones.TabIndex = 1;
             this.tsmOpciones.Text = "toolStrip1";
             this.tsmOpciones.Visible = false;
+            // 
+            // tp2_netDataSet8
+            // 
+            this.tp2_netDataSet8.DataSetName = "tp2_netDataSet8";
+            this.tp2_netDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comisionesBindingSource
+            // 
+            this.comisionesBindingSource.DataMember = "comisiones";
+            this.comisionesBindingSource.DataSource = this.tp2_netDataSet8;
+            // 
+            // comisionesTableAdapter
+            // 
+            this.comisionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dgvComisiones
+            // 
+            this.dgvComisiones.AllowUserToAddRows = false;
+            this.dgvComisiones.AllowUserToDeleteRows = false;
+            this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descripcion_Comision,
+            this.Año_Especialidad,
+            this.Id_Plan});
+            this.dgvComisiones.Location = new System.Drawing.Point(12, 33);
+            this.dgvComisiones.MultiSelect = false;
+            this.dgvComisiones.Name = "dgvComisiones";
+            this.dgvComisiones.ReadOnly = true;
+            this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvComisiones.Size = new System.Drawing.Size(520, 382);
+            this.dgvComisiones.TabIndex = 4;
+            this.dgvComisiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComisiones_CellContentClick_1);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Descripcion_Comision
+            // 
+            this.Descripcion_Comision.DataPropertyName = "Descripcion";
+            this.Descripcion_Comision.HeaderText = "Descripcion Comision";
+            this.Descripcion_Comision.Name = "Descripcion_Comision";
+            this.Descripcion_Comision.ReadOnly = true;
+            this.Descripcion_Comision.Width = 150;
+            // 
+            // Año_Especialidad
+            // 
+            this.Año_Especialidad.DataPropertyName = "AnioEspecialidad";
+            this.Año_Especialidad.HeaderText = "Año Especialidad";
+            this.Año_Especialidad.Name = "Año_Especialidad";
+            this.Año_Especialidad.ReadOnly = true;
+            this.Año_Especialidad.Width = 120;
+            // 
+            // Id_Plan
+            // 
+            this.Id_Plan.DataPropertyName = "IdPlan";
+            this.Id_Plan.HeaderText = "ID Plan";
+            this.Id_Plan.Name = "Id_Plan";
+            this.Id_Plan.ReadOnly = true;
             // 
             // Comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 449);
+            this.Controls.Add(this.dgvComisiones);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.tsmOpciones);
-            this.Controls.Add(this.dgvComisiones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Comisiones";
             this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.Comisiones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
             this.tsmOpciones.ResumeLayout(false);
             this.tsmOpciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvComisiones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Desc_com;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Anio_Especialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_plan;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.ToolStrip tsmOpciones;
+        private tp2_netDataSet8 tp2_netDataSet8;
+        private System.Windows.Forms.BindingSource comisionesBindingSource;
+        private tp2_netDataSet8TableAdapters.comisionesTableAdapter comisionesTableAdapter;
+        private System.Windows.Forms.DataGridView dgvComisiones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Comision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Año_Especialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Plan;
     }
 }

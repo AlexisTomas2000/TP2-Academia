@@ -8,7 +8,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
-
 namespace UI.Web
 {
     public partial class Formulario_web11 : System.Web.UI.Page
@@ -63,6 +62,14 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             this.LoadGrid();
+            bool vuelta = false;
+            if (Request.QueryString.AllKeys.Contains("vuelta"))
+            {
+                Boolean.TryParse(Request.QueryString["vuelta"], out vuelta);
+            }
+            if(vuelta){
+                this.nuevoLinkButton_Click(sender,e);
+            }
         }
 
         private void LoadGrid()
@@ -186,6 +193,7 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
+            this.Panel1.Visible = false;
             this.formPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();

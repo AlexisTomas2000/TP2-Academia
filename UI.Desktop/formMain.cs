@@ -132,7 +132,7 @@ namespace UI.Desktop
         private void btnComisiones_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Comisiones comisiones = new Comisiones();
+            Comisiones comisiones = new Comisiones(Entity);
             comisiones.ShowDialog();
             this.Show();
         }
@@ -189,6 +189,11 @@ namespace UI.Desktop
             Comisiones comisiones = new Comisiones(Entity);
             comisiones.ShowDialog();
             this.Show();
+        }
+
+        private void tsbRepoCurso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
