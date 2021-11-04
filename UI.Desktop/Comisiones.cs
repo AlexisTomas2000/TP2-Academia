@@ -14,43 +14,45 @@ namespace UI.Desktop
 {
     public partial class Comisiones : Form
     {
-        private Business.Logic.ComisionLogic c1;
+        private Business.Logic.ComisionLogic _c1;
         private Business.Entities.Persona _entity;
 
         public Persona Entity { get => _entity; set => _entity = value; }
+        public ComisionLogic C1 { get => _c1; set => _c1 = value; }
 
         public Comisiones()
         {
             InitializeComponent();
         }
+        public void Listar()
+        {
+            this.dgvComisiones.AutoGenerateColumns = false;
+            this.C1 = new ComisionLogic();
+            this.dgvComisiones.DataSource = C1.GetAll();
+        }
 
         public Comisiones(Persona persona) : this() {
-            InitializeComponent();
             Entity = persona;      
         }
 
         private void Comisiones_Load(object sender, EventArgs e)
         {
+            this.Listar();
             if ((Entity.TipoPersona == 2 || Entity.TipoPersona==3))
             {
                this.tsmOpciones.Visible = true;
                 this.tsmOpciones.Enabled = true;
             }
-            listar();
+            
 
         }
-        public void listar()
-        {
-            this.dgvComisiones.AutoGenerateColumns = false;
-            this.c1 = new ComisionLogic();
-            this.dgvComisiones.DataSource = c1.GetAll();
-        }
+   
 
 
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            listar();
+            Listar();
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
@@ -99,5 +101,14 @@ namespace UI.Desktop
         }
         #endregion
 
+        private void dgvComisiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvComisiones_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
