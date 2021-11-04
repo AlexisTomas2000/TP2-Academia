@@ -18,6 +18,9 @@ namespace UI.Web
             get;
             set;
         }
+
+        private Usuario _usr;
+        public Usuario Usr { get => _usr; set => _usr = value; }
         private int SelectedID
         {
             get
@@ -62,6 +65,24 @@ namespace UI.Web
             }
 
         }
+        private UsuarioLogic _logic1;
+        private UsuarioLogic Logic1
+        {
+            get
+            {
+
+                if (_logic1 == null)
+                {
+                    _logic1 = new UsuarioLogic();
+                }
+
+                return _logic1;
+            }
+
+        }
+
+
+
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -136,7 +157,12 @@ namespace UI.Web
                     this.Entity.State = BusinessEntity.States.New;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
+                    this.Usr = new Usuario();
+                    this.Usr.State = BusinessEntity.States.New;
+                    this.LoadUsr(this.Usr);
+                    this.SaveUsr(this.Usr);
                     this.Actualizar();
+
                     this.Form.Visible = false;
                     
                     break;
@@ -182,6 +208,9 @@ namespace UI.Web
             this.direccionTextBox.Text = string.Empty;
             this.telefonoTextBox.Text = string.Empty;
             this.emailTextBox.Text = string.Empty;
+            this.NomUsuTextBox.Text = string.Empty;
+            this.contraseñaTextBox.Text= string.Empty;
+            this.repConTextBox.Text= string.Empty;
         }
 
         private void DeleteEntity(int id) {
@@ -190,6 +219,10 @@ namespace UI.Web
 
         private void SaveEntity(Persona per) {
             this.Logic.Save(per);
+        }
+
+        private void SaveUsr(Usuario usr) {
+            this.Logic1.Save(usr);
         }
 
         private void LoadEntity(Persona per) {
@@ -209,6 +242,17 @@ namespace UI.Web
             per.IDPlan = int.Parse(this.ddlPlan.Text);
         }
 
+        private void LoadUsr(Usuario usr) {
+            usr.Nombre = this.nombreTextBox.Text;
+            usr.Apellido = this.apellidoTextBox.Text;
+            usr.NombreUsuario = this.nombreTextBox.Text;
+            usr.Clave = this.contraseñaTextBox.Text;
+            usr.EMail = this.emailTextBox.Text;
+            PersonaLogic persona = new PersonaLogic();
+            usr.IdPersona = persona.Ult().ID;
+
+        }
+
         private void Actualizar() {
             if (ddlSelec.SelectedIndex == 1)
             {
@@ -224,6 +268,7 @@ namespace UI.Web
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
+                this.MostrarUsu(false);
                 this.LoadForm(this.SelectedID);
             }
         }
@@ -232,6 +277,7 @@ namespace UI.Web
         {
             if (this.isEntitySelected)
             {
+                this.MostrarUsu(false);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
@@ -241,6 +287,7 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
+            this.MostrarUsu(true);
             this.formPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
@@ -250,6 +297,17 @@ namespace UI.Web
         protected void idPersonaTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        public void MostrarUsu(bool enable) {
+            this.nomUsuLabel.Visible = enable;
+            this.conLabel.Visible = enable;
+            this.repConLabel.Visible = enable;
+            this.NomUsuTextBox.Visible = enable;
+            this.contraseñaTextBox.Visible = enable;
+            this.repConTextBox.Visible = enable;
+            this.NomUsuTextBox.CausesValidation = enable;
+            this.contraseñaTextBox.CausesValidation = enable;
+            this.repConTextBox.CausesValidation = enable;
         }
     }
 }
