@@ -200,11 +200,7 @@ namespace UI.Web
             per.Direccion = this.direccionTextBox.Text;
             per.FechaNacimiento = Convert.ToDateTime(this.fechaNacTextBox.Text);
             per.Telefono = this.telefonoTextBox.Text;
-            if (ddlSelec.SelectedIndex == 1)
-            {
-                per.TipoPersona = 2;
-            }
-            else { per.TipoPersona = 1; }
+            per.TipoPersona = int.Parse(this.ddlTP.SelectedValue);
             per.EMail = this.emailTextBox.Text;
             per.IDPlan = int.Parse(this.ddlPlan.Text);
         }
@@ -248,6 +244,11 @@ namespace UI.Web
         }
 
         protected void idPersonaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void repConTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
