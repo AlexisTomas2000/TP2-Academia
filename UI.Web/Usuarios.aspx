@@ -39,17 +39,15 @@ ErrorMessage="El nombre no puede ser vacío" ForeColor="Red">*</asp:RequiredFiel
         <asp:TextBox ID="emailTextBox" runat="server" Width="136px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="Email" runat="server" ControlToValidate="emailTextBox" ErrorMessage="El email no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="Label1" runat="server" Text="ID Persona:"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="ID Persona:" Visible="False"></asp:Label>
 &nbsp;<asp:TextBox ID="txtIdPersona" runat="server" TextMode="Number" Visible="False"></asp:TextBox>
         <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
-        &nbsp;&nbsp;
+        &nbsp;<br /> &nbsp;
         <br />
         <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
-        <asp:TextBox ID="nombreUsuarioTextBox" runat="server" Width="126px"></asp:TextBox>
-     <asp:RequiredFieldValidator ID="NombreUsuario" runat="server" ControlToValidate="nombreUsuarioTextBox"   
-ErrorMessage="El nombre de usuario no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <asp:TextBox ID="txtNU" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
         <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server" Width="138px"></asp:TextBox>
@@ -77,7 +75,6 @@ ErrorMessage="La clave repetida no puede ser vacía" ForeColor="Red">*</asp:Requ
     <asp:Panel ID="Panel2" runat="server">
         <asp:LinkButton ID="LinkButtonBuscar" runat="server" OnClick="LinkButtonBuscar_Click">Buscar</asp:LinkButton>
         &nbsp;
-        <asp:TextBox ID="txtBusN" runat="server" OnTextChanged="txtBusN_TextChanged1"></asp:TextBox>
         <asp:TextBox ID="txtBuscCla" runat="server" OnTextChanged="txtBuscCla_TextChanged1"></asp:TextBox>
     </asp:Panel>
 </asp:Content>

@@ -90,8 +90,17 @@ namespace UI.Web
             if(vuelta){
                 this.Panel1.Visible = false;
                 op = 1;
-                P = PLogic.Ult();
+                P = PLogic.Ult();              
                 this.nuevoLinkButton_Click(sender,e);
+            }
+            else {
+                this.txtIdPersona.Visible = true;
+                this.Label1.Visible = true;
+            }
+            if (op == 0)
+            {
+                this.txtIdPersona.Visible = true;
+                this.Label1.Visible = true;
             }
             if(!IsPostBack)
             {
@@ -115,7 +124,7 @@ namespace UI.Web
             this.apellidoTextBox.Text = this.Entity.Apellido;
             this.emailTextBox.Text = this.Entity.EMail;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.txtNU.Text = this.Entity.NombreUsuario;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,10 +159,9 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Clave = this.claveTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            
             if (op == 0) {
+   
                 usuario.Nombre = this.nombreTextBox.Text;
                 usuario.Apellido = this.apellidoTextBox.Text;
                 usuario.EMail = this.emailTextBox.Text;
@@ -161,24 +169,20 @@ namespace UI.Web
             }
             else
             {
-                this.txtIdPersona.Visible = false;
+                
                 usuario.Nombre = P.Nombre;
                 usuario.Apellido = P.Apellido;
                 usuario.EMail = P.EMail;
                 usuario.IdPersona = P.ID;
             }
-     
-           
-           
-        }
-        private void LoadEntityAlt(Usuario usuario)
-        {
-           
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
-            
+            usuario.NombreUsuario = this.txtNU.Text;
+            usuario.Clave = this.claveTextBox.Text;
+         
+
+
         }
+
 
         private void SaveEntity(Usuario usuario)
         {
@@ -211,12 +215,7 @@ namespace UI.Web
 
                     this.Entity = new Usuario();
                     this.Entity.State = BusinessEntity.States.New;
-                    if (op == 0)
-                    { 
                     this.LoadEntity(this.Entity);
-                    }
-                    else { this.LoadEntityAlt(this.Entity); }
-
                     this.SaveEntity(this.Entity);
                         this.LoadGrid();
                         this.formPanel.Visible = false;
@@ -233,10 +232,10 @@ namespace UI.Web
             this.nombreTextBox.Enabled = enable;
             this.apellidoTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
+            this.txtNU.Enabled = enable;
             this.claveTextBox.Visible = enable;
             this.claveLabel.Visible = enable;
-            this.txtBusN.Visible = enable;
+            this.txtNU.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
         }
 
@@ -246,7 +245,7 @@ namespace UI.Web
             this.apellidoTextBox.Text = string.Empty;
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
-            this.nombreUsuarioTextBox.Text = string.Empty;
+            this.txtNU.Text = string.Empty;
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
@@ -289,7 +288,7 @@ namespace UI.Web
 
         protected void LinkButtonBuscar_Click(object sender, EventArgs e)
         {
-            Session["Usu"] = Logic.FindOne(txtBusN.Text, txtBuscCla.Text);
+            Session["Usu"] = Logic.FindOne(txtNU.Text, txtBuscCla.Text);
             Entity = (Usuario)Session["Usu"];
             if (Entity!=null)
             {
