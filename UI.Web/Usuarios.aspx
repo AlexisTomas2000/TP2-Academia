@@ -39,6 +39,9 @@ ErrorMessage="El nombre no puede ser vacío" ForeColor="Red">*</asp:RequiredFiel
         <asp:TextBox ID="emailTextBox" runat="server" Width="136px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="Email" runat="server" ControlToValidate="emailTextBox" ErrorMessage="El email no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
+        <asp:Label ID="Label1" runat="server" Text="ID Persona:"></asp:Label>
+&nbsp;<asp:TextBox ID="txtIdPersona" runat="server" TextMode="Number" Visible="False"></asp:TextBox>
+        <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
         &nbsp;&nbsp;

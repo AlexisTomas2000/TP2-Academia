@@ -150,22 +150,34 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.EMail = this.emailTextBox.Text;
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            if (op == 0) {
+                usuario.Nombre = this.nombreTextBox.Text;
+                usuario.Apellido = this.apellidoTextBox.Text;
+                usuario.EMail = this.emailTextBox.Text;
+                usuario.IdPersona = int.Parse(this.txtIdPersona.Text);
+            }
+            else
+            {
+                this.txtIdPersona.Visible = false;
+                usuario.Nombre = P.Nombre;
+                usuario.Apellido = P.Apellido;
+                usuario.EMail = P.EMail;
+                usuario.IdPersona = P.ID;
+            }
+     
+           
+           
         }
         private void LoadEntityAlt(Usuario usuario)
         {
-            usuario.Nombre = P.Nombre;
-            usuario.Apellido = P.Apellido;
-            usuario.EMail = P.EMail;
+           
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
-            usuario.IdPersona = P.ID;
+            
         }
 
         private void SaveEntity(Usuario usuario)
