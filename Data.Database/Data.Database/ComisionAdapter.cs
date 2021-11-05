@@ -79,9 +79,12 @@ namespace Data.Database
         {
             try
             {
+                //abrimos la conexion
                 this.OpenConnection();
+                //creame la sentencia sql y asignamos un valor al parametro
                 SqlCommand cmdDelete = new SqlCommand("delete comisiones where id_comision=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -126,12 +129,14 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones(desc_comision,anio_especialidad,id_plan) " +
                     "VALUES(@desc_comision, @anio_especialidad, @id_plan) " +
-                    "SELECT @@identity", sqlConn);
+                    "SELECT @@identity"//esta linea es para recuperar el ID que asignó el sql automaticamente
+                    , sqlConn);
+                //cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = especialidad.ID;
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = com.ID;
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = com.Descripcion;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = com.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = com.IdPlan;
-                com.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                com.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());//asi se obtiene el ID que asigno al BD automaticamente
             }
             catch (Exception Ex)
             {
