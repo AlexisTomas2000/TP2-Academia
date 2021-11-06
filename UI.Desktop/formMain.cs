@@ -92,7 +92,6 @@ namespace UI.Desktop
                 tsbMaterias.Visible = true;
                 tsbPlanes.Visible = true;
                 //tsbRepoPlanes.Visible = true;
-                tsbCursos.Visible = true;
                 //tsbRepoCurso.Visible = true;
                 tsbEspecialidades.Visible = true;
            
@@ -115,7 +114,9 @@ namespace UI.Desktop
             tsbUsuarios.Visible = true;
             tsbDYC.Visible = true;
             tsbInscripciones.Visible = true;
-          //  tsbRepoPlanes.Visible = true;
+            tsbCursos.Visible = true;
+            tsbPersonas.Visible = true;
+            //  tsbRepoPlanes.Visible = true;
             tsbCursos.Visible = true;
             //tsbRepoCurso.Visible = true;
 
@@ -254,10 +255,18 @@ namespace UI.Desktop
 
         private void tsbInscripciones_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AlumnosInscripciones alIn = new AlumnosInscripciones(Entity);
-            alIn.ShowDialog();
-            this.Show();
+            if (Entity.TipoPersona==1)
+            {
+
+            }
+            else
+            {
+                this.Hide();
+                AlumnosInscripciones alIn = new AlumnosInscripciones(Entity);
+                alIn.ShowDialog();
+                this.Show();
+            }
+
         }
     }
 }
