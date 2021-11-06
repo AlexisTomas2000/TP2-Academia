@@ -68,10 +68,10 @@ namespace UI.Desktop
             this.Show();
         }
         private void MostrarUsu() { 
-                btnComisiones.Visible = true;
+                /*btnComisiones.Visible = true;
                 btnMaterias.Visible = true;
                 btnPlanes.Visible = true;
-                btnEspecialidades.Visible = true;
+                btnEspecialidades.Visible = true;*/
                 tsbComisiones.Visible = true;
                 tsbMaterias.Visible = true;
                 tsbPlanes.Visible = true;
@@ -80,12 +80,12 @@ namespace UI.Desktop
         }
 
         private void MostrarProfesor() {
-                btnComisiones.Visible = true;
+               /* btnComisiones.Visible = true;
                 btnMaterias.Visible = true;
                 btnPlanes.Visible = true;
                 btnEspecialidades.Visible = true;
                 btnCursos.Visible = true;
-                btnUsuarios.Visible = true;
+                btnUsuarios.Visible = true;*/
                 tsbUsuarios.Visible = true;
                 tsbInscripciones.Visible = true;
                 tsbComisiones.Visible = true;
@@ -99,14 +99,14 @@ namespace UI.Desktop
         }
         private void MostrarSuperAdmin()
         {
-            btnComisiones.Visible = true;
+           /* btnComisiones.Visible = true;
             btnMaterias.Visible = true;
             btnPlanes.Visible = true;
             btnEspecialidades.Visible = true;
             btnUsuarios.Visible = true;
             btnCursos.Visible = true;
             btbDC.Visible = true;
-            btnPersonas.Visible = true;
+            btnPersonas.Visible = true;*/
 
             tsbComisiones.Visible = true;
             tsbMaterias.Visible = true;
@@ -198,7 +198,10 @@ namespace UI.Desktop
 
         private void tsbPlanes_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Planes planes = new Planes(Entity);
+            planes.ShowDialog();
+            this.Show();
         }
 
         private void tsbCursos_Click(object sender, EventArgs e)
@@ -230,6 +233,14 @@ namespace UI.Desktop
             this.Hide();
             Materias mat = new Materias(Entity);
             mat.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbPersonas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Personas per = new Personas(Entity);
+            per.ShowDialog();
             this.Show();
         }
     }

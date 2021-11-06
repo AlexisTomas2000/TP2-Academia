@@ -31,6 +31,12 @@ namespace UI.Desktop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Personas));
             this.dgvPersona = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.cbEleccion = new System.Windows.Forms.ComboBox();
+            this.tsmOpciones = new System.Windows.Forms.ToolStrip();
+            this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,14 +47,8 @@ namespace UI.Desktop
             this.Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.cbEleccion = new System.Windows.Forms.ComboBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.tsmOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPersona
@@ -72,67 +72,6 @@ namespace UI.Desktop
             this.dgvPersona.Size = new System.Drawing.Size(945, 381);
             this.dgvPersona.TabIndex = 0;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Legajo
-            // 
-            this.Legajo.DataPropertyName = "Legajo";
-            this.Legajo.HeaderText = "Legajo";
-            this.Legajo.Name = "Legajo";
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "EMail";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // Fecha_Nacimiento
-            // 
-            this.Fecha_Nacimiento.DataPropertyName = "FechaNacimiento";
-            this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
-            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "IDPlan";
-            this.IDPlan.Name = "IDPlan";
-            // 
-            // Tipo_Persona
-            // 
-            this.Tipo_Persona.DataPropertyName = "TipoPersona";
-            this.Tipo_Persona.HeaderText = "Tipo_Persona";
-            this.Tipo_Persona.Name = "Tipo_Persona";
-            this.Tipo_Persona.Visible = false;
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(881, 415);
@@ -153,17 +92,19 @@ namespace UI.Desktop
             this.cbEleccion.Text = "Alumnos";
             this.cbEleccion.SelectedIndexChanged += new System.EventHandler(this.cbEleccion_SelectedIndexChanged);
             // 
-            // toolStrip1
+            // tsmOpciones
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOpciones.Enabled = false;
+            this.tsmOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAgregar,
             this.tsbEditar,
             this.tsbEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(968, 25);
-            this.toolStrip1.TabIndex = 6;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tsmOpciones.Location = new System.Drawing.Point(0, 0);
+            this.tsmOpciones.Name = "tsmOpciones";
+            this.tsmOpciones.Size = new System.Drawing.Size(968, 25);
+            this.tsmOpciones.TabIndex = 6;
+            this.tsmOpciones.Text = "toolStrip1";
+            this.tsmOpciones.Visible = false;
             // 
             // tsbAgregar
             // 
@@ -195,21 +136,93 @@ namespace UI.Desktop
             this.tsbEliminar.Text = "toolStripButton3";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 125;
+            // 
+            // Legajo
+            // 
+            this.Legajo.DataPropertyName = "Legajo";
+            this.Legajo.HeaderText = "Legajo";
+            this.Legajo.Name = "Legajo";
+            this.Legajo.Width = 75;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Width = 125;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "EMail";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.Width = 175;
+            // 
+            // Fecha_Nacimiento
+            // 
+            this.Fecha_Nacimiento.DataPropertyName = "FechaNacimiento";
+            this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
+            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
+            this.Fecha_Nacimiento.Width = 75;
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "IDPlan";
+            this.IDPlan.Name = "IDPlan";
+            this.IDPlan.Width = 50;
+            // 
+            // Tipo_Persona
+            // 
+            this.Tipo_Persona.DataPropertyName = "TipoPersona";
+            this.Tipo_Persona.HeaderText = "Tipo_Persona";
+            this.Tipo_Persona.Name = "Tipo_Persona";
+            this.Tipo_Persona.Visible = false;
+            // 
             // Personas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 450);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tsmOpciones);
             this.Controls.Add(this.cbEleccion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvPersona);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Personas";
             this.Text = "Persona";
             this.Load += new System.EventHandler(this.Persona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tsmOpciones.ResumeLayout(false);
+            this.tsmOpciones.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +232,11 @@ namespace UI.Desktop
 
         private System.Windows.Forms.DataGridView dgvPersona;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox cbEleccion;
+        private System.Windows.Forms.ToolStrip tsmOpciones;
+        private System.Windows.Forms.ToolStripButton tsbAgregar;
+        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -229,10 +247,5 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Nacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_Persona;
-        private System.Windows.Forms.ComboBox cbEleccion;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbAgregar;
-        private System.Windows.Forms.ToolStripButton tsbEditar;
-        private System.Windows.Forms.ToolStripButton tsbEliminar;
     }
 }

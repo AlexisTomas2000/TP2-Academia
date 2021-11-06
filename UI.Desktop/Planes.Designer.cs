@@ -30,7 +30,7 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planes));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsmOpciones = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
@@ -40,23 +40,24 @@ namespace UI.Desktop
             this.id_especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.tsbReporte = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1.SuspendLayout();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // tsmOpciones
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOpciones.Enabled = false;
+            this.tsmOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
-            this.tsbEliminar,
-            this.tsbReporte});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(644, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tsbEliminar});
+            this.tsmOpciones.Location = new System.Drawing.Point(0, 0);
+            this.tsmOpciones.Name = "tsmOpciones";
+            this.tsmOpciones.Size = new System.Drawing.Size(644, 25);
+            this.tsmOpciones.TabIndex = 0;
+            this.tsmOpciones.Text = "toolStrip1";
+            this.tsmOpciones.Visible = false;
             // 
             // tsbNuevo
             // 
@@ -150,32 +151,36 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // tsbReporte
+            // btnReportes
             // 
-            this.tsbReporte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReporte.Image = ((System.Drawing.Image)(resources.GetObject("tsbReporte.Image")));
-            this.tsbReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReporte.Name = "tsbReporte";
-            this.tsbReporte.Size = new System.Drawing.Size(23, 22);
-            this.tsbReporte.Text = "toolStripButton1";
-            this.tsbReporte.Click += new System.EventHandler(this.tsbReporte_Click);
+            this.btnReportes.Enabled = false;
+            this.btnReportes.Location = new System.Drawing.Point(13, 419);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(118, 23);
+            this.btnReportes.TabIndex = 4;
+            this.btnReportes.Text = "Generar Reporte";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Visible = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // Planes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 444);
+            this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvPlanes);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tsmOpciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Planes";
             this.Text = "Planes";
             this.Load += new System.EventHandler(this.Planes_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tsmOpciones.ResumeLayout(false);
+            this.tsmOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,7 +189,7 @@ namespace UI.Desktop
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip tsmOpciones;
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.ToolStripButton tsbEditar;
@@ -194,6 +199,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn id_plan;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_plan;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_especialidad;
-        private System.Windows.Forms.ToolStripButton tsbReporte;
+        private System.Windows.Forms.Button btnReportes;
     }
 }
