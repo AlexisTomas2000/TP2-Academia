@@ -38,7 +38,7 @@ namespace UI.Desktop
         private void Comisiones_Load(object sender, EventArgs e)
         {
             this.Listar();
-            if ((Entity.TipoPersona == 2 || Entity.TipoPersona==3))
+            if ((Entity.TipoPersona==3))
             {
                this.tsmOpciones.Visible = true;
                 this.tsmOpciones.Enabled = true;

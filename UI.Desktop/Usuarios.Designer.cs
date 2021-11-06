@@ -42,17 +42,17 @@ namespace UI.Desktop
             this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
+            this.tsmOpciones = new System.Windows.Forms.ToolStrip();
+            this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
             this.tlUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            this.tsUsuarios.SuspendLayout();
+            this.tsmOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcUsuarios
@@ -71,7 +71,7 @@ namespace UI.Desktop
             // 
             // tcUsuarios.TopToolStripPanel
             // 
-            this.tcUsuarios.TopToolStripPanel.Controls.Add(this.tsUsuarios);
+            this.tcUsuarios.TopToolStripPanel.Controls.Add(this.tsmOpciones);
             // 
             // tlUsuarios
             // 
@@ -184,17 +184,29 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // tsUsuarios
+            // tsmOpciones
             // 
-            this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOpciones.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsmOpciones.Enabled = false;
+            this.tsmOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAgregar,
             this.tsbEditar,
             this.tsbEliminar});
-            this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
-            this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(112, 25);
-            this.tsUsuarios.TabIndex = 0;
+            this.tsmOpciones.Location = new System.Drawing.Point(3, 0);
+            this.tsmOpciones.Name = "tsmOpciones";
+            this.tsmOpciones.Size = new System.Drawing.Size(112, 25);
+            this.tsmOpciones.TabIndex = 0;
+            this.tsmOpciones.Visible = false;
+            // 
+            // tsbAgregar
+            // 
+            this.tsbAgregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAgregar.Image = ((System.Drawing.Image)(resources.GetObject("tsbAgregar.Image")));
+            this.tsbAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAgregar.Name = "tsbAgregar";
+            this.tsbAgregar.Size = new System.Drawing.Size(23, 22);
+            this.tsbAgregar.Text = "toolStripButton1";
+            this.tsbAgregar.Click += new System.EventHandler(this.tsbAgregar_Click);
             // 
             // tsbEditar
             // 
@@ -218,16 +230,6 @@ namespace UI.Desktop
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // tsbAgregar
-            // 
-            this.tsbAgregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAgregar.Image = ((System.Drawing.Image)(resources.GetObject("tsbAgregar.Image")));
-            this.tsbAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAgregar.Name = "tsbAgregar";
-            this.tsbAgregar.Size = new System.Drawing.Size(23, 22);
-            this.tsbAgregar.Text = "toolStripButton1";
-            this.tsbAgregar.Click += new System.EventHandler(this.tsbAgregar_Click);
-            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +237,9 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(749, 488);
             this.Controls.Add(this.tcUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Usuarios";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -245,8 +250,8 @@ namespace UI.Desktop
             this.tcUsuarios.PerformLayout();
             this.tlUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            this.tsUsuarios.ResumeLayout(false);
-            this.tsUsuarios.PerformLayout();
+            this.tsmOpciones.ResumeLayout(false);
+            this.tsmOpciones.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,7 +260,7 @@ namespace UI.Desktop
 
         private System.Windows.Forms.ToolStripContainer tcUsuarios;
         private System.Windows.Forms.TableLayoutPanel tlUsuarios;
-        private System.Windows.Forms.ToolStrip tsUsuarios;
+        private System.Windows.Forms.ToolStrip tsmOpciones;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btnActualizar;

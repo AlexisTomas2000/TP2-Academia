@@ -165,6 +165,10 @@ namespace UI.Desktop
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvAluIns);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AlumnosInscripciones";
             this.Text = "AlumnosInscripciones";
             this.Load += new System.EventHandler(this.AlumnosInscripciones_Load);

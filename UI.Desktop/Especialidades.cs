@@ -16,15 +16,28 @@ namespace UI.Desktop
     public partial class Especialidades : Form
     {
         private Business.Logic.EspecialidadLogic e1;
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         public Especialidades()
         {
             InitializeComponent();
-            listar();
+        }
+
+        public Especialidades(Persona entity): this()
+        {
+            Entity = entity;
         }
 
         private void Especialidades_Load(object sender, EventArgs e)
         {
             listar();
+            if (Entity.TipoPersona == 3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
         }
 
         public void listar()
@@ -34,16 +47,42 @@ namespace UI.Desktop
             this.dgvEspecialidades.DataSource = e1.GetAll();
         }
 
-        private void dgvEspecialidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
             listar();
         }
 
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsbAgregar_Click(object sender, EventArgs e)
+        {
+            EspecialidadDesktop espe = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
+            espe.ShowDialog();
+            this.listar();
+        }
+
+        private void tsbEditar_Click_1(object sender, EventArgs e)
+        {
+            int id = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+            EspecialidadDesktop espe = new EspecialidadDesktop(id, ApplicationForm.ModoForm.Modificacion);
+            espe.ShowDialog();
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            int id = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+            EspecialidadDesktop espe = new EspecialidadDesktop(id, ApplicationForm.ModoForm.Baja);
+            espe.ShowDialog();
+        }
+
+        #region BNR
         private void tsdOpciones_Click(object sender, EventArgs e)
         {
 
@@ -51,34 +90,27 @@ namespace UI.Desktop
 
         private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EspecialidadDesktop espe = new EspecialidadDesktop(ApplicationForm.ModoForm.Modificacion);
-            espe.ShowDialog();
+
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int id = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
-            EspecialidadDesktop espe = new EspecialidadDesktop(id, ApplicationForm.ModoForm.Modificacion);
-            espe.ShowDialog();
+
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            EspecialidadDesktop espe = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
-            espe.ShowDialog();
-            this.listar();
+
         }
 
         private void tsbDelete_Click(object sender, EventArgs e)
         {
-            int id = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
-            EspecialidadDesktop espe = new EspecialidadDesktop(id, ApplicationForm.ModoForm.Baja);
-            espe.ShowDialog();
-        }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
+        private void dgvEspecialidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

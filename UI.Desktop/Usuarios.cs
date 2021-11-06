@@ -16,13 +16,28 @@ namespace UI.Desktop
     {
         
         private Business.Logic.UsuarioLogic u1;
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
+
+
         public Usuarios()
         {
             InitializeComponent();
         }
+        public Usuarios(Persona entity):this()
+        {
+            Entity = entity;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Entity.TipoPersona == 3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
             Listar();
         }
         public void Listar()

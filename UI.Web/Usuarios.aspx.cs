@@ -10,20 +10,24 @@ using Business.Entities;
 using Business.Logic;
 namespace UI.Web
 {
-    public partial class Formulario_web11 : System.Web.UI.Page
+    public partial class Usuarios : System.Web.UI.Page
     {
         #region Props
-        private int op=0;
-        private Usuario Entity {
+        private int op = 0;
+        private Usuario Entity
+        {
             get;
             set;
         }
-        private int SelectedID {
-            get {
+        private int SelectedID
+        {
+            get
+            {
                 if (this.ViewState["SelectedID"] != null) { return (int)this.ViewState["SelectedID"]; }
                 else { return 0; }
             }
-            set {
+            set
+            {
                 this.ViewState["SelectedID"] = value;
             }
         }
@@ -68,7 +72,8 @@ namespace UI.Web
             get
             {
 
-                if (_logic == null) {
+                if (_logic == null)
+                {
                     _logic = new UsuarioLogic();
                 }
 
@@ -81,31 +86,24 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           this.LoadGrid();
+            this.LoadGrid();
             bool vuelta = false;
             if (Request.QueryString.AllKeys.Contains("vuelta"))
             {
                 Boolean.TryParse(Request.QueryString["vuelta"], out vuelta);
             }
-            if(vuelta){
-                this.Panel1.Visible = false;
-                op = 1;
-                P = PLogic.Ult();              
-                this.nuevoLinkButton_Click(sender,e);
-            }
-            else {
-                this.txtIdPersona.Visible = true;
-                this.Label1.Visible = true;
-            }
-            if (op == 0)
+            if (vuelta)
             {
-                this.txtIdPersona.Visible = true;
-                this.Label1.Visible = true;
+                this.Panel_1.Visible = true;
+                op = 1;
+                P = PLogic.Ult();
+                this.nuevoLinkButton_Click(sender, e);
             }
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 Session["Usu"] = null;
-            }else if (Session["Usu"]!=null)
+            }
+            else if (Session["Usu"] != null)
             {
                 this.EnableForm(true);
                 Entity = (Usuario)Session["Usu"];
@@ -118,13 +116,14 @@ namespace UI.Web
             this.gridView.DataBind();
         }
 
-        private void LoadForm(int id) {
+        private void LoadForm(int id)
+        {
             this.Entity = this.Logic.GetOne(id);
             this.nombreTextBox.Text = this.Entity.Nombre;
             this.apellidoTextBox.Text = this.Entity.Apellido;
             this.emailTextBox.Text = this.Entity.EMail;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.txtNU.Text = this.Entity.NombreUsuario;
+            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,9 +158,11 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            
-            if (op == 0) {
-   
+            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
+            usuario.Clave = this.claveTextBox.Text;
+            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            if (op == 0)
+            {
                 usuario.Nombre = this.nombreTextBox.Text;
                 usuario.Apellido = this.apellidoTextBox.Text;
                 usuario.EMail = this.emailTextBox.Text;
@@ -169,20 +170,24 @@ namespace UI.Web
             }
             else
             {
-                
+                this.txtIdPersona.Visible = false;
                 usuario.Nombre = P.Nombre;
                 usuario.Apellido = P.Apellido;
                 usuario.EMail = P.EMail;
                 usuario.IdPersona = P.ID;
             }
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
-            usuario.NombreUsuario = this.txtNU.Text;
-            usuario.Clave = this.claveTextBox.Text;
-         
+
 
 
         }
+        private void LoadEntityAlt(Usuario usuario)
+        {
 
+            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
+            usuario.Clave = this.claveTextBox.Text;
+            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+
+        }
 
         private void SaveEntity(Usuario usuario)
         {
@@ -215,13 +220,18 @@ namespace UI.Web
 
                     this.Entity = new Usuario();
                     this.Entity.State = BusinessEntity.States.New;
-                    this.LoadEntity(this.Entity);
+                    if (op == 0)
+                    {
+                        this.LoadEntity(this.Entity);
+                    }
+                    else { this.LoadEntityAlt(this.Entity); }
+
                     this.SaveEntity(this.Entity);
-                        this.LoadGrid();
-                        this.formPanel.Visible = false;
-       
+                    this.LoadGrid();
+                    this.formPanel.Visible = false;
+
                     break;
-                    default:
+                default:
                     break;
             }
         }
@@ -232,10 +242,10 @@ namespace UI.Web
             this.nombreTextBox.Enabled = enable;
             this.apellidoTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
-            this.txtNU.Enabled = enable;
+            this.nombreUsuarioTextBox.Enabled = enable;
             this.claveTextBox.Visible = enable;
             this.claveLabel.Visible = enable;
-            this.txtNU.Visible = enable;
+            this.txtBusN.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
         }
 
@@ -245,12 +255,12 @@ namespace UI.Web
             this.apellidoTextBox.Text = string.Empty;
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
-            this.txtNU.Text = string.Empty;
+            this.nombreUsuarioTextBox.Text = string.Empty;
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
-           
+
             this.formPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
@@ -288,12 +298,12 @@ namespace UI.Web
 
         protected void LinkButtonBuscar_Click(object sender, EventArgs e)
         {
-            Session["Usu"] = Logic.FindOne(txtNU.Text, txtBuscCla.Text);
+            Session["Usu"] = Logic.FindOne(txtBusN.Text, txtBuscCla.Text);
             Entity = (Usuario)Session["Usu"];
-            if (Entity!=null)
+            if (Entity != null)
             {
                 this.formPanel.Visible = true;
-               // this.FormMode = FormModes.Modificacion;
+                // this.FormMode = FormModes.Modificacion;
                 this.LoadForm(Entity.ID);
             }
 

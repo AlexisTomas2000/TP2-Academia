@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Formulario_web11" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="Panel1" runat="server">
+    <asp:Panel ID="Panel_1" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
             DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
@@ -80,6 +80,3 @@ ErrorMessage="La clave repetida no puede ser vacía" ForeColor="Red">*</asp:Requ
 </asp:Content>
 
 
-
-
- 

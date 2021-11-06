@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,33 @@ namespace UI.Desktop
     public partial class DocentesCursos : Form
     {
         private Business.Logic.DocenteCursoLogic dc;
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
+
+
         public DocentesCursos()
         {
             InitializeComponent();
         }
 
+        public DocentesCursos(Persona entity) : this()
+        {
+            Entity = entity;
+        }
+
         private void DocenteCurso_Load(object sender, EventArgs e)
         {
             listar();
+            if (Entity.TipoPersona == 3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
         }
+
+        
         public void listar()
         {
             this.dgvDocCur.AutoGenerateColumns = false;

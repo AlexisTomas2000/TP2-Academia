@@ -68,10 +68,10 @@ namespace UI.Desktop
             this.Show();
         }
         private void MostrarUsu() { 
-                btnComisiones.Visible = true;
+                /*btnComisiones.Visible = true;
                 btnMaterias.Visible = true;
                 btnPlanes.Visible = true;
-                btnEspecialidades.Visible = true;
+                btnEspecialidades.Visible = true;*/
                 tsbComisiones.Visible = true;
                 tsbMaterias.Visible = true;
                 tsbPlanes.Visible = true;
@@ -80,33 +80,33 @@ namespace UI.Desktop
         }
 
         private void MostrarProfesor() {
-                btnComisiones.Visible = true;
+               /* btnComisiones.Visible = true;
                 btnMaterias.Visible = true;
                 btnPlanes.Visible = true;
                 btnEspecialidades.Visible = true;
                 btnCursos.Visible = true;
-                btnUsuarios.Visible = true;
+                btnUsuarios.Visible = true;*/
                 tsbUsuarios.Visible = true;
                 tsbInscripciones.Visible = true;
                 tsbComisiones.Visible = true;
                 tsbMaterias.Visible = true;
                 tsbPlanes.Visible = true;
-                tsbRepoPlanes.Visible = true;
+                //tsbRepoPlanes.Visible = true;
                 tsbCursos.Visible = true;
-                tsbRepoCurso.Visible = true;
+                //tsbRepoCurso.Visible = true;
                 tsbEspecialidades.Visible = true;
            
         }
         private void MostrarSuperAdmin()
         {
-            btnComisiones.Visible = true;
+           /* btnComisiones.Visible = true;
             btnMaterias.Visible = true;
             btnPlanes.Visible = true;
             btnEspecialidades.Visible = true;
             btnUsuarios.Visible = true;
             btnCursos.Visible = true;
             btbDC.Visible = true;
-            btnPersonas.Visible = true;
+            btnPersonas.Visible = true;*/
 
             tsbComisiones.Visible = true;
             tsbMaterias.Visible = true;
@@ -115,9 +115,9 @@ namespace UI.Desktop
             tsbUsuarios.Visible = true;
             tsbDYC.Visible = true;
             tsbInscripciones.Visible = true;
-            tsbRepoPlanes.Visible = true;
+          //  tsbRepoPlanes.Visible = true;
             tsbCursos.Visible = true;
-            tsbRepoCurso.Visible = true;
+            //tsbRepoCurso.Visible = true;
 
         }
         #region btns
@@ -194,6 +194,62 @@ namespace UI.Desktop
         private void tsbRepoCurso_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsbPlanes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Planes planes = new Planes(Entity);
+            planes.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbCursos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cursos cursos = new Cursos(Entity);
+            cursos.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbDYC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DocentesCursos docCur = new DocentesCursos(Entity);
+            docCur.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbEspecialidades_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Especialidades esp = new Especialidades(Entity);
+            esp.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbMaterias_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Materias mat = new Materias(Entity);
+            mat.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbPersonas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Personas per = new Personas(Entity);
+            per.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Usuarios usr = new Usuarios(Entity);
+            usr.ShowDialog();
+            this.Show();
         }
     }
 }

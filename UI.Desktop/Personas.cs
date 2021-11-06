@@ -16,12 +16,27 @@ namespace UI.Desktop
     public partial class Personas : Form
     {
         private Business.Logic.PersonaLogic u1;
+        private Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
+
+
         public Personas()
         {
             InitializeComponent();
         }
+        public Personas(Persona entity) : this()
+        {
+            Entity = entity;
+        }
         private void Persona_Load(object sender, EventArgs e)
         {
+            if (Entity.TipoPersona == 3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
             cbEleccion.Items.Add("Alumnos");
             cbEleccion.Items.Add("Profesores");
             //cbEleccion.SelectedIndex = 1;
