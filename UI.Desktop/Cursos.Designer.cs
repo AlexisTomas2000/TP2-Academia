@@ -42,6 +42,7 @@ namespace UI.Desktop
             this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             this.SuspendLayout();
@@ -159,11 +160,24 @@ namespace UI.Desktop
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnReportes
+            // 
+            this.btnReportes.Enabled = false;
+            this.btnReportes.Location = new System.Drawing.Point(12, 415);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(139, 23);
+            this.btnReportes.TabIndex = 4;
+            this.btnReportes.Text = "Generar Reportes";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Visible = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 450);
+            this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvCursos);
@@ -197,5 +211,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cupo;
+        private System.Windows.Forms.Button btnReportes;
     }
 }

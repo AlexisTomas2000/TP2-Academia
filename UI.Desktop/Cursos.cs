@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
+using UI.Desktop.frm_Informes;
 
 namespace UI.Desktop
 {
@@ -49,6 +50,12 @@ namespace UI.Desktop
                 this.tsmOpciones.Visible = true;
                 this.tsmOpciones.Enabled = true;
             }
+
+            if (Entity.TipoPersona == 2 || Entity.TipoPersona == 3)
+            {
+                btnReportes.Visible = true;
+                btnReportes.Enabled = true;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -75,6 +82,12 @@ namespace UI.Desktop
             int id = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
             CursosDesktop curs = new CursosDesktop(id,ApplicationForm.ModoForm.Baja);
             curs.ShowDialog();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            ReporteCursos r = new ReporteCursos();
+            r.ShowDialog();
         }
     }
 }

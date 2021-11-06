@@ -16,6 +16,11 @@ namespace UI.Desktop
     {
         private Business.Entities.AlumnoInscripcion _AIActual;
         public Business.Entities.AlumnoInscripcion AIActual { get=>_AIActual; set=>this._AIActual=value; }
+
+
+        private Business.Entities.Persona _entity;
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         private void AlumnosInscripcionesDesktop_Load(object sender, EventArgs e)
         {
             txtID.Visible = false;
@@ -56,6 +61,12 @@ namespace UI.Desktop
             AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
             AIActual = ail.GetOne(ida,idc);
             this.MapearDeDatos();
+        }
+
+        public AlumnosInscripcionesDesktop(Persona per, ModoForm modo) : this() {
+            Entity = per;
+            this.Modo = modo;
+            //AIActual=
         }
         public override void MapearDeDatos()
         {
