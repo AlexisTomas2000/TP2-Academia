@@ -27,7 +27,7 @@ namespace UI.Desktop
             this.Modo = modo;
         }
 
-        public DocenteCursoDesktop(int id, ModoForm modo)
+        public DocenteCursoDesktop(int id, ModoForm modo) : this()
         {
             this.Modo = modo;
             DocenteCursoLogic dcl =new  DocenteCursoLogic();
@@ -87,7 +87,7 @@ namespace UI.Desktop
                     {
                         this.DcActual.ID = int.Parse(txtID.Text);
                         this.DcActual.IDCurso = int.Parse(cbIDcurso.SelectedValue.ToString());
-                        this.DcActual.Cargo = int.Parse(cbCargo.SelectedValue.ToString());
+                        this.DcActual.Cargo = int.Parse(cbCargo.SelectedIndex.ToString());
                         this.DcActual.IDDocente = int.Parse(this.txtIDdoc.Text);
                         DcActual.State = BusinessEntity.States.Modified;
                         break;
@@ -96,7 +96,7 @@ namespace UI.Desktop
                     {
                         this.DcActual.ID = int.Parse(txtID.Text);
                         this.DcActual.IDCurso = int.Parse(cbIDcurso.SelectedValue.ToString());
-                        this.DcActual.Cargo = int.Parse(cbCargo.SelectedValue.ToString());
+                        this.DcActual.Cargo = int.Parse(cbCargo.SelectedIndex.ToString());
                         this.DcActual.IDDocente = int.Parse(this.txtIDdoc.Text);
                         DcActual.State = BusinessEntity.States.Deleted;
                         break;
@@ -130,7 +130,7 @@ namespace UI.Desktop
         public override bool Validar()
         {
            bool rta = false;
-            Regex rx = new Regex(@"^[0-9]{1,4}$");
+            Regex rx = new Regex(@"^[0-9]{1,5}$");
             if (!txtIDdoc.Text.Equals("")) { 
                 if(rx.IsMatch(txtIDdoc.Text))
                 {
@@ -149,7 +149,7 @@ namespace UI.Desktop
                         }
                         else { MessageBox.Show("El id ingresado no es de un profesor"); }
 
-                    } else { MessageBox.Show("El id ingresado no existe o es mayor a 4 digitos"); }
+                    } else { MessageBox.Show("El id ingresado no existe o es mayor a 5 digitos"); }
                 }
                 else { MessageBox.Show("El id ingresado debe tener solo numeros"); }
             }

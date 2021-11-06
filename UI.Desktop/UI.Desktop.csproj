@@ -227,6 +227,9 @@
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="tp2_netDataSet.cs">
+      <DependentUpon>tp2_netDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tp2_netDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

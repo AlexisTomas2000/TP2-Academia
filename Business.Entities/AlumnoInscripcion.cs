@@ -12,6 +12,7 @@ namespace Business.Entities
         private int _IDCurso;
         private int _Nota;
         private Boolean _Disable;
+        private Persona entity;
 
         public AlumnoInscripcion()
         {
@@ -21,6 +22,12 @@ namespace Business.Entities
         {
             IDAlumno = int.Parse(idalumno);
         }
+
+        public AlumnoInscripcion(Persona entity)
+        {
+            this.entity = entity;
+        }
+
         public AlumnoInscripcion(string curso,string nota,string condicion,Boolean disable)
         {
             IDCurso = int.Parse(curso);
