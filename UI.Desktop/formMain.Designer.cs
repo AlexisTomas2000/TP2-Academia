@@ -52,7 +52,7 @@ namespace UI.Desktop
             this.mnuArchivo});
             this.mnsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnsPrincipal.Name = "mnsPrincipal";
-            this.mnsPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.mnsPrincipal.Size = new System.Drawing.Size(897, 24);
             this.mnsPrincipal.TabIndex = 1;
             this.mnsPrincipal.Text = "menuStrip1";
             this.mnsPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnsPrincipal_ItemClicked);
@@ -140,7 +140,7 @@ namespace UI.Desktop
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 424);
+            this.panel1.Size = new System.Drawing.Size(897, 481);
             this.panel1.TabIndex = 14;
             // 
             // tsbCursos
@@ -156,7 +156,7 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(897, 510);
             this.Controls.Add(this.mnsPrincipal);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
