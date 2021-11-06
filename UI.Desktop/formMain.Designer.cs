@@ -112,6 +112,7 @@ namespace UI.Desktop
             this.tsbMaterias.Size = new System.Drawing.Size(180, 22);
             this.tsbMaterias.Text = "Materias";
             this.tsbMaterias.Visible = false;
+            this.tsbMaterias.Click += new System.EventHandler(this.tsbMaterias_Click);
             // 
             // tsbEspecialidades
             // 
@@ -119,6 +120,7 @@ namespace UI.Desktop
             this.tsbEspecialidades.Size = new System.Drawing.Size(180, 22);
             this.tsbEspecialidades.Text = "Especialidades";
             this.tsbEspecialidades.Visible = false;
+            this.tsbEspecialidades.Click += new System.EventHandler(this.tsbEspecialidades_Click);
             // 
             // tsbCursos
             // 
@@ -133,7 +135,7 @@ namespace UI.Desktop
             // tsbRepoCurso
             // 
             this.tsbRepoCurso.Name = "tsbRepoCurso";
-            this.tsbRepoCurso.Size = new System.Drawing.Size(180, 22);
+            this.tsbRepoCurso.Size = new System.Drawing.Size(168, 22);
             this.tsbRepoCurso.Text = "Reporte de cursos";
             this.tsbRepoCurso.Visible = false;
             this.tsbRepoCurso.Click += new System.EventHandler(this.tsbRepoCurso_Click);

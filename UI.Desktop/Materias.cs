@@ -15,20 +15,29 @@ namespace UI.Desktop
     public partial class Materias : Form
     {
         private Business.Logic.MateriaLogic m1;
-        public Persona Persona { get; set; }
+        private Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         public Materias()
         {
             InitializeComponent();
-            listar();
         }
 
-        public Materias(Business.Entities.Persona per) {
-            this.Persona = per;
+        public Materias( Persona entity):this()
+        {
+
+            Entity = entity;
         }
 
         private void Materias_Load(object sender, EventArgs e)
         {
             listar();
+            if (Entity.TipoPersona == 3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
         }
         public void listar()
         {

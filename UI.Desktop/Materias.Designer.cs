@@ -36,7 +36,7 @@ namespace UI.Desktop
             this.Desc_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hs_Sem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hs_Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsmOpciones = new System.Windows.Forms.ToolStrip();
             this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -44,7 +44,7 @@ namespace UI.Desktop
             this.btnSalir = new System.Windows.Forms.Button();
             this.dataSet21 = new UI.Desktop.DataSet.DataSet2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,18 +105,20 @@ namespace UI.Desktop
             this.Hs_Totales.Name = "Hs_Totales";
             this.Hs_Totales.ReadOnly = true;
             // 
-            // toolStrip1
+            // tsmOpciones
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOpciones.Enabled = false;
+            this.tsmOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAgregar,
             this.tsbEditar,
             this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(654, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            this.tsmOpciones.Location = new System.Drawing.Point(0, 0);
+            this.tsmOpciones.Name = "tsmOpciones";
+            this.tsmOpciones.Size = new System.Drawing.Size(654, 25);
+            this.tsmOpciones.TabIndex = 1;
+            this.tsmOpciones.Text = "toolStrip1";
+            this.tsmOpciones.Visible = false;
+            this.tsmOpciones.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // tsbAgregar
             // 
@@ -180,14 +182,17 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(654, 482);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tsmOpciones);
             this.Controls.Add(this.dgvMaterias);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Materias";
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.Materias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tsmOpciones.ResumeLayout(false);
+            this.tsmOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,7 +202,7 @@ namespace UI.Desktop
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMaterias;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip tsmOpciones;
         private System.Windows.Forms.ToolStripButton tsbAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Plan;

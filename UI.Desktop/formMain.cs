@@ -216,5 +216,21 @@ namespace UI.Desktop
             docCur.ShowDialog();
             this.Show();
         }
+
+        private void tsbEspecialidades_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Especialidades esp = new Especialidades(Entity);
+            esp.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbMaterias_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Materias mat = new Materias(Entity);
+            mat.ShowDialog();
+            this.Show();
+        }
     }
 }
