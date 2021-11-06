@@ -29,6 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanDesktop));
             this.txtID = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.Label();
             this.txtIDE = new System.Windows.Forms.Label();
@@ -110,6 +111,9 @@ namespace UI.Desktop
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PlanDesktop";
             this.Text = "PlanesDesktop";
             this.Load += new System.EventHandler(this.PlanesDesktop_Load);

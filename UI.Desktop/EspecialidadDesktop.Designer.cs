@@ -29,6 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EspecialidadDesktop));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -90,8 +91,11 @@ namespace UI.Desktop
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnAceptar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EspecialidadDesktop";
-            this.Text = "Carga";
+            this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.CargaEsp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

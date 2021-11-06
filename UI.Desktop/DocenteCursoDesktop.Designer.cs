@@ -29,6 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocenteCursoDesktop));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtIDdoc = new System.Windows.Forms.TextBox();
             this.cbIDcurso = new System.Windows.Forms.ComboBox();
@@ -151,6 +152,9 @@ namespace UI.Desktop
             this.Controls.Add(this.cbIDcurso);
             this.Controls.Add(this.txtIDdoc);
             this.Controls.Add(this.txtID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DocenteCursoDesktop";
             this.Text = "DocenteCursoDesktop";
             this.Load += new System.EventHandler(this.DocenteCursoDesktop_Load);
