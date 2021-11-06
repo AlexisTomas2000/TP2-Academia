@@ -251,5 +251,13 @@ namespace UI.Desktop
             usr.ShowDialog();
             this.Show();
         }
+
+        private void tsbInscripciones_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AlumnosInscripciones alIn = new AlumnosInscripciones(Entity);
+            alIn.ShowDialog();
+            this.Show();
+        }
     }
 }

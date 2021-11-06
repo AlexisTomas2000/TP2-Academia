@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,18 @@ namespace UI.Desktop
     public partial class AlumnosInscripciones : Form
     {
         private Business.Logic.AlumnoInscripcionLogic _AI;
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         public AlumnosInscripciones()
         {
             InitializeComponent();
+        }
+
+        public AlumnosInscripciones(Persona entity): this()
+        {
+            Entity = entity;
         }
 
         private void AlumnosInscripciones_Load(object sender, EventArgs e)

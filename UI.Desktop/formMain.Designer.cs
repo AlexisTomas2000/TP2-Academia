@@ -36,12 +36,12 @@ namespace UI.Desktop
             this.tsbPlanes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbPersonas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDYC = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbInscripciones = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tsbCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,14 @@ namespace UI.Desktop
             this.tsbEspecialidades.Visible = false;
             this.tsbEspecialidades.Click += new System.EventHandler(this.tsbEspecialidades_Click);
             // 
+            // tsbCursos
+            // 
+            this.tsbCursos.Name = "tsbCursos";
+            this.tsbCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsbCursos.Text = "Cursos";
+            this.tsbCursos.Visible = false;
+            this.tsbCursos.Click += new System.EventHandler(this.tsbCursos_Click);
+            // 
             // tsbUsuarios
             // 
             this.tsbUsuarios.Name = "tsbUsuarios";
@@ -134,6 +142,7 @@ namespace UI.Desktop
             this.tsbInscripciones.Name = "tsbInscripciones";
             this.tsbInscripciones.Size = new System.Drawing.Size(180, 22);
             this.tsbInscripciones.Text = "Inscripciones";
+            this.tsbInscripciones.Click += new System.EventHandler(this.tsbInscripciones_Click);
             // 
             // panel1
             // 
@@ -143,14 +152,6 @@ namespace UI.Desktop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(897, 481);
             this.panel1.TabIndex = 14;
-            // 
-            // tsbCursos
-            // 
-            this.tsbCursos.Name = "tsbCursos";
-            this.tsbCursos.Size = new System.Drawing.Size(180, 22);
-            this.tsbCursos.Text = "Cursos";
-            this.tsbCursos.Visible = false;
-            this.tsbCursos.Click += new System.EventHandler(this.tsbCursos_Click);
             // 
             // formMain
             // 
