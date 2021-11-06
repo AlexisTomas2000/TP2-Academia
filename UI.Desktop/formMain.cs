@@ -243,5 +243,13 @@ namespace UI.Desktop
             per.ShowDialog();
             this.Show();
         }
+
+        private void tsbUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Usuarios usr = new Usuarios(Entity);
+            usr.ShowDialog();
+            this.Show();
+        }
     }
 }

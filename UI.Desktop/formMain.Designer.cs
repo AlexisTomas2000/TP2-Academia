@@ -111,6 +111,7 @@ namespace UI.Desktop
             this.tsbUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsbUsuarios.Text = "Usuarios";
             this.tsbUsuarios.Visible = false;
+            this.tsbUsuarios.Click += new System.EventHandler(this.tsbUsuarios_Click);
             // 
             // tsbPersonas
             // 
@@ -161,6 +162,7 @@ namespace UI.Desktop
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsPrincipal;
             this.MaximizeBox = false;
