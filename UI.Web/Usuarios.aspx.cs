@@ -14,7 +14,7 @@ namespace UI.Web
     {
         #region Props
         private int op = 0;
-        private Usuario Entity
+        private Business.Entities.Usuario Entity
         {
             get;
             set;
@@ -123,7 +123,7 @@ namespace UI.Web
             this.apellidoTextBox.Text = this.Entity.Apellido;
             this.emailTextBox.Text = this.Entity.EMail;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.txtNU.Text = this.Entity.NombreUsuario;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,7 +158,7 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
+            usuario.NombreUsuario = this.txtNU.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
             if (op == 0)
@@ -183,7 +183,7 @@ namespace UI.Web
         private void LoadEntityAlt(Usuario usuario)
         {
 
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
+            usuario.NombreUsuario = this.txtNU.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
 
@@ -242,7 +242,7 @@ namespace UI.Web
             this.nombreTextBox.Enabled = enable;
             this.apellidoTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
+            this.txtNU.Enabled = enable;
             this.claveTextBox.Visible = enable;
             this.claveLabel.Visible = enable;
             this.txtBusN.Visible = enable;
@@ -255,7 +255,7 @@ namespace UI.Web
             this.apellidoTextBox.Text = string.Empty;
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
-            this.nombreUsuarioTextBox.Text = string.Empty;
+            this.txtNU.Text = string.Empty;
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
@@ -296,7 +296,7 @@ namespace UI.Web
 
         }
 
-        protected void LinkButtonBuscar_Click(object sender, EventArgs e)
+        /*protected void LinkButtonBuscar_Click(object sender, EventArgs e)
         {
             Session["Usu"] = Logic.FindOne(txtBusN.Text, txtBuscCla.Text);
             Entity = (Usuario)Session["Usu"];
@@ -307,6 +307,6 @@ namespace UI.Web
                 this.LoadForm(Entity.ID);
             }
 
-        }
+        }*/
     }
 }

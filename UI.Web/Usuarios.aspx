@@ -75,7 +75,7 @@ ErrorMessage="La clave repetida no puede ser vacía" ForeColor="Red">*</asp:Requ
     <asp:Panel ID="Panel2" runat="server">
         <asp:LinkButton ID="LinkButtonBuscar" runat="server" OnClick="LinkButtonBuscar_Click">Buscar</asp:LinkButton>
         &nbsp;
-        <asp:TextBox ID="txtBuscCla" runat="server" OnTextChanged="txtBuscCla_TextChanged1"></asp:TextBox>
+        <asp:TextBox ID="txtBusN" runat="server" OnTextChanged="txtBuscCla_TextChanged1"></asp:TextBox>
     </asp:Panel>
 </asp:Content>
 
