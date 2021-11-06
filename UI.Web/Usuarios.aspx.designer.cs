@@ -11,17 +11,17 @@ namespace UI.Web
 {
 
 
-    public partial class Formulario_web11
+    public partial class Usuarios
     {
 
         /// <summary>
-        /// Control Panel1.
+        /// Control Panel_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel Panel_1;
 
         /// <summary>
         /// Control gridView.
