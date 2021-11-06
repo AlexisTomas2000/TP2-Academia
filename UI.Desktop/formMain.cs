@@ -195,5 +195,26 @@ namespace UI.Desktop
         {
 
         }
+
+        private void tsbPlanes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbCursos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cursos cursos = new Cursos(Entity);
+            cursos.ShowDialog();
+            this.Show();
+        }
+
+        private void tsbDYC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DocentesCursos docCur = new DocentesCursos(Entity);
+            docCur.ShowDialog();
+            this.Show();
+        }
     }
 }

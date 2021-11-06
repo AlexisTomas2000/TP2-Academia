@@ -15,10 +15,20 @@ namespace UI.Desktop
     public partial class Cursos : Form
     {
         private Business.Logic.CursoLogic c1;
+        private Business.Entities.Persona _entity;
+
+        public Persona Entity { get => _entity; set => _entity = value; }
+
         public Cursos()
         {
             InitializeComponent();
         }
+
+        public Cursos(Persona per):this() {
+            this.Entity = per;
+        }
+
+
 
         private void Cursos_Load(object sender, EventArgs e)
         {
@@ -34,6 +44,11 @@ namespace UI.Desktop
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             this.listar();
+            if (Entity.TipoPersona==3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -97,11 +97,12 @@ namespace UI.Desktop
             this.tsbPlanes.Size = new System.Drawing.Size(180, 22);
             this.tsbPlanes.Text = "Planes";
             this.tsbPlanes.Visible = false;
+            this.tsbPlanes.Click += new System.EventHandler(this.tsbPlanes_Click);
             // 
             // tsbRepoPlanes
             // 
             this.tsbRepoPlanes.Name = "tsbRepoPlanes";
-            this.tsbRepoPlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsbRepoPlanes.Size = new System.Drawing.Size(168, 22);
             this.tsbRepoPlanes.Text = "Reporte de Planes";
             this.tsbRepoPlanes.Visible = false;
             // 
@@ -127,6 +128,7 @@ namespace UI.Desktop
             this.tsbCursos.Size = new System.Drawing.Size(180, 22);
             this.tsbCursos.Text = "Cursos";
             this.tsbCursos.Visible = false;
+            this.tsbCursos.Click += new System.EventHandler(this.tsbCursos_Click);
             // 
             // tsbRepoCurso
             // 
@@ -156,6 +158,7 @@ namespace UI.Desktop
             this.tsbDYC.Size = new System.Drawing.Size(180, 22);
             this.tsbDYC.Text = "Docentes Y Cursos";
             this.tsbDYC.Visible = false;
+            this.tsbDYC.Click += new System.EventHandler(this.tsbDYC_Click);
             // 
             // tsbInscripciones
             // 
