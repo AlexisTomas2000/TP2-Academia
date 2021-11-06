@@ -99,7 +99,7 @@ namespace UI.Desktop
             this.desc_plan,
             this.id_especialidad});
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvPlanes.Location = new System.Drawing.Point(0, 25);
+            this.dgvPlanes.Location = new System.Drawing.Point(0, 0);
             this.dgvPlanes.MultiSelect = false;
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
@@ -174,6 +174,7 @@ namespace UI.Desktop
             this.Controls.Add(this.dgvPlanes);
             this.Controls.Add(this.tsmOpciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Planes";

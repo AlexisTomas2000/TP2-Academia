@@ -215,6 +215,7 @@ namespace UI.Desktop
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvPersona);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Personas";

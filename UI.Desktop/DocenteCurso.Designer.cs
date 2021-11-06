@@ -159,6 +159,9 @@ namespace UI.Desktop
             this.Controls.Add(this.btnAct);
             this.Controls.Add(this.tsmOpciones);
             this.Controls.Add(this.dgvDocCur);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DocentesCursos";
             this.Text = "DocenteCurso";
             this.Load += new System.EventHandler(this.DocenteCurso_Load);

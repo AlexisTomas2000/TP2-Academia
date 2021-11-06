@@ -149,6 +149,7 @@ namespace UI.Desktop
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvEspecialidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Especialidades";
