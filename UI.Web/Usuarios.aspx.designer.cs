@@ -168,22 +168,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label nombreUsuarioLabel;
 
         /// <summary>
-        /// Control nombreUsuarioTextBox.
+        /// Control txtNU.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
-
-        /// <summary>
-        /// Control NombreUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtNU;
 
         /// <summary>
         /// Control claveLabel.
@@ -328,15 +319,6 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButtonBuscar;
-
-        /// <summary>
-        /// Control txtBusN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBusN;
 
         /// <summary>
         /// Control txtBuscCla.
