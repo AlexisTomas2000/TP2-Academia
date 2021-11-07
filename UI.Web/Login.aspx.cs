@@ -34,14 +34,20 @@ namespace UI.Web
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usu = Logic.FindOne(txtUsu.Text, txtContra.Text);
-            if (usu.IdPersona!=0)
+            if (usu.IdPersona != 0)
             {
                 int id = usu.ID;
                 Session["Usuario"] = usu;
                 Response.Write("<script> alert(" + "'Hola'" + ") </script>");
-               Response.Redirect("~/Default");
-                
-            }else{ Response.Write("<script> alert("+ "'Datos incorrectos'" + ") </script>");}
+                PersonaLogic per = new PersonaLogic();
+                Session["Persona"] = per.GetOne(usu.IdPersona);
+
+                Response.Redirect("~/Default");
+
+            }
+            else { Response.Write("<script> alert(" + "'Datos incorrectos'" + ") </script>"); }
+
+
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
