@@ -130,6 +130,21 @@ namespace UI.Web
         {
             Response.Redirect("~/Planes");
         }
+
+        protected void btnComisiones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Comisiones");
+        }
+
+        protected void btnCursos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Cursos");
+        }
+
+        protected void btnMaterias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Materias");
+        }
     }
 
 }

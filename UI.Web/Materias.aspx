@@ -65,4 +65,7 @@ ErrorMessage="Las horas Totales no pueden ser vacías" ForeColor="Red">*</asp:Re
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
+    <div style="margin-left: auto; margin-right: auto; text-align: right;">
+       <asp:LinkButton ID="btnSalir" runat="server" OnClick="btnSalir_Click" >Salir</asp:LinkButton>
+        </div>
 </asp:Content>
