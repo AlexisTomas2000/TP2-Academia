@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Plan : System.Web.UI.Page
+    public partial class Plan : System.Web.UI.Page, IMetodos
     {
         #region Props
         protected void Page_Load(object sender, EventArgs e)
@@ -21,9 +21,19 @@ namespace UI.Web
             {
                 this.cargarDD1();
             }
+            Ent = (Persona)Session["Persona"];
+
+            if (Ent.TipoPersona == 1 || Ent.TipoPersona == 2) {
+                this.HideOrShow(false);
+            }
+            else { this.HideOrShow(true); }
             this.LoadGrid();
         }
 
+
+
+        private Business.Entities.Persona _ent;
+        public Persona Ent { get => _ent; set => _ent = value; }
         private Business.Entities.Plan Entity
         {
             get;
@@ -74,6 +84,9 @@ namespace UI.Web
             }
 
         }
+
+
+
         private void LoadGrid()
         {
             this.gridView.DataSource = this.Logic.GetAll();
@@ -210,6 +223,13 @@ namespace UI.Web
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
             }
+        }
+
+        void IMetodos.HideOrShow(bool a)
+        {
+            this.formActionsPanel.Visible =a;
+            this.gridView.Columns[3].Visible = a;
+            this.gridActionsPanel.Visible = a;
         }
     }
 }

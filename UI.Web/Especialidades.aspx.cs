@@ -9,8 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace UI.Web
 {
-    public partial class Especialidades : System.Web.UI.Page
+    public partial class Especialidades : Page
     {
+        #region props
+        private Persona _ent;
         private Especialidad Entity
         {
             get;
@@ -63,9 +65,19 @@ namespace UI.Web
                 return _logic;
             }
         }
+
+        public Persona Ent { get => _ent; set => _ent = value; }
+#endregion
         protected void Page_Load(object sender, EventArgs e)
         {
+            Ent = (Persona)Session["Persona"];
             this.LoadGrid();
+            if (Ent.TipoPersona == 1 || Ent.TipoPersona == 2)
+            {
+                HideOrShow(false);
+            }
+            else { HideOrShow(true); }
+            
         }
 
         private void LoadGrid()
@@ -188,6 +200,17 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.txtID.Text = (this.Entity.ID).ToString();
             this.txtDesc.Text = this.Entity.Descripcion;
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default");
+        }
+
+        private void HideOrShow(bool enabled) {
+            this.formActionsPanel.Visible = enabled;
+            this.formOptionsPanel.Visible = enabled;
+            this.gridView.Columns[2].Visible = enabled;
         }
     }
 }

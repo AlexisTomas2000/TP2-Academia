@@ -114,7 +114,22 @@ namespace UI.Web
             btnPlanes.Enabled = true;
         }
 
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session["Persona"] = null;
+            Session["Usuario"] = null;
+            this.verificarSession();
+        }
 
+        protected void btnEspecialidades_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Especialidades");
+        }
+
+        protected void btnPlanes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Planes");
+        }
     }
 
 }

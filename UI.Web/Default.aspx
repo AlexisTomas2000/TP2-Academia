@@ -17,9 +17,9 @@
             <br />
 
 
-            <asp:LinkButton ID="btnEspecialidades" runat="server" Enabled="False" Visible="False">Especialidades</asp:LinkButton>
+            <asp:LinkButton ID="btnEspecialidades" runat="server" Enabled="False" Visible="False" OnClick="btnEspecialidades_Click">Especialidades</asp:LinkButton>
             &nbsp;
-            <asp:LinkButton ID="btnPlanes" runat="server" Enabled="False" Visible="False">Planes</asp:LinkButton>  
+            <asp:LinkButton ID="btnPlanes" runat="server" Enabled="False" Visible="False" OnClick="btnPlanes_Click">Planes</asp:LinkButton>  
             &nbsp;  
             <asp:LinkButton ID="btnComisiones" runat="server" Enabled="False" Visible="False">Comisiones</asp:LinkButton>
 
@@ -53,7 +53,7 @@
         </div>  
         
         <div style="margin-left: auto; margin-right: auto; text-align: right;">
-            <asp:LinkButton ID="btnSalir" runat="server">Salir</asp:LinkButton>
+            <asp:LinkButton ID="btnSalir" runat="server" OnClick="btnSalir_Click">Salir</asp:LinkButton>
         </div>  
 
     </asp:Panel>
