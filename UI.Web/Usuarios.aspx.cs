@@ -298,7 +298,7 @@ namespace UI.Web
 
         /*protected void LinkButtonBuscar_Click(object sender, EventArgs e)
         {
-            Session["Usu"] = Logic.FindOne(txtBusN.Text, txtBuscCla.Text);
+            Session["Usu"] = Logic.FindOne(txtBusN.Text);
             Entity = (Usuario)Session["Usu"];
             if (Entity != null)
             {

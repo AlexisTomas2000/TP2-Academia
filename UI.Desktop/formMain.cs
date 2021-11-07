@@ -86,7 +86,6 @@ namespace UI.Desktop
                 btnEspecialidades.Visible = true;
                 btnCursos.Visible = true;
                 btnUsuarios.Visible = true;*/
-                tsbUsuarios.Visible = true;
                 tsbInscripciones.Visible = true;
                 tsbComisiones.Visible = true;
                 tsbMaterias.Visible = true;
