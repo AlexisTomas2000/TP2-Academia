@@ -20,7 +20,6 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-    </asp:Panel>
      </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="idLabel" runat="server" Text="ID Especialidad: "></asp:Label>

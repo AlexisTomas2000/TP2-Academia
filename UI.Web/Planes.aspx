@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Planes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Plan.aspx.cs" Inherits="UI.Web.Plan" %>
+﻿<%@ Page Title="Planes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="UI.Web.Plan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
        <asp:Panel ID="Panel1" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
