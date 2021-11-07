@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Plan : System.Web.UI.Page, IMetodos
+    public partial class Plan : System.Web.UI.Page
     {
         #region Props
         protected void Page_Load(object sender, EventArgs e)
@@ -26,10 +26,9 @@ namespace UI.Web
             if (Ent.TipoPersona == 1 || Ent.TipoPersona == 2) {
                 this.HideOrShow(false);
             }
-            else { this.HideOrShow(true); }
+            else { HideOrShow(true); }
             this.LoadGrid();
         }
-
 
 
         private Business.Entities.Persona _ent;
@@ -163,7 +162,10 @@ namespace UI.Web
             this.ClearForm();
             this.EnableForm(true);
         }
+        protected void salirClick(object sender, EventArgs e)
+        {
 
+        }
 
 
 
@@ -225,7 +227,7 @@ namespace UI.Web
             }
         }
 
-        void IMetodos.HideOrShow(bool a)
+        private void HideOrShow(bool a)
         {
             this.formActionsPanel.Visible =a;
             this.gridView.Columns[3].Visible = a;
