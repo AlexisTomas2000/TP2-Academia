@@ -17,7 +17,7 @@ namespace UI.Desktop
 {
     public partial class OlvidarContra : Form
     {
-        private Regex rx = new Regex(@"^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$");
+        private Regex rx = new Regex(@"\w + ([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
         public OlvidarContra()
         {
             InitializeComponent();
@@ -50,15 +50,16 @@ namespace UI.Desktop
                            h1{color:dodgerblue;}
                            h1{color:darkorange;}
                             </style>
-                        <h1>Este es el body del correo</h1></br>
-                        <h2>Este es el Segundo parrafo</h2>";
-            this.sendMail(txtMail.Text, "Este correo fue enviado para recuperar la contraseña", body);
-
+                        <h1>Su usuario es: " + u.NombreUsuario + "</h1></br>" +
+                        "<h2>Su contraseña es:" + u.Clave + "</h2></br>";
+                     //   "<h3>" + "Usted se llama: " + u.Nombre + " " + u.Apellido + "</h3>";
+           string rta= this.sendMail(txtMail.Text, "Este correo fue enviado para recuperar la contraseña", body);
+            MessageBox.Show(rta, "Olvidaste tu contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private string sendMail(string to , string asunto, string body)
         {
             string msge = "Error al enviar este correo.Por favor verifique los datos o intente mas tarde";
-            string from = "atomas@frro.utn.edu.ar";
+            string from = "a_c_a_d_e_m0117@hotmail.com";
             string displayName = "Academia";
             try
             {
@@ -69,7 +70,7 @@ namespace UI.Desktop
                 mail.Body = body;
                 mail.IsBodyHtml = true;
                 SmtpClient client = new SmtpClient("smtp.office365.com" , 587);
-                client.Credentials = new NetworkCredential(from, "42178987Ale");
+                client.Credentials = new NetworkCredential(from, "mdeveloper117");
                 client.EnableSsl = true;
                 client.Send(mail);
                 msge = "Correo enviado exitosamente";
@@ -85,7 +86,7 @@ namespace UI.Desktop
         {
             bool r = false;
            
-            if(this.rx.IsMatch(txtMail.Text))
+            if(!this.rx.IsMatch(txtMail.Text))
             { r = true; }
         
              return r;
