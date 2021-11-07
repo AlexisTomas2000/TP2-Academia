@@ -50,6 +50,10 @@ namespace UI.Desktop
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
+            OlvidarContra oc = new OlvidarContra();
+            oc.ShowDialog();
+            this.Show();
             MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 

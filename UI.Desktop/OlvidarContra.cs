@@ -38,6 +38,7 @@ namespace UI.Desktop
             if (validar()) 
             {
                 this.Mandarmail();
+                this.Close();
             }
         }
 
@@ -45,7 +46,13 @@ namespace UI.Desktop
         {
             UsuarioLogic ug = new UsuarioLogic();
             Usuario u = ug.GetOneM(txtMail.Text);
-            string body=""
+            string body = @"<style>
+                           h1{color:dodgerblue;}
+                           h1{color:darkorange;}
+                            </style>
+                        <h1>Este es el body del correo</h1></br>
+                        <h2>Este es el Segundo parrafo</h2>";
+            this.sendMail(txtMail.Text, "Este correo fue enviado para recuperar la contraseña", body);
 
         }
         private string sendMail(string to , string asunto, string body)
@@ -61,21 +68,25 @@ namespace UI.Desktop
                 mail.Subject = asunto;
                 mail.Body = body;
                 mail.IsBodyHtml = true;
-                SmtpClient client = new SmtpClient("smtp.office365.com",587);
+                SmtpClient client = new SmtpClient("smtp.office365.com" , 587);
                 client.Credentials = new NetworkCredential(from, "42178987Ale");
+                client.EnableSsl = true;
+                client.Send(mail);
+                msge = "Correo enviado exitosamente";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                msge = ex.Message + "Por favor verifica tu conexion y que tus datos sean correto e intente nuevamente";
             }
+            return msge;
         }
 
         private bool validar()
         {
             bool r = false;
            
-            if(this.rx.IsMatch(txtMail.Text){ r = true; }
+            if(this.rx.IsMatch(txtMail.Text))
+            { r = true; }
         
              return r;
         }
