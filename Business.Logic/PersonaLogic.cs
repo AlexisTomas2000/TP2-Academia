@@ -55,6 +55,11 @@ namespace Business.Logic
             this.PersonaData = new Data.Database.PersonaAdapter();
             return PersonaData.Ult();
         }
- 
+        public Exception MsgCatch()
+        {
+            this.PersonaData = new Data.Database.PersonaAdapter();
+            return PersonaData.MsgCatch();
+        }
+
     }
 }

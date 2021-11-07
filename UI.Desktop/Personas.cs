@@ -106,17 +106,22 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int id = ((Business.Entities.Persona)this.dgvPersona.SelectedRows[0].DataBoundItem).ID;
-            PersonaDesktop pers = new PersonaDesktop(id, ApplicationForm.ModoForm.Baja);
-            pers.ShowDialog();
-            if (pers.dev() == 1)
-            {
-                this.ListarA();
-            }
-            else if (pers.dev() == 2)
-            {
-                ListarP();
-            }
+                int id = ((Business.Entities.Persona)this.dgvPersona.SelectedRows[0].DataBoundItem).ID;
+                PersonaDesktop pers = new PersonaDesktop(id, ApplicationForm.ModoForm.Baja);
+                pers.ShowDialog();
+                if (pers.dev() == 1)
+                {
+                    this.ListarA();
+                }
+                else if (pers.dev() == 2)
+                {
+                    ListarP();
+                }    
+        }
+        public void NotificarE(string msg)
+        {
+            PersonaLogic per = new PersonaLogic();
+            MessageBox.Show("Error", msg, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #region basura no removible
         private void tsbAgregar_Click(object sender, EventArgs e)

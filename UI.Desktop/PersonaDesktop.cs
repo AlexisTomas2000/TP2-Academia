@@ -163,14 +163,47 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            if (Validar()) { 
+            try
+            {
+                if (Validar())
+                {
                     this.GuardarCambios();
-
-                UI.Desktop.UsuarioDesktop usuar = new UI.Desktop.UsuarioDesktop(true, ModoForm.Alta);
-                    usuar.ShowDialog();
-                    this.Close(); 
+                    if (Modo == ModoForm.Alta)
+                    {
+                        UI.Desktop.UsuarioDesktop usuar = new UI.Desktop.UsuarioDesktop(true, ModoForm.Alta);
+                        usuar.ShowDialog();
+                    }
+                    this.Close();
+                }
             }
+            catch (Exception ex)
+            {
+                var msg = "Error Message:" + ex.Message;
+                if(ex.InnerException !=null)
+                {
+                    msg = msg + " Inner exception: " + ex.InnerException.Message;
+                }
+                msg = "\t Debes eliminar el Usuario primero \n\n " + msg + " Stack Trace: " + ex.StackTrace;
+
+                this.NotificarE(msg);//"Debes eliminar el Usuario primero");
+            }
+           
+        }
+        public  void NotificarE(string msg)
+        {
+            PersonaLogic per = new PersonaLogic();
+            MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private bool Validar2()
+        {
+            bool rta = false;
+            PersonaLogic per = new PersonaLogic();
+            if(per.MsgCatch()==null)
+            {
+                rta = true;
+            }
+            return rta;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ namespace Data.Database
 {
     public class PersonaAdapter : Adapter
     {
+        Exception e;
         public List<Persona> GetAllP()
         {
             List<Persona> Personas = new List<Persona>();
@@ -130,14 +131,20 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al eliminar la persona", Ex);
+                e = Ex;
                 throw ExcepcionManejada;
             }
             finally
             {
+                this.MsgCatch();
                 this.CloseConnection();
             }
         }
 
+        public Exception MsgCatch()
+        {
+            return e;
+        }
         public void Save(Persona persona)
         {
             if (persona.State == BusinessEntity.States.Deleted)
