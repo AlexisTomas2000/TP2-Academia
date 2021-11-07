@@ -39,7 +39,6 @@ namespace UI.Desktop
             this.label4 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtIdAlum
@@ -158,24 +157,12 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtID
-            // 
-            this.txtID.BackColor = System.Drawing.Color.White;
-            this.txtID.Enabled = false;
-            this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(3, 123);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(16, 20);
-            this.txtID.TabIndex = 14;
-            // 
             // AlumnosInscripcionesDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(274, 145);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label4);
@@ -206,6 +193,5 @@ namespace UI.Desktop
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox txtID;
     }
 }

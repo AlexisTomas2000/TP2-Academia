@@ -26,6 +26,16 @@ namespace Business.Logic
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();
             return this.AIData.GetAll();
         }
+        public List<AlumnoInscripcion> GetAllD(int id)
+        {
+            this.AIData = new Data.Database.AlumnoInscripcionAdapter();
+            return this.AIData.GetAllD(id);
+        }
+        public List<AlumnoInscripcion> GetAllA(int id)
+        {
+            this.AIData = new Data.Database.AlumnoInscripcionAdapter();
+            return this.AIData.GetAllA(id);
+        }
         public Business.Entities.AlumnoInscripcion GetOne(int IDA, int IDC)
         {
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();

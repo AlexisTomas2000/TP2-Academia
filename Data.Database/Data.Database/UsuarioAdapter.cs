@@ -78,6 +78,40 @@ namespace Data.Database
             }
             return usr;
         }
+        public Business.Entities.Usuario GetOneM(string mail)
+        {
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where email=@mail", sqlConn);
+                cmdUsuarios.Parameters.Add("@mail", SqlDbType.VarChar,50).Value = mail;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                if (drUsuarios.Read())
+                {
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.EMail = (string)drUsuarios["email"];
+                    //usr.IdPersona = (int)drUsuarios["id_persona"];
+                }
+                drUsuarios.Close();
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuarios", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usr;
+        }
 
         public void Delete(int ID)
         {

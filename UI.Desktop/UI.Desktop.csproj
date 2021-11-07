@@ -197,6 +197,12 @@
     <Compile Include="Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
     </Compile>
+    <Compile Include="OlvidarContra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OlvidarContra.Designer.cs">
+      <DependentUpon>OlvidarContra.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OlvidarContra.resx">
+      <DependentUpon>OlvidarContra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonaDesktop.resx">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>

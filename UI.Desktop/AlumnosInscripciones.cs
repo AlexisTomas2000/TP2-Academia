@@ -33,11 +33,37 @@ namespace UI.Desktop
         {
             this.listar();
         }
-        public void listar()
+
+        private void listar()
+        {
+            if (Entity.TipoPersona == 3)
+            {
+                this.listarG();
+            }
+            else if (Entity.TipoPersona == 2)
+            {
+                this.listarD(Entity.ID);
+            }
+            else { this.listarA(Entity.ID); }
+        }
+
+        public void listarG()
         {
             this.dgvAluIns.AutoGenerateColumns = false;
             AlumnoInscripcionLogic ai = new AlumnoInscripcionLogic();
             this.dgvAluIns.DataSource = ai.GetAll();
+        }
+        public void listarD(int id)
+        {
+            this.dgvAluIns.AutoGenerateColumns = false;
+            AlumnoInscripcionLogic ai = new AlumnoInscripcionLogic();
+            this.dgvAluIns.DataSource = ai.GetAllD(id);
+        }
+        public void listarA(int id)
+        {
+            this.dgvAluIns.AutoGenerateColumns = false;
+            AlumnoInscripcionLogic ai = new AlumnoInscripcionLogic();
+            this.dgvAluIns.DataSource = ai.GetAllA(id);
         }
         private void btnListar_Click(object sender, EventArgs e)
         {
@@ -51,7 +77,7 @@ namespace UI.Desktop
 
         private void tsbAgregar_Click(object sender, EventArgs e)
         {
-            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(ApplicationForm.ModoForm.Alta);
+            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity,ApplicationForm.ModoForm.Alta);
             aid.ShowDialog();
         }
 
@@ -59,7 +85,7 @@ namespace UI.Desktop
         {
             int IDA = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDAlumno;
             int IDC = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDCurso;
-            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(IDA, IDC, ApplicationForm.ModoForm.Modificacion);
+            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity,IDA, IDC, ApplicationForm.ModoForm.Modificacion);
             aid.ShowDialog();
         }
 
@@ -67,7 +93,7 @@ namespace UI.Desktop
         {
             int IDA = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDAlumno;
             int IDC = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDCurso;
-            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(IDA, IDC, ApplicationForm.ModoForm.Baja);
+            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity, IDA, IDC, ApplicationForm.ModoForm.Baja);
             aid.ShowDialog();
         }
     }

@@ -255,7 +255,7 @@ namespace UI.Desktop
         private void tsbInscripciones_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AlumnoInscripcion ai = new AlumnoInscripcion(Entity);
+            AlumnosInscripciones ai = new AlumnosInscripciones(Entity);
             ai.ShowDialog();
             this.Show();
         }

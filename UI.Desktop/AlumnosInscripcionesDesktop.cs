@@ -23,7 +23,6 @@ namespace UI.Desktop
 
         private void AlumnosInscripcionesDesktop_Load(object sender, EventArgs e)
         {
-            txtID.Visible = false;
             CCMLogic c = new CCMLogic();
             cbCursos.DataSource = c.GetAll();
             cbCursos.DisplayMember = "Desc";
@@ -31,6 +30,8 @@ namespace UI.Desktop
             cbCondicion.SelectedIndex = 0;
             if (Modo == ModoForm.Alta)
             {
+                this.txtIdAlum.Text = Entity.ID.ToString();
+                txtIdAlum.Enabled = false;
                 cbCondicion.Visible = false;
                 cbNota.Visible = false;
                 label3.Visible = false;
@@ -53,14 +54,16 @@ namespace UI.Desktop
         }
         public AlumnosInscripcionesDesktop(ModoForm modo) : this()
         {
+            
             this.Modo = modo;
         }
-        public AlumnosInscripcionesDesktop(int ida,int idc,ModoForm modo):this()
+        public AlumnosInscripcionesDesktop(Persona per,int ida,int idc,ModoForm modo):this()
         {
             this.Modo = modo;
             AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
             AIActual = ail.GetOne(ida,idc);
             this.MapearDeDatos();
+            Entity = per;
         }
 
         public AlumnosInscripcionesDesktop(Persona per, ModoForm modo) : this() {
@@ -70,11 +73,20 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.AIActual.ID.ToString();
+            //this.txtID.Text = this.AIActual.ID.ToString();
             this.txtIdAlum.Text = this.AIActual.IDAlumno.ToString();
-            this.cbCondicion.Text = this.AIActual.Condicion;
-            this.cbCursos.Text = this.AIActual.IDCurso.ToString();
-            this.cbNota.Text = this.AIActual.Nota.ToString();
+            /*int a=0;
+                for (int i = 0; i < 4; i++)
+                {
+                string ab = cbCondicion.Items[i].ToString();
+                    if ((ab.Equals(AIActual.Condicion)))
+                    {
+                        a = i;
+                    }
+                }
+            cbCondicion.DisplayMember = cbCondicion.Items[a].ToString();*/
+            this.cbCondicion.SelectedValue = this.AIActual.Condicion.ToString();
+            this.cbNota.SelectedIndex = this.AIActual.Nota-1;
             switch (this.Modo)
             {
                 case ModoForm.Alta:
@@ -110,9 +122,10 @@ namespace UI.Desktop
             {
                 case ModoForm.Alta:
                     {
+                        this.txtIdAlum.Text = Entity.ID.ToString();
                         AlumnoInscripcion ai = new AlumnoInscripcion();
                         AIActual = ai;
-                        this.AIActual.IDAlumno = int.Parse(txtIdAlum.Text);
+                        this.AIActual.IDAlumno = Entity.ID;
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();
                         AIActual.State = BusinessEntity.States.New;
@@ -120,7 +133,7 @@ namespace UI.Desktop
                     }
                 case ModoForm.Modificacion:
                     {
-                        this.AIActual.ID = int.Parse(txtID.Text);
+                       // this.AIActual.ID = AIActual.ID;//int.Parse(txtID.Text);
                         this.AIActual.IDAlumno = int.Parse(txtIdAlum.Text);
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();
@@ -130,7 +143,7 @@ namespace UI.Desktop
                     }
                 case ModoForm.Baja:
                     {
-                        this.AIActual.ID = int.Parse(txtID.Text);
+                        //this.AIActual.ID = int.Parse(txtID.Text);
                         this.AIActual.IDAlumno = int.Parse(txtIdAlum.Text);
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();

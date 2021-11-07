@@ -38,7 +38,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.DcActual.ID.ToString();
             this.txtIDdoc.Text = this.DcActual.IDDocente.ToString();
-            this.cbCargo.SelectedValue = this.DcActual.Cargo;
+            this.cbCargo.SelectedIndex=this.DcActual.Cargo;
             this.cbIDcurso.SelectedValue = this.DcActual.IDCurso;
             switch (this.Modo)
             {

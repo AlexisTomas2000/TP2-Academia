@@ -23,10 +23,6 @@ namespace Business.Entities
             IDAlumno = int.Parse(idalumno);
         }
 
-        public AlumnoInscripcion(Persona entity)
-        {
-            this.entity = entity;
-        }
 
         public AlumnoInscripcion(string curso,string nota,string condicion,Boolean disable)
         {

@@ -42,6 +42,74 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        public List<AlumnoInscripcion> GetAllA(int idA)
+        {
+            List<AlumnoInscripcion> AlumnoInscrip = new List<AlumnoInscripcion>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdAlIns = new SqlCommand("SELECT alumnos_inscripciones.* FROM alumnos_inscripciones INNER JOIN cursos ON alumnos_inscripciones.id_curso = cursos.id_curso INNER JOIN "+
+                                                     "docentes_cursos ON cursos.id_curso = docentes_cursos.id_curso INNER JOIN personas ON alumnos_inscripciones.id_alumno = personas.id_persona "+
+                                                     "where alumnos_inscripciones.id_alumno = @idA", sqlConn);
+                cmdAlIns.Parameters.Add("@idA", SqlDbType.Int).Value = idA;
+                SqlDataReader drAlIns = cmdAlIns.ExecuteReader();
+                while (drAlIns.Read())
+                {
+                    AlumnoInscripcion AI = new AlumnoInscripcion();
+                    AI.ID = (int)drAlIns["id_inscripcion"];
+                    AI.IDAlumno = (int)drAlIns["id_alumno"];
+                    AI.IDCurso = (int)drAlIns["id_curso"];
+                    AI.Condicion = (string)drAlIns["condicion"];
+                    AI.Nota = (int)drAlIns["nota"];
+                    AlumnoInscrip.Add(AI);
+                }
+                drAlIns.Close();
+                return AlumnoInscrip;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Alumnos Inscriptos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        public List<AlumnoInscripcion> GetAllD(int idDoc)
+        {
+            List<AlumnoInscripcion> AlumnoInscrip = new List<AlumnoInscripcion>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdAlIns = new SqlCommand("SELECT alumnos_inscripciones.* FROM alumnos_inscripciones INNER JOIN "+
+                         "cursos ON alumnos_inscripciones.id_curso = cursos.id_curso INNER JOIN docentes_cursos ON cursos.id_curso = docentes_cursos.id_curso INNER JOIN "+
+                         "personas ON docentes_cursos.id_docente = personas.id_persona where personas.id_persona = @idDoc", sqlConn);
+                cmdAlIns.Parameters.Add("@idDoc", SqlDbType.Int).Value = idDoc;
+                SqlDataReader drAlIns = cmdAlIns.ExecuteReader();
+                while (drAlIns.Read())
+                {
+                    AlumnoInscripcion AI = new AlumnoInscripcion();
+                    AI.ID = (int)drAlIns["id_inscripcion"];
+                    AI.IDAlumno = (int)drAlIns["id_alumno"];
+                    AI.IDCurso = (int)drAlIns["id_curso"];
+                    AI.Condicion = (string)drAlIns["condicion"];
+                    AI.Nota = (int)drAlIns["nota"];
+                    AlumnoInscrip.Add(AI);
+                }
+                drAlIns.Close();
+                return AlumnoInscrip;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Alumnos Inscriptos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
         public Business.Entities.AlumnoInscripcion GetOne(int IDA,int IDC)
         {
             AlumnoInscripcion AI = new AlumnoInscripcion();
