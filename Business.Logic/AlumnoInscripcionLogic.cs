@@ -46,6 +46,11 @@ namespace Business.Logic
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();
             AIData.Delete(IDA,IDC);
         }
+        public void Delete(int IDA)
+        {
+            this.AIData = new Data.Database.AlumnoInscripcionAdapter();
+            AIData.Delete(IDA);
+        }
         public Business.Entities.AlumnoInscripcion GetOne2(int id)
         {
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();

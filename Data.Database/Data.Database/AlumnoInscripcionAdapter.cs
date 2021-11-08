@@ -42,15 +42,16 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        /*SELECT alumnos_inscripciones.* FROM alumnos_inscripciones INNER JOIN cursos ON alumnos_inscripciones.id_curso = cursos.id_curso INNER JOIN "+
+                                                     "docentes_cursos ON cursos.id_curso = docentes_cursos.id_curso INNER JOIN personas ON alumnos_inscripciones.id_alumno = personas.id_persona "+
+                                                     "where alumnos_inscripciones.id_alumno = @idA*/
         public List<AlumnoInscripcion> GetAllA(int idA)
         {
             List<AlumnoInscripcion> AlumnoInscrip = new List<AlumnoInscripcion>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdAlIns = new SqlCommand("SELECT alumnos_inscripciones.* FROM alumnos_inscripciones INNER JOIN cursos ON alumnos_inscripciones.id_curso = cursos.id_curso INNER JOIN "+
-                                                     "docentes_cursos ON cursos.id_curso = docentes_cursos.id_curso INNER JOIN personas ON alumnos_inscripciones.id_alumno = personas.id_persona "+
-                                                     "where alumnos_inscripciones.id_alumno = @idA", sqlConn);
+                SqlCommand cmdAlIns = new SqlCommand("select * from alumnos_inscripciones where id_alumno = @idA", sqlConn);
                 cmdAlIns.Parameters.Add("@idA", SqlDbType.Int).Value = idA;
                 SqlDataReader drAlIns = cmdAlIns.ExecuteReader();
                 while (drAlIns.Read())
@@ -179,6 +180,25 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete alumnos_inscripciones  where id_alumno=@id and id_curso=@idc", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = IDA;
                 cmdDelete.Parameters.Add("@idc", SqlDbType.Int).Value = IDC;
+                cmdDelete.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al eliminar Inscripcion de Alumno", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        public void Delete(int IDA)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdDelete = new SqlCommand("delete alumnos_inscripciones  where id_inscripcion=@id", sqlConn);
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = IDA;
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)

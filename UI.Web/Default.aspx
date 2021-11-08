@@ -33,7 +33,7 @@
             <asp:LinkButton ID="btnMaterias" runat="server" Enabled="False" Visible="False" OnClick="btnMaterias_Click">Materias</asp:LinkButton>
             <br />
             <br />
-            <asp:LinkButton ID="btnDocYCur" runat="server" Enabled="False" Visible="False">Docentes</asp:LinkButton>
+            <asp:LinkButton ID="btnDocYCur" runat="server" Enabled="False" Visible="False" OnClick="btnDocYCur_Click">Docentes</asp:LinkButton>
             &nbsp;
             <asp:LinkButton ID="btnInscripciones" runat="server" Enabled="False" Visible="False" OnClick="btnInscripciones_Click">Inscripcion a cursado</asp:LinkButton>
             &nbsp;

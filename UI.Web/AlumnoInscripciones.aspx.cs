@@ -68,7 +68,6 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            this.Listar();
             if (!this.IsPostBack) 
             {
                 this.cargarddl();
@@ -76,22 +75,62 @@ namespace UI.Web
             if(Session["Persona"]!=null)
             {
                 P = (Persona)Session["Persona"];
-                txtIDAlumno.Text = p.ID.ToString();
+                
+            }
+            this.Listar();
+            if (P.TipoPersona==1)
+            {
+                this.MostrarA();
+                
+            }else if(P.TipoPersona==2)
+            {
+                this.MostrarD();
             }
         }
 
+        private void MostrarD()
+        {
+            nuevoLinkButton.Enabled = false;
+            nuevoLinkButton.Visible = false;
+            eliminarLinkButton.Visible = false;
+            eliminarLinkButton.Enabled = false;
+            ddlCurso.Enabled = false;
+        }
+
+        private void MostrarA()
+        {
+            editarLinkButton.Enabled = false;
+            editarLinkButton.Visible = false;
+         
+        }
+        private void ListarA(int ida)
+        {
+            
+        }
         private void Listar()
         {
+            if (P.TipoPersona == 3) { 
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
+            }else if(P.TipoPersona==1)
+            {
+                this.gridView.DataSource = this.Logic.GetAllA(P.ID);
+                this.gridView.DataBind();
+            }
+            else
+            {
+                this.gridView.DataSource = this.Logic.GetAllD(P.ID);
+                this.gridView.DataBind();
+            }
+
         }
 
         private void cargarddl()
         {
-            CursoLogic cl = new CursoLogic();
+            CCMLogic cl = new CCMLogic();
             ddlCurso.DataSource = cl.GetAll();
-            ddlCurso.DataTextField = "ID";
-            ddlCurso.DataValueField = "ID";
+            ddlCurso.DataTextField = "Desc";
+            ddlCurso.DataValueField = "id_Curso";
             ddlCurso.DataBind();
             ListItem i= new ListItem("Inscripto", "1");
             ddlCondicion.Items.Add(i);
@@ -117,11 +156,12 @@ namespace UI.Web
                     this.Entity.State = BusinessEntity.States.New;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
-                    this.Form.Visible = false;
                     this.Listar();
+                    this.Form.Visible = false;                 
                     break;
                 case FormModes.Baja:
-                    this.DeleteEntity();
+                    this.DeleteEntity(this.SelectedID);
+                    this.Listar();
                     this.formPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
@@ -130,6 +170,7 @@ namespace UI.Web
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
+                    this.Listar();
                     this.formPanel.Visible = false;
                     break;
                 default:
@@ -137,10 +178,9 @@ namespace UI.Web
             }
         }
 
-        private void DeleteEntity()
+        private void DeleteEntity(int id)
         {
-            AlumnoInscripcion a = Logic.GetOne2(this.SelectedID);
-            this.Logic.Delete(a.IDAlumno,a.IDCurso);
+            this.Logic.Delete(id);
         }
 
         private void SaveEntity(AlumnoInscripcion entity)
@@ -152,7 +192,7 @@ namespace UI.Web
         {
             entity.IDCurso = int.Parse(this.ddlCurso.Text);
             entity.Condicion = ddlCondicion.SelectedItem.Text;
-            entity.Nota = int.Parse(this.ddlNota.Text);
+            entity.Nota = int.Parse(this.ddlNota.Text)+1;
             entity.IDAlumno = p.ID;
         }
 
@@ -168,7 +208,7 @@ namespace UI.Web
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
-                    this.LoadFrom(this.SelectedID);
+                this.LoadFrom(this.SelectedID);
             }
         }
 
@@ -192,12 +232,12 @@ namespace UI.Web
             }
         }
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
-        {
-            this.txtIDAlumno.Text = p.ID.ToString();
+        {   
             this.formPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableFrom(true);
+            this.txtIDAlumno.Text = P.ID.ToString();
         }
 
         private void ClearForm()
@@ -207,15 +247,32 @@ namespace UI.Web
 
         private void EnableFrom(bool enable)
         {
-            this.txtIDAlumno.Enabled = enable;
-            this.ddlCondicion.Enabled = enable;
-            this.ddlCurso.Enabled = enable;
+            
+            if (P.TipoPersona==3)
+            {
+                this.ddlCurso.Enabled = enable;
+                this.ddlCondicion.Enabled = enable;           
             this.ddlNota.Enabled = enable;
+            }
+            else if(P.TipoPersona==1)
+            {
+                this.ddlCondicion.Enabled = false;
+                this.ddlCondicion.Visible = false;
+                this.ddlNota.Visible = false;
+                this.ddlNota.Enabled = false;
+                this.Label2.Visible = false;
+                this.Label3.Visible = false;
+            }
+            else if(P.TipoPersona==2)
+            {
+                this.ddlCurso.Enabled = false;
+            }
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.LoadFrom(SelectedID);
         }
     }
 }

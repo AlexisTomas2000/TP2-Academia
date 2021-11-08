@@ -78,6 +78,8 @@ namespace UI.Web
             btnMaterias.Enabled = true;
             btnComisiones.Enabled = true;
             btnPlanes.Enabled = true;
+            btnInscripciones.Enabled = true;
+            btnInscripciones.Visible = true;
         }
         private void MostrarProf() {
             btnPlanes.Visible = true;
@@ -144,6 +146,26 @@ namespace UI.Web
         protected void btnMaterias_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Materias");
+        }
+
+        protected void btnUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDocYCur_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnInscripciones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AlumnoInscripciones");
+        }
+
+        protected void btnPersonas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
