@@ -13,6 +13,8 @@ namespace UI.Web
     public partial class Materias : System.Web.UI.Page
     {
         #region Props
+        private Persona _ent;
+        public Persona Ent { get=>_ent; set=>_ent=value; }
         private Materia Entity{
         get;
         set;
@@ -53,6 +55,8 @@ namespace UI.Web
         #endregion
 
         private MateriaLogic _logic;
+
+
         private MateriaLogic Logic {
             get
             {
@@ -71,6 +75,15 @@ namespace UI.Web
             this.LoadGrid();
             if (!this.IsPostBack) {
                 this.cargarDDl();
+            }
+            Ent = (Persona)Session["Persona"];
+            if (Ent.TipoPersona==1 || Ent.TipoPersona==2)
+            {
+                this.HideOrShow(false);
+            }
+            else
+            {
+                this.HideOrShow(true);
             }
         }
 
@@ -216,5 +229,18 @@ namespace UI.Web
             ddlPlan.DataBind();
         }
 
+        private void HideOrShow(bool v)
+        {
+            this.formActionsPanel.Visible = v;
+            this.gridActionsPanel.Visible = v;
+            this.gridView.Columns[5].Visible = v;
+
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("~/Default");
+        }
     }
 }

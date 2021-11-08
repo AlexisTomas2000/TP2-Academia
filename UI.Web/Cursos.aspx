@@ -55,11 +55,13 @@ ErrorMessage="El año no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldV
             <asp:LinkButton ID="cancelarLinkButton" runat="server" CausesValidation="false" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             <br />
     </asp:Panel>
-    </asp:Panel>
 
     <asp:Panel ID="gridActionsPanel" runat="server">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
+    <div style="margin-left: auto; margin-right: auto; text-align: right;">
+        <asp:LinkButton ID="btnSalir" runat="server" OnClick="btnSalir_Click">Salir</asp:LinkButton>
+        </div>
 </asp:Content>

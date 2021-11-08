@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class Materias
+    public partial class DocentesCursos
     {
 
         /// <summary>
@@ -60,22 +60,22 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox idTextBox;
 
         /// <summary>
-        /// Control descripcionLabel.
+        /// Control IdCursoLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descripcionLabel;
+        protected global::System.Web.UI.WebControls.Label IdCursoLabel;
 
         /// <summary>
-        /// Control descripcionTextBox.
+        /// Control ddlCurso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCurso;
 
         /// <summary>
         /// Control descripcion.
@@ -87,22 +87,22 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.RequiredFieldValidator descripcion;
 
         /// <summary>
-        /// Control hsSemLabel.
+        /// Control idDocenteLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hsSemLabel;
+        protected global::System.Web.UI.WebControls.Label idDocenteLabel;
 
         /// <summary>
-        /// Control hsSemTextBox.
+        /// Control idDocenteTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hsSemTextBox;
+        protected global::System.Web.UI.WebControls.TextBox idDocenteTextBox;
 
         /// <summary>
         /// Control RequiredFieldValidator2.
@@ -114,22 +114,22 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// Control hsTotLabel.
+        /// Control cargoLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hsTotLabel;
+        protected global::System.Web.UI.WebControls.Label cargoLabel;
 
         /// <summary>
-        /// Control hsTotTextBox.
+        /// Control ddlCargo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox hsTotTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCargo;
 
         /// <summary>
         /// Control RequiredFieldValidator3.
@@ -139,15 +139,6 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-
-        /// <summary>
-        /// Control idPlanLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idPlanLabel;
 
         /// <summary>
         /// Control ddlPlan.

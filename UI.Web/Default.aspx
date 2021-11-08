@@ -21,16 +21,16 @@
             &nbsp;
             <asp:LinkButton ID="btnPlanes" runat="server" Enabled="False" Visible="False" OnClick="btnPlanes_Click">Planes</asp:LinkButton>  
             &nbsp;  
-            <asp:LinkButton ID="btnComisiones" runat="server" Enabled="False" Visible="False">Comisiones</asp:LinkButton>
+            <asp:LinkButton ID="btnComisiones" runat="server" Enabled="False" Visible="False" OnClick="btnComisiones_Click">Comisiones</asp:LinkButton>
 
 
             <br />
             <br />
-            <asp:LinkButton ID="btnCursos" runat="server" Enabled="False" Visible="False">Cursos</asp:LinkButton>
+            <asp:LinkButton ID="btnCursos" runat="server" Enabled="False" Visible="False" OnClick="btnCursos_Click">Cursos</asp:LinkButton>
             &nbsp;
             <asp:LinkButton ID="btnUsuarios" runat="server" Enabled="False" Visible="False" OnClick="btnUsuarios_Click">Usuarios</asp:LinkButton>
             &nbsp;
-            <asp:LinkButton ID="btnMaterias" runat="server" Enabled="False" Visible="False">Materias</asp:LinkButton>
+            <asp:LinkButton ID="btnMaterias" runat="server" Enabled="False" Visible="False" OnClick="btnMaterias_Click">Materias</asp:LinkButton>
             <br />
             <br />
             <asp:LinkButton ID="btnDocYCur" runat="server" Enabled="False" Visible="False">Docentes</asp:LinkButton>

@@ -125,23 +125,25 @@ namespace UI.Web
         {
             Response.Redirect("~/Especialidades");
         }
-        protected void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Usuarios");
-        }
 
         protected void btnPlanes_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Planes");
         }
-        protected void btnPersonas_Click(object sender, EventArgs e)
+
+        protected void btnComisiones_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Personas");
+            Response.Redirect("~/Comisiones");
         }
 
-        protected void btnInscripciones_Click(object sender, EventArgs e)
+        protected void btnCursos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/AlumnoInscripciones");
+            Response.Redirect("~/Cursos");
+        }
+
+        protected void btnMaterias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Materias");
         }
     }
 

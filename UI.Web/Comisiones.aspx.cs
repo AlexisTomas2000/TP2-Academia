@@ -11,6 +11,9 @@ namespace UI.Web
 {
     public partial class Comisiones : System.Web.UI.Page
     {
+        #region props
+        private Persona _ent;
+        public Persona Ent { get => _ent; set => _ent = value; }
         private Comision Entity
         {
             get;
@@ -45,7 +48,8 @@ namespace UI.Web
             set { this.ViewState["FormMode"] = value; }
         }
         private ComisionLogic _logic;
-        //private PlanLogic _plogic;
+
+
 
         public ComisionLogic Logic { get 
             {
@@ -55,14 +59,22 @@ namespace UI.Web
                 }
                 return _logic;
             } }
-       // public PlanLogic Plogic { get => _plogic; set => _plogic = value; }
+
+#endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!this.IsPostBack)
-            { this.cargarDDl();
+            Ent = (Persona)Session["Persona"];
+            if (Ent.TipoPersona == 1 || Ent.TipoPersona == 2)
+            {
+                this.HideOrShow(false);
+
             }
-            
+            else { this.HideOrShow(true); }
+            if (!this.IsPostBack)
+            {
+                this.cargarDDl();
+            }
             this.LoadGrid();
         }
         private void LoadForm(int id)
@@ -191,7 +203,6 @@ namespace UI.Web
         }
         private void LoadEntity(Comision com)
         {
-            //com.ID =int.Parse( this.txtID.Text);
             com.Descripcion = txtDesc.Text;
             com.AnioEspecialidad=int.Parse(this.txtAño.Text);
             com.IdPlan = this.ddlIdPlan.SelectedIndex;
@@ -199,6 +210,18 @@ namespace UI.Web
         private void SaveEntity(Comision com)
         {
             this.Logic.Save(com);
+        }
+
+        private void HideOrShow(bool v) {
+            this.formActionsPanel.Visible = v;
+            this.gridActionsPanel.Visible = v;
+            this.gridView1.Columns[4].Visible = v;
+
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default");
         }
     }
 }

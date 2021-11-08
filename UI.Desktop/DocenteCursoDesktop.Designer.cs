@@ -153,8 +153,6 @@ namespace UI.Desktop
             this.Controls.Add(this.txtIDdoc);
             this.Controls.Add(this.txtID);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "DocenteCursoDesktop";
             this.Text = "DocenteCursoDesktop";
             this.Load += new System.EventHandler(this.DocenteCursoDesktop_Load);

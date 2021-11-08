@@ -11,6 +11,11 @@ namespace UI.Web
 {
     public partial class Cursos : System.Web.UI.Page
     {
+        #region props
+        public Persona Ent { get => _ent; set => _ent = value; }
+
+        private Persona _ent;
+
         private Curso Entity
         {
             get;
@@ -62,12 +67,24 @@ namespace UI.Web
                 return _logic;
             }
         }
+
+
+        #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
             this.LoadGrid();
             if (!this.IsPostBack)
             {
                 this.cargarDDl();
+            }
+            Ent = (Persona)Session["Persona"];
+            if (Ent.TipoPersona==1 || Ent.TipoPersona==2)
+            {
+                this.HideOrShow(false);
+            }
+            else
+            {
+                this.HideOrShow(true);
             }
         }
 
@@ -163,8 +180,7 @@ namespace UI.Web
             this.txtAño.Text = string.Empty;
             this.txtCupo.Text = string.Empty;
             this.txtID.Text = string.Empty; 
-            /*this.ddlCom.Text = string.Empty; 
-            this.ddlMat.Text = string.Empty; */
+
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -205,6 +221,19 @@ namespace UI.Web
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);
+        }
+        private void HideOrShow(bool v)
+        {
+            this.formActionsPanel.Visible = v;
+            this.gridActionsPanel.Visible = v;
+            this.gridView.Columns[5].Visible = v;
+            this.gridView.Columns[4].Visible = v;
+
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default");
         }
     }
 }
