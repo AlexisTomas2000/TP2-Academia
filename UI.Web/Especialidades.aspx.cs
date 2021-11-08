@@ -101,7 +101,7 @@ namespace UI.Web
                 case FormModes.Modificacion:
 
                     {
-
+                        
                         this.Entity = new Especialidad(); ;
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;

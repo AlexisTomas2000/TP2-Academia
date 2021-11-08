@@ -141,6 +141,36 @@ namespace Data.Database
             }
             return AI;
         }
+        public Business.Entities.AlumnoInscripcion GetOne2(int ID)
+        {
+            AlumnoInscripcion AI = new AlumnoInscripcion();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdAlIns = new SqlCommand("select * from alumnos_inscripciones where id_inscripcion=@ID", sqlConn);
+                cmdAlIns.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drAlIns = cmdAlIns.ExecuteReader();
+                if (drAlIns.Read())
+                {
+                    AI.ID = (int)drAlIns["id_inscripcion"];
+                    AI.IDAlumno = (int)drAlIns["id_alumno"];
+                    AI.IDCurso = (int)drAlIns["id_curso"];
+                    AI.Condicion = (string)drAlIns["condicion"];
+                    AI.Nota = (int)drAlIns["nota"];
+                }
+                drAlIns.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el Alumno Inscripto", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return AI;
+        }
         public void Delete(int IDA,int IDC)
         {
             try

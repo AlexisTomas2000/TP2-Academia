@@ -28,16 +28,16 @@
             <br />
             <asp:LinkButton ID="btnCursos" runat="server" Enabled="False" Visible="False">Cursos</asp:LinkButton>
             &nbsp;
-            <asp:LinkButton ID="btnUsuarios" runat="server" Enabled="False" Visible="False">Usuarios</asp:LinkButton>
+            <asp:LinkButton ID="btnUsuarios" runat="server" Enabled="False" Visible="False" OnClick="btnUsuarios_Click">Usuarios</asp:LinkButton>
             &nbsp;
             <asp:LinkButton ID="btnMaterias" runat="server" Enabled="False" Visible="False">Materias</asp:LinkButton>
             <br />
             <br />
             <asp:LinkButton ID="btnDocYCur" runat="server" Enabled="False" Visible="False">Docentes</asp:LinkButton>
             &nbsp;
-            <asp:LinkButton ID="btnInscripciones" runat="server" Enabled="False" Visible="False">Inscripcion a cursado</asp:LinkButton>
+            <asp:LinkButton ID="btnInscripciones" runat="server" Enabled="False" Visible="False" OnClick="btnInscripciones_Click">Inscripcion a cursado</asp:LinkButton>
             &nbsp;
-            <asp:LinkButton ID="btnPersonas" runat="server" Enabled="False" Visible="False">Personas</asp:LinkButton>
+            <asp:LinkButton ID="btnPersonas" runat="server" Enabled="False" Visible="False" OnClick="btnPersonas_Click">Personas</asp:LinkButton>
 
 
             <br />

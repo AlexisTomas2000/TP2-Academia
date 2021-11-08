@@ -45,10 +45,12 @@ ErrorMessage="El nombre no puede ser vacío" ForeColor="Red">*</asp:RequiredFiel
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
         &nbsp;<br /> &nbsp;
-        <br />
+        <br/>
         <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
-        <asp:TextBox ID="txtNU" runat="server"></asp:TextBox>
-        <br />
+        <asp:TextBox ID="txtNU" runat="server" CausesValidation="True"></asp:TextBox>
+     <asp:RequiredFieldValidator ID="NombreUsu" runat="server" ControlToValidate="txtNU"   
+ErrorMessage="El usuario no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <br/>
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
         <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server" Width="138px"></asp:TextBox>
       <asp:RequiredFieldValidator ID="clave" runat="server" ControlToValidate="claveTextBox"   
@@ -66,17 +68,11 @@ ErrorMessage="La clave repetida no puede ser vacía" ForeColor="Red">*</asp:Requ
             &nbsp;<br />
     </asp:Panel>
     </asp:Panel>
-
     <asp:Panel ID="gridActionsPanel" runat="server">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
         &nbsp;</asp:Panel>
-    <asp:Panel ID="Panel2" runat="server">
-        <asp:LinkButton ID="LinkButtonBuscar" runat="server" OnClick="LinkButtonBuscar_Click">Buscar</asp:LinkButton>
-        &nbsp;
-        <asp:TextBox ID="txtBusN" runat="server" OnTextChanged="txtBuscCla_TextChanged1"></asp:TextBox>
-    </asp:Panel>
 </asp:Content>
 
 

@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class Usuarios
+    public partial class AlumnoInscripciones
     {
 
         /// <summary>
@@ -42,85 +42,22 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Panel formPanel;
 
         /// <summary>
-        /// Control nombreLabel.
+        /// Control txtIDAlumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreLabel;
+        protected global::System.Web.UI.WebControls.TextBox txtIDAlumno;
 
         /// <summary>
-        /// Control nombreTextBox.
+        /// Control IdAlumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
-
-        /// <summary>
-        /// Control Nombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator Nombre;
-
-        /// <summary>
-        /// Control apellidoLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label apellidoLabel;
-
-        /// <summary>
-        /// Control apellidoTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox apellidoTextBox;
-
-        /// <summary>
-        /// Control Apellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator Apellido;
-
-        /// <summary>
-        /// Control emailLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLabel;
-
-        /// <summary>
-        /// Control emailTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTextBox;
-
-        /// <summary>
-        /// Control Email.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator Email;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator IdAlumno;
 
         /// <summary>
         /// Control Label1.
@@ -132,112 +69,67 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control txtIdPersona.
+        /// Control ddlCurso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdPersona;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCurso;
 
         /// <summary>
-        /// Control habilitadoLabel.
+        /// Control Curso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label habilitadoLabel;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Curso;
 
         /// <summary>
-        /// Control habilitadoCheckBox.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox habilitadoCheckBox;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control nombreUsuarioLabel.
+        /// Control ddlCondicion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreUsuarioLabel;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCondicion;
 
         /// <summary>
-        /// Control txtNU.
+        /// Control Condiciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNU;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Condiciones;
 
         /// <summary>
-        /// Control NombreUsu.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreUsu;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control claveLabel.
+        /// Control ddlNota.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label claveLabel;
-
-        /// <summary>
-        /// Control claveTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox claveTextBox;
-
-        /// <summary>
-        /// Control clave.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator clave;
-
-        /// <summary>
-        /// Control repetirClaveLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label repetirClaveLabel;
-
-        /// <summary>
-        /// Control repetirClaveTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox repetirClaveTextBox;
-
-        /// <summary>
-        /// Control repClave.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator repClave;
+        protected global::System.Web.UI.WebControls.DropDownList ddlNota;
 
         /// <summary>
         /// Control ValidationSummary1.

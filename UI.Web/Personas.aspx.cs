@@ -138,7 +138,8 @@ namespace UI.Web
                     this.SaveEntity(this.Entity);
                     this.Actualizar();
                     this.Form.Visible = false;
-                    Response.Redirect("Usuarios.aspx?vuelta=true");
+                    Session["Vuelta"] = txtNU.Text;
+                    Response.Redirect("Usuarios.aspx");
                     break;
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
@@ -237,6 +238,9 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
+
+            Label2.Visible = true;
+            txtNU.Visible = true;
             this.formPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();

@@ -83,22 +83,29 @@ namespace UI.Web
         }
 
         public Persona P { get => p; set => p = value; }
-
+        string q;
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.ClearForm();
+            
             this.LoadGrid();
-            bool vuelta = false;
+            /*bool vuelta = false;
             if (Request.QueryString.AllKeys.Contains("vuelta"))
             {
                 Boolean.TryParse(Request.QueryString["vuelta"], out vuelta);
-            }
-            if (vuelta)
+            }*/
+            if (Session["Vuelta"] != null){ q = (string)Session["Vuelta"]; }
+            
+            if (q!=null)
             {
+                Response.Clear();
                 this.Panel_1.Visible = true;
+                this.ClearForm();
                 op = 1;
                 P = PLogic.Ult();
                 this.nuevoLinkButton_Click(sender, e);
             }
+            Persona m = (Persona)Session["Persona"];
             if (!IsPostBack)
             {
                 Session["Usu"] = null;
@@ -146,6 +153,7 @@ namespace UI.Web
         {
             if (this.isEntitySelected)
             {
+                this.EnableForm(true);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
@@ -176,18 +184,15 @@ namespace UI.Web
                 usuario.EMail = P.EMail;
                 usuario.IdPersona = P.ID;
             }
-
-
-
         }
-        private void LoadEntityAlt(Usuario usuario)
+        /*private void LoadEntityAlt(Usuario usuario)
         {
 
             usuario.NombreUsuario = this.txtNU.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
 
-        }
+        }*/
 
         private void SaveEntity(Usuario usuario)
         {
@@ -220,11 +225,11 @@ namespace UI.Web
 
                     this.Entity = new Usuario();
                     this.Entity.State = BusinessEntity.States.New;
-                    if (op == 0)
-                    {
+                   /* if (op == 0)
+                    {*/
                         this.LoadEntity(this.Entity);
-                    }
-                    else { this.LoadEntityAlt(this.Entity); }
+                    /*}
+                    else { this.LoadEntityAlt(this.Entity); }*/
 
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -245,8 +250,8 @@ namespace UI.Web
             this.txtNU.Enabled = enable;
             this.claveTextBox.Visible = enable;
             this.claveLabel.Visible = enable;
-            this.txtBusN.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
+            this.repetirClaveTextBox.Visible = enable;
         }
 
         private void ClearForm()
@@ -286,10 +291,6 @@ namespace UI.Web
 
         }
 
-        protected void txtBusN_TextChanged1(object sender, EventArgs e)
-        {
-
-        }
 
         protected void repetirClaveTextBox_TextChanged(object sender, EventArgs e)
         {

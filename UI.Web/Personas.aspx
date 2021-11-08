@@ -82,6 +82,11 @@ ErrorMessage="Debe Seleccionar un plan" ForeColor="Red">*</asp:RequiredFieldVali
      <asp:RequiredFieldValidator ID="idTP" runat="server" ControlToValidate="ddlTP"   
 ErrorMessage="Debe Seleccionar un Tipo" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Nombre Usuario: " Visible="False"></asp:Label>
+        <asp:TextBox ID="txtNU" runat="server" Visible="False"></asp:TextBox>
+     <asp:RequiredFieldValidator ID="NU" runat="server" ControlToValidate="txtNU"   
+ErrorMessage="El nombre de usuario no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
         <asp:Panel ID="formActionsPanel" runat="server" >
             
