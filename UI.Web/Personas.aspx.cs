@@ -126,6 +126,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.LoadForm(this.SelectedID);
         }
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
@@ -255,6 +256,11 @@ namespace UI.Web
         protected void repConTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSalin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default");
         }
     }
 }

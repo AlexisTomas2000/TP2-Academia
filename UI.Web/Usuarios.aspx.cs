@@ -87,13 +87,7 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ClearForm();
-            
             this.LoadGrid();
-            /*bool vuelta = false;
-            if (Request.QueryString.AllKeys.Contains("vuelta"))
-            {
-                Boolean.TryParse(Request.QueryString["vuelta"], out vuelta);
-            }*/
             if (Session["Vuelta"] != null){ q = (string)Session["Vuelta"]; }
             
             if (q!=null)
@@ -109,8 +103,13 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 Session["Usu"] = null;
+            }else if(IsPostBack)
+            {
+                this.ClearForm();
+                this.LoadGrid();
             }
-            else if (Session["Usu"] != null)
+
+            if (Session["Usu"] != null)
             {
                 this.EnableForm(true);
                 Entity = (Usuario)Session["Usu"];
@@ -136,6 +135,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.LoadForm(this.SelectedID);
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -166,11 +166,12 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.NombreUsuario = this.txtNU.Text;
+            
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
             if (op == 0)
             {
+                usuario.NombreUsuario = this.txtNU.Text;
                 usuario.Nombre = this.nombreTextBox.Text;
                 usuario.Apellido = this.apellidoTextBox.Text;
                 usuario.EMail = this.emailTextBox.Text;
@@ -178,6 +179,8 @@ namespace UI.Web
             }
             else
             {
+                string s = (string)Session["Vuelta"];
+                usuario.NombreUsuario = s;
                 this.txtIdPersona.Visible = false;
                 usuario.Nombre = P.Nombre;
                 usuario.Apellido = P.Apellido;
@@ -246,12 +249,17 @@ namespace UI.Web
         {
             this.nombreTextBox.Enabled = enable;
             this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.txtNU.Enabled = enable;
+            this.emailTextBox.Enabled = enable;           
             this.claveTextBox.Visible = enable;
             this.claveLabel.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
             this.repetirClaveTextBox.Visible = enable;
+            if(op==0)
+            {
+                this.nombreUsuarioLabel.Visible = enable;
+                this.txtNU.Enabled = enable;
+                txtNU.Visible = enable;
+            }
         }
 
         private void ClearForm()
@@ -275,6 +283,7 @@ namespace UI.Web
 
         private void cargatxt()
         {
+            txtNU.Text = (string)Session["Vuelta"];
             nombreTextBox.Text = P.Nombre;
             apellidoTextBox.Text = P.Apellido;
             emailTextBox.Text = P.EMail;
@@ -295,6 +304,16 @@ namespace UI.Web
         protected void repetirClaveTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void txtNU_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default");
         }
 
         /*protected void LinkButtonBuscar_Click(object sender, EventArgs e)

@@ -104,6 +104,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView1.SelectedValue;
+            this.LoadForm(this.SelectedID);
         }
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {

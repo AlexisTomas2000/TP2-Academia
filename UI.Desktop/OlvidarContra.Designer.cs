@@ -53,7 +53,7 @@ namespace UI.Desktop
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(207, 87);
+            this.btnEnviar.Location = new System.Drawing.Point(208, 87);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
             this.btnEnviar.TabIndex = 2;

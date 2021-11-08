@@ -274,5 +274,10 @@ namespace UI.Web
             this.SelectedID = (int)this.gridView.SelectedValue;
             this.LoadFrom(SelectedID);
         }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default");
+        }
     }
 }

@@ -125,6 +125,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.LoadFrom(this.SelectedID);
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

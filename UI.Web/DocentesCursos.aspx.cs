@@ -89,6 +89,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.LoadForm(this.SelectedID);
         }
         private void cargarDDL() {
             CursoLogic cur = new CursoLogic();

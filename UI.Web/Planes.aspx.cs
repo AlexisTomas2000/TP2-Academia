@@ -111,6 +111,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.LoadForm(this.SelectedID);
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -164,7 +165,7 @@ namespace UI.Web
         }
         protected void salirClick(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Default");
         }
 
 
