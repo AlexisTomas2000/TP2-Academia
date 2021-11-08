@@ -142,7 +142,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al crear un Docente Curso", Ex);
+                Exception ExcepcionManejada = new Exception(Ex.Message, Ex);
                 throw ExcepcionManejada;
             }
             finally
