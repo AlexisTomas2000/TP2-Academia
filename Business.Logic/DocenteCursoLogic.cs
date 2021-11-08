@@ -37,5 +37,10 @@ namespace Business.Logic
             DocenteCurso.Save(dc);
         }
 
+        public void Delete(int id) {
+            this.DocenteCurso = new Data.Database.DocenteCursoAdapter();
+            DocenteCurso.Delete(id);
+        }
+
     }
 }

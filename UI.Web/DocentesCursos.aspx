@@ -25,12 +25,11 @@
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="idLabel" runat="server" Text="ID: "></asp:Label>
-        <asp:TextBox ID="idTextBox" runat="server" ReadOnly="True"></asp:TextBox>
+        <asp:TextBox ID="idTextBox" runat="server" ReadOnly="True" Enabled="False"></asp:TextBox>
         <br />
         <asp:Label ID="IdCursoLabel" runat="server" Text="ID Curso: "></asp:Label>
         <asp:DropDownList ID="ddlCurso" runat="server">
         </asp:DropDownList>
-        <asp:RequiredFieldValidator ID="descripcion" runat="server" ControlToValidate="idCursoTextBox" ErrorMessage="Debe Seleccionar un campo" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="idDocenteLabel" runat="server" Text="ID Docente: "></asp:Label>
         <asp:TextBox ID="idDocenteTextBox" runat="server" Width="136px"></asp:TextBox>
@@ -45,11 +44,6 @@ ErrorMessage="El ID del Docente no puede ser vacío" ForeColor="Red">*</asp:Requ
             <asp:ListItem Value="2">Profesor/a de Práctica</asp:ListItem>
             <asp:ListItem Value="3">Auxiliar</asp:ListItem>
             <asp:ListItem Value="4">Ayudante de Cátedra</asp:ListItem>
-        </asp:DropDownList>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="cargoTextBox"   
-ErrorMessage="el Cargo no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>  
-        <br />
-        <asp:DropDownList ID="ddlPlan" runat="server">
         </asp:DropDownList>
         <br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 

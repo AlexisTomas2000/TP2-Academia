@@ -145,6 +145,26 @@ namespace UI.Web
         {
             Response.Redirect("~/Materias");
         }
+
+        protected void btnDocYCur_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/DocentesCursos");
+        }
+
+        protected void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Usuarios");
+        }
+
+        protected void btnInscripciones_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPersonas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Personas");
+        }
     }
 
 }
