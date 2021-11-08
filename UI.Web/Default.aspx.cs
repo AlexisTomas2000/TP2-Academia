@@ -150,12 +150,12 @@ namespace UI.Web
 
         protected void btnUsuarios_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Usuarios");
         }
 
         protected void btnDocYCur_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/DocentesCursos");
         }
 
         protected void btnInscripciones_Click(object sender, EventArgs e)
@@ -165,7 +165,7 @@ namespace UI.Web
 
         protected void btnPersonas_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Personas");
         }
     }
 
