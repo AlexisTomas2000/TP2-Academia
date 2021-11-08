@@ -30,24 +30,18 @@ namespace UI.Web
                             </style>
                         <h1>Su usuario es: " + u.NombreUsuario + "</h1></br>" +
                         "<h2>Su contraseña es:" + u.Clave + "</h2></br>";
-            //   "<h3>" + "Usted se llama: " + u.Nombre + " " + u.Apellido + "</h3>";
             int rta = this.sendMail(txtEmail.Text, "Este correo fue enviado para recuperar la contraseña", body);
             if (rta == 0)
             {
                 Response.Write("<script> alert(" + "'Error al enviar este correo.Por favor verifique los datos o intente mas tarde.Por favor verifica tu conexion y que tus datos sean correto e intente nuevamente'" + ") </script>");
             }
-            else if (rta == 1)
-            {
-               //Response.Write("<script> alert(" + "'Correo enviado exitosamente'" + ") </script>");
-                Response.Redirect("~/Login");
-            }
         }
         private int sendMail(string to, string asunto, string body)
         {
-           // string msge = "Error al enviar este correo.Por favor verifique los datos o intente mas tarde";
+            //string msge = "Error al enviar este correo.Por favor verifique los datos o intente mas tarde";
+            int a = 0;
             string from = "a_c_a_d_e_m0117@hotmail.com";
             string displayName = "Academia";
-            int rta = 0;
             try
             {
                 MailMessage mail = new MailMessage();
@@ -60,15 +54,14 @@ namespace UI.Web
                 client.Credentials = new NetworkCredential(from, "mdeveloper117");
                 client.EnableSsl = true;
                 client.Send(mail);
-                rta = 1;
-                //msge = "Correo enviado exitosamente";
+                a= 1;
+              //  msge = "Correo enviado exitosamente";
             }
             catch (Exception ex)
             {
-                rta = 0;
-               // msge = ex.Message + "Por favor verifica tu conexion y que tus datos sean correto e intente nuevamente";
+                //msge = ex.Message + "Por favor verifica tu conexion y que tus datos sean correto e intente nuevamente";
             }
-            return rta ;
+            return a ;
         }
 
         private bool validar()
@@ -91,7 +84,7 @@ namespace UI.Web
             if (validar())
             {
                 this.Mandarmail();
-                
+                Response.Redirect("~/Login");
             }
         }
 

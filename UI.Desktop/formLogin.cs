@@ -54,9 +54,6 @@ namespace UI.Desktop
             OlvidarContra oc = new OlvidarContra();
             oc.ShowDialog();
             this.Show();
-            MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
         }
 
         public Persona Damelo() {

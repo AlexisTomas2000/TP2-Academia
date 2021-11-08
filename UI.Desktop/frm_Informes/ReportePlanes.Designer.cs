@@ -30,21 +30,32 @@ namespace UI.Desktop.frm_Informes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportePlanes));
+            this.spListaPlanesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tp2_netDataSet7 = new UI.Desktop.tp2_netDataSet7();
             this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2netDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp2_netDataSet = new UI.Desktop.tp2_netDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.planesTableAdapter = new UI.Desktop.tp2_netDataSetTableAdapters.planesTableAdapter();
-            this.tp2_netDataSet7 = new UI.Desktop.tp2_netDataSet7();
-            this.spListaPlanesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_ListaPlanesTableAdapter = new UI.Desktop.tp2_netDataSet7TableAdapters.sp_ListaPlanesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.spListaPlanesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2netDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spListaPlanesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spListaPlanesBindingSource
+            // 
+            this.spListaPlanesBindingSource.DataMember = "sp_ListaPlanes";
+            this.spListaPlanesBindingSource.DataSource = this.tp2_netDataSet7;
+            // 
+            // tp2_netDataSet7
+            // 
+            this.tp2_netDataSet7.DataSetName = "tp2_netDataSet7";
+            this.tp2_netDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // planesBindingSource
             // 
@@ -63,9 +74,9 @@ namespace UI.Desktop.frm_Informes
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet2";
-            reportDataSource1.Value = this.spListaPlanesBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.spListaPlanesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Desktop.Informe.InformePlanes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(22, 12);
             this.reportViewer1.Name = "reportViewer1";
@@ -76,16 +87,6 @@ namespace UI.Desktop.frm_Informes
             // planesTableAdapter
             // 
             this.planesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tp2_netDataSet7
-            // 
-            this.tp2_netDataSet7.DataSetName = "tp2_netDataSet7";
-            this.tp2_netDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spListaPlanesBindingSource
-            // 
-            this.spListaPlanesBindingSource.DataMember = "sp_ListaPlanes";
-            this.spListaPlanesBindingSource.DataSource = this.tp2_netDataSet7;
             // 
             // sp_ListaPlanesTableAdapter
             // 
@@ -98,16 +99,17 @@ namespace UI.Desktop.frm_Informes
             this.ClientSize = new System.Drawing.Size(743, 482);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReportePlanes";
-            this.Text = "Reporte2";
+            this.Text = "Reporte Planes";
             this.Load += new System.EventHandler(this.Reporte2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.spListaPlanesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2netDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spListaPlanesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

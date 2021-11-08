@@ -6,7 +6,7 @@
             CssClass="StrongText"></asp:Label>
     </div>  
         </asp:Panel>
-    <asp:Panel runat="server">
+    <asp:Panel runat="server" BackColor="#CCCCCC">
         <div style="margin-left: auto; margin-right: auto; text-align: center;">
 
 
@@ -48,6 +48,7 @@
             <br />
             <br />
             <br />
+            <asp:Image ID="Image1" runat="server" Height="168px" ImageUrl="~/Fotos/logo-utn (1) (1).png" Width="541px" />
             <br />
             <br />
             <br />

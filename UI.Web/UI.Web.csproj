@@ -138,6 +138,7 @@
     <Content Include="Especialidades.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Default.aspx" />
+    <Content Include="Fotos\logo-utn %281%29 %281%29.png" />
     <Content Include="frm_Informes\InformesCursos.aspx" />
     <Content Include="frm_Informes\InformesPlanes.aspx" />
     <Content Include="Login.aspx" />
