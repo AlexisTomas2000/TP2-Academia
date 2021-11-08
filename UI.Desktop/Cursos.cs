@@ -34,6 +34,17 @@ namespace UI.Desktop
         private void Cursos_Load(object sender, EventArgs e)
         {
             listar();
+            if (Entity.TipoPersona == 3)
+            {
+                this.tsmOpciones.Visible = true;
+                this.tsmOpciones.Enabled = true;
+            }
+
+            if (Entity.TipoPersona == 2 || Entity.TipoPersona == 3)
+            {
+                btnReportes.Visible = true;
+                btnReportes.Enabled = true;
+            }
         }
         public void listar()
         {
@@ -45,17 +56,6 @@ namespace UI.Desktop
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             this.listar();
-            if (Entity.TipoPersona==3)
-            {
-                this.tsmOpciones.Visible = true;
-                this.tsmOpciones.Enabled = true;
-            }
-
-            if (Entity.TipoPersona == 2 || Entity.TipoPersona == 3)
-            {
-                btnReportes.Visible = true;
-                btnReportes.Enabled = true;
-            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

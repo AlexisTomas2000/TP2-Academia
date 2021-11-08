@@ -17,7 +17,7 @@ namespace UI.Desktop
 {
     public partial class OlvidarContra : Form
     {
-        private Regex rx = new Regex(@"\w + ([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+        private Regex rx = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         public OlvidarContra()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace UI.Desktop
         }
         private string sendMail(string to , string asunto, string body)
         {
-            string msge = "Error al enviar este correo.Por favor verifique los datos o intente mas tarde";
+            string msge = "Error al enviar este correo. Por favor verifique los datos o intente mas tarde";
             string from = "a_c_a_d_e_m0117@hotmail.com";
             string displayName = "Academia";
             try
