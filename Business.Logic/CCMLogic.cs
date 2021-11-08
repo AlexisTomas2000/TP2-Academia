@@ -26,5 +26,11 @@ namespace Business.Logic
             this.CcmData = new Data.Database.CCMAdapter();
             return this.CcmData.GetAll();
         }
+
+        public object GetAll(int iDPlan)
+        {
+            this.CcmData = new Data.Database.CCMAdapter();
+            return this.CcmData.GetAll(iDPlan);
+        }
     }
 }

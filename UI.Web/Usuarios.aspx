@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="Panel_1" runat="server">
+    <asp:Panel ID="Panel_1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" ForeColor="Black" >
             <Columns>
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                 <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
@@ -23,7 +23,7 @@
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
     </asp:Panel>
-<asp:Panel ID="formPanel" Visible="false" runat="server">
+<asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server" ></asp:TextBox>
               <asp:RequiredFieldValidator ID="Nombre" runat="server" ControlToValidate="nombreTextBox"   
@@ -68,7 +68,7 @@ ErrorMessage="La clave repetida no puede ser vacía" ForeColor="Red">*</asp:Requ
             &nbsp;<br />
     </asp:Panel>
     </asp:Panel>
-    <asp:Panel ID="gridActionsPanel" runat="server">
+    <asp:Panel ID="gridActionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>

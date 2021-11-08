@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Personas.aspx.cs" Inherits="UI.Web.Personas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="Panel1" runat="server">
+    <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
                 <asp:BoundField HeaderText="ID Persona" DataField="ID" />
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
@@ -29,7 +29,7 @@
         <asp:DropDownList ID="ddlSelec" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" AutoPostBack="True">
         </asp:DropDownList>
     </asp:Panel>
-<asp:Panel ID="formPanel" Visible="false" runat="server">
+<asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         <asp:Label ID="IDPersonaLabel" runat="server" Text="ID Persona: "></asp:Label>
         <asp:TextBox ID="idPersonaTextBox" runat="server" Width="126px" Enabled="False" ReadOnly="True" OnTextChanged="idPersonaTextBox_TextChanged"></asp:TextBox>
         <br />
@@ -76,7 +76,7 @@ ErrorMessage="Debe Seleccionar un plan" ForeColor="Red">*</asp:RequiredFieldVali
         <br />
         <asp:Label ID="Label1" runat="server" Text="Tipo Persona: "></asp:Label>
         <asp:DropDownList ID="ddlTP" runat="server" >
-            <asp:ListItem Value="2">Alumno</asp:ListItem>
+            <asp:ListItem Value="1">Alumno</asp:ListItem>
             <asp:ListItem Value="2">Profesor</asp:ListItem>
         </asp:DropDownList>
      <asp:RequiredFieldValidator ID="idTP" runat="server" ControlToValidate="ddlTP"   
@@ -96,7 +96,7 @@ ErrorMessage="El nombre de usuario no puede estar vacío" ForeColor="Red">*</asp
     </asp:Panel>
     </asp:Panel>
 
-    <asp:Panel ID="gridActionsPanel" runat="server">
+    <asp:Panel ID="gridActionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>

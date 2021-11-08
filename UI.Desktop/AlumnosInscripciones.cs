@@ -32,6 +32,24 @@ namespace UI.Desktop
         private void AlumnosInscripciones_Load(object sender, EventArgs e)
         {
             this.listar();
+            this.Mostrar();
+        }
+
+        private void Mostrar()
+        {
+            if(Entity.TipoPersona==1)
+            {
+                this.tsbEditar.Enabled = false;
+                this.tsbEditar.Visible = false;
+                this.tsbEliminar.Visible = false;
+                this.tsbEliminar.Enabled = false;
+            }else if(Entity.TipoPersona==2)
+            {
+                tsbAgregar.Visible = false;
+                tsbAgregar.Enabled = false;
+                this.tsbEliminar.Visible = false;
+                this.tsbEliminar.Enabled = false;
+            }
         }
 
         private void listar()

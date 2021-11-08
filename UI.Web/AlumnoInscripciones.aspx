@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AlumnoInscripciones.aspx.cs" Inherits="UI.Web.AlumnoInscripciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="Panel_1" runat="server">
+    <asp:Panel ID="Panel_1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
                 <asp:BoundField HeaderText="Id Inscripcion" DataField="ID" />
                 <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
@@ -22,7 +22,7 @@
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
     </asp:Panel>
-    <asp:Panel ID="formPanel" Visible="false" runat="server">
+    <asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         Id Alumno:
         <asp:TextBox ID="txtIDAlumno" runat="server" Enabled="False"></asp:TextBox>
         <asp:RequiredFieldValidator ID="IdAlumno" runat="server" ControlToValidate="txtIDAlumno" ErrorMessage="El ID no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -53,7 +53,7 @@ ErrorMessage="Debe Seleccionar una condicion" ForeColor="Red">*</asp:RequiredFie
             &nbsp;<br />
     </asp:Panel>
     </asp:Panel>
-    <asp:Panel ID="gridActionsPanel" runat="server">
+    <asp:Panel ID="gridActionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>

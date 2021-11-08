@@ -14,7 +14,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-  <div style="margin-left: auto; margin-right: auto; text-align: center;">
+  <div style="margin-left: auto; margin-right: auto; text-align: center; background-color: #E4E3E8;">
             
             <br />
             <br />

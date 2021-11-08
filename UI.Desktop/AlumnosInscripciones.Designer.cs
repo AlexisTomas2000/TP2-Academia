@@ -48,6 +48,8 @@ namespace UI.Desktop
             // 
             // dgvAluIns
             // 
+            this.dgvAluIns.AllowUserToAddRows = false;
+            this.dgvAluIns.AllowUserToDeleteRows = false;
             this.dgvAluIns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAluIns.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdAlumno,
@@ -58,6 +60,7 @@ namespace UI.Desktop
             this.dgvAluIns.Location = new System.Drawing.Point(13, 33);
             this.dgvAluIns.MultiSelect = false;
             this.dgvAluIns.Name = "dgvAluIns";
+            this.dgvAluIns.ReadOnly = true;
             this.dgvAluIns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAluIns.Size = new System.Drawing.Size(545, 376);
             this.dgvAluIns.TabIndex = 0;
@@ -67,30 +70,35 @@ namespace UI.Desktop
             this.IdAlumno.DataPropertyName = "IDAlumno";
             this.IdAlumno.HeaderText = "ID Alumno";
             this.IdAlumno.Name = "IdAlumno";
+            this.IdAlumno.ReadOnly = true;
             // 
             // IDCurso
             // 
             this.IDCurso.DataPropertyName = "IDCurso";
             this.IDCurso.HeaderText = "ID Curso";
             this.IDCurso.Name = "IDCurso";
+            this.IDCurso.ReadOnly = true;
             // 
             // Condicion
             // 
             this.Condicion.DataPropertyName = "Condicion";
             this.Condicion.HeaderText = "Condicion";
             this.Condicion.Name = "Condicion";
+            this.Condicion.ReadOnly = true;
             // 
             // Nota
             // 
             this.Nota.DataPropertyName = "Nota";
             this.Nota.HeaderText = "Nota";
             this.Nota.Name = "Nota";
+            this.Nota.ReadOnly = true;
             // 
             // IDIns
             // 
             this.IDIns.DataPropertyName = "ID";
             this.IDIns.HeaderText = "ID Inscripcion";
             this.IDIns.Name = "IDIns";
+            this.IDIns.ReadOnly = true;
             // 
             // toolStrip1
             // 

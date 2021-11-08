@@ -24,14 +24,30 @@ namespace UI.Desktop
         private void AlumnosInscripcionesDesktop_Load(object sender, EventArgs e)
         {
             CCMLogic c = new CCMLogic();
-            cbCursos.DataSource = c.GetAll();
+            if (Entity.TipoPersona == 1) { 
+            cbCursos.DataSource = c.GetAll(Entity.IDPlan);
             cbCursos.DisplayMember = "Desc";
             cbCursos.ValueMember = "Id_Curso";
             cbCondicion.SelectedIndex = 0;
+            }
+            else
+            {   
+                cbCursos.DataSource = c.GetAll();
+                cbCursos.DisplayMember = "Desc";
+                cbCursos.ValueMember = "Id_Curso";
+                cbCondicion.SelectedIndex = 0;
+            }
+            
             if (Modo == ModoForm.Alta)
             {
                 this.txtIdAlum.Text = Entity.ID.ToString();
-                txtIdAlum.Enabled = false;
+                if (this.Entity.TipoPersona == 2)
+                {
+                    txtIdAlum.Enabled = true;
+                }else
+                {
+                    txtIdAlum.Enabled = false;
+                }
                 cbCondicion.Visible = false;
                 cbNota.Visible = false;
                 label3.Visible = false;
@@ -69,7 +85,6 @@ namespace UI.Desktop
         public AlumnosInscripcionesDesktop(Persona per, ModoForm modo) : this() {
             Entity = per;
             this.Modo = modo;
-            //AIActual=
         }
         public override void MapearDeDatos()
         {
@@ -116,6 +131,7 @@ namespace UI.Desktop
                     }
             }
         }
+
         public override void MapearADatos()
         {
             switch(Modo)
@@ -189,18 +205,39 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-           
-            if (MessageBox.Show("Presiones si para confirmar la inscripcion", "Confirmar Inscripcion", MessageBoxButtons.YesNo)==DialogResult.Yes)
-            { this.GuardarCambios();
+            PersonaLogic per = new PersonaLogic();
+            Persona a = per.GetOne(int.Parse(txtIdAlum.Text));
+            if(Entity.TipoPersona == 2){ 
+            if(a.TipoPersona==1) 
+            {
+                if (MessageBox.Show("Presiones si para confirmar la inscripcion", "Confirmar Inscripcion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.GuardarCambios();
+                    this.Close();
+                }
+            }
+            else { MessageBox.Show("El Alumno no existe", "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            if (MessageBox.Show("Presiones si para confirmar la inscripcion", "Confirmar Inscripcion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.GuardarCambios();
                 this.Close();
             }
-            
+
 
         }
 
         private void cbCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtIdAlum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

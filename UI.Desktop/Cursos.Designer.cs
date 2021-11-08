@@ -93,6 +93,9 @@ namespace UI.Desktop
             // 
             // dgvCursos
             // 
+            this.dgvCursos.AllowUserToAddRows = false;
+            this.dgvCursos.AllowUserToDeleteRows = false;
+            this.dgvCursos.AllowUserToOrderColumns = true;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -103,6 +106,7 @@ namespace UI.Desktop
             this.dgvCursos.Location = new System.Drawing.Point(12, 28);
             this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
+            this.dgvCursos.ReadOnly = true;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(548, 381);
             this.dgvCursos.TabIndex = 1;
@@ -112,6 +116,7 @@ namespace UI.Desktop
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID_Curso";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // ID_Plan
             // 
@@ -125,6 +130,7 @@ namespace UI.Desktop
             this.ID_Materia.DataPropertyName = "IDMateria";
             this.ID_Materia.HeaderText = "ID_Materia";
             this.ID_Materia.Name = "ID_Materia";
+            this.ID_Materia.ReadOnly = true;
             // 
             // Año
             // 

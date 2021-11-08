@@ -94,6 +94,7 @@ namespace UI.Web
             btnMaterias.Enabled = true;
             btnComisiones.Enabled = true;
             btnPlanes.Enabled = true;
+            btnInscripciones.Text = "Registrar Notas";
         }
         private void MostrarSuperAdmin() {
             btnPlanes.Visible = true;

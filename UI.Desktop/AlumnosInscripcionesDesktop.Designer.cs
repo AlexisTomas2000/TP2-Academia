@@ -49,6 +49,7 @@ namespace UI.Desktop
             this.txtIdAlum.Name = "txtIdAlum";
             this.txtIdAlum.Size = new System.Drawing.Size(162, 20);
             this.txtIdAlum.TabIndex = 0;
+            this.txtIdAlum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdAlum_KeyPress);
             // 
             // cbCursos
             // 

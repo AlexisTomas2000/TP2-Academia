@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Especialidades.aspx.cs" Inherits="UI.Web.Especialidades" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-     <asp:Panel ID="Panel1" runat="server">
+     <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
                 <asp:BoundField HeaderText="ID Especialidad" DataField="ID" />
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
@@ -21,7 +21,7 @@
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
      </asp:Panel>
-<asp:Panel ID="formPanel" Visible="false" runat="server">
+<asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         <asp:Label ID="idLabel" runat="server" Text="ID Especialidad: "></asp:Label>
         <asp:TextBox ID="txtID" runat="server" ReadOnly="True" Enabled="False"></asp:TextBox>
         <br />
@@ -31,19 +31,19 @@
 ErrorMessage="La descripcion no puede ser vacía" ForeColor="Red">*</asp:RequiredFieldValidator>  
         <br />
      </asp:Panel>
-     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/> 
-        <asp:Panel ID="formActionsPanel" runat="server">
+     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" BackColor="#E4E3E8" Height="54px"/> 
+        <asp:Panel ID="formActionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             &nbsp;
             <asp:LinkButton ID="cancelarLinkButton" runat="server" CausesValidation="false" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             <br />
             </asp:Panel>
-    <asp:Panel ID="formOptionsPanel" runat="server">
+    <asp:Panel ID="formOptionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
-            <div style="margin-left: auto; margin-right: auto; text-align: right;">
+            <div style="margin-left: auto; margin-right: auto; text-align: right; background-color: #E4E3E8;">
             <asp:LinkButton ID="btnSalir" runat="server" OnClick="btnSalir_Click">Salir</asp:LinkButton>
         </div>  
 </asp:Content>

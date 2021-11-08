@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="UI.Web.Formulario_web1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="Panel1" runat="server">  
-        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+        <div style="margin-left: auto; margin-right: auto; text-align: center; background-color: #E4E3E8;">
         <asp:Label ID="Label1" runat="server" Text="" Font-Bold="true" Font-Size="X-Large"
             CssClass="StrongText"></asp:Label>
     </div>  
         </asp:Panel>
     <asp:Panel runat="server" BackColor="#CCCCCC">
-        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+        <div style="margin-left: auto; margin-right: auto; text-align: center; background-color: #E4E3E8;">
 
 
             <br />
@@ -56,7 +56,7 @@
 
         </div>  
         
-        <div style="margin-left: auto; margin-right: auto; text-align: right;">
+        <div style="margin-left: auto; margin-right: auto; text-align: right; background-color: #E4E3E8;">
             <asp:LinkButton ID="btnSalir" runat="server" OnClick="btnSalir_Click">Salir</asp:LinkButton>
         </div>  
 

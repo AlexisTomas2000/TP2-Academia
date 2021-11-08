@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="UI.Web.Cursos" %>
 <asp:Content ID="Content" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="Panel1" runat="server">
+    <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
                 <asp:BoundField HeaderText="ID Curso" DataField="ID" />
                 <asp:BoundField HeaderText="ID Materia" DataField="IDMateria" />
@@ -24,7 +24,7 @@
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
     </asp:Panel>
-<asp:Panel ID="formPanel" Visible="false" runat="server" style="margin-top: 0px">
+<asp:Panel ID="formPanel" Visible="false" runat="server" style="margin-top: 0px" BackColor="#E4E3E8" Height="155px">
     <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>
     <asp:TextBox ID="txtID" runat="server" Enabled="False" ReadOnly="True"></asp:TextBox>
      <br />
@@ -48,20 +48,20 @@ ErrorMessage="El año no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldV
     <br />
     <br />
     </asp:Panel>
-    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/>   
-          <asp:Panel ID="formActionsPanel" runat="server">
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" BackColor="#E4E3E8" Height="49px" style="margin-top: 5px"/>   
+          <asp:Panel ID="formActionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             &nbsp;
             <asp:LinkButton ID="cancelarLinkButton" runat="server" CausesValidation="false" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             <br />
     </asp:Panel>
 
-    <asp:Panel ID="gridActionsPanel" runat="server">
+    <asp:Panel ID="gridActionsPanel" runat="server" BackColor="#E4E3E8">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar </asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar </asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
-    <div style="margin-left: auto; margin-right: auto; text-align: right;">
+    <div style="margin-left: auto; margin-right: auto; text-align: right; background-color: #E4E3E8;">
         <asp:LinkButton ID="btnSalir" runat="server" OnClick="btnSalir_Click">Salir</asp:LinkButton>
         </div>
 </asp:Content>

@@ -68,10 +68,6 @@ namespace UI.Desktop
             this.Show();
         }
         private void MostrarUsu() { 
-                /*btnComisiones.Visible = true;
-                btnMaterias.Visible = true;
-                btnPlanes.Visible = true;
-                btnEspecialidades.Visible = true;*/
                 tsbComisiones.Visible = true;
                 tsbMaterias.Visible = true;
                 tsbPlanes.Visible = true;
@@ -80,32 +76,17 @@ namespace UI.Desktop
         }
 
         private void MostrarProfesor() {
-               /* btnComisiones.Visible = true;
-                btnMaterias.Visible = true;
-                btnPlanes.Visible = true;
-                btnEspecialidades.Visible = true;
-                btnCursos.Visible = true;
-                btnUsuarios.Visible = true;*/
                 tsbInscripciones.Visible = true;
                 tsbComisiones.Visible = true;
                 tsbMaterias.Visible = true;
                 tsbPlanes.Visible = true;
-                //tsbRepoPlanes.Visible = true;
                 tsbCursos.Visible = true;
-                //tsbRepoCurso.Visible = true;
                 tsbEspecialidades.Visible = true;
+            tsbInscripciones.Text = "Registrar Notas";
            
         }
         private void MostrarSuperAdmin()
         {
-           /* btnComisiones.Visible = true;
-            btnMaterias.Visible = true;
-            btnPlanes.Visible = true;
-            btnEspecialidades.Visible = true;
-            btnUsuarios.Visible = true;
-            btnCursos.Visible = true;
-            btbDC.Visible = true;
-            btnPersonas.Visible = true;*/
             tsbComisiones.Visible = true;
             tsbMaterias.Visible = true;
             tsbPlanes.Visible = true;
@@ -114,9 +95,7 @@ namespace UI.Desktop
             tsbDYC.Visible = true;
             tsbInscripciones.Visible = true;
             tsbPersonas.Visible = true;
-          //  tsbRepoPlanes.Visible = true;
             tsbCursos.Visible = true;
-            //tsbRepoCurso.Visible = true;
 
         }
         #region btns
