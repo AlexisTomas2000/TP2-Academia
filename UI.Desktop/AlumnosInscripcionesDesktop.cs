@@ -145,6 +145,12 @@ namespace UI.Desktop
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();
                         AIActual.State = BusinessEntity.States.New;
+                        CursoLogic cur = new CursoLogic();
+                        Curso curso = cur.GetOne(AIActual.IDCurso);
+                        curso.Cupo = curso.Cupo - 1;
+                        curso.State = BusinessEntity.States.Modified;
+                        cur.Save(curso);
+
                         break;
                     }
                 case ModoForm.Modificacion:
