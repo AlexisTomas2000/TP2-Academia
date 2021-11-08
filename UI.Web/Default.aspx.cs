@@ -114,6 +114,10 @@ namespace UI.Web
             btnMaterias.Enabled = true;
             btnComisiones.Enabled = true;
             btnPlanes.Enabled = true;
+            btnReportesCursos.Enabled = true;
+            btnReportesCursos.Visible = true;
+            btnReportesPlanes.Enabled = true;
+            btnReportesPlanes.Visible = true;
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)
@@ -166,6 +170,16 @@ namespace UI.Web
         protected void btnPersonas_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Personas");
+        }
+
+        protected void txtReportesCursos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_Informes/InformesCursos.aspx");
+        }
+
+        protected void btnReportesPlanes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_Informes/InformesPlanes.aspx");
         }
     }
 

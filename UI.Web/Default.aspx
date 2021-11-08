@@ -42,6 +42,9 @@
 
             <br />
             <br />
+            <asp:LinkButton ID="btnReportesCursos" runat="server" Enabled="False" OnClick="txtReportesCursos_Click" Visible="False">Reporte Curso</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LinkButton ID="btnReportesPlanes" runat="server" Enabled="False" OnClick="btnReportesPlanes_Click" Visible="False">Reporte Planes</asp:LinkButton>
             <br />
             <br />
             <br />

@@ -18,7 +18,7 @@
               <Width>2.47354cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.37313cm</Width>
+              <Width>3.77cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.08208cm</Width>
@@ -40,8 +40,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id curso</Value>
-                              <Style />
+                              <Value>Id Curso</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -59,6 +61,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -70,8 +73,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id materia</Value>
-                              <Style />
+                              <Value>Id Materia</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -89,6 +94,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -100,8 +106,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>desc materia</Value>
-                              <Style />
+                              <Value>Descripcion Materia</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -119,6 +127,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -130,8 +139,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id comision</Value>
-                              <Style />
+                              <Value>Id Comision</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -149,6 +160,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -160,8 +172,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>desc comision</Value>
-                              <Style />
+                              <Value>Descripcion Comision</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -179,6 +193,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -190,8 +205,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cupo</Value>
-                              <Style />
+                              <Value>Cupo</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -209,6 +226,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -220,8 +238,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>anio calendario</Value>
-                              <Style />
+                              <Value>Año Calendario</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -239,6 +259,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -485,7 +506,7 @@
         <Top>0.92287cm</Top>
         <Left>0.79057cm</Left>
         <Height>1.2cm</Height>
-        <Width>23.16208cm</Width>
+        <Width>23.55895cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -526,7 +547,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.00224cm</Top>
-          <Left>6.79662cm</Left>
+          <Left>7.8285cm</Left>
           <Height>0.99688cm</Height>
           <Width>8.95583cm</Width>
           <Style>

@@ -9,13 +9,13 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.18792cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.55833cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.66958cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -31,8 +31,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id plan</Value>
-                              <Style />
+                              <Value>Id Plan</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -43,13 +45,14 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightGoldenrodYellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -61,8 +64,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>desc plan</Value>
-                              <Style />
+                              <Value>Descripcion  Plan</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -73,13 +78,14 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightGoldenrodYellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -91,8 +97,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id especialidad</Value>
-                              <Style />
+                              <Value>Id Especialidad</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -103,13 +111,14 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightGoldenrodYellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -121,8 +130,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>desc especialidad</Value>
-                              <Style />
+                              <Value>Descripcion Especialidad</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -133,13 +144,14 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightGoldenrodYellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -293,7 +305,7 @@
         <Top>1.90183cm</Top>
         <Left>3.48933cm</Left>
         <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Width>13.91583cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

@@ -114,6 +114,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.LinkButton btnPersonas;
 
         /// <summary>
+        /// Control btnReportesCursos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnReportesCursos;
+
+        /// <summary>
+        /// Control btnReportesPlanes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnReportesPlanes;
+
+        /// <summary>
         /// Control btnSalir.
         /// </summary>
         /// <remarks>
