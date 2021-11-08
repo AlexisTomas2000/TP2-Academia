@@ -14,9 +14,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <p class="auto-style1">
-            Login<br />
+  <div style="margin-left: auto; margin-right: auto; text-align: center;">
+            
+            <br />
+            <br />
+            
+        <asp:Label ID="Label1" runat="server" Text="" Font-Bold="true" Font-Size="X-Large"
+            CssClass="StrongText">Login</asp:Label>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
             <asp:Label runat="server" Text="Usuario"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtUsu" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
@@ -25,10 +35,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtContra" runat="server" OnTextChanged="txtContra_TextChanged" TextMode="Password"></asp:TextBox>
             <br />
+
+            <br />
+            <br />
+
             <asp:Button ID="btnIngresar" runat="server" OnClick="btnIngresar_Click" Text="Ingresar" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:LinkButton ID="btnOlvideMiContra" runat="server" OnClick="btnOlvideMiContra_Click">Olvide mi contraseña</asp:LinkButton>
-            </p>
+
         </div>
     </form>
 </body>
