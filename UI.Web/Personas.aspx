@@ -76,8 +76,8 @@ ErrorMessage="Debe Seleccionar un plan" ForeColor="Red">*</asp:RequiredFieldVali
         <br />
         <asp:Label ID="Label1" runat="server" Text="Tipo Persona: "></asp:Label>
         <asp:DropDownList ID="ddlTP" runat="server" >
-            <asp:ListItem>1</asp:ListItem>
-            <asp:ListItem>1</asp:ListItem>
+            <asp:ListItem Value="2">Alumno</asp:ListItem>
+            <asp:ListItem Value="2">Profesor</asp:ListItem>
         </asp:DropDownList>
      <asp:RequiredFieldValidator ID="idTP" runat="server" ControlToValidate="ddlTP"   
 ErrorMessage="Debe Seleccionar un Tipo" ForeColor="Red">*</asp:RequiredFieldValidator>

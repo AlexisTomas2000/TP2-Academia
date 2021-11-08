@@ -121,6 +121,7 @@ namespace UI.Web
             this.emailTextBox.Text = this.Entity.EMail;
             this.fechaNacTextBox.Text = this.Entity.FechaNacimiento.ToString("dd/MM/yyyy");
             this.ddlPlan.SelectedIndex = this.Entity.IDPlan;
+            this.ddlTP.SelectedIndex = (this.Entity.TipoPersona) -1 ;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,6 +221,8 @@ namespace UI.Web
         {
             if (this.isEntitySelected)
             {
+                Label2.Visible = false;
+                txtNU.Visible = false;
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
@@ -230,6 +233,8 @@ namespace UI.Web
         {
             if (this.isEntitySelected)
             {
+                Label2.Visible = false;
+                txtNU.Visible = false;
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
