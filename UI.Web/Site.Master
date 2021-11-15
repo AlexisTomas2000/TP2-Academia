@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.SiteMaster" %>
 
+<%@ Register src="UserControl/Login.ascx" tagname="custom_login" tagprefix="mylogin" %>
+
 <!DOCTYPE html>
 
 <html lang="es">
