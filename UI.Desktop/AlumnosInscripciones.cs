@@ -106,17 +106,15 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int IDA = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDAlumno;
-            int IDC = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDCurso;
-            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity,IDA, IDC, ApplicationForm.ModoForm.Modificacion);
+            int ID = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).ID;
+            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity,ID, ApplicationForm.ModoForm.Modificacion);
             aid.ShowDialog();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int IDA = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDAlumno;
-            int IDC = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).IDCurso;
-            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity, IDA, IDC, ApplicationForm.ModoForm.Baja);
+            int ID = ((Business.Entities.AlumnoInscripcion)this.dgvAluIns.SelectedRows[0].DataBoundItem).ID;
+            AlumnosInscripcionesDesktop aid = new AlumnosInscripcionesDesktop(Entity,ID,ApplicationForm.ModoForm.Baja);
             aid.ShowDialog();
         }
     }

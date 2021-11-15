@@ -166,15 +166,16 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     CursoLogic curso = new CursoLogic();
                     Business.Entities.Curso cur = curso.GetOne(Entity.IDCurso);
-                    if (curso.HayCupos(cur))
+                    if (curso.HayCupos(cur)==true)
                     {
                         this.SaveEntity(this.Entity);
                         this.Listar();
                         this.Form.Visible = false;
+                        Response.Redirect("~/AlumnoInscripciones");
                     }
-                    else
+                    else if(curso.HayCupos(cur) == false)
                     {
-                        Response.Write("<script> alerti(" + "No hay cupos para este curso, por favor seleccione otro" + ")</script>");
+                        Response.Write("<script> alert(" + "'No hay cupos para este curso, por favor seleccione otro'" + ") </script>");
                     }
                                      
                     break;
@@ -195,8 +196,8 @@ namespace UI.Web
                 default:
                     break;
             }
+            
         }
-
         private void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
@@ -233,7 +234,7 @@ namespace UI.Web
 
         private void LoadFrom(int selectedID)
         {
-            this.Entity = this.Logic.GetOne2(selectedID);
+            this.Entity = this.Logic.GetOne(selectedID);
             this.txtIDAlumno.Text = this.Entity.IDAlumno.ToString();
             this.ddlCurso.SelectedValue = this.Entity.IDCurso.ToString();
             this.ddlCondicion.SelectedItem.Text = this.Entity.Condicion;

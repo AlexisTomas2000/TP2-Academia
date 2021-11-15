@@ -25,7 +25,7 @@ namespace UI.Desktop
         {
             CCMLogic c = new CCMLogic();
             if (Entity.TipoPersona == 1) { 
-            cbCursos.DataSource = c.GetAll(Entity.IDPlan);
+            cbCursos.DataSource = c.GetAll();
             cbCursos.DisplayMember = "Desc";
             cbCursos.ValueMember = "Id_Curso";
             cbCondicion.SelectedIndex = 0;
@@ -73,11 +73,11 @@ namespace UI.Desktop
             
             this.Modo = modo;
         }
-        public AlumnosInscripcionesDesktop(Persona per,int ida,int idc,ModoForm modo):this()
+        public AlumnosInscripcionesDesktop(Persona per,int id,ModoForm modo):this()
         {
             this.Modo = modo;
             AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
-            AIActual = ail.GetOne(ida,idc);
+            AIActual = ail.GetOne(id);
             this.MapearDeDatos();
             Entity = per;
         }
@@ -134,24 +134,10 @@ namespace UI.Desktop
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();
                         AIActual.State = BusinessEntity.States.New;
-                        CursoLogic cur = new CursoLogic();
-                        Curso curso = cur.GetOne(AIActual.IDCurso);
-                        if (cur.HayCupos(curso))
-                        {
-                            curso.Cupo = curso.Cupo - 1;
-                            curso.State = BusinessEntity.States.Modified;
-                            cur.Save(curso);
-                        }
-                        else
-                        {
-                            MessageBox.Show("No hay cupos para el curso seleccionado, intente mas tarde", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error); 
-                        }
-
                         break;
                     }
                 case ModoForm.Modificacion:
                     {
-                       // this.AIActual.ID = AIActual.ID;//int.Parse(txtID.Text);
                         this.AIActual.IDAlumno = int.Parse(txtIdAlum.Text);
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();
@@ -161,7 +147,6 @@ namespace UI.Desktop
                     }
                 case ModoForm.Baja:
                     {
-                        //this.AIActual.ID = int.Parse(txtID.Text);
                         this.AIActual.IDAlumno = int.Parse(txtIdAlum.Text);
                         this.AIActual.IDCurso = int.Parse(cbCursos.SelectedValue.ToString());
                         this.AIActual.Condicion = cbCondicion.SelectedItem.ToString();
@@ -207,23 +192,43 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            PersonaLogic per = new PersonaLogic();
-            Persona a = per.GetOne(int.Parse(txtIdAlum.Text));
-            if(Entity.TipoPersona == 2){ 
-            if(a.TipoPersona==1) 
+            if (Entity.TipoPersona == 1)
             {
                 if (MessageBox.Show("Presiones si para confirmar la inscripcion", "Confirmar Inscripcion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.MapearADatos();
+                    CursoLogic cur = new CursoLogic();
+                    Curso curso = cur.GetOne(AIActual.IDCurso);
+                    if (cur.HayCupos(curso))
+                    {
+                        curso.Cupo = curso.Cupo - 1;
+                        curso.State = BusinessEntity.States.Modified;
+                        cur.Save(curso);
+                        this.GuardarCambios();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay cupos para el curso seleccionado, intente mas tarde", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+            else if (Entity.TipoPersona == 2)
+            {
+                if (MessageBox.Show("Presiones si para confirmar la nota", "Confirmar Nota", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     this.GuardarCambios();
                     this.Close();
                 }
             }
-            else { MessageBox.Show("El Alumno no existe", "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            }
-            if (MessageBox.Show("Presiones si para confirmar la inscripcion", "Confirmar Inscripcion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else if (Entity.TipoPersona == 3)
             {
-                this.GuardarCambios();
-                this.Close();
+                if (MessageBox.Show("Presiones si para eliminar la inscripcion", "Eliminar inscripcion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.GuardarCambios();
+                    this.Close();
+                }
             }
 
 
