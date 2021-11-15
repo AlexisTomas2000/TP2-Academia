@@ -46,5 +46,16 @@ namespace Business.Logic
             this.CursoData = new Data.Database.CursoAdapter();
             CursoData.Save(cur);
         }
+
+        public bool HayCupos(Business.Entities.Curso cur) {
+             bool rta = false;
+            if (cur.Cupo>0)
+            {
+                rta = true;
+
+            }
+
+            return rta; 
+        }
     }
 }

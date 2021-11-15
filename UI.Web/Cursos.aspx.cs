@@ -154,6 +154,7 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.formPanel.Visible = false;
+
                     break;
                 default:
                     break;

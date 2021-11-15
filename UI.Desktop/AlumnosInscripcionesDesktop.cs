@@ -136,9 +136,16 @@ namespace UI.Desktop
                         AIActual.State = BusinessEntity.States.New;
                         CursoLogic cur = new CursoLogic();
                         Curso curso = cur.GetOne(AIActual.IDCurso);
-                        curso.Cupo = curso.Cupo - 1;
-                        curso.State = BusinessEntity.States.Modified;
-                        cur.Save(curso);
+                        if (cur.HayCupos(curso))
+                        {
+                            curso.Cupo = curso.Cupo - 1;
+                            curso.State = BusinessEntity.States.Modified;
+                            cur.Save(curso);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay cupos para el curso seleccionado, intente mas tarde", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error); 
+                        }
 
                         break;
                     }
