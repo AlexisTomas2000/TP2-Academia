@@ -3,12 +3,13 @@
     <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView1" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="id_comision" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" DataSourceID="SqlDataSource1" >
             <Columns>
-                <asp:BoundField HeaderText="Id" DataField="ID" />
-                <asp:BoundField HeaderText="Descripcion Comision" DataField="Descripcion" />
-                <asp:BoundField HeaderText="Año Especialidad" DataField="AnioEspecialidad" />
-                <asp:BoundField HeaderText="Id Plan" DataField="IdPlan" />
+                <asp:BoundField HeaderText="ID Comision" DataField="id_comision" InsertVisible="False" ReadOnly="True" SortExpression="id_comision" />
+                <asp:BoundField HeaderText="Descripcion Comision" DataField="desc_comision" SortExpression="desc_comision" />
+                <asp:BoundField HeaderText="Año Especialidad" DataField="anio_especialidad" SortExpression="anio_especialidad" />
+                <asp:BoundField HeaderText="ID Plan" DataField="id_plan" SortExpression="id_plan" />
+                <asp:BoundField DataField="desc_plan" HeaderText="Descripcion Plan" SortExpression="desc_plan" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -21,6 +22,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2_netConnectionString %>" SelectCommand="sp_Lista_Comisiones" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         <asp:Label ID="lbID" runat="server" Text="ID:"></asp:Label>

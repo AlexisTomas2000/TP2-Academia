@@ -75,7 +75,6 @@ namespace UI.Web
             {
                 this.cargarDDl();
             }
-            this.LoadGrid();
         }
         private void LoadForm(int id)
         {
@@ -93,11 +92,6 @@ namespace UI.Web
             ddlIdPlan.DataTextField = "Descripcion";
             ddlIdPlan.DataValueField = "ID";
             ddlIdPlan.DataBind();
-        }
-        private void LoadGrid()
-        {
-            this.gridView1.DataSource = this.Logic.GetAll();
-            this.gridView1.DataBind();
         }
 
   
@@ -122,7 +116,6 @@ namespace UI.Web
             { 
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
                     this.formPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
@@ -133,7 +126,6 @@ namespace UI.Web
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
-                        this.LoadGrid();
                         this.formPanel.Visible = false;
                     }
                     break;
@@ -144,7 +136,6 @@ namespace UI.Web
                         this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
-                        this.LoadGrid();
                         this.formPanel.Visible = false;
                     }
                     break;

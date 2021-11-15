@@ -26,6 +26,8 @@ namespace UI.Desktop
 
         private void Planes_Load(object sender, EventArgs e)
         {
+            this.sp_ListaPlanesTableAdapter.Fill(this.tp2_netDataSet13.sp_ListaPlanes);
+
             if (Entity.TipoPersona == 3)
             {
                 this.tsmOpciones.Visible = true;
@@ -37,27 +39,21 @@ namespace UI.Desktop
                 btnReportes.Visible = true;
                 btnReportes.Enabled = true;
             }
-            Listar();
+           
 
         }
 
-        public void Listar() 
-        {
-            this.dgvPlanes.AutoGenerateColumns = false;
-            this.p1 = new PlanLogic();
-            this.dgvPlanes.DataSource = p1.GetAll();
-        }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Listar();
+            this.sp_ListaPlanesTableAdapter.Fill(this.tp2_netDataSet13.sp_ListaPlanes);
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             PlanDesktop plan = new PlanDesktop(ApplicationForm.ModoForm.Alta);
             plan.ShowDialog();
-            this.Listar();
+            this.sp_ListaPlanesTableAdapter.Fill(this.tp2_netDataSet13.sp_ListaPlanes);
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)

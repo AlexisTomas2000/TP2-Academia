@@ -19,7 +19,7 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdccm = new SqlCommand("SELECT cursos.id_materia, cursos.id_comision, materias.desc_materia, comisiones.desc_comision, cursos.id_curso, cursos.anio_calendario,cursos.cupo " +
                                                     "FROM cursos INNER JOIN comisiones ON cursos.id_comision = comisiones.id_comision INNER JOIN "+
-                                                    "materias ON cursos.id_materia = materias.id_materia", sqlConn);
+                                                    "materias ON cursos.id_materia = materias.id_materia where cursos.cupo>0", sqlConn);
                 SqlDataReader drCcms = cmdccm.ExecuteReader();
                 while (drCcms.Read())
                 {
@@ -55,7 +55,7 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdccm = new SqlCommand("SELECT cursos.id_materia, cursos.id_comision, materias.desc_materia, comisiones.desc_comision, cursos.id_curso, cursos.anio_calendario,cursos.cupo " +
                                                         "FROM cursos INNER JOIN comisiones ON cursos.id_comision = comisiones.id_comision INNER JOIN " +
-                                                        "materias ON cursos.id_materia = materias.id_materia where materias.id_plan=@id ", sqlConn);
+                                                        "materias ON cursos.id_materia = materias.id_materia where materias.id_plan=@id and cursos.cupo>0", sqlConn);
                 cmdccm.Parameters.Add("@id", SqlDbType.Int).Value = iDPlan;
                 SqlDataReader drCcms = cmdccm.ExecuteReader();
                 while (drCcms.Read())

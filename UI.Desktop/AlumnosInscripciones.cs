@@ -50,6 +50,11 @@ namespace UI.Desktop
                 this.tsbEliminar.Visible = false;
                 this.tsbEliminar.Enabled = false;
             }
+            else
+            {
+                tsbAgregar.Visible = false;
+                tsbAgregar.Enabled = false;
+            }
         }
 
         private void listar()

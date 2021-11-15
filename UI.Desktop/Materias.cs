@@ -32,25 +32,19 @@ namespace UI.Desktop
 
         private void Materias_Load(object sender, EventArgs e)
         {
-            listar();
+            this.sp_ListaMateriasTableAdapter.Fill(this.tp2_netDataSet11.sp_ListaMaterias);
             if (Entity.TipoPersona == 3)
             {
                 this.tsmOpciones.Visible = true;
                 this.tsmOpciones.Enabled = true;
             }
         }
-        public void listar()
-        {
-            this.dgvMaterias.AutoGenerateColumns = false;
-            this.m1 = new MateriaLogic();
-            this.dgvMaterias.DataSource = m1.GetAll();
-        }
 
         private void tsbAgregar_Click(object sender, EventArgs e)
         {
             MateriaDesktop mat = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
             mat.ShowDialog();
-            this.listar();
+            this.sp_ListaMateriasTableAdapter.Fill(this.tp2_netDataSet11.sp_ListaMaterias);
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -70,7 +64,7 @@ namespace UI.Desktop
             int id = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
             MateriaDesktop mat = new MateriaDesktop(id, ApplicationForm.ModoForm.Baja);
             mat.ShowDialog();
-            listar();
+            this.sp_ListaMateriasTableAdapter.Fill(this.tp2_netDataSet11.sp_ListaMaterias);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -80,7 +74,7 @@ namespace UI.Desktop
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            listar();
+           this.sp_ListaMateriasTableAdapter.Fill(this.tp2_netDataSet11.sp_ListaMaterias);
         }
     }
 }

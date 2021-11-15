@@ -88,18 +88,7 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            //this.txtID.Text = this.AIActual.ID.ToString();
             this.txtIdAlum.Text = this.AIActual.IDAlumno.ToString();
-            /*int a=0;
-                for (int i = 0; i < 4; i++)
-                {
-                string ab = cbCondicion.Items[i].ToString();
-                    if ((ab.Equals(AIActual.Condicion)))
-                    {
-                        a = i;
-                    }
-                }
-            cbCondicion.DisplayMember = cbCondicion.Items[a].ToString();*/
             this.cbCondicion.SelectedValue = this.AIActual.Condicion.ToString();
             this.cbNota.SelectedIndex = this.AIActual.Nota-1;
             switch (this.Modo)

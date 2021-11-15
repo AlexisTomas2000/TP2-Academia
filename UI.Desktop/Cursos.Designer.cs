@@ -29,22 +29,30 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cursos));
             this.tsmOpciones = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tbsEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
+            this.tp2_netDataSet9 = new UI.Desktop.tp2_netDataSet9();
+            this.spListaCursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_ListaCursosTableAdapter = new UI.Desktop.tp2_netDataSet9TableAdapters.sp_ListaCursosTableAdapter();
+            this.idcursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idmateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descmateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcomisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desccomisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aniocalendarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spListaCursosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tsmOpciones
@@ -96,59 +104,28 @@ namespace UI.Desktop
             this.dgvCursos.AllowUserToAddRows = false;
             this.dgvCursos.AllowUserToDeleteRows = false;
             this.dgvCursos.AllowUserToOrderColumns = true;
+            this.dgvCursos.AutoGenerateColumns = false;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.ID_Plan,
-            this.ID_Materia,
-            this.Año,
-            this.Cupo});
+            this.idcursoDataGridViewTextBoxColumn,
+            this.idmateriaDataGridViewTextBoxColumn,
+            this.descmateriaDataGridViewTextBoxColumn,
+            this.idcomisionDataGridViewTextBoxColumn,
+            this.desccomisionDataGridViewTextBoxColumn,
+            this.aniocalendarioDataGridViewTextBoxColumn,
+            this.cupoDataGridViewTextBoxColumn});
+            this.dgvCursos.DataSource = this.spListaCursosBindingSource;
             this.dgvCursos.Location = new System.Drawing.Point(12, 28);
             this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(548, 381);
+            this.dgvCursos.Size = new System.Drawing.Size(865, 381);
             this.dgvCursos.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID_Curso";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ID_Plan
-            // 
-            this.ID_Plan.DataPropertyName = "IDComision";
-            this.ID_Plan.HeaderText = "ID_Comision";
-            this.ID_Plan.Name = "ID_Plan";
-            this.ID_Plan.ReadOnly = true;
-            // 
-            // ID_Materia
-            // 
-            this.ID_Materia.DataPropertyName = "IDMateria";
-            this.ID_Materia.HeaderText = "ID_Materia";
-            this.ID_Materia.Name = "ID_Materia";
-            this.ID_Materia.ReadOnly = true;
-            // 
-            // Año
-            // 
-            this.Año.DataPropertyName = "AnioCalendario";
-            this.Año.HeaderText = "Año";
-            this.Año.Name = "Año";
-            this.Año.ReadOnly = true;
-            // 
-            // Cupo
-            // 
-            this.Cupo.DataPropertyName = "Cupo";
-            this.Cupo.HeaderText = "Cupo";
-            this.Cupo.Name = "Cupo";
-            this.Cupo.ReadOnly = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(474, 415);
+            this.btnSalir.Location = new System.Drawing.Point(802, 415);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -158,7 +135,7 @@ namespace UI.Desktop
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(384, 415);
+            this.btnActualizar.Location = new System.Drawing.Point(721, 415);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 3;
@@ -178,11 +155,76 @@ namespace UI.Desktop
             this.btnReportes.Visible = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
+            // tp2_netDataSet9
+            // 
+            this.tp2_netDataSet9.DataSetName = "tp2_netDataSet9";
+            this.tp2_netDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spListaCursosBindingSource
+            // 
+            this.spListaCursosBindingSource.DataMember = "sp_ListaCursos";
+            this.spListaCursosBindingSource.DataSource = this.tp2_netDataSet9;
+            // 
+            // sp_ListaCursosTableAdapter
+            // 
+            this.sp_ListaCursosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idcursoDataGridViewTextBoxColumn
+            // 
+            this.idcursoDataGridViewTextBoxColumn.DataPropertyName = "id_curso";
+            this.idcursoDataGridViewTextBoxColumn.HeaderText = "ID Curso";
+            this.idcursoDataGridViewTextBoxColumn.Name = "idcursoDataGridViewTextBoxColumn";
+            this.idcursoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idmateriaDataGridViewTextBoxColumn
+            // 
+            this.idmateriaDataGridViewTextBoxColumn.DataPropertyName = "id_materia";
+            this.idmateriaDataGridViewTextBoxColumn.HeaderText = "ID Materia";
+            this.idmateriaDataGridViewTextBoxColumn.Name = "idmateriaDataGridViewTextBoxColumn";
+            this.idmateriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descmateriaDataGridViewTextBoxColumn
+            // 
+            this.descmateriaDataGridViewTextBoxColumn.DataPropertyName = "desc_materia";
+            this.descmateriaDataGridViewTextBoxColumn.HeaderText = "Descripcion Materia";
+            this.descmateriaDataGridViewTextBoxColumn.Name = "descmateriaDataGridViewTextBoxColumn";
+            this.descmateriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descmateriaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idcomisionDataGridViewTextBoxColumn
+            // 
+            this.idcomisionDataGridViewTextBoxColumn.DataPropertyName = "id_comision";
+            this.idcomisionDataGridViewTextBoxColumn.HeaderText = "ID Comision";
+            this.idcomisionDataGridViewTextBoxColumn.Name = "idcomisionDataGridViewTextBoxColumn";
+            this.idcomisionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // desccomisionDataGridViewTextBoxColumn
+            // 
+            this.desccomisionDataGridViewTextBoxColumn.DataPropertyName = "desc_comision";
+            this.desccomisionDataGridViewTextBoxColumn.HeaderText = "Descripcion Comision";
+            this.desccomisionDataGridViewTextBoxColumn.Name = "desccomisionDataGridViewTextBoxColumn";
+            this.desccomisionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.desccomisionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // aniocalendarioDataGridViewTextBoxColumn
+            // 
+            this.aniocalendarioDataGridViewTextBoxColumn.DataPropertyName = "anio_calendario";
+            this.aniocalendarioDataGridViewTextBoxColumn.HeaderText = "AÑO";
+            this.aniocalendarioDataGridViewTextBoxColumn.Name = "aniocalendarioDataGridViewTextBoxColumn";
+            this.aniocalendarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cupoDataGridViewTextBoxColumn
+            // 
+            this.cupoDataGridViewTextBoxColumn.DataPropertyName = "cupo";
+            this.cupoDataGridViewTextBoxColumn.HeaderText = "Cupo";
+            this.cupoDataGridViewTextBoxColumn.Name = "cupoDataGridViewTextBoxColumn";
+            this.cupoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 450);
+            this.ClientSize = new System.Drawing.Size(900, 450);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnSalir);
@@ -198,6 +240,8 @@ namespace UI.Desktop
             this.tsmOpciones.ResumeLayout(false);
             this.tsmOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spListaCursosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,11 +256,16 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvCursos;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Plan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cupo;
         private System.Windows.Forms.Button btnReportes;
+        private tp2_netDataSet9 tp2_netDataSet9;
+        private System.Windows.Forms.BindingSource spListaCursosBindingSource;
+        private tp2_netDataSet9TableAdapters.sp_ListaCursosTableAdapter sp_ListaCursosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcursoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmateriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descmateriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcomisionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desccomisionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aniocalendarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cupoDataGridViewTextBoxColumn;
     }
 }

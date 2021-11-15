@@ -27,7 +27,6 @@ namespace UI.Web
                 this.HideOrShow(false);
             }
             else { HideOrShow(true); }
-            this.LoadGrid();
         }
 
 
@@ -84,13 +83,6 @@ namespace UI.Web
 
         }
 
-
-
-        private void LoadGrid()
-        {
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
-        }
 
         private void cargarDD1()
         {
@@ -180,7 +172,6 @@ namespace UI.Web
                 case FormModes.Baja:
 
                     this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
                     this.formPanel.Visible = false;
                     
                     break;
@@ -191,9 +182,7 @@ namespace UI.Web
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
-                        this.SaveEntity(this.Entity);
-                        this.LoadGrid();
-                        
+                        this.SaveEntity(this.Entity);                   
                         this.formPanel.Visible = false;
 
                     
@@ -203,7 +192,6 @@ namespace UI.Web
                         this.Entity.State = BusinessEntity.States.New;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
-                        this.LoadGrid();
                         this.formPanel.Visible = false;
 
                     

@@ -85,7 +85,16 @@ namespace UI.Web
             }else if(P.TipoPersona==2)
             {
                 this.MostrarD();
+            }else if (p.TipoPersona==3)
+            {
+                this.MostrarSA();
             }
+        }
+
+        private void MostrarSA()
+        {
+            nuevoLinkButton.Enabled = false;
+            nuevoLinkButton.Visible = false;
         }
 
         private void MostrarD()

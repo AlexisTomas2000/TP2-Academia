@@ -72,7 +72,6 @@ namespace UI.Web
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadGrid();
             if (!this.IsPostBack)
             {
                 this.cargarDDl();
@@ -102,11 +101,6 @@ namespace UI.Web
             ddlCom.DataBind();
         }
 
-        private void LoadGrid()
-        {
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
-        }
         private void LoadFrom(int id)
         {
             this.Entity = this.Logic.GetOne(id);
@@ -144,7 +138,6 @@ namespace UI.Web
             {
                 case FormModes.Baja:
                     this.DaleteEntity(this.SelectedID);
-                    this.LoadGrid();
                     this.formPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
@@ -153,7 +146,6 @@ namespace UI.Web
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
-                    this.LoadGrid();
                     this.formPanel.Visible = false;
                     break;
                 case FormModes.Alta:
@@ -161,7 +153,6 @@ namespace UI.Web
                     this.Entity.State = BusinessEntity.States.New;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
-                    this.LoadGrid();
                     this.formPanel.Visible = false;
                     break;
                 default:

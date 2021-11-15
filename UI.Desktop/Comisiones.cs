@@ -24,12 +24,6 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-        public void Listar()
-        {
-            this.dgvComisiones.AutoGenerateColumns = false;
-            this.C1 = new ComisionLogic();
-            this.dgvComisiones.DataSource = C1.GetAll();
-        }
 
         public Comisiones(Persona persona) : this() {
             Entity = persona;      
@@ -37,7 +31,9 @@ namespace UI.Desktop
 
         private void Comisiones_Load(object sender, EventArgs e)
         {
-            this.Listar();
+            // TODO: esta línea de código carga datos en la tabla 'tp2_netDataSet10.sp_Lista_Comisiones' Puede moverla o quitarla según sea necesario.
+            this.sp_Lista_ComisionesTableAdapter.Fill(this.tp2_netDataSet10.sp_Lista_Comisiones);
+   
             if ((Entity.TipoPersona==3))
             {
                this.tsmOpciones.Visible = true;
@@ -52,7 +48,7 @@ namespace UI.Desktop
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Listar();
+            this.sp_Lista_ComisionesTableAdapter.Fill(this.tp2_netDataSet10.sp_Lista_Comisiones);
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)

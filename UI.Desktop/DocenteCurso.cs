@@ -33,7 +33,7 @@ namespace UI.Desktop
 
         private void DocenteCurso_Load(object sender, EventArgs e)
         {
-            listar();
+            this.sp_listaDocenteCursoTableAdapter.Fill(this.tp2_netDataSet12.sp_listaDocenteCurso);
             if (Entity.TipoPersona == 3)
             {
                 this.tsmOpciones.Visible = true;
@@ -41,19 +41,11 @@ namespace UI.Desktop
             }
         }
 
-        
-        public void listar()
-        {
-            this.dgvDocCur.AutoGenerateColumns = false;
-            this.dc = new DocenteCursoLogic();
-            this.dgvDocCur.DataSource = dc.GetAll();
-        }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             DocenteCursoDesktop dcd = new DocenteCursoDesktop(ApplicationForm.ModoForm.Alta);
             dcd.ShowDialog();
-            this.listar();
+            this.sp_listaDocenteCursoTableAdapter.Fill(this.tp2_netDataSet12.sp_listaDocenteCurso);
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -72,12 +64,17 @@ namespace UI.Desktop
 
         private void btnAct_Click(object sender, EventArgs e)
         {
-            this.listar();
+            this.sp_listaDocenteCursoTableAdapter.Fill(this.tp2_netDataSet12.sp_listaDocenteCurso);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvDocCur_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -3,15 +3,16 @@
     <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="id_materia" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" DataSourceID="SqlDataSource1" >
             <Columns>
-                <asp:BoundField HeaderText="ID Materia" DataField="ID" />
-                <asp:BoundField HeaderText="ID Plan" DataField="IDPlan" />
-                <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                <asp:BoundField HeaderText="Horas Semanales" DataField="HsSemanales" />
-                <asp:BoundField HeaderText="Horas Totales" DataField="HsTotales" />
-
+                <asp:BoundField HeaderText="ID Materia" DataField="id_materia" InsertVisible="False" ReadOnly="True" SortExpression="id_materia" />
+                <asp:BoundField HeaderText="Descripcion Materia" DataField="desc_materia" SortExpression="desc_materia" />
+                <asp:BoundField HeaderText="Horas Semanales" DataField="hs_semanales" SortExpression="hs_semanales" />
+                <asp:BoundField HeaderText="Horas Totales" DataField="hs_totales" SortExpression="hs_totales" />
+                <asp:BoundField HeaderText="ID Plan" DataField="id_plan" SortExpression="id_plan" />
+                <asp:BoundField DataField="desc_plan" HeaderText="Descripcion Plan" SortExpression="desc_plan" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
+
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -23,6 +24,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2_netConnectionString %>" SelectCommand="sp_ListaMaterias" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         <asp:Label ID="idLabel" runat="server" Text="ID Materia: "></asp:Label>
