@@ -30,7 +30,11 @@ namespace Business.Logic
             this.MateriaData = new Data.Database.MateriaAdapter();
             return this.MateriaData.GetAll();
         }
-
+        public List<MatPlan> GetAllD()
+        {
+            this.MateriaData = new Data.Database.MateriaAdapter();
+            return this.MateriaData.GetAllD();
+        }
         public Business.Entities.Materia GetOne(int ID)
         {
             this.MateriaData = new Data.Database.MateriaAdapter();

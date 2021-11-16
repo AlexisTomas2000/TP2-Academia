@@ -41,6 +41,38 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        public List<ComPlan> GetAllCD()
+        {
+            List<ComPlan> comisiones = new List<ComPlan>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdComision = new SqlCommand("sp_Lista_Comisiones", sqlConn);
+                cmdComision.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drComision = cmdComision.ExecuteReader();
+                while (drComision.Read())
+                {
+                    ComPlan com = new ComPlan();
+                    com.ID = (int)drComision["id_comision"];
+                    com.Descripcion = (string)drComision["desc_comision"];
+                    com.AnioEspecialidad = (int)drComision["anio_especialidad"];
+                    com.IdPlan = (int)drComision["id_plan"];
+                    com.DescripcionP=(string)drComision["desc_plan"];
+                    comisiones.Add(com);
+                }
+                drComision.Close();
+                return comisiones;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de comisiones con descripcion de plan", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
 
         public Business.Entities.Comision GetOne(int ID)
         {

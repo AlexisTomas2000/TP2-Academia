@@ -51,16 +51,19 @@ namespace UI.Web
 
 
 
-        public ComisionLogic Logic { get 
+        public ComisionLogic Logic
+        {
+            get
             {
-                if(_logic==null)
+                if (_logic == null)
                 {
                     _logic = new ComisionLogic();
                 }
                 return _logic;
-            } }
+            }
+        }
 
-#endregion
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,7 +78,15 @@ namespace UI.Web
             {
                 this.cargarDDl();
             }
+            this.listar();
         }
+
+        private void listar()
+        {
+            this.gridView.DataSource = this.Logic.GetAllCD();
+            this.gridView.DataBind();
+        }
+
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
@@ -94,10 +105,10 @@ namespace UI.Web
             ddlIdPlan.DataBind();
         }
 
-  
+
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.gridView1.SelectedValue;
+            this.SelectedID = (int)this.gridView.SelectedValue;
             this.LoadForm(this.SelectedID);
         }
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
@@ -111,15 +122,15 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            
+
             switch (this.FormMode)
-            { 
+            {
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.formPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
-                    if(validar())
+                    if (validar())
                     {
                         this.Entity = new Comision();
                         this.Entity.ID = this.SelectedID;
@@ -157,7 +168,7 @@ namespace UI.Web
         }
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
-            if(this.isEntitySelected)
+            if (this.isEntitySelected)
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
@@ -196,7 +207,7 @@ namespace UI.Web
         private void LoadEntity(Comision com)
         {
             com.Descripcion = txtDesc.Text;
-            com.AnioEspecialidad=int.Parse(this.txtAño.Text);
+            com.AnioEspecialidad = int.Parse(this.txtAño.Text);
             com.IdPlan = this.ddlIdPlan.SelectedIndex;
         }
         private void SaveEntity(Comision com)
@@ -204,10 +215,11 @@ namespace UI.Web
             this.Logic.Save(com);
         }
 
-        private void HideOrShow(bool v) {
+        private void HideOrShow(bool v)
+        {
             this.formActionsPanel.Visible = v;
             this.gridActionsPanel.Visible = v;
-            this.gridView1.Columns[4].Visible = v;
+            this.gridView.Columns[4].Visible = v;
 
         }
 

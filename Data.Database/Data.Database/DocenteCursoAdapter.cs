@@ -39,6 +39,40 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        public List<DCP> GetAllD()
+        {
+            List<DCP> DocCur = new List<DCP>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdDocCur = new SqlCommand("sp_listaDocenteCurso", sqlConn);
+                cmdDocCur.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drDocCur = cmdDocCur.ExecuteReader();
+                while (drDocCur.Read())
+                {
+                    DCP dc = new DCP();
+                    dc.ID = (int)drDocCur["id_dictado"];
+                    dc.IDCurso = (int)drDocCur["id_curso"];
+                    dc.Cargo = (int)drDocCur["cargo"];
+                    dc.DescMateria=(string)drDocCur["desc_materia"];
+                    dc.Desc_Comision= (string)drDocCur["desc_comision"];
+                    dc.Apellido= (string)drDocCur["apellido"];
+                    dc.Nombre= (string)drDocCur["nombre"];
+                    DocCur.Add(dc);
+                }
+                drDocCur.Close();
+                return DocCur;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Docentes Cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
         public Business.Entities.DocenteCurso GetOne(int ID)
         {
             DocenteCurso dc = new DocenteCurso();

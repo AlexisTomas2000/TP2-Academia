@@ -3,16 +3,15 @@
     <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="id_curso" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" DataSourceID="SqlDataSource1" >
+            DataKeyNames="id_curso" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
-                <asp:BoundField HeaderText="ID Materia" DataField="id_materia" SortExpression="id_materia" />
-                <asp:BoundField HeaderText="ID Comision" DataField="id_comision" SortExpression="id_comision" />
-                <asp:BoundField HeaderText="ID Materia" DataField="desc_materia" SortExpression="desc_materia" />
-                <asp:BoundField HeaderText="Descripcion Materia" DataField="desc_comision" SortExpression="desc_comision" />
-                <asp:BoundField HeaderText="ID Curso" DataField="id_curso" InsertVisible="False" ReadOnly="True" SortExpression="id_curso" />
-
-                <asp:BoundField DataField="anio_calendario" HeaderText="Año Calendario" SortExpression="anio_calendario" />
-                <asp:BoundField DataField="cupo" HeaderText="Cupo" SortExpression="cupo" />
+                 <asp:BoundField HeaderText="ID Curso" DataField="Id_Curso" />
+                <asp:BoundField HeaderText="ID Comision" DataField="Id_Comision" />
+                <asp:BoundField HeaderText="Descripcion Comision" DataField="DescComision"  />
+                <asp:BoundField HeaderText="ID Materia" DataField="Id_Materia" />
+                <asp:BoundField HeaderText="Descripcion Materia" DataField="Desc_Materia" />
+                <asp:BoundField DataField="Anio" HeaderText="Año Calendario"  />
+                <asp:BoundField DataField="Cupo" HeaderText="Cupo"  />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -25,7 +24,6 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2_netConnectionString %>" SelectCommand="sp_ListaCursos" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server" style="margin-top: 0px" BackColor="#E4E3E8" Height="155px">
     <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>

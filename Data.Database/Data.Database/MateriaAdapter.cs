@@ -42,6 +42,39 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+        public List<MatPlan> GetAllD()
+        {
+            List<MatPlan> materias = new List<MatPlan>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdMateria = new SqlCommand("sp_ListaMaterias", sqlConn);
+                cmdMateria.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drMateria = cmdMateria.ExecuteReader();
+                while (drMateria.Read())
+                {
+                    MatPlan mat = new MatPlan();
+                    mat.ID = (int)drMateria["id_materia"];
+                    mat.Descripcion = (string)drMateria["desc_materia"];
+                    mat.HsSemanales = (int)drMateria["hs_semanales"];
+                    mat.HsTotales = (int)drMateria["hs_totales"];
+                    mat.IDPlan = (int)drMateria["id_plan"];
+                    mat.DescripcionP = (string)drMateria["desc_plan"];
+                    materias.Add(mat);
+                }
+                drMateria.Close();
+                return materias;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de materias", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
 
         public Business.Entities.Materia GetOne(int ID)
         {

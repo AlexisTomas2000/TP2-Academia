@@ -42,6 +42,40 @@ namespace Data.Database
             }
         
         }
+        public List<PlanEsp> GetAllD()
+        {
+            List<PlanEsp> planes = new List<PlanEsp>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPlanes = new SqlCommand("sp_ListaPlanes", sqlConn);
+                cmdPlanes.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
+                while (drPlanes.Read())
+                {
+                    PlanEsp pl = new PlanEsp();
+                    pl.ID = (int)drPlanes["id_plan"];
+                    pl.Descripcion = (String)drPlanes["desc_plan"];
+                    pl.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                    pl.DescripcionE = (string)drPlanes["desc_especialidad"];
+                    planes.Add(pl);
+                }
+                drPlanes.Close();
+                return planes;
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de planes", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+
+        }
 
         public Business.Entities.Plan GetOne(int ID)
         {

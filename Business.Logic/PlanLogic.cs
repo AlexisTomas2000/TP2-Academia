@@ -33,6 +33,12 @@ namespace Business.Logic
             this.PlanData = new Data.Database.PlanAdapter();
             return PlanData.GetAll();
         }
+        public List<PlanEsp> GetAllD()
+        {
+
+            this.PlanData = new Data.Database.PlanAdapter();
+            return PlanData.GetAllD();
+        }
 
         public Business.Entities.Plan GetOne(int ID)
         {

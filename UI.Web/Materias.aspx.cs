@@ -71,7 +71,7 @@ namespace UI.Web
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            this.listar();
             if (!this.IsPostBack) {
                 this.cargarDDl();
             }
@@ -84,6 +84,12 @@ namespace UI.Web
             {
                 this.HideOrShow(true);
             }
+        }
+
+        private void listar()
+        {
+            this.gridView.DataSource = this.Logic.GetAllD();
+            this.gridView.DataBind();
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)

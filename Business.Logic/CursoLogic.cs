@@ -29,6 +29,11 @@ namespace Business.Logic
             this.CursoData = new Data.Database.CursoAdapter();
             return this.CursoData.GetAll();
         }
+        public List<CCM> GetAllD()
+        {
+            this.CursoData = new Data.Database.CursoAdapter();
+            return this.CursoData.GetAllD();
+        }
         public Business.Entities.Curso GetOne(int ID)
         {
             this.CursoData = new Data.Database.CursoAdapter();
