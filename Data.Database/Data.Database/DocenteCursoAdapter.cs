@@ -8,40 +8,9 @@ using System.Data.SqlClient;
 namespace Data.Database
 {
     public class DocenteCursoAdapter : Adapter
-    {
-        public List<DocenteCurso> GetAll()
+    {   public List<DocenteCurso> GetAll()
         {
             List<DocenteCurso> DocCur = new List<DocenteCurso>();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdDocCur = new SqlCommand("select * from docentes_cursos", sqlConn);
-                SqlDataReader drDocCur = cmdDocCur.ExecuteReader();
-                while (drDocCur.Read())
-                {
-                    DocenteCurso dc = new DocenteCurso();
-                    dc.ID = (int)drDocCur["id_dictado"];
-                    dc.IDCurso = (int)drDocCur["id_curso"];
-                    dc.IDDocente = (int)drDocCur["id_docente"];
-                    dc.Cargo = (int)drDocCur["cargo"];
-                    DocCur.Add(dc);
-                }
-                drDocCur.Close();
-                return DocCur;
-            }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Docentes Cursos", Ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-        }
-        public List<DCP> GetAllD()
-        {
-            List<DCP> DocCur = new List<DCP>();
             try
             {
                 this.OpenConnection();
@@ -50,7 +19,7 @@ namespace Data.Database
                 SqlDataReader drDocCur = cmdDocCur.ExecuteReader();
                 while (drDocCur.Read())
                 {
-                    DCP dc = new DCP();
+                    DocenteCurso dc = new DocenteCurso();
                     dc.ID = (int)drDocCur["id_dictado"];
                     dc.IDCurso = (int)drDocCur["id_curso"];
                     dc.Cargo = (int)drDocCur["cargo"];

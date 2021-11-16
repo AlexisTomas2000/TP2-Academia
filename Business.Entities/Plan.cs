@@ -7,7 +7,7 @@ namespace Business.Entities
 {
     public class Plan : BusinessEntity
     {
-        private String _Descripcion;
+        private String _Descripcion, _DescripcionE;
         private int _IDEspecialidad;
 
         public String Descripcion
@@ -21,6 +21,12 @@ namespace Business.Entities
         {
             get => _IDEspecialidad;
             set => this._IDEspecialidad = value;
+        }
+        public String DescripcionE
+        {
+            get => _DescripcionE;
+            set => this._DescripcionE = value;
+
         }
     }
 }

@@ -42,9 +42,9 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public List<MatPlan> GetAllD()
+        public List<Materia> GetAllD()
         {
-            List<MatPlan> materias = new List<MatPlan>();
+            List<Materia> materias = new List<Materia>();
             try
             {
                 this.OpenConnection();
@@ -53,7 +53,7 @@ namespace Data.Database
                 SqlDataReader drMateria = cmdMateria.ExecuteReader();
                 while (drMateria.Read())
                 {
-                    MatPlan mat = new MatPlan();
+                    Materia mat = new Materia();
                     mat.ID = (int)drMateria["id_materia"];
                     mat.Descripcion = (string)drMateria["desc_materia"];
                     mat.HsSemanales = (int)drMateria["hs_semanales"];

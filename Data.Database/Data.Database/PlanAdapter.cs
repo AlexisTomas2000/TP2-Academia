@@ -11,40 +11,10 @@ namespace Data.Database
 {
     public class PlanAdapter: Adapter
     {
+        
         public List<Plan> GetAll()
         {
             List<Plan> planes = new List<Plan>();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdPlanes = new SqlCommand("select * from planes", sqlConn);
-                SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
-                while (drPlanes.Read()) {
-                    Plan pl = new Plan();
-                    pl.ID = (int)drPlanes["id_plan"];
-                    pl.Descripcion = (String)drPlanes["desc_plan"];
-                    pl.IDEspecialidad = (int)drPlanes["id_especialidad"];
-                    planes.Add(pl);
-                }
-                drPlanes.Close();
-                return planes;
-
-            }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada = new Exception("Error al recuperar lista de planes", Ex);
-                throw ExcepcionManejada;
-            }
-
-            finally 
-            {
-                this.CloseConnection();
-            }
-        
-        }
-        public List<PlanEsp> GetAllD()
-        {
-            List<PlanEsp> planes = new List<PlanEsp>();
             try
             {
                 this.OpenConnection();
@@ -53,7 +23,7 @@ namespace Data.Database
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
                 while (drPlanes.Read())
                 {
-                    PlanEsp pl = new PlanEsp();
+                    Plan pl = new Plan();
                     pl.ID = (int)drPlanes["id_plan"];
                     pl.Descripcion = (String)drPlanes["desc_plan"];
                     pl.IDEspecialidad = (int)drPlanes["id_especialidad"];

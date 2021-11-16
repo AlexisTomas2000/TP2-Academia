@@ -42,9 +42,6 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        /*SELECT alumnos_inscripciones.* FROM alumnos_inscripciones INNER JOIN cursos ON alumnos_inscripciones.id_curso = cursos.id_curso INNER JOIN "+
-                                                     "docentes_cursos ON cursos.id_curso = docentes_cursos.id_curso INNER JOIN personas ON alumnos_inscripciones.id_alumno = personas.id_persona "+
-                                                     "where alumnos_inscripciones.id_alumno = @idA*/
         public List<AlumnoInscripcion> GetAllA(int idA)
         {
             List<AlumnoInscripcion> AlumnoInscrip = new List<AlumnoInscripcion>();

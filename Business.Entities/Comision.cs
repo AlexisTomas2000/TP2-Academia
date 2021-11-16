@@ -8,7 +8,7 @@ namespace Business.Entities
     public class Comision : BusinessEntity
     {
         private int _AñoEspecialidad;
-        private String _Descripcion;
+        private String _Descripcion, _Descripcionp;
         private int _IDPlan;
 
         public int AnioEspecialidad
@@ -36,6 +36,12 @@ namespace Business.Entities
             {
                 _IDPlan = value;
             }
+        }
+        public String DescripcionP
+        {
+            get => _Descripcionp;
+            set => this._Descripcionp = value;
+
         }
     }
 }

@@ -26,11 +26,6 @@ namespace Business.Logic
             this.DocenteCurso = new Data.Database.DocenteCursoAdapter();
             return this.DocenteCurso.GetAll();
         }
-        public List<DCP> GetAllD()
-        {
-            this.DocenteCurso = new Data.Database.DocenteCursoAdapter();
-            return this.DocenteCurso.GetAllD();
-        }
         public Business.Entities.DocenteCurso GetOne(int ID)
         {
             this.DocenteCurso = new Data.Database.DocenteCursoAdapter();

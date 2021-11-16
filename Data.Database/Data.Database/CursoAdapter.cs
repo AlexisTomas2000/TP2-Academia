@@ -9,7 +9,7 @@ namespace Data.Database
 {
     public class CursoAdapter : Adapter
     {
-        public List<Curso> GetAll()
+       /* public List<Curso> GetAll()
         {
             List<Curso> cursos = new List<Curso>();
             try
@@ -39,7 +39,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-        }
+        }*/
 
         public Business.Entities.Curso GetOne(int ID)
         {
@@ -165,9 +165,9 @@ namespace Data.Database
             }
 
         }
-        public List<CCM> GetAllD()
+        public List<Curso> GetAll()
         {
-            List<CCM> cursos = new List<CCM>();
+            List<Curso> cursos = new List<Curso>();
             try
             {
                 this.OpenConnection();
@@ -176,11 +176,11 @@ namespace Data.Database
                 SqlDataReader drCurso = cmdCurso.ExecuteReader();
                 while (drCurso.Read())
                 {
-                    CCM c = new CCM();
-                    c.Id_Curso = (int)drCurso["id_curso"];
-                    c.Id_Comision = (int)drCurso["id_comision"];
-                    c.Id_Materia = (int)drCurso["id_materia"];
-                    c.Anio = (int)drCurso["anio_calendario"];
+                    Curso c = new Curso();
+                    c.ID = (int)drCurso["id_curso"];
+                    c.IDComision = (int)drCurso["id_comision"];
+                    c.IDMateria = (int)drCurso["id_materia"];
+                    c.AnioCalendario = (int)drCurso["anio_calendario"];
                     c.Cupo = (int)drCurso["cupo"];
                     c.DescComision = (string)drCurso["desc_comision"];
                     c.Desc_Materia = (string)drCurso["desc_materia"];

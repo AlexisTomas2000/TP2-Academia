@@ -23,7 +23,7 @@ namespace UI.Desktop
 
         private void AlumnosInscripcionesDesktop_Load(object sender, EventArgs e)
         {
-            CCMLogic c = new CCMLogic();
+            CursoLogic c = new CursoLogic();
             if (Entity.TipoPersona == 1) { 
             cbCursos.DataSource = c.GetAll();
             cbCursos.DisplayMember = "Desc";

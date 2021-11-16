@@ -50,7 +50,7 @@ namespace UI.Desktop
         {
             this.dgvCursos.AutoGenerateColumns = false;
             this.c1 = new CursoLogic();
-            this.dgvCursos.DataSource = c1.GetAllD();
+            this.dgvCursos.DataSource = c1.GetAll();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

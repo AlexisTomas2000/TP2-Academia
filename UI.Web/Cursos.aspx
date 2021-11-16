@@ -3,14 +3,14 @@
     <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="id_curso" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
-                 <asp:BoundField HeaderText="ID Curso" DataField="Id_Curso" />
-                <asp:BoundField HeaderText="ID Comision" DataField="Id_Comision" />
+                 <asp:BoundField HeaderText="ID Curso" DataField="ID" />
+                <asp:BoundField HeaderText="ID Comision" DataField="IDComision" />
                 <asp:BoundField HeaderText="Descripcion Comision" DataField="DescComision"  />
-                <asp:BoundField HeaderText="ID Materia" DataField="Id_Materia" />
+                <asp:BoundField HeaderText="ID Materia" DataField="IDMateria" />
                 <asp:BoundField HeaderText="Descripcion Materia" DataField="Desc_Materia" />
-                <asp:BoundField DataField="Anio" HeaderText="Año Calendario"  />
+                <asp:BoundField DataField="AnioCalendario" HeaderText="Año Calendario"  />
                 <asp:BoundField DataField="Cupo" HeaderText="Cupo"  />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>

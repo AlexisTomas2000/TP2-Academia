@@ -83,7 +83,7 @@ namespace UI.Web
 
         private void listar()
         {
-            this.gridView.DataSource = this.Logic.GetAllCD();
+            this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
         }
 

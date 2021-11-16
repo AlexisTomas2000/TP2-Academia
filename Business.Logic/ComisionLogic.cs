@@ -30,11 +30,11 @@ namespace Business.Logic
                 this.ComisionData = new Data.Database.ComisionAdapter();
                 return this.ComisionData.GetAll();
             }
-        public List<ComPlan> GetAllCD()
+       /* public List<Comision> GetAllCD()
         {
             this.ComisionData = new Data.Database.ComisionAdapter();
             return this.ComisionData.GetAllCD();
-        }
+        }*/
 
         public Business.Entities.Comision GetOne(int ID)
             {

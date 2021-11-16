@@ -136,7 +136,7 @@ namespace UI.Web
 
         private void cargarddl()
         {
-            CCMLogic cl = new CCMLogic();
+            CursoLogic cl = new CursoLogic();
             ddlCurso.DataSource = cl.GetAll();
             ddlCurso.DataTextField = "Desc";
             ddlCurso.DataValueField = "id_Curso";

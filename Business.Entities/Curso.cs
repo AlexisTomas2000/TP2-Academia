@@ -11,6 +11,7 @@ namespace Business.Entities
         private int _Cupo;
         private int _IDComision;
         private int _ID_Materia;
+        private string _DescComision, _Desc_Materia, desc;
 
         public int AnioCalendario
         {
@@ -34,5 +35,8 @@ namespace Business.Entities
             get => this._ID_Materia;
             set => this._ID_Materia = value;
         }
+        public string Desc_Materia { get => _Desc_Materia; set => _Desc_Materia = value; }
+        public string DescComision { get => _DescComision; set => _DescComision = value; }
+        public string Desc { get => desc; set => desc = value; }
     }
 }

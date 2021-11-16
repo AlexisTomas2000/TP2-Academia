@@ -11,7 +11,7 @@ namespace Data.Database
 {
     public class ComisionAdapter : Adapter
     {
-        public List<Comision> GetAll()
+        /*public List<Comision> GetAll()
         {
             List<Comision> comisiones = new List<Comision>();
             try
@@ -40,10 +40,10 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-        }
-        public List<ComPlan> GetAllCD()
+        }*/
+        public List<Comision> GetAll()
         {
-            List<ComPlan> comisiones = new List<ComPlan>();
+            List<Comision> comisiones = new List<Comision>();
             try
             {
                 this.OpenConnection();
@@ -52,7 +52,7 @@ namespace Data.Database
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 while (drComision.Read())
                 {
-                    ComPlan com = new ComPlan();
+                    Comision com = new Comision();
                     com.ID = (int)drComision["id_comision"];
                     com.Descripcion = (string)drComision["desc_comision"];
                     com.AnioEspecialidad = (int)drComision["anio_especialidad"];
