@@ -48,14 +48,27 @@ namespace Business.Logic
         }
 
         public bool HayCupos(Business.Entities.Curso cur) {
-             bool rta = false;
-            if (cur.Cupo>0)
+             
+            try
             {
-                rta = true;
+                bool rta = false;
+                if (cur.Cupo > 0)
+                {
+                    rta = true;
 
+                }else
+                {
+                    throw new Exception("No hay mas cupos");
+                }
+
+                return rta;
             }
-
-            return rta; 
+            catch (Exception ex)
+            {
+                //Exception ExepcionManejada = new Exception("No hay mas cupos", ex);
+                throw new Exception("No hay mas cupos", ex); ;
+            }
+           
         }
     }
 }

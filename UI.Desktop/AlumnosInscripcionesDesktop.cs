@@ -196,20 +196,24 @@ namespace UI.Desktop
             {
                 if (MessageBox.Show("Presiones si para confirmar la inscripcion", "Confirmar Inscripcion", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.MapearADatos();
-                    CursoLogic cur = new CursoLogic();
-                    Curso curso = cur.GetOne(AIActual.IDCurso);
-                    if (cur.HayCupos(curso))
+                    try
                     {
-                        curso.Cupo = curso.Cupo - 1;
-                        curso.State = BusinessEntity.States.Modified;
-                        cur.Save(curso);
-                        this.GuardarCambios();
-                        this.Close();
+                        this.MapearADatos();
+                        CursoLogic cur = new CursoLogic();
+                        Curso curso = cur.GetOne(AIActual.IDCurso);
+                        if (cur.HayCupos(curso))
+                        {
+                            curso.Cupo = curso.Cupo - 1;
+                            curso.State = BusinessEntity.States.Modified;
+                            cur.Save(curso);
+                            this.GuardarCambios();
+                            this.Close();
+                            MessageBox.Show("Inscripcion Confirmada", "Inscripcion", MessageBoxButtons.OK);
+                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No hay cupos para el curso seleccionado, intente mas tarde", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Inscripcion",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
                 }

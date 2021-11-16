@@ -164,20 +164,22 @@ namespace UI.Web
                     this.Entity = new AlumnoInscripcion();
                     this.Entity.State = BusinessEntity.States.New;
                     this.LoadEntity(this.Entity);
-                    CursoLogic curso = new CursoLogic();
-                    Business.Entities.Curso cur = curso.GetOne(Entity.IDCurso);
-                    if (curso.HayCupos(cur)==true)
+                    try
                     {
-                        this.SaveEntity(this.Entity);
-                        this.Listar();
-                        this.Form.Visible = false;
-                        Response.Redirect("~/AlumnoInscripciones");
+                        CursoLogic curso = new CursoLogic();
+                        Business.Entities.Curso cur = curso.GetOne(Entity.IDCurso);
+                        if (curso.HayCupos(cur))
+                        {
+                            this.SaveEntity(this.Entity);
+                            this.Listar();
+                            this.Form.Visible = false;
+                            Response.Redirect("~/AlumnoInscripciones");
+                        }
                     }
-                    else if(curso.HayCupos(cur) == false)
+                    catch (Exception ex)
                     {
-                        Response.Write("<script> alert(" + "'No hay cupos para este curso, por favor seleccione otro'" + ") </script>");
-                    }
-                                     
+                        Response.Write("<script> alert('" + ex.Message + "') </script>");
+                    }                   
                     break;
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
