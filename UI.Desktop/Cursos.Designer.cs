@@ -169,14 +169,14 @@ namespace UI.Desktop
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "Id_Curso";
+            this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID Curso";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
             // IDCom
             // 
-            this.IDCom.DataPropertyName = "Id_Comision";
+            this.IDCom.DataPropertyName = "IDComision";
             this.IDCom.HeaderText = "ID Comision";
             this.IDCom.Name = "IDCom";
             this.IDCom.ReadOnly = true;
@@ -191,7 +191,7 @@ namespace UI.Desktop
             // 
             // IDMat
             // 
-            this.IDMat.DataPropertyName = "Id_Materia";
+            this.IDMat.DataPropertyName = "IDMateria";
             this.IDMat.HeaderText = "ID Materia";
             this.IDMat.Name = "IDMat";
             this.IDMat.ReadOnly = true;
@@ -206,14 +206,14 @@ namespace UI.Desktop
             // 
             // Año
             // 
-            this.Año.DataPropertyName = "anio";
+            this.Año.DataPropertyName = "AnioCalendario";
             this.Año.HeaderText = "Año";
             this.Año.Name = "Año";
             this.Año.ReadOnly = true;
             // 
             // Cupo
             // 
-            this.Cupo.DataPropertyName = "cupo";
+            this.Cupo.DataPropertyName = "Cupo";
             this.Cupo.HeaderText = "Cupo";
             this.Cupo.Name = "Cupo";
             this.Cupo.ReadOnly = true;
