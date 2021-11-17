@@ -27,14 +27,14 @@ namespace UI.Desktop
             if (Entity.TipoPersona == 1) { 
             cbCursos.DataSource = c.GetAll();
             cbCursos.DisplayMember = "Desc";
-            cbCursos.ValueMember = "Id_Curso";
+            cbCursos.ValueMember = "ID";
             cbCondicion.SelectedIndex = 0;
             }
             else
             {   
                 cbCursos.DataSource = c.GetAll();
                 cbCursos.DisplayMember = "Desc";
-                cbCursos.ValueMember = "Id_Curso";
+                cbCursos.ValueMember = "ID";
                 cbCondicion.SelectedIndex = 0;
             }
             

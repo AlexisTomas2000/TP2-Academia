@@ -184,6 +184,7 @@ namespace Data.Database
                     c.Cupo = (int)drCurso["cupo"];
                     c.DescComision = (string)drCurso["desc_comision"];
                     c.Desc_Materia = (string)drCurso["desc_materia"];
+                    c.Desc= (string)drCurso["desc_materia"]+ (string)drCurso["desc_comision"];
                     cursos.Add(c);
                 }
                 drCurso.Close();

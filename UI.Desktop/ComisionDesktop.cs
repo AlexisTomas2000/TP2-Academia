@@ -43,7 +43,7 @@ namespace UI.Desktop
             this.txbID.Text = this.ComisionActual.ID.ToString();
             this.txbDescripcion.Text = this.ComisionActual.Descripcion;
             this.txbAñoEsp.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.cbPlanes.SelectedValue = this.ComisionActual.IdPlan;
+            this.cbPlanes.SelectedValue =this.ComisionActual.IdPlan;
             switch (this.Modo)
             {
                 case ModoForm.Alta:
