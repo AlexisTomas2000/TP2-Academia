@@ -11,19 +11,23 @@ namespace Data.Database
 {
     public class PlanAdapter: Adapter
     {
+        
         public List<Plan> GetAll()
         {
             List<Plan> planes = new List<Plan>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPlanes = new SqlCommand("select * from planes", sqlConn);
+                SqlCommand cmdPlanes = new SqlCommand("sp_ListaPlanes", sqlConn);
+                cmdPlanes.CommandType = CommandType.StoredProcedure;
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
-                while (drPlanes.Read()) {
+                while (drPlanes.Read())
+                {
                     Plan pl = new Plan();
                     pl.ID = (int)drPlanes["id_plan"];
                     pl.Descripcion = (String)drPlanes["desc_plan"];
                     pl.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                    pl.DescripcionE = (string)drPlanes["desc_especialidad"];
                     planes.Add(pl);
                 }
                 drPlanes.Close();
@@ -36,11 +40,11 @@ namespace Data.Database
                 throw ExcepcionManejada;
             }
 
-            finally 
+            finally
             {
                 this.CloseConnection();
             }
-        
+
         }
 
         public Business.Entities.Plan GetOne(int ID)

@@ -72,6 +72,7 @@ namespace UI.Web
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.listar();
             if (!this.IsPostBack) {
                 this.cargarDDL();
             }
@@ -79,7 +80,11 @@ namespace UI.Web
             
         }
 
-
+        private void listar()
+        {
+            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataBind();
+        }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -8,22 +8,25 @@ using System.Data.SqlClient;
 namespace Data.Database
 {
     public class DocenteCursoAdapter : Adapter
-    {
-        public List<DocenteCurso> GetAll()
+    {   public List<DocenteCurso> GetAll()
         {
             List<DocenteCurso> DocCur = new List<DocenteCurso>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDocCur = new SqlCommand("select * from docentes_cursos", sqlConn);
+                SqlCommand cmdDocCur = new SqlCommand("sp_listaDocenteCurso", sqlConn);
+                cmdDocCur.CommandType = CommandType.StoredProcedure;
                 SqlDataReader drDocCur = cmdDocCur.ExecuteReader();
                 while (drDocCur.Read())
                 {
                     DocenteCurso dc = new DocenteCurso();
                     dc.ID = (int)drDocCur["id_dictado"];
                     dc.IDCurso = (int)drDocCur["id_curso"];
-                    dc.IDDocente = (int)drDocCur["id_docente"];
                     dc.Cargo = (int)drDocCur["cargo"];
+                    dc.DescMateria=(string)drDocCur["desc_materia"];
+                    dc.Desc_Comision= (string)drDocCur["desc_comision"];
+                    dc.Apellido= (string)drDocCur["apellido"];
+                    dc.Nombre= (string)drDocCur["nombre"];
                     DocCur.Add(dc);
                 }
                 drDocCur.Close();

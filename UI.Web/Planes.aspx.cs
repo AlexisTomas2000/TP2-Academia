@@ -17,6 +17,7 @@ namespace UI.Web
         #region Props
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.listar();
             if (!this.IsPostBack)
             {
                 this.cargarDD1();
@@ -29,6 +30,11 @@ namespace UI.Web
             else { HideOrShow(true); }
         }
 
+        private void listar()
+        {
+            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataBind();
+        }
 
         private Business.Entities.Persona _ent;
         public Persona Ent { get => _ent; set => _ent = value; }

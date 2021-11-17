@@ -11,7 +11,7 @@ namespace Data.Database
 {
     public class ComisionAdapter : Adapter
     {
-        public List<Comision> GetAll()
+        /*public List<Comision> GetAll()
         {
             List<Comision> comisiones = new List<Comision>();
             try
@@ -34,6 +34,38 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar lista de comisiones", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }*/
+        public List<Comision> GetAll()
+        {
+            List<Comision> comisiones = new List<Comision>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdComision = new SqlCommand("sp_Lista_Comisiones", sqlConn);
+                cmdComision.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drComision = cmdComision.ExecuteReader();
+                while (drComision.Read())
+                {
+                    Comision com = new Comision();
+                    com.ID = (int)drComision["id_comision"];
+                    com.Descripcion = (string)drComision["desc_comision"];
+                    com.AnioEspecialidad = (int)drComision["anio_especialidad"];
+                    com.IdPlan = (int)drComision["id_plan"];
+                    com.DescripcionP=(string)drComision["desc_plan"];
+                    comisiones.Add(com);
+                }
+                drComision.Close();
+                return comisiones;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de comisiones con descripcion de plan", Ex);
                 throw ExcepcionManejada;
             }
             finally

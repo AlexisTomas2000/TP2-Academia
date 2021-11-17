@@ -7,9 +7,9 @@ using System.Data.SqlClient;
 
 namespace Data.Database
 {
-    public class CursoAdapter:Adapter
+    public class CursoAdapter : Adapter
     {
-        public List<Curso> GetAll()
+       /* public List<Curso> GetAll()
         {
             List<Curso> cursos = new List<Curso>();
             try
@@ -39,7 +39,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-        }
+        }*/
 
         public Business.Entities.Curso GetOne(int ID)
         {
@@ -119,7 +119,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET id_materia = @id_materia, id_comision=@id_comision, " +
-                    "anio_calendario = @anio_calendario, cupo = @cupo "+"WHERE id_curso=@id", sqlConn);
+                    "anio_calendario = @anio_calendario, cupo = @cupo " + "WHERE id_curso=@id", sqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = cur.ID;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = cur.IDMateria;
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = cur.IDComision;
@@ -163,6 +163,41 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
+
         }
-    }
+        public List<Curso> GetAll()
+        {
+            List<Curso> cursos = new List<Curso>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdCurso = new SqlCommand("sp_ListaCursos", sqlConn);
+                cmdCurso.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drCurso = cmdCurso.ExecuteReader();
+                while (drCurso.Read())
+                {
+                    Curso c = new Curso();
+                    c.ID = (int)drCurso["id_curso"];
+                    c.IDComision = (int)drCurso["id_comision"];
+                    c.IDMateria = (int)drCurso["id_materia"];
+                    c.AnioCalendario = (int)drCurso["anio_calendario"];
+                    c.Cupo = (int)drCurso["cupo"];
+                    c.DescComision = (string)drCurso["desc_comision"];
+                    c.Desc_Materia = (string)drCurso["desc_materia"];
+                    cursos.Add(c);
+                }
+                drCurso.Close();
+                return cursos;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Cursos con descripciones", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        }
 }

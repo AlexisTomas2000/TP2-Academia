@@ -36,25 +36,20 @@ namespace Business.Logic
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();
             return this.AIData.GetAllA(id);
         }
-        public Business.Entities.AlumnoInscripcion GetOne(int IDA, int IDC)
+        public Business.Entities.AlumnoInscripcion GetOne(int ID)
         {
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();
-            return this.AIData.GetOne(IDA, IDC);
+            return this.AIData.GetOne(ID);
         }
-        public void Delete(int IDA, int IDC)
+        public void Delete(int IDA, int IDC,int ID)
         {
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();
-            AIData.Delete(IDA,IDC);
+            AIData.Delete(IDA,IDC,ID);
         }
         public void Delete(int IDA)
         {
             this.AIData = new Data.Database.AlumnoInscripcionAdapter();
             AIData.Delete(IDA);
-        }
-        public Business.Entities.AlumnoInscripcion GetOne2(int id)
-        {
-            this.AIData = new Data.Database.AlumnoInscripcionAdapter();
-            return AIData.GetOne2(id);
         }
 
         public void Save(Business.Entities.AlumnoInscripcion AI)

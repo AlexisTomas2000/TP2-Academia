@@ -136,7 +136,7 @@ namespace UI.Web
 
         private void cargarddl()
         {
-            CCMLogic cl = new CCMLogic();
+            CursoLogic cl = new CursoLogic();
             ddlCurso.DataSource = cl.GetAll();
             ddlCurso.DataTextField = "Desc";
             ddlCurso.DataValueField = "id_Curso";
@@ -164,19 +164,22 @@ namespace UI.Web
                     this.Entity = new AlumnoInscripcion();
                     this.Entity.State = BusinessEntity.States.New;
                     this.LoadEntity(this.Entity);
-                    CursoLogic curso = new CursoLogic();
-                    Business.Entities.Curso cur = curso.GetOne(Entity.IDCurso);
-                    if (curso.HayCupos(cur))
+                    try
                     {
-                        this.SaveEntity(this.Entity);
-                        this.Listar();
-                        this.Form.Visible = false;
+                        CursoLogic curso = new CursoLogic();
+                        Business.Entities.Curso cur = curso.GetOne(Entity.IDCurso);
+                        if (curso.HayCupos(cur))
+                        {
+                            this.SaveEntity(this.Entity);
+                            this.Listar();
+                            this.Form.Visible = false;
+                            Response.Redirect("~/AlumnoInscripciones");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        Response.Write("<script> alerti(" + "No hay cupos para este curso, por favor seleccione otro" + ")</script>");
-                    }
-                                     
+                        Response.Write("<script> alert('" + ex.Message + "') </script>");
+                    }                   
                     break;
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
@@ -195,8 +198,8 @@ namespace UI.Web
                 default:
                     break;
             }
+            
         }
-
         private void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
@@ -233,7 +236,7 @@ namespace UI.Web
 
         private void LoadFrom(int selectedID)
         {
-            this.Entity = this.Logic.GetOne2(selectedID);
+            this.Entity = this.Logic.GetOne(selectedID);
             this.txtIDAlumno.Text = this.Entity.IDAlumno.ToString();
             this.ddlCurso.SelectedValue = this.Entity.IDCurso.ToString();
             this.ddlCondicion.SelectedItem.Text = this.Entity.Condicion;

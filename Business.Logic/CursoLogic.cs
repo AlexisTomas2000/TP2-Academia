@@ -29,6 +29,11 @@ namespace Business.Logic
             this.CursoData = new Data.Database.CursoAdapter();
             return this.CursoData.GetAll();
         }
+        /*public List<Curso> GetAllD()
+        {
+            this.CursoData = new Data.Database.CursoAdapter();
+            return this.CursoData.GetAllD();
+        }*/
         public Business.Entities.Curso GetOne(int ID)
         {
             this.CursoData = new Data.Database.CursoAdapter();
@@ -48,14 +53,27 @@ namespace Business.Logic
         }
 
         public bool HayCupos(Business.Entities.Curso cur) {
-             bool rta = false;
-            if (cur.Cupo>0)
+             
+            try
             {
-                rta = true;
+                bool rta = false;
+                if (cur.Cupo > 0)
+                {
+                    rta = true;
 
+                }else
+                {
+                    throw new Exception("No hay mas cupos");
+                }
+
+                return rta;
             }
-
-            return rta; 
+            catch (Exception ex)
+            {
+                //Exception ExepcionManejada = new Exception("No hay mas cupos", ex);
+                throw new Exception("No hay mas cupos", ex); ;
+            }
+           
         }
     }
 }

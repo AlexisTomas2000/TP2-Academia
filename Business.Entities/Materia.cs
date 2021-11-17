@@ -7,7 +7,7 @@ namespace Business.Entities
 {
     public class Materia : BusinessEntity
     {
-        private String _Descripcion;
+        private String _Descripcion, _DescripcionP;
         private int _HsSemanales;
         private int _HsTotales;
         private int _IDPlan;
@@ -34,6 +34,11 @@ namespace Business.Entities
         {
             get => this._IDPlan;
             set => this._IDPlan=value;
+        }
+        public String DescripcionP
+        {
+            get => this._DescripcionP;
+            set => this._DescripcionP = value;
         }
     }
 }

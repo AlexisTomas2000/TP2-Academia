@@ -3,12 +3,12 @@
        <asp:Panel ID="Panel1" runat="server" BackColor="#E4E3E8">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"
-            DataKeyNames="id_plan" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" DataSourceID="SqlDataSource1" >
+            DataKeyNames="ID" BackColor="#E4E3E8" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridView_SelectedIndexChanged" >
             <Columns>
-                <asp:BoundField HeaderText="ID Plan" DataField="id_plan" InsertVisible="False" ReadOnly="True" SortExpression="id_plan" />
-                <asp:BoundField HeaderText="Descripcion Plan" DataField="desc_plan" SortExpression="desc_plan" />
-                <asp:BoundField HeaderText="ID Especialidad" DataField="id_especialidad" SortExpression="id_especialidad" />
-                <asp:BoundField DataField="desc_especialidad" HeaderText="Descripcion Especialidad" SortExpression="desc_especialidad" />
+                <asp:BoundField HeaderText="ID Plan" DataField="ID"/>
+                <asp:BoundField HeaderText="Descripcion Plan" DataField="Descripcion"  />
+                <asp:BoundField HeaderText="ID Especialidad" DataField="IDEspecialidad" />
+                <asp:BoundField DataField="DescripcionE" HeaderText="Descripcion Especialidad"  />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -21,7 +21,6 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-           <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tp2_netConnectionString %>" SelectCommand="sp_ListaPlanes" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </asp:Panel>
 <asp:Panel ID="formPanel" Visible="false" runat="server" BackColor="#E4E3E8">
         <asp:Label ID="IDLabel" runat="server" Text="ID: "></asp:Label>

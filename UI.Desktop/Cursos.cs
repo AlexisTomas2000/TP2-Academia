@@ -33,7 +33,6 @@ namespace UI.Desktop
 
         private void Cursos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tp2_netDataSet9.sp_ListaCursos' Puede moverla o quitarla según sea necesario.
             listar();
             if (Entity.TipoPersona == 3)
             {
@@ -49,10 +48,9 @@ namespace UI.Desktop
         }
         public void listar()
         {
-            this.sp_ListaCursosTableAdapter.Fill(this.tp2_netDataSet9.sp_ListaCursos);
-           /* this.dgvCursos.AutoGenerateColumns = false;
+            this.dgvCursos.AutoGenerateColumns = false;
             this.c1 = new CursoLogic();
-            this.dgvCursos.DataSource = c1.GetAll();*/
+            this.dgvCursos.DataSource = c1.GetAll();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

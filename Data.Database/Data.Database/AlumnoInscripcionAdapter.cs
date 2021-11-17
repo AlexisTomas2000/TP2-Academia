@@ -42,9 +42,6 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        /*SELECT alumnos_inscripciones.* FROM alumnos_inscripciones INNER JOIN cursos ON alumnos_inscripciones.id_curso = cursos.id_curso INNER JOIN "+
-                                                     "docentes_cursos ON cursos.id_curso = docentes_cursos.id_curso INNER JOIN personas ON alumnos_inscripciones.id_alumno = personas.id_persona "+
-                                                     "where alumnos_inscripciones.id_alumno = @idA*/
         public List<AlumnoInscripcion> GetAllA(int idA)
         {
             List<AlumnoInscripcion> AlumnoInscrip = new List<AlumnoInscripcion>();
@@ -111,44 +108,13 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public Business.Entities.AlumnoInscripcion GetOne(int IDA,int IDC)
+        public Business.Entities.AlumnoInscripcion GetOne(int ID)
         {
             AlumnoInscripcion AI = new AlumnoInscripcion();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdAlIns = new SqlCommand("select * from alumnos_inscripciones where id_alumno=@id and id_curso=@idc", sqlConn);
-                cmdAlIns.Parameters.Add("@id", SqlDbType.Int).Value = IDA;
-                cmdAlIns.Parameters.Add("@idc", SqlDbType.Int).Value = IDC;
-                SqlDataReader drAlIns = cmdAlIns.ExecuteReader();
-                if (drAlIns.Read())
-                {
-                    AI.ID = (int)drAlIns["id_inscripcion"];
-                    AI.IDAlumno = (int)drAlIns["id_alumno"];
-                    AI.IDCurso = (int)drAlIns["id_curso"];
-                    AI.Condicion = (string)drAlIns["condicion"];
-                    AI.Nota = (int)drAlIns["nota"];
-                }
-                drAlIns.Close();
-            }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada = new Exception("Error al recuperar el Alumno Inscripto", Ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return AI;
-        }
-        public Business.Entities.AlumnoInscripcion GetOne2(int ID)
-        {
-            AlumnoInscripcion AI = new AlumnoInscripcion();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdAlIns = new SqlCommand("select * from alumnos_inscripciones where id_inscripcion=@ID", sqlConn);
+                SqlCommand cmdAlIns = new SqlCommand("select * from alumnos_inscripciones where id_inscripcion=@id", sqlConn);
                 cmdAlIns.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drAlIns = cmdAlIns.ExecuteReader();
                 if (drAlIns.Read())
@@ -172,14 +138,16 @@ namespace Data.Database
             }
             return AI;
         }
-        public void Delete(int IDA,int IDC)
+      
+        public void Delete(int IDA,int IDC,int ID)
         {
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete alumnos_inscripciones  where id_alumno=@id and id_curso=@idc", sqlConn);
-                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = IDA;
+                SqlCommand cmdDelete = new SqlCommand("delete alumnos_inscripciones where id_alumno=@ida and id_curso=@idc and id_inscripcion=@id", sqlConn);
+                cmdDelete.Parameters.Add("@ida", SqlDbType.Int).Value = IDA;
                 cmdDelete.Parameters.Add("@idc", SqlDbType.Int).Value = IDC;
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -215,7 +183,7 @@ namespace Data.Database
         {
             if (AI.State == BusinessEntity.States.Deleted)
             {
-                this.Delete(AI.IDAlumno,AI.IDCurso);
+                this.Delete(AI.ID);
             }
             else if (AI.State == BusinessEntity.States.New)
             {
