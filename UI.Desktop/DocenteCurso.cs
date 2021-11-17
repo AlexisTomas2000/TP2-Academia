@@ -33,12 +33,19 @@ namespace UI.Desktop
 
         private void DocenteCurso_Load(object sender, EventArgs e)
         {
-            this.sp_listaDocenteCursoTableAdapter.Fill(this.tp2_netDataSet12.sp_listaDocenteCurso);
+            this.listar();
             if (Entity.TipoPersona == 3)
             {
                 this.tsmOpciones.Visible = true;
                 this.tsmOpciones.Enabled = true;
             }
+        }
+
+        private void listar()
+        {
+            this.dgvDocCur.AutoGenerateColumns = false;
+            this.dc = new DocenteCursoLogic();
+            this.dgvDocCur.DataSource = dc.GetAll();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -64,7 +71,7 @@ namespace UI.Desktop
 
         private void btnAct_Click(object sender, EventArgs e)
         {
-            this.sp_listaDocenteCursoTableAdapter.Fill(this.tp2_netDataSet12.sp_listaDocenteCurso);
+            this.listar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

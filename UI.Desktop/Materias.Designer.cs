@@ -32,6 +32,8 @@ namespace UI.Desktop
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.spListaMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tp2_netDataSet11 = new UI.Desktop.tp2_netDataSet11();
             this.tsmOpciones = new System.Windows.Forms.ToolStrip();
             this.tsbAgregar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
@@ -39,42 +41,48 @@ namespace UI.Desktop
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dataSet21 = new UI.Desktop.DataSet.DataSet2();
-            this.tp2_netDataSet11 = new UI.Desktop.tp2_netDataSet11();
-            this.spListaMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_ListaMateriasTableAdapter = new UI.Desktop.tp2_netDataSet11TableAdapters.sp_ListaMateriasTableAdapter();
-            this.idmateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descmateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hssemanalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hstotalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DesPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spListaMateriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet11)).BeginInit();
             this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spListaMateriasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMaterias
             // 
             this.dgvMaterias.AllowUserToAddRows = false;
             this.dgvMaterias.AllowUserToDeleteRows = false;
-            this.dgvMaterias.AutoGenerateColumns = false;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idmateriaDataGridViewTextBoxColumn,
-            this.descmateriaDataGridViewTextBoxColumn,
-            this.hssemanalesDataGridViewTextBoxColumn,
-            this.hstotalesDataGridViewTextBoxColumn,
-            this.idplanDataGridViewTextBoxColumn,
-            this.descplanDataGridViewTextBoxColumn});
-            this.dgvMaterias.DataSource = this.spListaMateriasBindingSource;
+            this.ID,
+            this.DescripcionMateria,
+            this.IDPlan,
+            this.DesPlan,
+            this.HSS,
+            this.HST});
             this.dgvMaterias.Location = new System.Drawing.Point(12, 32);
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(755, 405);
+            this.dgvMaterias.Size = new System.Drawing.Size(786, 405);
             this.dgvMaterias.TabIndex = 0;
+            // 
+            // spListaMateriasBindingSource
+            // 
+            this.spListaMateriasBindingSource.DataMember = "sp_ListaMaterias";
+            this.spListaMateriasBindingSource.DataSource = this.tp2_netDataSet11;
+            // 
+            // tp2_netDataSet11
+            // 
+            this.tp2_netDataSet11.DataSetName = "tp2_netDataSet11";
+            this.tp2_netDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tsmOpciones
             // 
@@ -123,7 +131,7 @@ namespace UI.Desktop
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(611, 447);
+            this.btnActualizar.Location = new System.Drawing.Point(642, 447);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 2;
@@ -133,7 +141,7 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(692, 447);
+            this.btnSalir.Location = new System.Drawing.Point(723, 447);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 3;
@@ -146,69 +154,61 @@ namespace UI.Desktop
             this.dataSet21.DataSetName = "DataSet2";
             this.dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tp2_netDataSet11
-            // 
-            this.tp2_netDataSet11.DataSetName = "tp2_netDataSet11";
-            this.tp2_netDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spListaMateriasBindingSource
-            // 
-            this.spListaMateriasBindingSource.DataMember = "sp_ListaMaterias";
-            this.spListaMateriasBindingSource.DataSource = this.tp2_netDataSet11;
-            // 
             // sp_ListaMateriasTableAdapter
             // 
             this.sp_ListaMateriasTableAdapter.ClearBeforeFill = true;
             // 
-            // idmateriaDataGridViewTextBoxColumn
+            // ID
             // 
-            this.idmateriaDataGridViewTextBoxColumn.DataPropertyName = "id_materia";
-            this.idmateriaDataGridViewTextBoxColumn.HeaderText = "ID Materia";
-            this.idmateriaDataGridViewTextBoxColumn.Name = "idmateriaDataGridViewTextBoxColumn";
-            this.idmateriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID Materia";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // descmateriaDataGridViewTextBoxColumn
+            // DescripcionMateria
             // 
-            this.descmateriaDataGridViewTextBoxColumn.DataPropertyName = "desc_materia";
-            this.descmateriaDataGridViewTextBoxColumn.HeaderText = "Descripcion Materia";
-            this.descmateriaDataGridViewTextBoxColumn.Name = "descmateriaDataGridViewTextBoxColumn";
-            this.descmateriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descmateriaDataGridViewTextBoxColumn.Width = 150;
+            this.DescripcionMateria.DataPropertyName = "Descripcion";
+            this.DescripcionMateria.HeaderText = "Descripcion Materia";
+            this.DescripcionMateria.Name = "DescripcionMateria";
+            this.DescripcionMateria.ReadOnly = true;
+            this.DescripcionMateria.Width = 150;
             // 
-            // hssemanalesDataGridViewTextBoxColumn
+            // IDPlan
             // 
-            this.hssemanalesDataGridViewTextBoxColumn.DataPropertyName = "hs_semanales";
-            this.hssemanalesDataGridViewTextBoxColumn.HeaderText = "Horas Semanales";
-            this.hssemanalesDataGridViewTextBoxColumn.Name = "hssemanalesDataGridViewTextBoxColumn";
-            this.hssemanalesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "ID Plan";
+            this.IDPlan.Name = "IDPlan";
+            this.IDPlan.ReadOnly = true;
             // 
-            // hstotalesDataGridViewTextBoxColumn
+            // DesPlan
             // 
-            this.hstotalesDataGridViewTextBoxColumn.DataPropertyName = "hs_totales";
-            this.hstotalesDataGridViewTextBoxColumn.HeaderText = "Horas Totales";
-            this.hstotalesDataGridViewTextBoxColumn.Name = "hstotalesDataGridViewTextBoxColumn";
-            this.hstotalesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.DesPlan.DataPropertyName = "DescripcionP";
+            this.DesPlan.HeaderText = "Descripcion Plan";
+            this.DesPlan.Name = "DesPlan";
+            this.DesPlan.ReadOnly = true;
+            this.DesPlan.Width = 150;
             // 
-            // idplanDataGridViewTextBoxColumn
+            // HSS
             // 
-            this.idplanDataGridViewTextBoxColumn.DataPropertyName = "id_plan";
-            this.idplanDataGridViewTextBoxColumn.HeaderText = "ID Plan";
-            this.idplanDataGridViewTextBoxColumn.Name = "idplanDataGridViewTextBoxColumn";
-            this.idplanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.HSS.DataPropertyName = "HsSemanales";
+            this.HSS.HeaderText = "Horas Semanales";
+            this.HSS.Name = "HSS";
+            this.HSS.ReadOnly = true;
+            this.HSS.Width = 120;
             // 
-            // descplanDataGridViewTextBoxColumn
+            // HST
             // 
-            this.descplanDataGridViewTextBoxColumn.DataPropertyName = "desc_plan";
-            this.descplanDataGridViewTextBoxColumn.HeaderText = "Descripcion Plan";
-            this.descplanDataGridViewTextBoxColumn.Name = "descplanDataGridViewTextBoxColumn";
-            this.descplanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descplanDataGridViewTextBoxColumn.Width = 150;
+            this.HST.DataPropertyName = "HsTotales";
+            this.HST.HeaderText = "Horas Totales";
+            this.HST.Name = "HST";
+            this.HST.ReadOnly = true;
+            this.HST.Width = 120;
             // 
             // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 482);
+            this.ClientSize = new System.Drawing.Size(812, 482);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.tsmOpciones);
@@ -221,11 +221,11 @@ namespace UI.Desktop
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.Materias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spListaMateriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet11)).EndInit();
             this.tsmOpciones.ResumeLayout(false);
             this.tsmOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spListaMateriasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,11 +244,11 @@ namespace UI.Desktop
         private tp2_netDataSet11 tp2_netDataSet11;
         private System.Windows.Forms.BindingSource spListaMateriasBindingSource;
         private tp2_netDataSet11TableAdapters.sp_ListaMateriasTableAdapter sp_ListaMateriasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idmateriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descmateriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hssemanalesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hstotalesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idplanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descplanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DesPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HSS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HST;
     }
 }

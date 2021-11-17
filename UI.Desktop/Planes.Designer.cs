@@ -36,20 +36,20 @@ namespace UI.Desktop
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.spListaPlanesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tp2_netDataSet13 = new UI.Desktop.tp2_netDataSet13();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.tp2_netDataSet13 = new UI.Desktop.tp2_netDataSet13();
-            this.spListaPlanesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_ListaPlanesTableAdapter = new UI.Desktop.tp2_netDataSet13TableAdapters.sp_ListaPlanesTableAdapter();
-            this.idplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idespecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descespecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spListaPlanesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet13)).BeginInit();
             this.SuspendLayout();
             // 
             // tsmOpciones
@@ -100,22 +100,30 @@ namespace UI.Desktop
             // 
             this.dgvPlanes.AllowUserToAddRows = false;
             this.dgvPlanes.AllowUserToDeleteRows = false;
-            this.dgvPlanes.AutoGenerateColumns = false;
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idplanDataGridViewTextBoxColumn,
-            this.descplanDataGridViewTextBoxColumn,
-            this.idespecialidadDataGridViewTextBoxColumn,
-            this.descespecialidadDataGridViewTextBoxColumn});
-            this.dgvPlanes.DataSource = this.spListaPlanesBindingSource;
+            this.IDPlan,
+            this.DescripcionPlan,
+            this.IDEspecialidad,
+            this.DescripcionE});
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvPlanes.Location = new System.Drawing.Point(0, 0);
             this.dgvPlanes.MultiSelect = false;
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanes.Size = new System.Drawing.Size(644, 387);
+            this.dgvPlanes.Size = new System.Drawing.Size(644, 381);
             this.dgvPlanes.TabIndex = 1;
+            // 
+            // spListaPlanesBindingSource
+            // 
+            this.spListaPlanesBindingSource.DataMember = "sp_ListaPlanes";
+            this.spListaPlanesBindingSource.DataSource = this.tp2_netDataSet13;
+            // 
+            // tp2_netDataSet13
+            // 
+            this.tp2_netDataSet13.DataSetName = "tp2_netDataSet13";
+            this.tp2_netDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnActualizar
             // 
@@ -151,49 +159,40 @@ namespace UI.Desktop
             this.btnReportes.Visible = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // tp2_netDataSet13
-            // 
-            this.tp2_netDataSet13.DataSetName = "tp2_netDataSet13";
-            this.tp2_netDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spListaPlanesBindingSource
-            // 
-            this.spListaPlanesBindingSource.DataMember = "sp_ListaPlanes";
-            this.spListaPlanesBindingSource.DataSource = this.tp2_netDataSet13;
-            // 
             // sp_ListaPlanesTableAdapter
             // 
             this.sp_ListaPlanesTableAdapter.ClearBeforeFill = true;
             // 
-            // idplanDataGridViewTextBoxColumn
+            // IDPlan
             // 
-            this.idplanDataGridViewTextBoxColumn.DataPropertyName = "id_plan";
-            this.idplanDataGridViewTextBoxColumn.HeaderText = "ID Plan";
-            this.idplanDataGridViewTextBoxColumn.Name = "idplanDataGridViewTextBoxColumn";
-            this.idplanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.IDPlan.DataPropertyName = "ID";
+            this.IDPlan.HeaderText = "ID Plan";
+            this.IDPlan.Name = "IDPlan";
+            this.IDPlan.ReadOnly = true;
             // 
-            // descplanDataGridViewTextBoxColumn
+            // DescripcionPlan
             // 
-            this.descplanDataGridViewTextBoxColumn.DataPropertyName = "desc_plan";
-            this.descplanDataGridViewTextBoxColumn.HeaderText = "Descripcion Plan";
-            this.descplanDataGridViewTextBoxColumn.Name = "descplanDataGridViewTextBoxColumn";
-            this.descplanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descplanDataGridViewTextBoxColumn.Width = 200;
+            this.DescripcionPlan.DataPropertyName = "Descripcion";
+            this.DescripcionPlan.HeaderText = "Descripcion Plan";
+            this.DescripcionPlan.Name = "DescripcionPlan";
+            this.DescripcionPlan.ReadOnly = true;
+            this.DescripcionPlan.Width = 150;
             // 
-            // idespecialidadDataGridViewTextBoxColumn
+            // IDEspecialidad
             // 
-            this.idespecialidadDataGridViewTextBoxColumn.DataPropertyName = "id_especialidad";
-            this.idespecialidadDataGridViewTextBoxColumn.HeaderText = "ID Especialidad";
-            this.idespecialidadDataGridViewTextBoxColumn.Name = "idespecialidadDataGridViewTextBoxColumn";
-            this.idespecialidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.IDEspecialidad.DataPropertyName = "IDEspecialidad";
+            this.IDEspecialidad.HeaderText = "ID Especialidad";
+            this.IDEspecialidad.Name = "IDEspecialidad";
+            this.IDEspecialidad.ReadOnly = true;
+            this.IDEspecialidad.Width = 120;
             // 
-            // descespecialidadDataGridViewTextBoxColumn
+            // DescripcionE
             // 
-            this.descespecialidadDataGridViewTextBoxColumn.DataPropertyName = "desc_especialidad";
-            this.descespecialidadDataGridViewTextBoxColumn.HeaderText = "Descripcion Especialidad";
-            this.descespecialidadDataGridViewTextBoxColumn.Name = "descespecialidadDataGridViewTextBoxColumn";
-            this.descespecialidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descespecialidadDataGridViewTextBoxColumn.Width = 200;
+            this.DescripcionE.DataPropertyName = "DescripcionE";
+            this.DescripcionE.HeaderText = "Descripcion Especialidad";
+            this.DescripcionE.Name = "DescripcionE";
+            this.DescripcionE.ReadOnly = true;
+            this.DescripcionE.Width = 180;
             // 
             // Planes
             // 
@@ -215,8 +214,8 @@ namespace UI.Desktop
             this.tsmOpciones.ResumeLayout(false);
             this.tsmOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spListaPlanesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,9 +234,9 @@ namespace UI.Desktop
         private tp2_netDataSet13 tp2_netDataSet13;
         private System.Windows.Forms.BindingSource spListaPlanesBindingSource;
         private tp2_netDataSet13TableAdapters.sp_ListaPlanesTableAdapter sp_ListaPlanesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idplanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descplanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idespecialidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descespecialidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDEspecialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionE;
     }
 }

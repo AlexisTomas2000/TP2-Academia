@@ -26,7 +26,7 @@ namespace UI.Desktop
 
         private void Planes_Load(object sender, EventArgs e)
         {
-            this.sp_ListaPlanesTableAdapter.Fill(this.tp2_netDataSet13.sp_ListaPlanes);
+            this.listar();
 
             if (Entity.TipoPersona == 3)
             {
@@ -43,17 +43,23 @@ namespace UI.Desktop
 
         }
 
+        private void listar()
+        {
+            this.dgvPlanes.AutoGenerateColumns = false;
+            this.p1 = new PlanLogic();
+            this.dgvPlanes.DataSource = p1.GetAll();
+        }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            this.sp_ListaPlanesTableAdapter.Fill(this.tp2_netDataSet13.sp_ListaPlanes);
+            this.listar();
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             PlanDesktop plan = new PlanDesktop(ApplicationForm.ModoForm.Alta);
             plan.ShowDialog();
-            this.sp_ListaPlanesTableAdapter.Fill(this.tp2_netDataSet13.sp_ListaPlanes);
+            this.listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
