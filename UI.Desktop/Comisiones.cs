@@ -31,9 +31,7 @@ namespace UI.Desktop
 
         private void Comisiones_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tp2_netDataSet10.sp_Lista_Comisiones' Puede moverla o quitarla según sea necesario.
-            this.sp_Lista_ComisionesTableAdapter.Fill(this.tp2_netDataSet10.sp_Lista_Comisiones);
-   
+            this.listar();
             if ((Entity.TipoPersona==3))
             {
                this.tsmOpciones.Visible = true;
@@ -42,13 +40,17 @@ namespace UI.Desktop
             
 
         }
-   
 
-
+        private void listar()
+        {
+            this.dgvComisiones.AutoGenerateColumns = false;
+            this.C1 = new ComisionLogic();
+            this.dgvComisiones.DataSource = C1.GetAll();
+        }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            this.sp_Lista_ComisionesTableAdapter.Fill(this.tp2_netDataSet10.sp_Lista_Comisiones);
+            this.listar();
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)

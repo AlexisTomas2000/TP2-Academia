@@ -41,26 +41,26 @@ namespace UI.Desktop
             this.comisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comisionesTableAdapter = new UI.Desktop.tp2_netDataSet8TableAdapters.comisionesTableAdapter();
             this.dgvComisiones = new System.Windows.Forms.DataGridView();
-            this.tp2_netDataSet10 = new UI.Desktop.tp2_netDataSet10();
             this.spListaComisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tp2_netDataSet10 = new UI.Desktop.tp2_netDataSet10();
             this.sp_Lista_ComisionesTableAdapter = new UI.Desktop.tp2_netDataSet10TableAdapters.sp_Lista_ComisionesTableAdapter();
-            this.idcomisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desccomisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anioespecialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DesCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPLan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsmOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spListaComisionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet10)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(480, 421);
+            this.btnActualizar.Location = new System.Drawing.Point(507, 421);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace UI.Desktop
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(561, 421);
+            this.btnSalir.Location = new System.Drawing.Point(588, 421);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 3;
@@ -142,80 +142,78 @@ namespace UI.Desktop
             // 
             this.dgvComisiones.AllowUserToAddRows = false;
             this.dgvComisiones.AllowUserToDeleteRows = false;
-            this.dgvComisiones.AutoGenerateColumns = false;
             this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcomisionDataGridViewTextBoxColumn,
-            this.desccomisionDataGridViewTextBoxColumn,
-            this.anioespecialidadDataGridViewTextBoxColumn,
-            this.idplanDataGridViewTextBoxColumn,
-            this.descplanDataGridViewTextBoxColumn});
-            this.dgvComisiones.DataSource = this.spListaComisionesBindingSource;
+            this.IDCom,
+            this.DesCom,
+            this.IDPLan,
+            this.DescripcionPlan,
+            this.Año});
             this.dgvComisiones.Location = new System.Drawing.Point(12, 33);
             this.dgvComisiones.MultiSelect = false;
             this.dgvComisiones.Name = "dgvComisiones";
             this.dgvComisiones.ReadOnly = true;
             this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComisiones.Size = new System.Drawing.Size(622, 382);
+            this.dgvComisiones.Size = new System.Drawing.Size(651, 382);
             this.dgvComisiones.TabIndex = 4;
             this.dgvComisiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComisiones_CellContentClick_1);
-            // 
-            // tp2_netDataSet10
-            // 
-            this.tp2_netDataSet10.DataSetName = "tp2_netDataSet10";
-            this.tp2_netDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // spListaComisionesBindingSource
             // 
             this.spListaComisionesBindingSource.DataMember = "sp_Lista_Comisiones";
             this.spListaComisionesBindingSource.DataSource = this.tp2_netDataSet10;
             // 
+            // tp2_netDataSet10
+            // 
+            this.tp2_netDataSet10.DataSetName = "tp2_netDataSet10";
+            this.tp2_netDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // sp_Lista_ComisionesTableAdapter
             // 
             this.sp_Lista_ComisionesTableAdapter.ClearBeforeFill = true;
             // 
-            // idcomisionDataGridViewTextBoxColumn
+            // IDCom
             // 
-            this.idcomisionDataGridViewTextBoxColumn.DataPropertyName = "id_comision";
-            this.idcomisionDataGridViewTextBoxColumn.HeaderText = "ID Comision";
-            this.idcomisionDataGridViewTextBoxColumn.Name = "idcomisionDataGridViewTextBoxColumn";
-            this.idcomisionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.IDCom.DataPropertyName = "ID";
+            this.IDCom.HeaderText = "ID Comision";
+            this.IDCom.Name = "IDCom";
+            this.IDCom.ReadOnly = true;
             // 
-            // desccomisionDataGridViewTextBoxColumn
+            // DesCom
             // 
-            this.desccomisionDataGridViewTextBoxColumn.DataPropertyName = "desc_comision";
-            this.desccomisionDataGridViewTextBoxColumn.HeaderText = "Descripcion Comision";
-            this.desccomisionDataGridViewTextBoxColumn.Name = "desccomisionDataGridViewTextBoxColumn";
-            this.desccomisionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.desccomisionDataGridViewTextBoxColumn.Width = 120;
+            this.DesCom.DataPropertyName = "Descripcion";
+            this.DesCom.HeaderText = "Descripcion Comision";
+            this.DesCom.Name = "DesCom";
+            this.DesCom.ReadOnly = true;
+            this.DesCom.Width = 150;
             // 
-            // anioespecialidadDataGridViewTextBoxColumn
+            // IDPLan
             // 
-            this.anioespecialidadDataGridViewTextBoxColumn.DataPropertyName = "anio_especialidad";
-            this.anioespecialidadDataGridViewTextBoxColumn.HeaderText = "Año Especialidad";
-            this.anioespecialidadDataGridViewTextBoxColumn.Name = "anioespecialidadDataGridViewTextBoxColumn";
-            this.anioespecialidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.IDPLan.DataPropertyName = "IdPlan";
+            this.IDPLan.HeaderText = "ID PLan";
+            this.IDPLan.Name = "IDPLan";
+            this.IDPLan.ReadOnly = true;
             // 
-            // idplanDataGridViewTextBoxColumn
+            // DescripcionPlan
             // 
-            this.idplanDataGridViewTextBoxColumn.DataPropertyName = "id_plan";
-            this.idplanDataGridViewTextBoxColumn.HeaderText = "ID Plan";
-            this.idplanDataGridViewTextBoxColumn.Name = "idplanDataGridViewTextBoxColumn";
-            this.idplanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.DescripcionPlan.DataPropertyName = "DescripcionP";
+            this.DescripcionPlan.HeaderText = "Descripcion Plan";
+            this.DescripcionPlan.Name = "DescripcionPlan";
+            this.DescripcionPlan.ReadOnly = true;
+            this.DescripcionPlan.Width = 150;
             // 
-            // descplanDataGridViewTextBoxColumn
+            // Año
             // 
-            this.descplanDataGridViewTextBoxColumn.DataPropertyName = "desc_plan";
-            this.descplanDataGridViewTextBoxColumn.HeaderText = "Descripcion Plan";
-            this.descplanDataGridViewTextBoxColumn.Name = "descplanDataGridViewTextBoxColumn";
-            this.descplanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descplanDataGridViewTextBoxColumn.Width = 150;
+            this.Año.DataPropertyName = "AnioEspecialidad";
+            this.Año.HeaderText = "Año";
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
             // 
             // Comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 449);
+            this.ClientSize = new System.Drawing.Size(675, 449);
             this.Controls.Add(this.dgvComisiones);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
@@ -232,8 +230,8 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spListaComisionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp2_netDataSet10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,10 +251,10 @@ namespace UI.Desktop
         private tp2_netDataSet10 tp2_netDataSet10;
         private System.Windows.Forms.BindingSource spListaComisionesBindingSource;
         private tp2_netDataSet10TableAdapters.sp_Lista_ComisionesTableAdapter sp_Lista_ComisionesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcomisionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desccomisionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anioespecialidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idplanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descplanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DesCom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPLan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
     }
 }

@@ -11,7 +11,6 @@ namespace UI.Consola
     public class Usuarios
     {
         private Business.Logic.UsuarioLogic _UsuarioNegocio;
-        //puto el que borra 
         public Business.Logic.UsuarioLogic UsuarioNegocio
         {
             get { return _UsuarioNegocio; }
